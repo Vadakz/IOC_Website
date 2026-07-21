@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./Services.css";
+import "./services.css";
 import services from "../../data/services";
 
 export default function Services() {
