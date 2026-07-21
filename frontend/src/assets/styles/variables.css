@@ -1,0 +1,18 @@
+:root{
+
+    --primary:#0B2E59;
+     --secondary:#19B5B5;
+   --accent:#4FD1C5;
+
+    --dark:#111827;
+    --light:#F8FAFC;
+    --white:#ffffff;
+    --gray:#6B7280;
+
+    --container:1200px;
+
+    --radius:14px;
+
+    --transition:.35s ease;
+
+}

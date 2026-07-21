@@ -1,0 +1,204 @@
+.about-section {
+    padding: 100px 0;
+    background: #ffffff;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.about-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 26px;
+    box-shadow:
+        0 30px 70px rgba(0, 0, 0, .14);
+    animation: aboutFadeLeft 0.8s ease both;
+}
+
+.about-image {
+    display: block;
+    width: 120%;
+    height: 130%;
+    object-fit: cover;
+    object-position: 65% center;
+    transition: transform 0.4s ease;
+}
+
+.about-image-wrapper:hover .about-image {
+    transform: scale(1.03);
+}
+
+
+
+.about-content {
+    animation: aboutFadeRight 0.8s ease both;
+}
+
+.about-label {
+    display: inline-block;
+    margin-bottom: 15px;
+    color: var(--secondary);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.about-content h2 {
+    margin-bottom: 22px;
+    color: var(--primary);
+    font-size: clamp(34px, 4vw, 50px);
+    line-height: 1.15;
+}
+
+.about-content h2 span {
+    display: block;
+    color: var(--secondary);
+}
+
+.about-content>p {
+    margin-bottom: 16px;
+    color: var(--gray);
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.about-highlights {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.about-highlight {
+    padding: 20px;
+    border: 1px solid #e4e9f0;
+    border-radius: 12px;
+    background: #f7f9fc;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.about-highlight:hover {
+    transform: translateY(-4px);
+    border-color: rgba(27, 177, 174, 0.35);
+    box-shadow: 0 12px 25px rgba(15, 39, 70, 0.08);
+}
+
+.about-highlight strong {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--primary);
+    font-size: 26px;
+}
+
+.about-highlight span {
+    color: var(--gray);
+    font-size: 14px;
+}
+
+.about-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 24px;
+    border-radius: 8px;
+    background: #0f3a72;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.about-button:hover {
+    transform: translateY(-2px);
+    background: var(--secondary);
+    box-shadow: 0 10px 22px rgba(15, 58, 114, 0.22);
+}
+
+.about-button span {
+    transition: transform 0.2s ease;
+}
+
+.about-button:hover span {
+    transform: translateX(4px);
+}
+
+@keyframes aboutFadeLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes aboutFadeRight {
+    from {
+        opacity: 0;
+        transform: translateX(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 950px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .about-image {
+        height: 500px;
+        object-position: center;
+    }
+}
+
+@media (max-width: 620px) {
+    .about-section {
+        padding: 75px 0;
+    }
+
+    .about-image {
+        height: 380px;
+    }
+
+    .about-experience {
+        right: 15px;
+        bottom: 15px;
+        width: 135px;
+        padding: 16px;
+    }
+
+    .about-experience strong {
+        font-size: 30px;
+    }
+
+    .about-highlights {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .about-highlight {
+        padding: 16px;
+    }
+
+    .about-highlight strong {
+        font-size: 22px;
+    }
+}

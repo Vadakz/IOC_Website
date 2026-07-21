@@ -1,0 +1,219 @@
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(4, 22, 43, 0.24);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.navbar-container {
+    width: min(92%, 1240px);
+    min-height: 88px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.navbar-logo {
+    display: block;
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+    max-width:190;
+    transition: .3s;
+}
+
+.navbar-logo:hover {
+    transform: scale(1.04);
+}
+
+.brand-details strong {
+    font-size: 14px;
+    letter-spacing: 0.3px;
+}
+
+.brand-details small {
+    margin-top: 4px;
+    font-size: 10px;
+    letter-spacing: 0.8px;
+    color: rgba(255, 255, 255, 0.68);
+    text-transform: uppercase;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.navbar-links>a:not(.navbar-mobile-quote) {
+    position: relative;
+    padding: 10px 0;
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.25s ease;
+}
+
+.navbar-links>a:not(.navbar-mobile-quote)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    width: 0;
+    height: 2px;
+    background: #28b5ad;
+    transition: width 0.25s ease;
+}
+
+.navbar-links>a:not(.navbar-mobile-quote):hover {
+    color: #ffffff;
+}
+
+.navbar-links>a:not(.navbar-mobile-quote):hover::after {
+    width: 100%;
+}
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.navbar-quote,
+.navbar-mobile-quote {
+    padding: 12px 22px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #20a7a0, #287fc0);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    box-shadow: 0 10px 28px rgba(0, 169, 157, 0.25);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.navbar-quote:hover,
+.navbar-mobile-quote:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 32px rgba(0, 169, 157, 0.35);
+}
+
+.navbar-mobile-quote {
+    display: none;
+}
+
+.navbar-toggle {
+    display: none;
+    width: 42px;
+    height: 42px;
+    padding: 9px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.navbar-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    margin: 5px 0;
+    border-radius: 20px;
+    background: #ffffff;
+    transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
+}
+
+.navbar-toggle-active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.navbar-toggle-active span:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-toggle-active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 980px) {
+    .navbar-container {
+        min-height: 78px;
+    }
+
+    .navbar-links {
+        position: absolute;
+        top: 78px;
+        left: 4%;
+        right: 4%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 5px;
+        padding: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 14px;
+        background: rgba(5, 25, 48, 0.97);
+        box-shadow: 0 22px 50px rgba(0, 0, 0, 0.35);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-14px);
+        transition:
+            opacity 0.25s ease,
+            visibility 0.25s ease,
+            transform 0.25s ease;
+    }
+
+    .navbar-links-open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .navbar-links>a:not(.navbar-mobile-quote) {
+        padding: 13px 10px;
+    }
+
+    .navbar-links>a:not(.navbar-mobile-quote)::after {
+        display: none;
+    }
+
+    .navbar-mobile-quote {
+        display: block;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .navbar-quote {
+        display: none;
+    }
+
+    .navbar-toggle {
+        display: block;
+    }
+}
+
+@media (max-width: 560px) {
+    .brand-details {
+        display: none;
+    }
+
+    .brand-symbol {
+        font-size: 26px;
+    }
+}
