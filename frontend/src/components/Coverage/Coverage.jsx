@@ -1,73 +1,150 @@
-import { cities, coverageStats } from "../../data/coverage.js";
+import "./Coverage.css";
+import "leaflet/dist/leaflet.css";
+
+import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import L from "leaflet";
+
+const locations = [
+  {
+    name: "Riyadh",
+    region: "Central Region",
+    coordinates: [24.7136, 46.6753],
+  },
+  {
+    name: "Jeddah",
+    region: "Western Region",
+    coordinates: [21.5433, 39.1728],
+  },
+  {
+    name: "Dammam",
+    region: "Eastern Region",
+    coordinates: [26.4207, 50.0888],
+  },
+  {
+    name: "Jubail",
+    region: "Eastern Industrial Region",
+    coordinates: [27.0174, 49.6225],
+  },
+];
+
+const locationIcon = L.divIcon({
+  className: "coverage-custom-marker",
+  html: `
+    <span class="coverage-marker-pulse"></span>
+    <span class="coverage-marker-dot"></span>
+  `,
+  iconSize: [34, 34],
+  iconAnchor: [17, 17],
+  popupAnchor: [0, -16],
+});
 
 export default function Coverage() {
   return (
-    <section className="coverage" id="coverage">
-      <div className="wrap">
-        <div className="section-head">
-          <span className="eyebrow">Our Coverage</span>
-          <h2>Kingdom-wide, and growing.</h2>
+    <section className="coverage-section" id="coverage">
+      <div className="coverage-container">
+        <div className="coverage-header">
+          <div>
+            <span className="coverage-label">Our Coverage</span>
+
+            <h2>
+              Operational coverage across the
+              <span> Kingdom of Saudi Arabia</span>
+            </h2>
+          </div>
+
           <p>
-            IOC/ECO operates across four main cities today with a footprint reaching every province — supporting
-            SMEs, large and mega projects alike.
+            IOC provides integrated facility management and operational
+            support across major cities and industrial regions throughout the
+            Kingdom.
           </p>
         </div>
 
-        <div className="cov-grid">
-          <div className="cov-map">
-            <svg viewBox="0 0 460 380" aria-hidden="true">
-              <circle cx="230" cy="190" r="150" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
-              <circle cx="230" cy="190" r="105" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
-              <circle cx="230" cy="190" r="60" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
+        <div className="coverage-layout">
+          <div className="coverage-location-panel">
+            <div className="coverage-panel-heading">
+              <span>Operational locations</span>
+              <strong>{locations.length} Locations</strong>
+            </div>
 
-              <line x1="230" y1="190" x2="230" y2="90" stroke="rgba(0,169,157,0.35)" strokeWidth="1.2" />
-              <line x1="230" y1="190" x2="120" y2="250" stroke="rgba(0,169,157,0.35)" strokeWidth="1.2" />
-              <line x1="230" y1="190" x2="345" y2="150" stroke="rgba(0,169,157,0.35)" strokeWidth="1.2" />
-              <line x1="230" y1="190" x2="100" y2="120" stroke="rgba(0,169,157,0.25)" strokeWidth="1" />
-              <line x1="230" y1="190" x2="360" y2="270" stroke="rgba(0,169,157,0.25)" strokeWidth="1" />
+            <div className="coverage-location-list">
+              {locations.map((location) => (
+                <div className="coverage-location-card" key={location.name}>
+                  <span className="coverage-location-pin"></span>
 
-              <circle cx="230" cy="190" r="7" className="net-dot" />
-              <circle className="net-pulse" cx="230" cy="190" r="7" />
-              <text className="net-city" x="242" y="186" fill="#fff" fontWeight="600">
-                RIYADH
-              </text>
-
-              <circle cx="120" cy="250" r="5" className="net-dot" />
-              <text className="net-city" x="60" y="272">JEDDAH</text>
-
-              <circle cx="345" cy="150" r="5" className="net-dot" />
-              <text className="net-city" x="357" y="148">DAMMAM</text>
-
-              <circle cx="230" cy="90" r="5" className="net-dot" />
-              <text className="net-city" x="200" y="72">NEOM</text>
-
-              <circle cx="100" cy="120" r="5" className="net-dot" />
-              <text className="net-city" x="30" y="116">RED SEA</text>
-
-              <circle cx="360" cy="270" r="5" className="net-dot" />
-              <text className="net-city" x="365" y="292">JUBAIL</text>
-            </svg>
-          </div>
-
-          <div>
-            <div className="cov-list">
-              {cities.map((c) => (
-                <div className="cov-city" key={c.name}>
-                  <span className="cov-dot"></span>
                   <div>
-                    <strong>{c.name}</strong>
-                    <span>{c.tag}</span>
+                    <h3>{location.name}</h3>
+                    <p>{location.region}</p>
                   </div>
                 </div>
               ))}
             </div>
+          </div>
 
-            <div className="service-line">
-              {coverageStats.map((s) => (
-                <div key={s.label}>
-                  <span className="num">{s.num}</span> <span className="lbl">{s.label}</span>
-                </div>
+          <div className="coverage-map-card">
+            <div className="coverage-map-top">
+              <div>
+                <span>IOC Operational Network</span>
+                <h3>Kingdom-wide service coverage</h3>
+              </div>
+
+              <div className="coverage-map-status">
+                <span></span>
+                Active
+              </div>
+            </div>
+            <MapContainer
+              center={[24.2, 45]}
+              zoom={5.8}
+              minZoom={5.5}
+              maxZoom={7}
+              maxBounds={[
+                [15, 33],
+                [33, 56],
+              ]}
+              maxBoundsViscosity={1}
+              dragging={false}
+              scrollWheelZoom={false}
+              doubleClickZoom={false}
+              zoomControl={false}
+              className="coverage-live-map"
+            >
+              <TileLayer
+                attribution='&copy; <a href="https://www.maptiler.com/copyright/">MapTiler</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+                url={`https://api.maptiler.com/maps/dataviz-dark/{z}/{x}/{y}.png?key=${import.meta.env.VITE_MAPTILER_KEY}`}
+              />
+
+              {locations.map((location) => (
+                <Marker
+                  key={location.name}
+                  position={location.coordinates}
+                  icon={locationIcon}
+                >
+                  <Popup>
+                    <div className="coverage-popup">
+                      <strong>{location.name}</strong>
+                      <span>{location.region}</span>
+                      <p>IOC operational service coverage</p>
+                    </div>
+                  </Popup>
+                </Marker>
               ))}
+            </MapContainer>
+
+            <div className="coverage-map-footer">
+              <div>
+                <strong>4</strong>
+                <span>Operational Hubs</span>
+              </div>
+
+              <div>
+                <strong>24/7</strong>
+                <span>Support Services</span>
+              </div>
+
+              <div>
+                <strong>KSA</strong>
+                <span>Nationwide Capability</span>
+              </div>
             </div>
           </div>
         </div>
