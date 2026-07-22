@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../../assets/images/logo.png";
+import services from "../../data/services";
+
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -58,12 +60,32 @@ export default function Navbar() {
                         About Us
                     </button>
 
-                    <button
-                        type="button"
-                        onClick={() => goToSection("services")}
-                    >
-                        Services
-                    </button>
+                    <div className="navbar-dropdown">
+    <button
+        type="button"
+        className="navbar-dropdown-trigger"
+        onClick={() => goToSection("services")}
+    >
+        Services
+        <span className="dropdown-arrow">▾</span>
+    </button>
+
+    <div className="navbar-dropdown-menu">
+        {services.map((service) => (
+            <Link
+                key={service.id}
+                to={`/services/${service.slug}`}
+                onClick={closeMenu}
+            >
+                <span className="dropdown-service-icon">
+                    {service.icon && <service.icon />}
+                </span>
+
+                <span>{service.title}</span>
+            </Link>
+        ))}
+    </div>
+</div>
 
                     <button
                         type="button"

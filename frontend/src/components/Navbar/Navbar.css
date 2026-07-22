@@ -21,10 +21,10 @@
 }
 
 .navbar-brand {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-  overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    overflow: hidden;
 }
 
 .navbar-logo {
@@ -32,7 +32,7 @@
     height: 80px;
     width: auto;
     object-fit: contain;
-    max-width:190;
+    max-width: 190;
     transition: .3s;
 }
 
@@ -68,16 +68,38 @@
     padding: 0;
 }
 
-.navbar-links>a:not(.navbar-mobile-quote) {
+.navbar-links a,
+.navbar-links button {
+    color: #ffffff;
+}
+
+.navbar-links a:hover,
+.navbar-links button:hover {
+    color: #ffffff;
+    opacity: 0.8;
+}
+
+.navbar-links a.active,
+.navbar-links button.active {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.navbar-links a:not(.navbar-mobile-quote),
+.navbar-links button {
     position: relative;
     padding: 10px 0;
-    color: rgba(255, 255, 255, 0.86);
+    color: rgba(255, 255, 255, 0.9);
     font-size: 14px;
     font-weight: 500;
+    background: none;
+    border: none;
+    cursor: pointer;
     transition: color 0.25s ease;
 }
 
-.navbar-links>a:not(.navbar-mobile-quote)::after {
+.navbar-links a:not(.navbar-mobile-quote)::after,
+.navbar-links button::after {
     content: "";
     position: absolute;
     left: 0;
@@ -88,11 +110,13 @@
     transition: width 0.25s ease;
 }
 
-.navbar-links>a:not(.navbar-mobile-quote):hover {
+.navbar-links a:not(.navbar-mobile-quote):hover,
+.navbar-links button:hover {
     color: #ffffff;
 }
 
-.navbar-links>a:not(.navbar-mobile-quote):hover::after {
+.navbar-links a:not(.navbar-mobile-quote):hover::after,
+.navbar-links button:hover::after {
     width: 100%;
 }
 
@@ -100,6 +124,96 @@
     display: flex;
     align-items: center;
     gap: 18px;
+}
+
+/* Services dropdown container */
+.navbar-dropdown {
+    position: relative;
+}
+
+/* Services navbar button */
+.navbar-dropdown-trigger {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.dropdown-arrow {
+    display: inline-block;
+    font-size: 11px;
+    transition: transform 0.25s ease;
+}
+
+/* Dropdown box */
+.navbar-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 50%;
+    width: 300px;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    background: rgba(5, 25, 48, 0.98);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, 10px);
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease,
+        transform 0.25s ease;
+}
+
+/* Show dropdown on hover */
+.navbar-dropdown:hover .navbar-dropdown-menu,
+.navbar-dropdown:focus-within .navbar-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+}
+
+.navbar-dropdown:hover .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+/* Individual service links */
+.navbar-dropdown-menu a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 14px;
+    text-decoration: none;
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+/* Remove the normal navbar underline inside dropdown */
+.navbar-dropdown-menu a::after {
+    display: none;
+}
+
+.navbar-dropdown-menu a:hover {
+    color: #ffffff;
+    background: rgba(40, 181, 173, 0.16);
+    transform: translateX(4px);
+}
+
+.dropdown-service-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 28px;
+    height: 28px;
+    border-radius: 7px;
+    color: #28b5ad;
+    background: rgba(40, 181, 173, 0.12);
 }
 
 .navbar-quote,
@@ -163,6 +277,45 @@
 @media (max-width: 980px) {
     .navbar-container {
         min-height: 78px;
+    }
+
+    .navbar-dropdown {
+        width: 100%;
+    }
+
+    .navbar-dropdown-trigger {
+        width: 100%;
+        justify-content: space-between;
+        padding: 13px 10px;
+    }
+
+    .navbar-dropdown-menu {
+        position: static;
+        width: 100%;
+        max-height: 0;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+        background: rgba(255, 255, 255, 0.04);
+
+        opacity: 1;
+        visibility: visible;
+        overflow: hidden;
+        transform: none;
+        transition:
+            max-height 0.3s ease,
+            padding 0.3s ease;
+    }
+
+    .navbar-dropdown:hover .navbar-dropdown-menu,
+    .navbar-dropdown:focus-within .navbar-dropdown-menu {
+        max-height: 500px;
+        padding: 8px;
+        transform: none;
+    }
+
+    .navbar-dropdown-menu a {
+        padding: 11px 12px;
     }
 
     .navbar-links {
