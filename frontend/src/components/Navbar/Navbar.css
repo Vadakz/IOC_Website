@@ -59,6 +59,15 @@
     gap: 30px;
 }
 
+.navbar-links button {
+    border: none;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    padding: 0;
+}
+
 .navbar-links>a:not(.navbar-mobile-quote) {
     position: relative;
     padding: 10px 0;
