@@ -1,4 +1,5 @@
 import "./WhyChoose.css";
+import { Link } from "react-router-dom";
 
 const strengths = [
   {
@@ -129,10 +130,10 @@ export default function WhyChoose() {
             </p>
           </div>
 
-          <a href="#contact">
-            Discuss your requirements
+          <Link to="/industries">
+            Industries We Serve
             <span aria-hidden="true">→</span>
-          </a>
+          </Link>
         </div>
       </div>
     </section>
