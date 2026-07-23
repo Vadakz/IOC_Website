@@ -1,13 +1,16 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import "./Navbar.css";
 import logo from "../../assets/images/logo.png";
 import services from "../../data/services";
 
-
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
     const navigate = useNavigate();
+
+    const { t, i18n } = useTranslation();
+    const language = i18n.resolvedLanguage || i18n.language;
 
     const closeMenu = () => {
         setMenuOpen(false);
@@ -26,7 +29,16 @@ export default function Navbar() {
                     block: "start",
                 });
             }
-        }, 100);
+        }, 150);
+    };
+
+    const changeLanguage = async (selectedLanguage) => {
+        await i18n.changeLanguage(selectedLanguage);
+
+        localStorage.setItem("language", selectedLanguage);
+        document.documentElement.lang = selectedLanguage;
+        document.documentElement.dir =
+            selectedLanguage === "ar" ? "rtl" : "ltr";
     };
 
     return (
@@ -50,74 +62,132 @@ export default function Navbar() {
                     }`}
                 >
                     <Link to="/" onClick={closeMenu}>
-                        Home
+                        {t("navbar.home")}
                     </Link>
 
                     <button
                         type="button"
                         onClick={() => goToSection("about")}
                     >
-                        About Us
+                        {t("navbar.about")}
                     </button>
 
                     <div className="navbar-dropdown">
-    <button
-        type="button"
-        className="navbar-dropdown-trigger"
-        onClick={() => goToSection("services")}
-    >
-        Services
-        <span className="dropdown-arrow">▾</span>
-    </button>
+                        <button
+                            type="button"
+                            className="navbar-dropdown-trigger"
+                            onClick={() => goToSection("services")}
+                        >
+                            {t("navbar.services")}
+                            <span className="dropdown-arrow">▾</span>
+                        </button>
 
-    <div className="navbar-dropdown-menu">
-        {services.map((service) => (
-            <Link
-                key={service.id}
-                to={`/services/${service.slug}`}
-                onClick={closeMenu}
-            >
-                <span className="dropdown-service-icon">
-                    {service.icon && <service.icon />}
-                </span>
+                        <div className="navbar-dropdown-menu">
+                            {services.map((service) => {
+                                const ServiceIcon = service.icon;
 
-                <span>{service.title}</span>
-            </Link>
-        ))}
-    </div>
-</div>
+                                return (
+                                    <Link
+                                        key={service.id}
+                                        to={`/services/${service.slug}`}
+                                        onClick={closeMenu}
+                                    >
+                                        <span className="dropdown-service-icon">
+                                            {ServiceIcon && <ServiceIcon />}
+                                        </span>
+
+                                        <span>{service.title}</span>
+                                    </Link>
+                                );
+                            })}
+                        </div>
+                    </div>
 
                     <button
                         type="button"
                         onClick={() => goToSection("coverage")}
                     >
-                        Coverage
+                        {t("navbar.coverage")}
                     </button>
 
-                    <button
-                        type="button"
-                        onClick={() => goToSection("contact")}
+                    <Link to="/contact" onClick={closeMenu}>
+                        {t("navbar.contact")}
+                    </Link>
+
+                    <div
+                        className="navbar-mobile-language"
+                        aria-label="Select language"
                     >
-                        Contact Us
-                    </button>
+                        <span aria-hidden="true">🌐</span>
 
-                    <button
-                        type="button"
+                        <button
+                            type="button"
+                            className={language === "en" ? "active" : ""}
+                            onClick={() => changeLanguage("en")}
+                        >
+                            EN
+                        </button>
+
+                        <span className="language-divider">|</span>
+
+                        <button
+                            type="button"
+                            lang="ar"
+                            className={language === "ar" ? "active" : ""}
+                            onClick={() => changeLanguage("ar")}
+                        >
+                            العربية
+                        </button>
+                    </div>
+
+                    <Link
+                        to="/contact"
                         className="navbar-mobile-quote"
-                        onClick={() => goToSection("contact")}
+                        onClick={closeMenu}
                     >
-                        Get a Quote
-                    </button>
+                        {t("navbar.quote")}
+                    </Link>
                 </nav>
 
                 <div className="navbar-actions">
-                    <button
-                        type="button"
-                        className="navbar-quote"
-                        onClick={() => goToSection("contact")}
+                    <div
+                        className="navbar-language"
+                        aria-label="Select language"
                     >
-                        Get a Quote
-                    </button>
+                        <span
+                            className="navbar-language-icon"
+                            aria-hidden="true"
+                        >
+                            🌐
+                        </span>
+
+                        <button
+                            type="button"
+                            className={language === "en" ? "active" : ""}
+                            onClick={() => changeLanguage("en")}
+                        >
+                            EN
+                        </button>
+
+                        <span className="language-divider">|</span>
+
+                        <button
+                            type="button"
+                            lang="ar"
+                            className={language === "ar" ? "active" : ""}
+                            onClick={() => changeLanguage("ar")}
+                        >
+                            العربية
+                        </button>
+                    </div>
+
+                    <Link
+                        to="/contact"
+                        className="navbar-quote"
+                        onClick={closeMenu}
+                    >
+                        {t("navbar.quote")}
+                    </Link>
 
                     <button
                         type="button"
@@ -126,8 +196,8 @@ export default function Navbar() {
                         }`}
                         aria-label={
                             menuOpen
-                                ? "Close navigation menu"
-                                : "Open navigation menu"
+                                ? t("navbar.closeMenu")
+                                : t("navbar.openMenu")
                         }
                         aria-expanded={menuOpen}
                         onClick={() =>
