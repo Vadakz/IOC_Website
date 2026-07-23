@@ -9,6 +9,7 @@ import {
     FaPhoneAlt,
 } from "react-icons/fa";
 import "./Contact.css";
+import contactHero from "../../assets/images/contact-hero.jpg";
 import services from "../../data/services";
 
 const contactCards = [
@@ -126,8 +127,12 @@ export default function Contact() {
 
     return (
         <main className="contact-page">
-            <section className="contact-hero">
-                <div className="contact-hero-overlay" />
+            <section
+                className="contact-hero"
+                style={{
+                    backgroundImage: `url(${contactHero})`,
+                }}
+            >
 
                 <div className="contact-page-container contact-hero-content">
                     <span className="contact-page-eyebrow">
@@ -431,8 +436,8 @@ export default function Contact() {
                 </div>
             </section>
 
-          
-            
+
+
         </main>
     );
 }

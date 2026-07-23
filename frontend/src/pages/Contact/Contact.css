@@ -18,20 +18,15 @@
 }
 
 .contact-hero {
-    position: relative;
-    display: flex;
-    min-height: 620px;
-    align-items: center;
-    background:
-        linear-gradient(
-            90deg,
-            rgba(5, 31, 49, 0.96) 0%,
-            rgba(5, 31, 49, 0.86) 50%,
-            rgba(5, 31, 49, 0.58) 100%
-        ),
-        url("../../assets/images/contact-hero.jpg") center / cover
-            no-repeat;
-    overflow: hidden;
+  position: relative;
+  min-height: 100vh;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
 }
 
 .contact-hero-overlay {
