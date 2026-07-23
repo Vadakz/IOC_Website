@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar/Navbar";
 import "./IndustriesPage.css";
 import clients from "../data/clients";
+import PageTransition from "../components/PageTransition";
 
 const industries = [
   {
@@ -97,9 +98,10 @@ export default function IndustriesPage() {
   const movingClients = [...clients, ...clients];
 
   return (
-    <>
-      <Navbar />
+    
+      
 
+     <PageTransition>
       <main className="industries-page">
         <section className="industries-page-hero">
           <div className="industries-page-container">
@@ -115,10 +117,7 @@ export default function IndustriesPage() {
               support designed around the requirements of each industry.
             </p>
 
-            <a href="#industry-list" className="industries-scroll-link">
-              Explore Industries
-              <span aria-hidden="true">↓</span>
-            </a>
+          
           </div>
         </section>
 
@@ -207,6 +206,7 @@ export default function IndustriesPage() {
           </div>
         </section>
       </main>
-    </>
+      </PageTransition>
+    
   );
 }

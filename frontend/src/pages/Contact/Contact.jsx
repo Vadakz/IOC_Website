@@ -11,6 +11,7 @@ import {
 import "./Contact.css";
 import contactHero from "../../assets/images/contact-hero.jpg";
 import services from "../../data/services";
+import PageTransition from "../../components/PageTransition";
 
 const contactCards = [
     {
@@ -125,319 +126,325 @@ export default function Contact() {
         }
     };
 
+
     return (
-        <main className="contact-page">
-            <section
-                className="contact-hero"
-                style={{
-                    backgroundImage: `url(${contactHero})`,
-                }}
-            >
 
-                <div className="contact-page-container contact-hero-content">
-                    <span className="contact-page-eyebrow">
-                        Contact International Operations Company
-                    </span>
+        <PageTransition>
 
-                    <h1>
-                        Let&apos;s Build Better
-                        <span>Operations Together.</span>
-                    </h1>
 
-                    <p>
-                        Speak with our team about integrated facility
-                        management, environmental services and operational
-                        solutions across Saudi Arabia.
-                    </p>
+            <main className="contact-page">
+                <section
+                    className="contact-hero"
+                    style={{
+                        backgroundImage: `url(${contactHero})`,
+                    }}
+                >
 
-                    <div className="contact-hero-actions">
-                        <button
-                            type="button"
-                            className="contact-primary-button"
-                            onClick={scrollToForm}
-                        >
-                            Send an Enquiry
-                            <FaArrowRight />
-                        </button>
-
-                        <a
-                            href="tel:+966000000000"
-                            className="contact-secondary-button"
-                        >
-                            Call Our Team
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <section className="contact-cards-section">
-                <div className="contact-page-container">
-                    <div className="contact-section-heading">
+                    <div className="contact-page-container contact-hero-content">
                         <span className="contact-page-eyebrow">
-                            Get in Touch
+                            Contact International Operations Company
                         </span>
 
-                        <h2>Choose the easiest way to reach us.</h2>
+                        <h1>
+                            Let&apos;s Build Better
+                            <span>Operations Together.</span>
+                        </h1>
 
                         <p>
-                            Our team is available to support enquiries,
-                            quotations, service requests and business
-                            partnerships.
+                            Speak with our team about integrated facility
+                            management, environmental services and operational
+                            solutions across Saudi Arabia.
                         </p>
+
+                        <div className="contact-hero-actions">
+                            <button
+                                type="button"
+                                className="contact-primary-button"
+                                onClick={scrollToForm}
+                            >
+                                Send an Enquiry
+                                <FaArrowRight />
+                            </button>
+
+                            <a
+                                href="tel:+966000000000"
+                                className="contact-secondary-button"
+                            >
+                                Call Our Team
+                            </a>
+                        </div>
                     </div>
+                </section>
 
-                    <div className="contact-cards-grid">
-                        {contactCards.map((card) => {
-                            const Icon = card.icon;
+                <section className="contact-cards-section">
+                    <div className="contact-page-container">
+                        <div className="contact-section-heading">
+                            <span className="contact-page-eyebrow">
+                                Get in Touch
+                            </span>
 
-                            const cardContent = (
-                                <>
-                                    <span className="contact-card-icon">
-                                        <Icon />
-                                    </span>
+                            <h2>Choose the easiest way to reach us.</h2>
 
-                                    <h3>{card.title}</h3>
+                            <p>
+                                Our team is available to support enquiries,
+                                quotations, service requests and business
+                                partnerships.
+                            </p>
+                        </div>
 
-                                    {card.lines.map((line) => (
-                                        <p key={line}>{line}</p>
-                                    ))}
-                                </>
-                            );
+                        <div className="contact-cards-grid">
+                            {contactCards.map((card) => {
+                                const Icon = card.icon;
 
-                            if (card.href) {
+                                const cardContent = (
+                                    <>
+                                        <span className="contact-card-icon">
+                                            <Icon />
+                                        </span>
+
+                                        <h3>{card.title}</h3>
+
+                                        {card.lines.map((line) => (
+                                            <p key={line}>{line}</p>
+                                        ))}
+                                    </>
+                                );
+
+                                if (card.href) {
+                                    return (
+                                        <a
+                                            key={card.id}
+                                            href={card.href}
+                                            target={
+                                                card.href.startsWith("http")
+                                                    ? "_blank"
+                                                    : undefined
+                                            }
+                                            rel={
+                                                card.href.startsWith("http")
+                                                    ? "noreferrer"
+                                                    : undefined
+                                            }
+                                            className="contact-info-card"
+                                        >
+                                            {cardContent}
+                                        </a>
+                                    );
+                                }
+
                                 return (
-                                    <a
+                                    <div
                                         key={card.id}
-                                        href={card.href}
-                                        target={
-                                            card.href.startsWith("http")
-                                                ? "_blank"
-                                                : undefined
-                                        }
-                                        rel={
-                                            card.href.startsWith("http")
-                                                ? "noreferrer"
-                                                : undefined
-                                        }
                                         className="contact-info-card"
                                     >
                                         {cardContent}
-                                    </a>
+                                    </div>
                                 );
-                            }
-
-                            return (
-                                <div
-                                    key={card.id}
-                                    className="contact-info-card"
-                                >
-                                    {cardContent}
-                                </div>
-                            );
-                        })}
-                    </div>
-                </div>
-            </section>
-
-            <section
-                className="contact-form-section"
-                id="contact-form"
-            >
-                <div className="contact-page-container">
-                    <div className="contact-form-layout">
-                        <div className="contact-form-visual">
-                            <div className="contact-form-visual-overlay" />
-
-                            <div className="contact-form-visual-content">
-                                <span className="contact-page-eyebrow">
-                                    Reliable Support
-                                </span>
-
-                                <h2>
-                                    Solutions designed around your
-                                    operations.
-                                </h2>
-
-                                <p>
-                                    Share your requirements with us and our
-                                    team will recommend the right service
-                                    solution for your business.
-                                </p>
-
-                                <div className="contact-visual-feature">
-                                    <FaGlobe />
-
-                                    <span>
-                                        Nationwide operational coverage
-                                    </span>
-                                </div>
-
-                                <div className="contact-visual-feature">
-                                    <FaClock />
-
-                                    <span>
-                                        Responsive customer support
-                                    </span>
-                                </div>
-                            </div>
+                            })}
                         </div>
+                    </div>
+                </section>
 
-                        <div className="contact-form-panel">
-                            <div className="contact-form-heading">
-                                <span className="contact-page-eyebrow">
-                                    Send an Enquiry
-                                </span>
+                <section
+                    className="contact-form-section"
+                    id="contact-form"
+                >
+                    <div className="contact-page-container">
+                        <div className="contact-form-layout">
+                            <div className="contact-form-visual">
+                                <div className="contact-form-visual-overlay" />
 
-                                <h2>Tell us how we can assist you.</h2>
+                                <div className="contact-form-visual-content">
+                                    <span className="contact-page-eyebrow">
+                                        Reliable Support
+                                    </span>
 
-                                <p>
-                                    Complete the form and our team will
-                                    contact you as soon as possible.
-                                </p>
-                            </div>
+                                    <h2>
+                                        Solutions designed around your
+                                        operations.
+                                    </h2>
 
-                            <form
-                                className="contact-form"
-                                onSubmit={handleSubmit}
-                            >
-                                <div className="contact-form-row">
-                                    <div className="contact-form-group">
-                                        <label htmlFor="fullName">
-                                            Full Name
-                                        </label>
-
-                                        <input
-                                            type="text"
-                                            id="fullName"
-                                            name="fullName"
-                                            value={formData.fullName}
-                                            onChange={handleChange}
-                                            placeholder="Enter your full name"
-                                            required
-                                        />
-                                    </div>
-
-                                    <div className="contact-form-group">
-                                        <label htmlFor="companyName">
-                                            Company Name
-                                        </label>
-
-                                        <input
-                                            type="text"
-                                            id="companyName"
-                                            name="companyName"
-                                            value={formData.companyName}
-                                            onChange={handleChange}
-                                            placeholder="Enter company name"
-                                        />
-                                    </div>
-                                </div>
-
-                                <div className="contact-form-row">
-                                    <div className="contact-form-group">
-                                        <label htmlFor="email">
-                                            Email Address
-                                        </label>
-
-                                        <input
-                                            type="email"
-                                            id="email"
-                                            name="email"
-                                            value={formData.email}
-                                            onChange={handleChange}
-                                            placeholder="name@company.com"
-                                            required
-                                        />
-                                    </div>
-
-                                    <div className="contact-form-group">
-                                        <label htmlFor="phone">
-                                            Phone Number
-                                        </label>
-
-                                        <input
-                                            type="tel"
-                                            id="phone"
-                                            name="phone"
-                                            value={formData.phone}
-                                            onChange={handleChange}
-                                            placeholder="+966"
-                                            required
-                                        />
-                                    </div>
-                                </div>
-
-                                <div className="contact-form-group">
-                                    <label htmlFor="service">
-                                        Interested Service
-                                    </label>
-
-                                    <select
-                                        id="service"
-                                        name="service"
-                                        value={formData.service}
-                                        onChange={handleChange}
-                                        required
-                                    >
-                                        <option value="">
-                                            Select a service
-                                        </option>
-
-                                        {services.map((service) => (
-                                            <option
-                                                key={service.id}
-                                                value={service.title}
-                                            >
-                                                {service.title}
-                                            </option>
-                                        ))}
-
-                                        <option value="Other">
-                                            Other
-                                        </option>
-                                    </select>
-                                </div>
-
-                                <div className="contact-form-group">
-                                    <label htmlFor="message">
-                                        Message
-                                    </label>
-
-                                    <textarea
-                                        id="message"
-                                        name="message"
-                                        value={formData.message}
-                                        onChange={handleChange}
-                                        placeholder="Tell us about your requirements"
-                                        rows="6"
-                                        required
-                                    />
-                                </div>
-
-                                <button
-                                    type="submit"
-                                    className="contact-submit-button"
-                                >
-                                    Send Enquiry
-                                    <FaArrowRight />
-                                </button>
-
-                                {status && (
-                                    <p
-                                        className="contact-form-status"
-                                        role="status"
-                                    >
-                                        {status}
+                                    <p>
+                                        Share your requirements with us and our
+                                        team will recommend the right service
+                                        solution for your business.
                                     </p>
-                                )}
-                            </form>
+
+                                    <div className="contact-visual-feature">
+                                        <FaGlobe />
+
+                                        <span>
+                                            Nationwide operational coverage
+                                        </span>
+                                    </div>
+
+                                    <div className="contact-visual-feature">
+                                        <FaClock />
+
+                                        <span>
+                                            Responsive customer support
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="contact-form-panel">
+                                <div className="contact-form-heading">
+                                    <span className="contact-page-eyebrow">
+                                        Send an Enquiry
+                                    </span>
+
+                                    <h2>Tell us how we can assist you.</h2>
+
+                                    <p>
+                                        Complete the form and our team will
+                                        contact you as soon as possible.
+                                    </p>
+                                </div>
+
+                                <form
+                                    className="contact-form"
+                                    onSubmit={handleSubmit}
+                                >
+                                    <div className="contact-form-row">
+                                        <div className="contact-form-group">
+                                            <label htmlFor="fullName">
+                                                Full Name
+                                            </label>
+
+                                            <input
+                                                type="text"
+                                                id="fullName"
+                                                name="fullName"
+                                                value={formData.fullName}
+                                                onChange={handleChange}
+                                                placeholder="Enter your full name"
+                                                required
+                                            />
+                                        </div>
+
+                                        <div className="contact-form-group">
+                                            <label htmlFor="companyName">
+                                                Company Name
+                                            </label>
+
+                                            <input
+                                                type="text"
+                                                id="companyName"
+                                                name="companyName"
+                                                value={formData.companyName}
+                                                onChange={handleChange}
+                                                placeholder="Enter company name"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div className="contact-form-row">
+                                        <div className="contact-form-group">
+                                            <label htmlFor="email">
+                                                Email Address
+                                            </label>
+
+                                            <input
+                                                type="email"
+                                                id="email"
+                                                name="email"
+                                                value={formData.email}
+                                                onChange={handleChange}
+                                                placeholder="name@company.com"
+                                                required
+                                            />
+                                        </div>
+
+                                        <div className="contact-form-group">
+                                            <label htmlFor="phone">
+                                                Phone Number
+                                            </label>
+
+                                            <input
+                                                type="tel"
+                                                id="phone"
+                                                name="phone"
+                                                value={formData.phone}
+                                                onChange={handleChange}
+                                                placeholder="+966"
+                                                required
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div className="contact-form-group">
+                                        <label htmlFor="service">
+                                            Interested Service
+                                        </label>
+
+                                        <select
+                                            id="service"
+                                            name="service"
+                                            value={formData.service}
+                                            onChange={handleChange}
+                                            required
+                                        >
+                                            <option value="">
+                                                Select a service
+                                            </option>
+
+                                            {services.map((service) => (
+                                                <option
+                                                    key={service.id}
+                                                    value={service.title}
+                                                >
+                                                    {service.title}
+                                                </option>
+                                            ))}
+
+                                            <option value="Other">
+                                                Other
+                                            </option>
+                                        </select>
+                                    </div>
+
+                                    <div className="contact-form-group">
+                                        <label htmlFor="message">
+                                            Message
+                                        </label>
+
+                                        <textarea
+                                            id="message"
+                                            name="message"
+                                            value={formData.message}
+                                            onChange={handleChange}
+                                            placeholder="Tell us about your requirements"
+                                            rows="6"
+                                            required
+                                        />
+                                    </div>
+
+                                    <button
+                                        type="submit"
+                                        className="contact-submit-button"
+                                    >
+                                        Send Enquiry
+                                        <FaArrowRight />
+                                    </button>
+
+                                    {status && (
+                                        <p
+                                            className="contact-form-status"
+                                            role="status"
+                                        >
+                                            {status}
+                                        </p>
+                                    )}
+                                </form>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
 
 
-        </main>
+            </main>
+        </PageTransition>
     );
 }
