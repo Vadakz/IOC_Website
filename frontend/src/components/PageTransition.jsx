@@ -1,17 +1,20 @@
 import { motion } from "framer-motion";
+import { useLocation } from "react-router-dom";
 
 export default function PageTransition({ children }) {
+  const location = useLocation();
+
   return (
-    <motion.main
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
+    <motion.div
+      key={location.pathname}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       transition={{
-        duration: 0.35,
-        ease: "easeOut",
+        duration: 0.9,
+        ease: "easeInOut",
       }}
     >
       {children}
-    </motion.main>
+    </motion.div>
   );
 }

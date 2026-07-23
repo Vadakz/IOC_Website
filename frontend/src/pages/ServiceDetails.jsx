@@ -1,6 +1,8 @@
 import { Link, useParams } from "react-router-dom";
 import services from "../data/services";
 import "./ServiceDetails.css";
+import PageTransition from "../components/PageTransition";
+
 
 export default function ServiceDetails() {
   const { slug } = useParams();
@@ -19,6 +21,7 @@ export default function ServiceDetails() {
   const Icon = service.icon;
 
   return (
+    <PageTransition>
     <main className="service-details-page">
       <section className="service-details-hero">
         <div className="container">
@@ -72,5 +75,6 @@ export default function ServiceDetails() {
         </div>
       </section>
     </main>
+    </PageTransition>
   );
 }
