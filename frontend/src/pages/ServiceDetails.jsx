@@ -69,14 +69,11 @@ export default function ServiceDetails() {
                     src={wasteManagementImage}
                     alt={localizedService.title}
                   />
-                  <span className="service-vehicle-logo" >
-                    <span className="service-vehicle-logo">
-                      <img
-                        src={`${import.meta.env.BASE_URL}images/ioc-eco-logo.png`}
-                        alt="IOC ECO Logo"
-                      />
-                    </span>
-                  </span>
+                  <img
+                    className="service-vehicle-logo"
+                    src={`${import.meta.env.BASE_URL}images/ioc-eco-logo.png`}
+                    alt="IOC ECO Logo"
+                  />
                 </figure>
               )}
 
