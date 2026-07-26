@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Hero.css";
 import heroBackground from "../../assets/images/hero-bg.jpg";
 
@@ -21,6 +22,13 @@ const statistics = [
 ];
 
 export default function Hero() {
+  const scrollToSection = (sectionId) => {
+    document.getElementById(sectionId)?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
   return (
     <section
       className="hero"
@@ -51,14 +59,18 @@ export default function Hero() {
           </p>
 
           <div className="hero-actions">
-            <a href="#services" className="hero-button hero-button-primary">
+            <button
+              type="button"
+              className="hero-button hero-button-primary"
+              onClick={() => scrollToSection("services")}
+            >
               Explore Services
               <span aria-hidden="true">→</span>
-            </a>
+            </button>
 
-            <a href="#contact" className="hero-button hero-button-secondary">
+            <Link to="/contact" className="hero-button hero-button-secondary">
               Request a Quote
-            </a>
+            </Link>
           </div>
 
           <div className="hero-certifications">
@@ -78,10 +90,15 @@ export default function Hero() {
         </div>
       </div>
 
-      <a href="#about" className="hero-scroll" aria-label="Scroll to about section">
+      <button
+        type="button"
+        className="hero-scroll"
+        aria-label="Scroll to about section"
+        onClick={() => scrollToSection("about")}
+      >
         <span>Scroll to discover</span>
         <span className="hero-scroll-line" />
-      </a>
+      </button>
     </section>
   );
 }

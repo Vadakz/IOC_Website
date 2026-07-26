@@ -10,11 +10,11 @@ export default function Services() {
         <div className="services-heading">
           <span>Our Services</span>
 
-          <h2>End-to-end facility management solutions</h2>
+          <h2>Six services. One standard of delivery.</h2>
 
           <p>
-            IOC/ECO delivers dependable technical, operational and
-            environmental services designed around each client’s requirements.
+            From daily workplace care to critical building systems, IOC/ECO
+            delivers services shaped around your facility and operational needs.
           </p>
         </div>
 
@@ -23,23 +23,29 @@ export default function Services() {
             const Icon = service.icon;
 
             return (
-              <article className="service-card" key={service.id}>
+              <Link
+                className="service-card"
+                key={service.id}
+                to={`/services/${service.slug}`}
+                aria-label={`View ${service.title}`}
+              >
+                <span className="service-card-number">
+                  {String(service.id).padStart(2, "0")}
+                </span>
                 <div className="service-icon">
                   <Icon />
                 </div>
 
+                <span className="service-card-category">{service.category}</span>
                 <h3>{service.title}</h3>
 
                 <p>{service.shortDescription}</p>
 
-                <Link
-                  to={`/services/${service.slug}`}
-                  className="service-link"
-                >
+                <span className="service-link">
                   Learn More
                   <span aria-hidden="true">→</span>
-                </Link>
-              </article>
+                </span>
+              </Link>
             );
           })}
         </div>

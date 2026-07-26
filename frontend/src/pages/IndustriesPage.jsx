@@ -1,4 +1,4 @@
-import Navbar from "../components/Navbar/Navbar";
+
 import "./IndustriesPage.css";
 import clients from "../data/clients";
 import PageTransition from "../components/PageTransition";

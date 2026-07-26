@@ -49,10 +49,32 @@
   border-radius: 22px;
   background: rgba(255, 255, 255, 0.92);
   box-shadow: 0 10px 30px rgba(15, 39, 70, 0.05);
+  color: inherit;
+  cursor: pointer;
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease,
     border-color 0.3s ease;
+}
+
+.service-card-number {
+  position: absolute;
+  top: 25px;
+  right: 27px;
+  color: #b3c0cb;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.service-card-category {
+  display: block;
+  margin-bottom: 9px;
+  color: var(--secondary);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.35px;
+  text-transform: uppercase;
 }
 
 .service-card::before {
@@ -68,13 +90,16 @@
   transition: transform 0.3s ease;
 }
 
-.service-card:hover {
+.service-card:hover,
+.service-card:focus-visible {
   transform: translateY(-8px);
   border-color: rgba(27, 177, 174, 0.4);
   box-shadow: 0 22px 50px rgba(15, 39, 70, 0.12);
+  outline: none;
 }
 
-.service-card:hover::before {
+.service-card:hover::before,
+.service-card:focus-visible::before {
   transform: scaleX(1);
 }
 
@@ -95,7 +120,8 @@
     color 0.3s ease;
 }
 
-.service-card:hover .service-icon {
+.service-card:hover .service-icon,
+.service-card:focus-visible .service-icon {
   transform: rotate(-4deg) scale(1.06);
   background: var(--secondary);
   color: #ffffff;
@@ -131,7 +157,8 @@
   transition: transform 0.25s ease;
 }
 
-.service-link:hover span {
+.service-card:hover .service-link > span,
+.service-card:focus-visible .service-link > span {
   transform: translateX(5px);
 }
 

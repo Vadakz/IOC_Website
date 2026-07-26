@@ -113,6 +113,7 @@
   gap: 14px;
   font-size: 14px;
   font-weight: 700;
+  cursor: pointer;
   transition:
     transform 0.25s ease,
     background 0.25s ease,
@@ -235,6 +236,9 @@
   letter-spacing: 1.4px;
   text-transform: uppercase;
   transform: translateX(-50%);
+  border: 0;
+  background: transparent;
+  cursor: pointer;
 }
 
 .hero-scroll-line {
