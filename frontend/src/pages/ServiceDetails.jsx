@@ -3,8 +3,10 @@ import { FaArrowRight, FaCheck, FaChevronLeft } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import services from "../data/services";
 import wasteManagementImage from "../assets/images/services/waste-management-hero-v2.webp";
-import "./ServiceDetails.css";
 import PageTransition from "../components/PageTransition";
+import softFacilityImage from "../assets/images/services/soft-facility-management.png";
+
+import "./ServiceDetails.css";
 
 export default function ServiceDetails() {
   const { t, i18n } = useTranslation();
@@ -24,8 +26,21 @@ export default function ServiceDetails() {
   }
 
   const Icon = service.icon;
+
   const isWasteManagement = service.slug === "WasteManagement";
-  const localizedService = isArabic
+
+  const isSoftFacility =
+    service.slug === "Soft-Facility-Management";
+
+  const heroImage = isWasteManagement
+    ? wasteManagementImage
+    : isSoftFacility
+      ? softFacilityImage
+      : null;
+
+
+
+  const localizedService = isArabic //to convert to arabic
     ? {
       ...service,
       ...t(`serviceItems.${service.slug}`, { returnObjects: true }),
@@ -36,7 +51,11 @@ export default function ServiceDetails() {
     <PageTransition>
       <main className="service-details-page">
         <section
-          className={`service-details-hero ${isWasteManagement ? "service-details-hero--waste" : ""
+          className={`service-details-hero ${isWasteManagement
+            ? "service-details-hero--waste"
+            : isSoftFacility
+              ? "service-details-hero--soft"
+              : ""
             }`}
         >
           <div className="service-details-orb" aria-hidden="true" />
@@ -62,18 +81,24 @@ export default function ServiceDetails() {
                 </Link>
               </div>
 
-              {isWasteManagement && (
-                <figure className="service-hero-visual">
+              {heroImage && (
+                <figure
+                  className={`service-hero-visual ${isSoftFacility ? "service-hero-visual--soft" : ""
+                    }`}
+                >
                   <img
                     className="service-hero-image"
-                    src={wasteManagementImage}
+                    src={heroImage}
                     alt={localizedService.title}
                   />
-                  <img
-                    className="service-vehicle-logo"
-                    src={`${import.meta.env.BASE_URL}images/ioc-eco-logo.png`}
-                    alt="IOC ECO Logo"
-                  />
+
+                  {isWasteManagement && (
+                    <img
+                      className="service-vehicle-logo"
+                      src={`${import.meta.env.BASE_URL}images/ioc-eco-logo.png`}
+                      alt="IOC ECO Logo"
+                    />
+                  )}
                 </figure>
               )}
 

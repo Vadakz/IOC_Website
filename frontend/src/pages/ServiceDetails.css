@@ -1,8 +1,17 @@
+/* ==========================================================
+   1. PAGE
+========================================================== */
+
 .service-details-page {
   min-height: 100vh;
   overflow: hidden;
   background: #fff;
 }
+
+
+/* ==========================================================
+   2. DEFAULT SERVICE HERO
+========================================================== */
 
 .service-details-hero {
   position: relative;
@@ -53,6 +62,7 @@
   color: #6d6258;
   font-size: 14px;
   font-weight: 600;
+  text-decoration: none;
   transition: color 0.2s ease;
 }
 
@@ -126,7 +136,10 @@
   color: #062b4e;
   font-size: 14px;
   font-weight: 800;
-  transition: transform 0.2s ease, background 0.2s ease;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
 }
 
 .service-hero-cta:hover {
@@ -134,8 +147,13 @@
   background: #fff;
 }
 
+
+/* ==========================================================
+   3. SHARED OUTCOMES CARD
+========================================================== */
+
 .service-outcomes {
-  padding: 28px;
+  padding: 24px;
   border: 1px solid rgba(132, 99, 63, 0.16);
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.68);
@@ -144,7 +162,7 @@
 
 .service-outcomes > span {
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 28px;
   color: #8a7562;
   font-size: 11px;
   font-weight: 800;
@@ -155,6 +173,9 @@
 .service-outcomes ul {
   display: grid;
   gap: 17px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .service-outcomes li {
@@ -172,6 +193,39 @@
   color: var(--secondary);
   font-size: 12px;
 }
+
+
+/* ==========================================================
+   4. SHARED SERVICE HERO IMAGE
+========================================================== */
+
+.service-hero-visual {
+  position: relative;
+  z-index: 1;
+  top: -350px;
+  right: -50%;
+  width: 90%;
+  overflow: hidden;
+  border: 2px solid rgba(41, 201, 197, 0.72);
+  border-radius: 56% 0 0 56%;
+  background: #dcecf2;
+  box-shadow:
+    0 35px 90px rgba(0, 0, 0, 0.35),
+    0 0 0 14px rgba(13, 118, 151, 0.11);
+}
+
+.service-hero-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 60% center;
+}
+
+
+/* ==========================================================
+   5. WASTE MANAGEMENT HERO
+========================================================== */
 
 .service-details-hero--waste {
   min-height: 900px;
@@ -235,6 +289,7 @@
 
 .service-details-hero--waste h1 {
   max-width: 760px;
+  color: #fff;
   font-size: clamp(50px, 4.5vw, 70px);
   letter-spacing: -2px;
 }
@@ -249,10 +304,6 @@
   color: #29c9c5;
 }
 
-.service-details-hero--waste .service-details-hero p {
-  color: rgba(255, 255, 255, 0.78);
-}
-
 .service-details-hero--waste .service-hero-copy > p {
   color: rgba(255, 255, 255, 0.78);
 }
@@ -261,9 +312,7 @@
   position: relative;
   z-index: 3;
   max-width: 430px;
-
-  margin-top: -550px;   /* Move card upward */
-
+  margin-top: -550px;
   border-color: rgba(255, 255, 255, 0.18);
   background: rgba(255, 255, 255, 0.08);
 }
@@ -276,45 +325,185 @@
   color: rgba(255, 255, 255, 0.92);
 }
 
-.service-hero-visual {
-  position: relative;
-  z-index: 1;
-  top: -300px;
-  right: -50%;
-  bottom: -24px;
-  width: 80%;
-  overflow: hidden;
-  border: 2px solid rgba(41, 201, 197, 0.72);
-  border-radius: 56% 0 0 56%;
-  background: #dcecf2;
-  box-shadow:
-    0 35px 90px rgba(0, 0, 0, 0.35),
-    0 0 0 14px rgba(13, 118, 151, 0.11);
-}
-
-.service-hero-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% center;
-}
+/* Waste Management truck logo overlay */
 
 .service-vehicle-logo {
   position: absolute;
   z-index: 5;
   top: 50%;
   left: 39%;
-  width: clamp(220px, 18vw, 300px);
+  width: clamp(220px, 25vw, 300px);
   height: auto;
+  opacity: 0.55;
   pointer-events: none;
   filter:
-    drop-shadow(0 2px 2px rgba(255,255,255,0.5))
-    drop-shadow(0 10px 20px rgba(0,0,0,.10));
-  transform: translate(-50%, -50%);
+    drop-shadow(0 2px 2px rgba(255, 255, 255, 0.25))
+    drop-shadow(0 10px 20px rgba(0, 0, 0, 0.12));
+  transform: translate(-65%, -50%);
 }
+
+
+/* ==========================================================
+   6. SOFT FACILITY MANAGEMENT HERO
+========================================================== */
+
+.service-details-hero--soft {
+  min-height: 900px;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(2, 18, 34, 0.98) 0%,
+      rgba(2, 28, 49, 0.94) 36%,
+      rgba(3, 37, 63, 0.56) 62%,
+      rgba(3, 37, 63, 0.12) 100%
+    ),
+    #031c36;
+  color: #fff;
+}
+
+.service-details-hero--soft::before {
+  z-index: 2;
+  opacity: 0.14;
+  background-image:
+    linear-gradient(rgba(55, 199, 202, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(55, 199, 202, 0.1) 1px, transparent 1px);
+}
+
+.service-details-hero--soft .service-details-orb {
+  display: none;
+}
+
+.service-details-hero--soft .container {
+  width: min(1448px, calc(100% - 80px));
+  max-width: 1448px;
+}
+
+.service-details-hero--soft .service-back-link {
+  position: relative;
+  z-index: 4;
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.service-details-hero--soft .service-back-link:hover {
+  color: #fff;
+}
+
+.service-details-hero--soft .service-hero-grid {
+  display: block;
+}
+
+.service-details-hero--soft .service-hero-copy {
+  position: relative;
+  z-index: 4;
+  width: min(48%, 700px);
+}
+
+.service-details-hero--soft .service-details-icon {
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--secondary);
+}
+
+.service-details-hero--soft .service-eyebrow {
+  color: #29c9c5;
+}
+
+.service-details-hero--soft h1 {
+  max-width: 700px;
+  color: #fff;
+  font-size: clamp(50px, 4.6vw, 74px);
+  line-height: 1.02;
+  letter-spacing: -2px;
+}
+
+.service-details-hero--soft .service-hero-copy > p {
+  max-width: 600px;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.service-details-hero--soft .service-hero-cta {
+  background: #20c4c9;
+  color: #03223c;
+}
+
+.service-details-hero--soft .service-hero-cta:hover {
+  background: #fff;
+}
+
+/* Soft Facility image area */
+
+.service-hero-visual--soft {
+  position: absolute;
+  z-index: 1;
+  inset: 0 0 0 auto;
+  width: 66%;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.service-hero-visual--soft::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      #031c36 0%,
+      rgba(3, 28, 54, 0.92) 13%,
+      rgba(3, 28, 54, 0.48) 35%,
+      transparent 65%
+    );
+  pointer-events: none;
+}
+
+.service-hero-visual--soft .service-hero-image {
+  object-position: 58% center;
+}
+
+/* Soft Facility outcomes card */
+
+.service-details-hero--soft .service-outcomes {
+  position: relative;
+  z-index: 4;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  width: min(100%, 880px);
+  max-width: 880px;
+  margin-top: 54px;
+  padding: 26px 30px;
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(3, 27, 50, 0.8);
+  backdrop-filter: blur(14px);
+}
+
+.service-details-hero--soft .service-outcomes > span {
+  grid-column: 1 / -1;
+  margin-bottom: 0;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.service-details-hero--soft .service-outcomes ul {
+  display: contents;
+}
+
+.service-details-hero--soft .service-outcomes li {
+  color: rgba(255, 255, 255, 0.94);
+}
+
+
+/* ==========================================================
+   7. SERVICE OVERVIEW
+========================================================== */
 
 .service-details-content {
   padding: 105px 0;
+  background: #fff;
 }
 
 .service-details-grid {
@@ -377,6 +566,11 @@
   font-weight: 650;
 }
 
+
+/* ==========================================================
+   8. CAPABILITIES CARD
+========================================================== */
+
 .service-feature-box {
   padding: 38px;
   border: 1px solid #dfe8ee;
@@ -394,6 +588,9 @@
 .service-feature-box ul {
   display: grid;
   gap: 19px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .service-feature-box li {
@@ -417,6 +614,11 @@
   color: var(--secondary);
   font-size: 9px;
 }
+
+
+/* ==========================================================
+   9. PROCESS SECTION
+========================================================== */
 
 .service-process-section {
   padding: 100px 0 110px;
@@ -477,6 +679,11 @@
   line-height: 1.75;
 }
 
+
+/* ==========================================================
+   10. NOT FOUND PAGE
+========================================================== */
+
 .service-not-found {
   min-height: 100vh;
   padding: 190px 25px;
@@ -505,81 +712,73 @@
   font-weight: 700;
 }
 
+
+/* ==========================================================
+   11. TABLET AND MOBILE
+========================================================== */
+
 @media (max-width: 900px) {
-  .service-details-hero--waste .container {
-    width: min(100% - 40px, var(--container-width));
-    max-width: var(--container-width);
+  /* ------------------------------
+     Shared mobile hero layout
+  ------------------------------ */
+
+  .service-details-hero {
+    padding: 125px 0 70px;
   }
 
- .service-hero-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-}
-
-  .service-details-hero--waste {
-    min-height: auto;
-  }
-
-  .service-details-hero--waste .service-hero-grid {
-    display: grid;
+  .service-hero-grid {
     grid-template-columns: 1fr;
+    gap: 32px;
   }
 
-  .service-details-hero--waste .service-hero-copy,
-  .service-details-hero--waste .service-outcomes,
-  .service-hero-visual {
-    grid-column: 1;
+  .service-hero-copy {
     width: 100%;
+    max-width: 100%;
+  }
+
+  .service-details-hero h1 {
+    max-width: 100%;
+    font-size: clamp(42px, 11vw, 58px);
+    line-height: 1;
+    letter-spacing: -1.2px;
+  }
+
+  .service-details-hero p {
+    max-width: 100%;
+    font-size: 17px;
+    line-height: 1.65;
   }
 
   .service-hero-visual {
     position: relative;
-    top: auto;
-    right: auto;
-    bottom: auto;
-    grid-row: auto;
-    justify-self: center;
-    width: min(88vw, 560px);
-    aspect-ratio: 1.28;
-    border-radius: 32px;
+    inset: auto;
+    order: 2;
+    width: 100%;
+    height: 390px;
+    margin-top: 8px;
+    border-radius: 34px;
   }
 
-  .service-vehicle-logo {
-    left: 41%;
-    width: clamp(155px, 38vw, 210px);
+  .service-hero-image {
+    object-position: center;
   }
 
   .service-outcomes {
-    max-width: 540px;
+    width: 100%;
+    max-width: 100%;
   }
 
-  .service-details-grid {
-    gap: 50px;
-  }
+  /* ------------------------------
+     Waste Management mobile
+  ------------------------------ */
 
-  .service-process-heading {
-    gap: 20px;
-  }
-
-  .service-process-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .service-process-grid li:nth-child(2) {
-    margin-right: 0;
-    border-right: 0;
-  }
-}
-
-@media (max-width: 900px) {
   .service-details-hero--waste {
     min-height: auto;
-    padding: 125px 0 70px;
   }
 
   .service-details-hero--waste .container {
     width: min(100% - 36px, var(--container-width));
+    max-width: var(--container-width);
   }
 
   .service-details-hero--waste .service-hero-grid {
@@ -593,59 +792,10 @@
     max-width: 100%;
   }
 
-  .service-details-hero--waste h1 {
-    max-width: 100%;
-    font-size: clamp(42px, 11vw, 58px);
-    line-height: 1;
-    letter-spacing: -1.2px;
-  }
-
-  .service-details-hero--waste .service-hero-copy > p {
-    max-width: 100%;
-    font-size: 17px;
-    line-height: 1.65;
-  }
-
-  .service-hero-visual {
-    position: relative;
-    top: auto;
-    right: auto;
-    bottom: auto;
-
-    order: 2;
-
-    width: 100%;
-    height: 390px;
-    aspect-ratio: auto;
-
-    margin-top: 8px;
-
-    border-radius: 34px;
-  }
-
-  .service-hero-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-
-  .service-vehicle-logo {
-    top: 50%;
-    left: 39%;
-    right: auto;
-    width: min(48%, 185px);
-    max-width: none;
-    transform: translate(-50%, -50%);
-    opacity: 0.88;
-  }
-
   .service-details-hero--waste .service-outcomes {
     order: 3;
-
     width: 100%;
     max-width: 100%;
-
     margin-top: 0;
   }
 
@@ -655,24 +805,244 @@
     height: 520px;
   }
 
+  .service-vehicle-logo {
+    top: 50%;
+    left: 39%;
+    width: min(60%, 185px);
+    max-width: none;
+    opacity: 0.5;
+    transform: translate(-50%, -50%);
+  }
+
+  /* ------------------------------
+     Soft Facility mobile
+  ------------------------------ */
+
+  .service-details-hero--soft {
+    min-height: auto;
+  }
+
+  .service-details-hero--soft .container {
+    width: min(100% - 36px, var(--container-width));
+    max-width: var(--container-width);
+  }
+
+  .service-details-hero--soft .service-hero-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .service-details-hero--soft .service-hero-copy {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .service-hero-visual--soft {
+    position: relative;
+    inset: auto;
+    order: 2;
+    width: 100%;
+    height: 350px;
+    border-radius: 28px;
+  }
+
+  .service-hero-visual--soft::before {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(3, 28, 54, 0.08),
+        rgba(3, 28, 54, 0.5)
+      );
+  }
+
+  .service-hero-visual--soft .service-hero-image {
+    object-position: 64% center;
+  }
+
+  .service-details-hero--soft .service-outcomes {
+    order: 3;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 0;
+    padding: 24px 22px;
+  }
+
+  .service-details-hero--soft .service-outcomes > span {
+    display: block;
+    margin-bottom: 18px;
+  }
+
+  .service-details-hero--soft .service-outcomes ul {
+    display: grid;
+    gap: 15px;
+  }
+
+  /* ------------------------------
+     Overview mobile
+  ------------------------------ */
+
+  .service-details-content {
+    padding: 70px 0;
+  }
+
+  .service-details-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .service-overview {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .service-overview h2 {
+    max-width: 100%;
+    font-size: 34px;
+    line-height: 1.15;
+  }
+
+  .service-overview p {
+    max-width: 100%;
+  }
+
+  .service-feature-box {
+    order: 2;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 0;
+    padding: 28px 22px;
+  }
+
+  .service-feature-box h3 {
+    font-size: 30px;
+  }
+
+  .service-feature-box ul {
+    gap: 18px;
+  }
+
+  /* ------------------------------
+     Process mobile
+  ------------------------------ */
+
+  .service-process-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 40px;
+  }
+
+  .service-process-heading > div,
+  .service-process-heading > p {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .service-process-heading h2 {
+    width: 100%;
+    max-width: 100%;
+    font-size: 34px;
+    line-height: 1.12;
+  }
+
+  .service-process-heading > p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
   .service-process-grid {
     grid-template-columns: 1fr;
   }
 
   .service-process-grid li,
-  .service-process-grid li:not(:last-child),
-  .service-process-grid li:nth-child(2) {
+  .service-process-grid li:not(:last-child) {
     margin-right: 0;
     padding: 27px 0;
     border-right: 0;
     border-bottom: 1px solid #d6e0e6;
   }
 
+  .service-process-grid li:last-child {
+    border-bottom: 0;
+  }
+
   .service-process-grid li > span {
     margin-bottom: 18px;
   }
-
 }
+
+
+/* ==========================================================
+   12. SMALL MOBILE
+========================================================== */
+
+@media (max-width: 640px) {
+  .service-details-hero {
+    padding: 116px 0 58px;
+  }
+
+  .service-back-link {
+    margin-bottom: 34px;
+  }
+
+  .service-details-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+    border-radius: 16px;
+    font-size: 25px;
+  }
+
+  .service-details-hero h1 {
+    font-size: clamp(38px, 12vw, 50px);
+  }
+
+  .service-details-hero p {
+    font-size: 16px;
+  }
+
+  .service-hero-cta {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .service-hero-visual {
+    height: 300px;
+    border-radius: 24px;
+  }
+
+  .service-hero-visual--soft {
+    height: 285px;
+    border-radius: 22px;
+  }
+
+  .service-outcomes {
+    padding: 22px 20px;
+  }
+
+  .service-details-content,
+  .service-process-section {
+    padding: 72px 0;
+  }
+
+  .service-overview h2,
+  .service-process-heading h2 {
+    font-size: 32px;
+  }
+
+  .service-feature-box {
+    padding: 26px 20px;
+  }
+}
+
+
+/* ==========================================================
+   13. REDUCED MOTION
+========================================================== */
 
 @media (prefers-reduced-motion: reduce) {
   .service-hero-cta {
