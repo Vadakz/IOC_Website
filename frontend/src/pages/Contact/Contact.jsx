@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import {
     FaArrowRight,
     FaChevronDown,
@@ -71,6 +72,14 @@ const faqs = [
 ];
 
 export default function Contact() {
+    const { t, i18n } = useTranslation();
+    const translatedCards = t("contact.cards", { returnObjects: true });
+    const isArabic = i18n.resolvedLanguage?.startsWith("ar");
+    const localizedCards = contactCards.map((card, index) => ({
+        ...card,
+        ...translatedCards[index],
+    }));
+
     const [formData, setFormData] = useState({
         fullName: "",
         companyName: "",
@@ -96,7 +105,7 @@ export default function Contact() {
         event.preventDefault();
 
         setStatus(
-            "Thank you. Your enquiry has been recorded. Our team will contact you shortly."
+            t("contact.success")
         );
 
         setFormData({
@@ -142,18 +151,16 @@ export default function Contact() {
 
                     <div className="contact-page-container contact-hero-content">
                         <span className="contact-page-eyebrow">
-                            Contact International Operations Company
+                            {t("contact.heroLabel")}
                         </span>
 
                         <h1>
-                            Let&apos;s Build Better
-                            <span>Operations Together.</span>
+                            {t("contact.heroTitle")}
+                            <span>{t("contact.heroAccent")}</span>
                         </h1>
 
                         <p>
-                            Speak with our team about integrated facility
-                            management, environmental services and operational
-                            solutions across Saudi Arabia.
+                            {t("contact.heroDescription")}
                         </p>
 
                         <div className="contact-hero-actions">
@@ -162,15 +169,15 @@ export default function Contact() {
                                 className="contact-primary-button"
                                 onClick={scrollToForm}
                             >
-                                Send an Enquiry
+                                {t("contact.sendEnquiry")}
                                 <FaArrowRight />
                             </button>
 
                             <a
-                                href="tel:+966000000000"
+                                href="tel:+966920051300"
                                 className="contact-secondary-button"
                             >
-                                Call Our Team
+                                {t("contact.callTeam")}
                             </a>
                         </div>
                     </div>
@@ -180,20 +187,18 @@ export default function Contact() {
                     <div className="contact-page-container">
                         <div className="contact-section-heading">
                             <span className="contact-page-eyebrow">
-                                Get in Touch
+                                {t("contact.getInTouch")}
                             </span>
 
-                            <h2>Choose the easiest way to reach us.</h2>
+                            <h2>{t("contact.reachTitle")}</h2>
 
                             <p>
-                                Our team is available to support enquiries,
-                                quotations, service requests and business
-                                partnerships.
+                                {t("contact.reachDescription")}
                             </p>
                         </div>
 
                         <div className="contact-cards-grid">
-                            {contactCards.map((card) => {
+                            {localizedCards.map((card) => {
                                 const Icon = card.icon;
 
                                 const cardContent = (
@@ -256,25 +261,22 @@ export default function Contact() {
 
                                 <div className="contact-form-visual-content">
                                     <span className="contact-page-eyebrow">
-                                        Reliable Support
+                                        {t("contact.supportLabel")}
                                     </span>
 
                                     <h2>
-                                        Solutions designed around your
-                                        operations.
+                                        {t("contact.supportTitle")}
                                     </h2>
 
                                     <p>
-                                        Share your requirements with us and our
-                                        team will recommend the right service
-                                        solution for your business.
+                                        {t("contact.supportDescription")}
                                     </p>
 
                                     <div className="contact-visual-feature">
                                         <FaGlobe />
 
                                         <span>
-                                            Nationwide operational coverage
+                                            {t("contact.coverageFeature")}
                                         </span>
                                     </div>
 
@@ -282,7 +284,7 @@ export default function Contact() {
                                         <FaClock />
 
                                         <span>
-                                            Responsive customer support
+                                            {t("contact.responsiveFeature")}
                                         </span>
                                     </div>
                                 </div>
@@ -291,14 +293,13 @@ export default function Contact() {
                             <div className="contact-form-panel">
                                 <div className="contact-form-heading">
                                     <span className="contact-page-eyebrow">
-                                        Send an Enquiry
+                                        {t("contact.formLabel")}
                                     </span>
 
-                                    <h2>Tell us how we can assist you.</h2>
+                                    <h2>{t("contact.formTitle")}</h2>
 
                                     <p>
-                                        Complete the form and our team will
-                                        contact you as soon as possible.
+                                        {t("contact.formDescription")}
                                     </p>
                                 </div>
 
@@ -309,7 +310,7 @@ export default function Contact() {
                                     <div className="contact-form-row">
                                         <div className="contact-form-group">
                                             <label htmlFor="fullName">
-                                                Full Name
+                                                {t("contact.fullName")}
                                             </label>
 
                                             <input
@@ -318,14 +319,14 @@ export default function Contact() {
                                                 name="fullName"
                                                 value={formData.fullName}
                                                 onChange={handleChange}
-                                                placeholder="Enter your full name"
+                                                placeholder={t("contact.fullNamePlaceholder")}
                                                 required
                                             />
                                         </div>
 
                                         <div className="contact-form-group">
                                             <label htmlFor="companyName">
-                                                Company Name
+                                                {t("contact.companyName")}
                                             </label>
 
                                             <input
@@ -334,7 +335,7 @@ export default function Contact() {
                                                 name="companyName"
                                                 value={formData.companyName}
                                                 onChange={handleChange}
-                                                placeholder="Enter company name"
+                                                placeholder={t("contact.companyPlaceholder")}
                                             />
                                         </div>
                                     </div>
@@ -342,7 +343,7 @@ export default function Contact() {
                                     <div className="contact-form-row">
                                         <div className="contact-form-group">
                                             <label htmlFor="email">
-                                                Email Address
+                                                {t("contact.email")}
                                             </label>
 
                                             <input
@@ -351,14 +352,14 @@ export default function Contact() {
                                                 name="email"
                                                 value={formData.email}
                                                 onChange={handleChange}
-                                                placeholder="name@company.com"
+                                                placeholder={t("contact.emailPlaceholder")}
                                                 required
                                             />
                                         </div>
 
                                         <div className="contact-form-group">
                                             <label htmlFor="phone">
-                                                Phone Number
+                                                {t("contact.phone")}
                                             </label>
 
                                             <input
@@ -367,7 +368,7 @@ export default function Contact() {
                                                 name="phone"
                                                 value={formData.phone}
                                                 onChange={handleChange}
-                                                placeholder="+966"
+                                                placeholder={t("contact.phonePlaceholder")}
                                                 required
                                             />
                                         </div>
@@ -375,7 +376,7 @@ export default function Contact() {
 
                                     <div className="contact-form-group">
                                         <label htmlFor="service">
-                                            Interested Service
+                                            {t("contact.service")}
                                         </label>
 
                                         <select
@@ -386,7 +387,7 @@ export default function Contact() {
                                             required
                                         >
                                             <option value="">
-                                                Select a service
+                                                {t("contact.selectService")}
                                             </option>
 
                                             {services.map((service) => (
@@ -394,19 +395,21 @@ export default function Contact() {
                                                     key={service.id}
                                                     value={service.title}
                                                 >
-                                                    {service.title}
+                                                    {isArabic
+                                                        ? t(`serviceItems.${service.slug}.title`)
+                                                        : service.title}
                                                 </option>
                                             ))}
 
                                             <option value="Other">
-                                                Other
+                                                {t("contact.other")}
                                             </option>
                                         </select>
                                     </div>
 
                                     <div className="contact-form-group">
                                         <label htmlFor="message">
-                                            Message
+                                            {t("contact.message")}
                                         </label>
 
                                         <textarea
@@ -414,7 +417,7 @@ export default function Contact() {
                                             name="message"
                                             value={formData.message}
                                             onChange={handleChange}
-                                            placeholder="Tell us about your requirements"
+                                            placeholder={t("contact.messagePlaceholder")}
                                             rows="6"
                                             required
                                         />
@@ -424,7 +427,7 @@ export default function Contact() {
                                         type="submit"
                                         className="contact-submit-button"
                                     >
-                                        Send Enquiry
+                                        {t("contact.submit")}
                                         <FaArrowRight />
                                     </button>
 

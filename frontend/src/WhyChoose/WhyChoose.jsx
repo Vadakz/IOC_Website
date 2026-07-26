@@ -1,5 +1,6 @@
 import "./WhyChoose.css";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const strengths = [
   {
@@ -69,47 +70,53 @@ const strengths = [
 ];
 
 export default function WhyChoose() {
+  const { t } = useTranslation();
+  const localizedStrengths = t("whyChoose.strengths", {
+    returnObjects: true,
+  });
+
   return (
     <section className="why-choose-section" id="why-choose">
       <div className="why-choose-container">
         <div className="why-choose-header">
           <div className="why-choose-heading">
-            <span className="why-choose-label">Why Choose IOC</span>
+            <span className="why-choose-label">{t("whyChoose.label")}</span>
 
             <h2>
-              A trusted partner for
-              <span> integrated facility management</span>
+              {t("whyChoose.title")}
+              <span> {t("whyChoose.titleAccent")}</span>
             </h2>
           </div>
 
           <div className="why-choose-intro">
             <p>
-              IOC combines operational expertise, skilled professionals and
-              reliable service systems to deliver solutions tailored to each
-              client’s requirements.
+              {t("whyChoose.intro")}
             </p>
 
             <div className="why-choose-highlight">
               <strong>40+</strong>
-              <span>Years of proven operational excellence</span>
+              <span>{t("whyChoose.years")}</span>
             </div>
           </div>
         </div>
 
         <div className="why-choose-grid">
-          {strengths.map((strength) => (
-            <article className="why-choose-card" key={strength.title}>
+          {strengths.map((strength, index) => {
+            const content = localizedStrengths[index];
+
+            return (
+            <article className="why-choose-card" key={content.title}>
               <div className="why-choose-card-top">
                 <div className="why-choose-icon">{strength.icon}</div>
                 <span className="why-choose-number">{strength.number}</span>
               </div>
 
-              <h3>{strength.title}</h3>
+              <h3>{content.title}</h3>
 
-              <p>{strength.description}</p>
+              <p>{content.description}</p>
 
               <ul>
-                {strength.points.map((point) => (
+                {content.points.map((point) => (
                   <li key={point}>
                     <span></span>
                     {point}
@@ -117,7 +124,8 @@ export default function WhyChoose() {
                 ))}
               </ul>
             </article>
-          ))}
+            );
+          })}
         </div>
 
         <div className="why-choose-bottom">
@@ -125,14 +133,13 @@ export default function WhyChoose() {
             <span className="why-choose-status-dot"></span>
 
             <p>
-              Delivering safe, reliable and sustainable operational support
-              throughout the Kingdom.
+              {t("whyChoose.bottom")}
             </p>
           </div>
 
           <Link to="/industries">
-            Industries We Serve
-            <span aria-hidden="true">→</span>
+            {t("whyChoose.industriesLink")}
+            <span aria-hidden="true">{t("common.arrow")}</span>
           </Link>
         </div>
       </div>

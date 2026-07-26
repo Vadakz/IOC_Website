@@ -1,27 +1,13 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import "./Hero.css";
 import heroBackground from "../../assets/images/hero-bg.jpg";
 
-const statistics = [
-  {
-    value: "40+",
-    label: "Years of excellence",
-  },
-  {
-    value: "600+",
-    label: "Clients nationwide",
-  },
-  {
-    value: "500+",
-    label: "Employees",
-  },
-  {
-    value: "24/7",
-    label: "Customer support",
-  },
-];
-
 export default function Hero() {
+  const { t } = useTranslation();
+  const statistics = t("hero.stats", { returnObjects: true });
+  const badges = t("hero.badges", { returnObjects: true });
+
   const scrollToSection = (sectionId) => {
     document.getElementById(sectionId)?.scrollIntoView({
       behavior: "smooth",
@@ -44,18 +30,16 @@ export default function Hero() {
         <div className="hero-content">
           <div className="hero-eyebrow">
             <span className="hero-eyebrow-line" />
-            Established 1982 · Saudi Arabia
+            {t("hero.label")}
           </div>
 
           <h1>
-            Embracing
-            <span>sustainable living.</span>
+            {t("hero.titleFirst")}
+            <span>{t("hero.titleSecond")}</span>
           </h1>
 
           <p className="hero-description">
-            Delivering integrated waste management, janitorial, pest control,
-            MEP and environmental services for cleaner, safer and more
-            sustainable communities across Saudi Arabia.
+            {t("hero.description")}
           </p>
 
           <div className="hero-actions">
@@ -64,19 +48,19 @@ export default function Hero() {
               className="hero-button hero-button-primary"
               onClick={() => scrollToSection("services")}
             >
-              Explore Services
-              <span aria-hidden="true">→</span>
+              {t("hero.explore")}
+              <span aria-hidden="true">{t("common.arrow")}</span>
             </button>
 
             <Link to="/contact" className="hero-button hero-button-secondary">
-              Request a Quote
+              {t("hero.requestQuote")}
             </Link>
           </div>
 
           <div className="hero-certifications">
-            <span>Nationwide Coverage</span>
-            <span>Integrated Services</span>
-            <span>24/7 Operations</span>
+            {badges.map((badge) => (
+              <span key={badge}>{badge}</span>
+            ))}
           </div>
         </div>
 
@@ -93,10 +77,10 @@ export default function Hero() {
       <button
         type="button"
         className="hero-scroll"
-        aria-label="Scroll to about section"
+        aria-label={t("hero.scrollLabel")}
         onClick={() => scrollToSection("about")}
       >
-        <span>Scroll to discover</span>
+        <span>{t("hero.scroll")}</span>
         <span className="hero-scroll-line" />
       </button>
     </section>

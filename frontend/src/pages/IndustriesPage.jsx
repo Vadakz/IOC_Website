@@ -1,4 +1,6 @@
 
+import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import "./IndustriesPage.css";
 import clients from "../data/clients";
 import PageTransition from "../components/PageTransition";
@@ -95,7 +97,9 @@ const industries = [
 */
 
 export default function IndustriesPage() {
+  const { t } = useTranslation();
   const movingClients = [...clients, ...clients];
+  const localizedIndustries = t("industries.items", { returnObjects: true });
 
   return (
     
@@ -105,16 +109,17 @@ export default function IndustriesPage() {
       <main className="industries-page">
         <section className="industries-page-hero">
           <div className="industries-page-container">
-            <span className="industries-page-label">Industries We Serve</span>
+            <span className="industries-page-label">
+              {t("industries.heroLabel")}
+            </span>
 
             <h1>
-              Tailored solutions for
-              <span> diverse industries</span>
+              {t("industries.heroTitle")}
+              <span> {t("industries.heroAccent")}</span>
             </h1>
 
             <p>
-              IOC delivers integrated facility management and operational
-              support designed around the requirements of each industry.
+              {t("industries.heroDescription")}
             </p>
 
           
@@ -125,34 +130,35 @@ export default function IndustriesPage() {
           <div className="industries-page-container">
             <div className="industries-overview-header">
               <div>
-                <span>Our Industry Expertise</span>
+                <span>{t("industries.expertiseLabel")}</span>
 
                 <h2>
-                  Supporting complex operational environments across the
-                  Kingdom
+                  {t("industries.expertiseTitle")}
                 </h2>
               </div>
 
               <p>
-                From commercial and industrial facilities to healthcare,
-                education and hospitality environments, IOC provides reliable,
-                safe and efficient service delivery.
+                {t("industries.expertiseDescription")}
               </p>
             </div>
 
             <div className="industries-page-grid">
-              {industries.map((industry, index) => (
-                <article className="industries-page-card" key={industry.title}>
+              {industries.map((industry, index) => {
+                const content = localizedIndustries[index];
+
+                return (
+                <article className="industries-page-card" key={content.title}>
                   <div className="industries-page-card-top">
                     <div className="industries-page-icon">{industry.icon}</div>
 
                     <span>{String(index + 1).padStart(2, "0")}</span>
                   </div>
 
-                  <h3>{industry.title}</h3>
-                  <p>{industry.description}</p>
+                  <h3>{content.title}</h3>
+                  <p>{content.description}</p>
                 </article>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>
@@ -161,17 +167,15 @@ export default function IndustriesPage() {
           <div className="industries-page-container">
             <div className="clients-section-header">
               <div>
-                <span>Our Clients</span>
+                <span>{t("industries.clientsLabel")}</span>
 
                 <h2>
-                  Trusted partnerships across the industries we serve
+                  {t("industries.clientsTitle")}
                 </h2>
               </div>
 
               <p>
-                We are proud to support leading organizations through
-                dependable facility management, technical services and
-                operational expertise.
+                {t("industries.clientsDescription")}
               </p>
             </div>
           </div>
@@ -183,7 +187,12 @@ export default function IndustriesPage() {
                   className="client-logo-card"
                   key={`${client.name}-${index}`}
                 >
-                  <img src={client.logo} alt={`${client.name} logo`} />
+                  <img
+                    src={client.logo}
+                    alt={t("industries.clientLogoAlt", {
+                      client: client.name,
+                    })}
+                  />
                   <span>{client.name}</span>
                 </article>
               ))}
@@ -194,15 +203,15 @@ export default function IndustriesPage() {
         <section className="industries-cta">
           <div className="industries-page-container industries-cta-content">
             <div>
-              <span>Partner With IOC</span>
+              <span>{t("industries.partnerLabel")}</span>
 
-              <h2>Reliable operational support for your industry</h2>
+              <h2>{t("industries.partnerTitle")}</h2>
             </div>
 
-            <a href="#contact">
-              Discuss Your Requirements
-              <span aria-hidden="true">→</span>
-            </a>
+            <Link to="/contact">
+              {t("industries.partnerButton")}
+              <span aria-hidden="true">{t("common.arrow")}</span>
+            </Link>
           </div>
         </section>
       </main>

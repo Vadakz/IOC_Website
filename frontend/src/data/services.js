@@ -239,8 +239,13 @@ const services = [
     title: "Waste Management Services",
     menuTitle: "Waste Management",
     category: "Environmental services",
+
     shortDescription:
       "Responsible collection and handling solutions for municipal, construction, wastewater and specialist waste streams.",
+
+    image: "/images/waste-management.jpg",
+    logo: "/images/ioc-eco-logo.png",
+
     description:
       "IOC/ECO provides dependable waste and wastewater services for facilities and projects across Saudi Arabia. We match the collection method, equipment and service frequency to each waste stream while supporting safe handling, responsible disposal and cleaner operating environments.",
     overviewTitle: "Practical waste solutions, responsibly managed",

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import {
   FaEnvelope,
   FaFacebookF,
@@ -15,7 +16,9 @@ import logo from "../../assets/images/logo.png";
 import "./Footer.css";
 
 export default function Footer() {
+  const { t, i18n } = useTranslation();
   const currentYear = new Date().getFullYear();
+  const isArabic = i18n.resolvedLanguage?.startsWith("ar");
 
   return (
     <>
@@ -28,19 +31,17 @@ export default function Footer() {
             <Link to="/" className="footer-logo-link">
               <img
                 src={logo}
-                alt="International Operations Company"
+                alt={t("footer.logoAlt")}
                 className="footer-logo"
               />
             </Link>
 
             <p className="footer-brand-description">
-              Delivering integrated facility management, environmental and
-              operational solutions that create cleaner, safer and more
-              sustainable environments.
+              {t("footer.description")}
             </p>
 
             <span className="footer-brand-tagline">
-              Creating Sustainable Living
+              {t("footer.tagline")}
             </span>
 
             <div className="footer-socials">
@@ -71,34 +72,42 @@ export default function Footer() {
           </div>
 
           <div className="footer-column">
-            <h3>Company</h3>
+            <h3>{t("footer.company")}</h3>
 
-            <nav className="footer-links" aria-label="Footer company links">
-              <Link to="/">Home</Link>
-              <Link to="/#about">About Us</Link>
-              <Link to="/industries">Industries</Link>
-              <Link to="/industries#clients">Our Clients</Link>
-              <Link to="/contact">Contact Us</Link>
+            <nav
+              className="footer-links"
+              aria-label={t("footer.companyLinksLabel")}
+            >
+              <Link to="/">{t("footer.home")}</Link>
+              <Link to="/#about">{t("footer.about")}</Link>
+              <Link to="/industries">{t("footer.industries")}</Link>
+              <Link to="/industries#clients">{t("footer.clients")}</Link>
+              <Link to="/contact">{t("footer.contactUs")}</Link>
             </nav>
           </div>
 
           <div className="footer-column footer-services-column">
-            <h3>Our Services</h3>
+            <h3>{t("footer.services")}</h3>
 
-            <nav className="footer-links" aria-label="Footer service links">
+            <nav
+              className="footer-links"
+              aria-label={t("footer.serviceLinksLabel")}
+            >
               {services.map((service) => (
                 <Link
                   key={service.id || service.slug}
                   to={`/services/${service.slug}`}
                 >
-                  {service.title}
+                  {isArabic
+                    ? t(`serviceItems.${service.slug}.menuTitle`)
+                    : service.menuTitle}
                 </Link>
               ))}
             </nav>
           </div>
 
           <div className="footer-column">
-            <h3>Contact</h3>
+            <h3>{t("footer.contact")}</h3>
 
             <div className="footer-contact-list">
               <a
@@ -112,8 +121,8 @@ export default function Footer() {
                 </span>
 
                 <span>
-                  Riyadh
-                  <small>Kingdom of Saudi Arabia</small>
+                  {t("footer.riyadh")}
+                  <small>{t("footer.country")}</small>
                 </span>
               </a>
 
@@ -158,13 +167,12 @@ export default function Footer() {
         <div className="footer-bottom">
           <div className="footer-container footer-bottom-content">
             <p>
-              © {currentYear} International Operations Company. All rights
-              reserved.
+              {t("footer.copyright", { year: currentYear })}
             </p>
 
             <div className="footer-legal-links">
-              <a href="#">Privacy Policy</a>
-              <a href="#">Terms &amp; Conditions</a>
+              <a href="#">{t("footer.privacy")}</a>
+              <a href="#">{t("footer.terms")}</a>
             </div>
           </div>
         </div>

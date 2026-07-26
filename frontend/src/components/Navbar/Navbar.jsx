@@ -11,6 +11,7 @@ export default function Navbar() {
 
     const { t, i18n } = useTranslation();
     const language = i18n.resolvedLanguage || i18n.language;
+    const isArabic = language?.startsWith("ar");
 
     const closeMenu = () => {
         setMenuOpen(false);
@@ -36,9 +37,6 @@ export default function Navbar() {
         await i18n.changeLanguage(selectedLanguage);
 
         localStorage.setItem("language", selectedLanguage);
-        document.documentElement.lang = selectedLanguage;
-        document.documentElement.dir =
-            selectedLanguage === "ar" ? "rtl" : "ltr";
     };
 
     return (
@@ -51,7 +49,7 @@ export default function Navbar() {
                 >
                     <img
                         src={logo}
-                        alt="International Operations Company"
+                        alt={t("common.companyName")}
                         className="navbar-logo"
                     />
                 </Link>
@@ -85,6 +83,9 @@ export default function Navbar() {
                         <div className="navbar-dropdown-menu">
                             {services.map((service) => {
                                 const ServiceIcon = service.icon;
+                                const localizedTitle = isArabic
+                                    ? t(`serviceItems.${service.slug}.menuTitle`)
+                                    : service.menuTitle;
 
                                 return (
                                     <Link
@@ -96,7 +97,7 @@ export default function Navbar() {
                                             {ServiceIcon && <ServiceIcon />}
                                         </span>
 
-                                        <span>{service.title}</span>
+                                        <span>{localizedTitle}</span>
                                     </Link>
                                 );
                             })}
@@ -116,7 +117,7 @@ export default function Navbar() {
 
                     <div
                         className="navbar-mobile-language"
-                        aria-label="Select language"
+                        aria-label={t("navbar.selectLanguage")}
                     >
                         <span aria-hidden="true">🌐</span>
 
@@ -152,7 +153,7 @@ export default function Navbar() {
                 <div className="navbar-actions">
                     <div
                         className="navbar-language"
-                        aria-label="Select language"
+                        aria-label={t("navbar.selectLanguage")}
                     >
                         <span
                             className="navbar-language-icon"

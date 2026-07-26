@@ -2,6 +2,7 @@ import "./Coverage.css";
 import "leaflet/dist/leaflet.css";
 
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import { useTranslation } from "react-i18next";
 import L from "leaflet";
 
 const locations = [
@@ -39,31 +40,34 @@ const locationIcon = L.divIcon({
 });
 
 export default function Coverage() {
+  const { t } = useTranslation();
+  const coverageStats = t("coverage.stats", { returnObjects: true });
+
   return (
     <section className="coverage-section" id="coverage">
       <div className="coverage-container">
         <div className="coverage-header">
           <div>
-            <span className="coverage-label">Our Coverage</span>
+            <span className="coverage-label">{t("coverage.label")}</span>
 
             <h2>
-              Operational coverage across the
-              <span> Kingdom of Saudi Arabia</span>
+              {t("coverage.title")}
+              <span> {t("coverage.titleAccent")}</span>
             </h2>
           </div>
 
           <p>
-            IOC provides integrated facility management and operational
-            support across major cities and industrial regions throughout the
-            Kingdom.
+            {t("coverage.description")}
           </p>
         </div>
 
         <div className="coverage-layout">
           <div className="coverage-location-panel">
             <div className="coverage-panel-heading">
-              <span>Operational locations</span>
-              <strong>{locations.length} Locations</strong>
+              <span>{t("coverage.locationsLabel")}</span>
+              <strong>
+                {t("coverage.locationsCount", { count: locations.length })}
+              </strong>
             </div>
 
             <div className="coverage-location-list">
@@ -72,8 +76,8 @@ export default function Coverage() {
                   <span className="coverage-location-pin"></span>
 
                   <div>
-                    <h3>{location.name}</h3>
-                    <p>{location.region}</p>
+                    <h3>{t(`coverage.locations.${location.name}.name`)}</h3>
+                    <p>{t(`coverage.locations.${location.name}.region`)}</p>
                   </div>
                 </div>
               ))}
@@ -83,13 +87,13 @@ export default function Coverage() {
           <div className="coverage-map-card">
             <div className="coverage-map-top">
               <div>
-                <span>IOC Operational Network</span>
-                <h3>Kingdom-wide service coverage</h3>
+                <span>{t("coverage.network")}</span>
+                <h3>{t("coverage.networkTitle")}</h3>
               </div>
 
               <div className="coverage-map-status">
                 <span></span>
-                Active
+                {t("coverage.active")}
               </div>
             </div>
             <MapContainer
@@ -121,9 +125,13 @@ export default function Coverage() {
                 >
                   <Popup>
                     <div className="coverage-popup">
-                      <strong>{location.name}</strong>
-                      <span>{location.region}</span>
-                      <p>IOC operational service coverage</p>
+                      <strong>
+                        {t(`coverage.locations.${location.name}.name`)}
+                      </strong>
+                      <span>
+                        {t(`coverage.locations.${location.name}.region`)}
+                      </span>
+                      <p>{t("coverage.popup")}</p>
                     </div>
                   </Popup>
                 </Marker>
@@ -131,20 +139,12 @@ export default function Coverage() {
             </MapContainer>
 
             <div className="coverage-map-footer">
-              <div>
-                <strong>4</strong>
-                <span>Operational Hubs</span>
-              </div>
-
-              <div>
-                <strong>24/7</strong>
-                <span>Support Services</span>
-              </div>
-
-              <div>
-                <strong>KSA</strong>
-                <span>Nationwide Capability</span>
-              </div>
+              {coverageStats.map((stat) => (
+                <div key={stat.label}>
+                  <strong>{stat.value}</strong>
+                  <span>{stat.label}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>

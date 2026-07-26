@@ -1,33 +1,46 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import "./services.css";
 import services from "../../data/services";
 
 
 export default function Services() {
+  const { t, i18n } = useTranslation();
+  const isArabic = i18n.resolvedLanguage?.startsWith("ar");
+
   return (
     <section className="services-section" id="services">
       <div className="container">
         <div className="services-heading">
-          <span>Our Services</span>
+          <span>{t("servicesSection.label")}</span>
 
-          <h2>Six services. One standard of delivery.</h2>
+          <h2>{t("servicesSection.title")}</h2>
 
           <p>
-            From daily workplace care to critical building systems, IOC/ECO
-            delivers services shaped around your facility and operational needs.
+            {t("servicesSection.description")}
           </p>
         </div>
 
         <div className="services-grid">
           {services.map((service) => {
             const Icon = service.icon;
+            const localizedService = isArabic
+              ? {
+                  ...service,
+                  ...t(`serviceItems.${service.slug}`, {
+                    returnObjects: true,
+                  }),
+                }
+              : service;
 
             return (
               <Link
                 className="service-card"
                 key={service.id}
                 to={`/services/${service.slug}`}
-                aria-label={`View ${service.title}`}
+                aria-label={t("servicesSection.viewLabel", {
+                  service: localizedService.title,
+                })}
               >
                 <span className="service-card-number">
                   {String(service.id).padStart(2, "0")}
@@ -36,14 +49,16 @@ export default function Services() {
                   <Icon />
                 </div>
 
-                <span className="service-card-category">{service.category}</span>
-                <h3>{service.title}</h3>
+                <span className="service-card-category">
+                  {localizedService.category}
+                </span>
+                <h3>{localizedService.title}</h3>
 
-                <p>{service.shortDescription}</p>
+                <p>{localizedService.shortDescription}</p>
 
                 <span className="service-link">
-                  Learn More
-                  <span aria-hidden="true">→</span>
+                  {t("servicesSection.learnMore")}
+                  <span aria-hidden="true">{t("common.arrow")}</span>
                 </span>
               </Link>
             );

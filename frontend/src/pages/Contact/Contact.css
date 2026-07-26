@@ -236,21 +236,26 @@
     display: grid;
     grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
     overflow: hidden;
-    border-radius: 30px;
+    border-radius: 26px;
     background: #ffffff;
-    box-shadow: 0 28px 75px rgba(14, 45, 65, 0.12);
+    box-shadow: 0 24px 65px rgba(14, 45, 65, 0.12);
 }
 
 .contact-form-visual {
     position: relative;
     display: flex;
-    min-height: 740px;
-    align-items: flex-end;
-    padding: 50px;
+    min-height: 640px;
+    align-items: center;
+    justify-content: center;
+    padding: 44px;
     color: #ffffff;
     background:
-        url("../../assets/images/contact-form.jpg") center / cover
-            no-repeat;
+        radial-gradient(
+            circle at 18% 14%,
+            rgba(72, 177, 226, 0.28),
+            transparent 36%
+        ),
+        linear-gradient(145deg, #06273e 0%, #0a4b70 58%, #147aa6 100%);
 }
 
 .contact-form-visual-overlay {
@@ -258,15 +263,17 @@
     inset: 0;
     background:
         linear-gradient(
-            180deg,
-            rgba(5, 30, 47, 0.18),
-            rgba(5, 30, 47, 0.94)
+            145deg,
+            rgba(5, 30, 47, 0.08),
+            rgba(5, 30, 47, 0.32)
         );
 }
 
 .contact-form-visual-content {
     position: relative;
     z-index: 1;
+    max-width: 510px;
+    text-align: center;
 }
 
 .contact-form-visual .contact-page-eyebrow {
@@ -276,22 +283,23 @@
 .contact-form-visual h2 {
     max-width: 500px;
     margin: 0;
-    font-size: clamp(2.3rem, 4vw, 4rem);
-    line-height: 1.05;
+    font-size: clamp(2.15rem, 3.5vw, 3.5rem);
+    line-height: 1.1;
     letter-spacing: -0.045em;
 }
 
 .contact-form-visual p {
     max-width: 520px;
-    margin: 22px 0 30px;
-    color: rgba(255, 255, 255, 0.75);
-    line-height: 1.8;
+    margin: 20px auto 26px;
+    color: rgba(255, 255, 255, 0.82);
+    line-height: 1.75;
 }
 
 .contact-visual-feature {
     display: flex;
     gap: 13px;
     align-items: center;
+    justify-content: center;
     margin-top: 14px;
     color: rgba(255, 255, 255, 0.88);
     font-size: 0.92rem;
@@ -303,24 +311,24 @@
 }
 
 .contact-form-panel {
-    padding: 52px;
+    padding: 42px 46px;
 }
 
 .contact-form {
     display: grid;
-    gap: 22px;
-    margin-top: 36px;
+    gap: 17px;
+    margin-top: 27px;
 }
 
 .contact-form-row {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
+    gap: 15px;
 }
 
 .contact-form-group {
     display: grid;
-    gap: 9px;
+    gap: 7px;
 }
 
 .contact-form-group label {
@@ -333,7 +341,7 @@
 .contact-form-group select,
 .contact-form-group textarea {
     width: 100%;
-    padding: 15px 16px;
+    padding: 13px 15px;
     color: #173246;
     font: inherit;
     border: 1px solid #dbe4e9;
@@ -347,7 +355,7 @@
 }
 
 .contact-form-group textarea {
-    min-height: 150px;
+    min-height: 112px;
     resize: vertical;
 }
 
@@ -587,7 +595,7 @@ html[dir="rtl"] .contact-submit-button svg {
     }
 
     .contact-form-visual {
-        min-height: 570px;
+        min-height: 460px;
     }
 
     .contact-faq-layout {
