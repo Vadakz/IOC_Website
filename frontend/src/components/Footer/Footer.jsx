@@ -7,6 +7,7 @@ import {
   FaLinkedinIn,
   FaMapMarkerAlt,
   FaPhoneAlt,
+  FaTwitter,
 } from "react-icons/fa";
 
 import services from "../../data/services";
@@ -44,7 +45,7 @@ export default function Footer() {
 
             <div className="footer-socials">
               <a
-                href="#"
+                href="https://www.linkedin.com/company/international-operations-company/"
                 aria-label="LinkedIn"
                 className="footer-social-link"
               >
@@ -52,15 +53,15 @@ export default function Footer() {
               </a>
 
               <a
-                href="#"
-                aria-label="Facebook"
+                href="https://x.com/ioceco"
+                aria-label="Twitter"
                 className="footer-social-link"
               >
-                <FaFacebookF />
+                <FaTwitter />
               </a>
 
               <a
-                href="#"
+                href="https://www.instagram.com/ecoioc/"
                 aria-label="Instagram"
                 className="footer-social-link"
               >
