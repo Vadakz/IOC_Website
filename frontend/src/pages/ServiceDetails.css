@@ -18,11 +18,9 @@
   padding: 155px 0 94px;
   overflow: hidden;
   background:
-    radial-gradient(
-      circle at 82% 18%,
+    radial-gradient(circle at 82% 18%,
       rgba(212, 169, 112, 0.2),
-      transparent 32%
-    ),
+      transparent 32%),
     linear-gradient(115deg, #f7f3ec, #eee5d8);
   color: var(--primary);
 }
@@ -160,7 +158,7 @@
   backdrop-filter: blur(12px);
 }
 
-.service-outcomes > span {
+.service-outcomes>span {
   display: block;
   margin-bottom: 28px;
   color: #8a7562;
@@ -232,11 +230,9 @@
   display: flex;
   align-items: center;
   background:
-    radial-gradient(
-      circle at 32% 48%,
+    radial-gradient(circle at 32% 48%,
       rgba(5, 112, 158, 0.25),
-      transparent 34%
-    ),
+      transparent 34%),
     linear-gradient(118deg, #031c36 0%, #042b4e 58%, #07375a 100%);
   color: #fff;
 }
@@ -304,7 +300,7 @@
   color: #29c9c5;
 }
 
-.service-details-hero--waste .service-hero-copy > p {
+.service-details-hero--waste .service-hero-copy>p {
   color: rgba(255, 255, 255, 0.78);
 }
 
@@ -317,7 +313,7 @@
   background: rgba(255, 255, 255, 0.08);
 }
 
-.service-details-hero--waste .service-outcomes > span {
+.service-details-hero--waste .service-outcomes>span {
   color: rgba(255, 255, 255, 0.6);
 }
 
@@ -337,8 +333,7 @@
   opacity: 0.55;
   pointer-events: none;
   filter:
-    drop-shadow(0 2px 2px rgba(255, 255, 255, 0.25))
-    drop-shadow(0 10px 20px rgba(0, 0, 0, 0.12));
+    drop-shadow(0 2px 2px rgba(255, 255, 255, 0.25)) drop-shadow(0 10px 20px rgba(0, 0, 0, 0.12));
   transform: translate(-65%, -50%);
 }
 
@@ -352,13 +347,11 @@
   display: flex;
   align-items: center;
   background:
-    linear-gradient(
-      90deg,
+    linear-gradient(90deg,
       rgba(2, 18, 34, 0.98) 0%,
       rgba(2, 28, 49, 0.94) 36%,
       rgba(3, 37, 63, 0.56) 62%,
-      rgba(3, 37, 63, 0.12) 100%
-    ),
+      rgba(3, 37, 63, 0.12) 100%),
     #031c36;
   color: #fff;
 }
@@ -418,7 +411,7 @@
   letter-spacing: -2px;
 }
 
-.service-details-hero--soft .service-hero-copy > p {
+.service-details-hero--soft .service-hero-copy>p {
   max-width: 600px;
   color: rgba(255, 255, 255, 0.82);
 }
@@ -451,13 +444,11 @@
   z-index: 2;
   inset: 0;
   background:
-    linear-gradient(
-      90deg,
+    linear-gradient(90deg,
       #031c36 0%,
       rgba(3, 28, 54, 0.92) 13%,
       rgba(3, 28, 54, 0.48) 35%,
-      transparent 65%
-    );
+      transparent 65%);
   pointer-events: none;
 }
 
@@ -482,7 +473,7 @@
   backdrop-filter: blur(14px);
 }
 
-.service-details-hero--soft .service-outcomes > span {
+.service-details-hero--soft .service-outcomes>span {
   grid-column: 1 / -1;
   margin-bottom: 0;
   color: rgba(255, 255, 255, 0.55);
@@ -494,6 +485,316 @@
 
 .service-details-hero--soft .service-outcomes li {
   color: rgba(255, 255, 255, 0.94);
+}
+
+/* ==========================================================
+   7. PEST CONTROL HERO
+========================================================== */
+
+.service-details-hero--pest {
+  min-height: 900px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 82% 18%,
+      rgba(94, 160, 108, 0.2),
+      transparent 34%),
+    linear-gradient(135deg,
+      #f8fcf8 0%,
+      #edf7ef 55%,
+      #e5f2e7 100%);
+  color: #183229;
+}
+
+.service-details-hero--pest::before {
+  z-index: 2;
+  opacity: 0.18;
+  background-image:
+    linear-gradient(rgba(79, 137, 92, 0.08) 1px,
+      transparent 1px),
+    linear-gradient(90deg,
+      rgba(79, 137, 92, 0.08) 1px,
+      transparent 1px);
+}
+
+.service-details-hero--pest .service-details-orb {
+  display: none;
+}
+
+.service-details-hero--pest .container {
+  width: min(1448px, calc(100% - 80px));
+  max-width: 1448px;
+}
+
+.service-details-hero--pest .service-back-link {
+  position: relative;
+  z-index: 4;
+  color: #5f7468;
+}
+
+.service-details-hero--pest .service-back-link:hover {
+  color: #183229;
+}
+
+.service-details-hero--pest .service-hero-grid {
+  display: block;
+}
+
+.service-details-hero--pest .service-hero-copy {
+  position: relative;
+  z-index: 4;
+  width: min(48%, 700px);
+}
+
+.service-details-hero--pest .service-details-icon {
+  border-color: rgba(65, 126, 80, 0.18);
+  background: rgba(255, 255, 255, 0.72);
+  color: #3f8f58;
+}
+
+.service-details-hero--pest .service-eyebrow {
+  color: #3f8f58;
+}
+
+.service-details-hero--pest h1 {
+  max-width: 700px;
+  color: #173329;
+  font-size: clamp(50px, 4.6vw, 74px);
+  line-height: 1.02;
+  letter-spacing: -2px;
+}
+
+.service-details-hero--pest .service-hero-copy>p {
+  max-width: 600px;
+  color: #5d7365;
+}
+
+.service-details-hero--pest .service-hero-cta {
+  background: #3f8f58;
+  color: #fff;
+}
+
+.service-details-hero--pest .service-hero-cta:hover {
+  background: #2f7445;
+}
+
+/* Pest Control image area */
+
+.service-hero-visual--pest {
+  position: absolute;
+  z-index: 1;
+  inset: 0 0 0 auto;
+  width: 66%;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.service-hero-visual--pest::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  background:
+    linear-gradient(90deg,
+      #edf7ef 0%,
+      rgba(237, 247, 239, 0.9) 15%,
+      rgba(237, 247, 239, 0.48) 36%,
+      transparent 66%);
+  pointer-events: none;
+}
+
+.service-hero-visual--pest .service-hero-image {
+  object-position: 58% center;
+}
+
+/* Pest Control outcomes card */
+
+.service-details-hero--pest .service-outcomes {
+  position: relative;
+  z-index: 4;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  width: min(100%, 880px);
+  max-width: 880px;
+  margin-top: 54px;
+  padding: 26px 30px;
+  border: 1px solid rgba(63, 143, 88, 0.18);
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 20px 45px rgba(34, 72, 45, 0.08);
+  backdrop-filter: blur(14px);
+}
+
+.service-details-hero--pest .service-outcomes>span {
+  grid-column: 1 / -1;
+  margin-bottom: 0;
+  color: #688072;
+}
+
+.service-details-hero--pest .service-outcomes ul {
+  display: contents;
+}
+
+.service-details-hero--pest .service-outcomes li {
+  color: #1d392b;
+}
+
+/* ==========================================================
+   JANITORIAL SERVICES HERO
+========================================================== */
+
+.service-details-hero--janitorial {
+  min-height: 900px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 82% 18%,
+      rgba(38, 185, 190, 0.16),
+      transparent 35%),
+    linear-gradient(135deg,
+      #ffffff 0%,
+      #f6fbfc 52%,
+      #eaf6f8 100%);
+  color: #102f46;
+}
+
+.service-details-hero--janitorial::before {
+  z-index: 2;
+  opacity: 0.14;
+  background-image:
+    linear-gradient(rgba(42, 152, 165, 0.08) 1px,
+      transparent 1px),
+    linear-gradient(90deg,
+      rgba(42, 152, 165, 0.08) 1px,
+      transparent 1px);
+}
+
+.service-details-hero--janitorial .service-details-orb {
+  display: none;
+}
+
+.service-details-hero--janitorial .container {
+  width: min(1448px, calc(100% - 80px));
+  max-width: 1448px;
+}
+
+.service-details-hero--janitorial .service-back-link {
+  position: relative;
+  z-index: 4;
+  color: #5a7180;
+}
+
+.service-details-hero--janitorial .service-back-link:hover {
+  color: #102f46;
+}
+
+.service-details-hero--janitorial .service-hero-grid {
+  display: block;
+}
+
+.service-details-hero--janitorial .service-hero-copy {
+  position: relative;
+  z-index: 4;
+  width: min(48%, 700px);
+}
+
+.service-details-hero--janitorial .service-details-icon {
+  border-color: rgba(38, 167, 180, 0.2);
+  background: rgba(255, 255, 255, 0.8);
+  color: #169eaa;
+}
+
+.service-details-hero--janitorial .service-eyebrow {
+  color: #169eaa;
+}
+
+.service-details-hero--janitorial h1 {
+  max-width: 700px;
+  color: #0d2f4a;
+  font-size: clamp(50px, 4.6vw, 74px);
+  line-height: 1.02;
+  letter-spacing: -2px;
+}
+
+.service-details-hero--janitorial .service-hero-copy>p {
+  max-width: 600px;
+  color: #587080;
+}
+
+.service-details-hero--janitorial .service-hero-cta {
+  background: #1ab5bd;
+  color: #ffffff;
+}
+
+.service-details-hero--janitorial .service-hero-cta:hover {
+  background: #128f98;
+}
+
+/* Janitorial image area */
+
+.service-hero-visual--janitorial {
+  position: absolute;
+  z-index: 1;
+  inset: 0 0 0 auto;
+  width: 66%;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.service-hero-visual--janitorial::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  background:
+    linear-gradient(90deg,
+      #f6fbfc 0%,
+      rgba(246, 251, 252, 0.92) 14%,
+      rgba(246, 251, 252, 0.48) 36%,
+      transparent 67%);
+  pointer-events: none;
+}
+
+.service-hero-visual--janitorial .service-hero-image {
+  object-position: 62% center;
+}
+
+/* Janitorial outcomes card */
+
+.service-details-hero--janitorial .service-outcomes {
+  position: relative;
+  z-index: 4;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  width: min(100%, 880px);
+  max-width: 880px;
+  margin-top: 54px;
+  padding: 26px 30px;
+  border: 1px solid rgba(38, 167, 180, 0.18);
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 20px 45px rgba(20, 80, 100, 0.08);
+  backdrop-filter: blur(14px);
+}
+
+.service-details-hero--janitorial .service-outcomes>span {
+  grid-column: 1 / -1;
+  margin-bottom: 0;
+  color: #6b8490;
+}
+
+.service-details-hero--janitorial .service-outcomes ul {
+  display: contents;
+}
+
+.service-details-hero--janitorial .service-outcomes li {
+  color: #173a4a;
 }
 
 
@@ -531,7 +832,7 @@
   letter-spacing: -0.8px;
 }
 
-.service-overview > p {
+.service-overview>p {
   margin-top: 24px;
   color: var(--gray);
   font-size: 16px;
@@ -550,7 +851,7 @@
   font-size: 15px;
 }
 
-.service-sectors > div {
+.service-sectors>div {
   display: flex;
   flex-wrap: wrap;
   gap: 9px;
@@ -602,7 +903,7 @@
   line-height: 1.55;
 }
 
-.service-feature-box li > span {
+.service-feature-box li>span {
   display: flex;
   width: 24px;
   height: 24px;
@@ -658,7 +959,7 @@
   border-right: 1px solid #d6e0e6;
 }
 
-.service-process-grid li > span {
+.service-process-grid li>span {
   display: inline-block;
   margin-bottom: 33px;
   color: var(--secondary);
@@ -690,7 +991,7 @@
   text-align: center;
 }
 
-.service-not-found > span {
+.service-not-found>span {
   color: var(--secondary);
   font-size: 13px;
   font-weight: 800;
@@ -849,11 +1150,9 @@
 
   .service-hero-visual--soft::before {
     background:
-      linear-gradient(
-        180deg,
+      linear-gradient(180deg,
         rgba(3, 28, 54, 0.08),
-        rgba(3, 28, 54, 0.5)
-      );
+        rgba(3, 28, 54, 0.5));
   }
 
   .service-hero-visual--soft .service-hero-image {
@@ -869,12 +1168,138 @@
     padding: 24px 22px;
   }
 
-  .service-details-hero--soft .service-outcomes > span {
+  .service-details-hero--soft .service-outcomes>span {
     display: block;
     margin-bottom: 18px;
   }
 
   .service-details-hero--soft .service-outcomes ul {
+    display: grid;
+    gap: 15px;
+  }
+
+  /* ------------------------------
+   Pest Control mobile
+------------------------------ */
+
+  .service-details-hero--pest {
+    min-height: auto;
+  }
+
+  .service-details-hero--pest .container {
+    width: min(100% - 36px, var(--container-width));
+    max-width: var(--container-width);
+  }
+
+  .service-details-hero--pest .service-hero-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .service-details-hero--pest .service-hero-copy {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .service-hero-visual--pest {
+    position: relative;
+    inset: auto;
+    order: 2;
+    width: 100%;
+    height: 350px;
+    border-radius: 28px;
+  }
+
+  .service-hero-visual--pest::before {
+    background:
+      linear-gradient(180deg,
+        rgba(237, 247, 239, 0.05),
+        rgba(237, 247, 239, 0.42));
+  }
+
+  .service-hero-visual--pest .service-hero-image {
+    object-position: 62% center;
+  }
+
+  .service-details-hero--pest .service-outcomes {
+    order: 3;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 0;
+    padding: 24px 22px;
+  }
+
+  .service-details-hero--pest .service-outcomes>span {
+    display: block;
+    margin-bottom: 18px;
+  }
+
+  .service-details-hero--pest .service-outcomes ul {
+    display: grid;
+    gap: 15px;
+  }
+
+  /* ------------------------------
+   Janitorial mobile
+------------------------------ */
+
+  .service-details-hero--janitorial {
+    min-height: auto;
+  }
+
+  .service-details-hero--janitorial .container {
+    width: min(100% - 36px, var(--container-width));
+    max-width: var(--container-width);
+  }
+
+  .service-details-hero--janitorial .service-hero-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .service-details-hero--janitorial .service-hero-copy {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .service-hero-visual--janitorial {
+    position: relative;
+    inset: auto;
+    order: 2;
+    width: 100%;
+    height: 350px;
+    border-radius: 28px;
+  }
+
+  .service-hero-visual--janitorial::before {
+    background:
+      linear-gradient(180deg,
+        rgba(246, 251, 252, 0.04),
+        rgba(246, 251, 252, 0.42));
+  }
+
+  .service-hero-visual--janitorial .service-hero-image {
+    object-position: 64% center;
+  }
+
+  .service-details-hero--janitorial .service-outcomes {
+    order: 3;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 0;
+    padding: 24px 22px;
+  }
+
+  .service-details-hero--janitorial .service-outcomes>span {
+    display: block;
+    margin-bottom: 18px;
+  }
+
+  .service-details-hero--janitorial .service-outcomes ul {
     display: grid;
     gap: 15px;
   }
@@ -936,8 +1361,8 @@
     margin-bottom: 40px;
   }
 
-  .service-process-heading > div,
-  .service-process-heading > p {
+  .service-process-heading>div,
+  .service-process-heading>p {
     width: 100%;
     max-width: 100%;
   }
@@ -949,7 +1374,7 @@
     line-height: 1.12;
   }
 
-  .service-process-heading > p {
+  .service-process-heading>p {
     font-size: 15px;
     line-height: 1.7;
   }
@@ -970,7 +1395,7 @@
     border-bottom: 0;
   }
 
-  .service-process-grid li > span {
+  .service-process-grid li>span {
     margin-bottom: 18px;
   }
 }

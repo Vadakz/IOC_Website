@@ -2,9 +2,12 @@ import { Link, useParams } from "react-router-dom";
 import { FaArrowRight, FaCheck, FaChevronLeft } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import services from "../data/services";
-import wasteManagementImage from "../assets/images/services/waste-management-hero-v2.webp";
 import PageTransition from "../components/PageTransition";
+
+import wasteManagementImage from "../assets/images/services/waste-management-hero-v2.webp";
 import softFacilityImage from "../assets/images/services/soft-facility-management.png";
+import pestControlImage from "../assets/images/services/pest-control.png";
+import janitorialImage from "../assets/images/services/janitorial.png";
 
 import "./ServiceDetails.css";
 
@@ -25,18 +28,50 @@ export default function ServiceDetails() {
     );
   }
 
+  /* ==========================================================
+     SERVICE ICON
+  ========================================================== */
+
   const Icon = service.icon;
 
-  const isWasteManagement = service.slug === "WasteManagement";
+  /* ==========================================================
+     WASTE MANAGEMENT PAGE
+  ========================================================== */
+
+  const isWasteManagement =
+    service.slug === "WasteManagement";
+
+  /* ==========================================================
+     SOFT FACILITY MANAGEMENT PAGE
+  ========================================================== */
 
   const isSoftFacility =
     service.slug === "Soft-Facility-Management";
+
+  /* ==========================================================
+     PEST CONTROL PAGE
+  ========================================================== */
+
+  const isPestControl =
+    service.slug === "PestControl";
+
+  /* ==========================================================
+ JANITORIAL SERVICES PAGE
+========================================================== */
+
+  const isJanitorial =
+    service.slug === "Janitorial";
+
 
   const heroImage = isWasteManagement
     ? wasteManagementImage
     : isSoftFacility
       ? softFacilityImage
-      : null;
+      : isPestControl
+        ? pestControlImage
+        : isJanitorial
+          ? janitorialImage
+          : null;
 
 
 
@@ -55,7 +90,11 @@ export default function ServiceDetails() {
             ? "service-details-hero--waste"
             : isSoftFacility
               ? "service-details-hero--soft"
-              : ""
+              : isPestControl
+                ? "service-details-hero--pest"
+                : isJanitorial
+                  ? "service-details-hero--janitorial"
+                  : ""
             }`}
         >
           <div className="service-details-orb" aria-hidden="true" />
@@ -81,16 +120,34 @@ export default function ServiceDetails() {
                 </Link>
               </div>
 
+              {/* ======================================================
+    HERO IMAGE
+    Waste Management | Soft Facility | Pest Control | 
+    Janitorial
+====================================================== */}
+
               {heroImage && (
                 <figure
-                  className={`service-hero-visual ${isSoftFacility ? "service-hero-visual--soft" : ""
+                  className={`service-hero-visual ${isSoftFacility
+                    ? "service-hero-visual--soft"
+                    : isPestControl
+                      ? "service-hero-visual--pest"
+                      : isJanitorial
+                        ? "service-hero-visual--janitorial"
+                        : ""
                     }`}
                 >
+                  {/* Hero Image */}
                   <img
                     className="service-hero-image"
                     src={heroImage}
                     alt={localizedService.title}
                   />
+
+                  {/* ======================================================
+        Waste Management Only
+        Truck Logo Overlay
+    ====================================================== */}
 
                   {isWasteManagement && (
                     <img
@@ -99,6 +156,16 @@ export default function ServiceDetails() {
                       alt="IOC ECO Logo"
                     />
                   )}
+
+                  {/* ======================================================
+        Soft Facility
+        Logo already present in image
+    ====================================================== */}
+
+                  {/* ======================================================
+        Pest Control
+        No additional logo required
+    ====================================================== */}
                 </figure>
               )}
 
