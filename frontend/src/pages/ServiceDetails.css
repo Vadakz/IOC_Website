@@ -245,15 +245,7 @@
 }
 
 .service-details-hero--waste::after {
-  content: "";
-  position: absolute;
-  right: -6%;
-  bottom: -365px;
-  width: 84%;
-  height: 520px;
-  border-radius: 50% 50% 0 0;
-  background: linear-gradient(110deg, #087481, #061d3b 70%);
-  transform: rotate(-4deg);
+  display: none;
 }
 
 .service-details-hero--waste .service-details-orb {
@@ -307,7 +299,7 @@
 .service-details-hero--waste .service-outcomes {
   position: relative;
   z-index: 3;
-  max-width: 430px;
+  max-width: 630px;
   margin-top: -550px;
   border-color: rgba(255, 255, 255, 0.18);
   background: rgba(255, 255, 255, 0.08);
@@ -653,13 +645,12 @@
   overflow: hidden;
   background:
     radial-gradient(circle at 82% 18%,
-      rgba(38, 185, 190, 0.16),
+      rgba(38, 185, 190, 0.14),
       transparent 35%),
     linear-gradient(135deg,
-      #ffffff 0%,
-      #f6fbfc 52%,
-      #eaf6f8 100%);
-  color: #102f46;
+      #f4f8fb 0%,
+      #eef5f8 55%,
+      #e7f2f6 100%);
 }
 
 .service-details-hero--janitorial::before {
@@ -754,10 +745,10 @@
   inset: 0;
   background:
     linear-gradient(90deg,
-      #f6fbfc 0%,
-      rgba(246, 251, 252, 0.92) 14%,
-      rgba(246, 251, 252, 0.48) 36%,
-      transparent 67%);
+      #f4f8fb 0%,
+      rgba(244, 248, 251, 0.72) 16%,
+      rgba(244, 248, 251, 0.32) 38%,
+      transparent 68%);
   pointer-events: none;
 }
 
@@ -778,8 +769,8 @@
   margin-top: 54px;
   padding: 26px 30px;
   border: 1px solid rgba(38, 167, 180, 0.18);
-  background: rgba(255, 255, 255, 0.86);
-  box-shadow: 0 20px 45px rgba(20, 80, 100, 0.08);
+  background: rgba(255, 255, 255, .92);
+  box-shadow: 0 20px 50px rgba(15, 55, 80, 0.10);
   backdrop-filter: blur(14px);
 }
 
@@ -795,6 +786,327 @@
 
 .service-details-hero--janitorial .service-outcomes li {
   color: #173a4a;
+}
+
+
+/* ==========================================================
+   MEP SERVICES HERO
+========================================================== */
+
+.service-details-hero--mep {
+  min-height: 900px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  background:
+    radial-gradient(circle at 78% 15%,
+      rgba(217, 140, 56, 0.13),
+      transparent 30%),
+    linear-gradient(120deg,
+      #202b35 0%,
+      #2b3742 52%,
+      #35414b 100%);
+
+  color: #fff;
+}
+
+.service-details-hero--mep::before {
+  z-index: 2;
+  opacity: 0.14;
+  background-image:
+    linear-gradient(rgba(217, 140, 56, 0.08) 1px,
+      transparent 1px),
+    linear-gradient(90deg,
+      rgba(217, 140, 56, 0.08) 1px,
+      transparent 1px);
+}
+
+.service-details-hero--mep .service-details-orb {
+  display: none;
+}
+
+.service-details-hero--mep .container {
+  width: min(1448px, calc(100% - 80px));
+  max-width: 1448px;
+}
+
+.service-details-hero--mep .service-back-link {
+  position: relative;
+  z-index: 4;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.service-details-hero--mep .service-back-link:hover {
+  color: #fff;
+}
+
+.service-details-hero--mep .service-hero-grid {
+  display: block;
+}
+
+.service-details-hero--mep .service-hero-copy {
+  position: relative;
+  z-index: 4;
+  width: min(48%, 700px);
+}
+
+.service-details-hero--mep .service-details-icon {
+  border-color: rgba(217, 140, 56, 0.28);
+  background: rgba(255, 255, 255, 0.08);
+  color: #e39a49;
+}
+
+.service-details-hero--mep .service-eyebrow {
+  color: #e39a49;
+}
+
+.service-details-hero--mep h1 {
+  max-width: 700px;
+  color: #fff;
+  font-size: clamp(50px, 4.6vw, 74px);
+  line-height: 1.02;
+  letter-spacing: -2px;
+}
+
+.service-details-hero--mep .service-hero-copy>p {
+  max-width: 600px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.service-details-hero--mep .service-hero-cta {
+  background: #d98c38;
+  color: #fff;
+}
+
+.service-details-hero--mep .service-hero-cta:hover {
+  background: #b76e22;
+}
+
+/* MEP image */
+
+.service-hero-visual--mep {
+  position: absolute;
+  z-index: 1;
+  inset: 0 0 0 auto;
+  width: 72%;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.service-hero-visual--mep::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+
+  background: linear-gradient(90deg,
+      #26323d 0%,
+      rgba(38, 50, 61, 0.98) 8%,
+      rgba(38, 50, 61, 0.9) 20%,
+      rgba(38, 50, 61, 0.68) 34%,
+      rgba(38, 50, 61, 0.3) 50%,
+      transparent 68%);
+
+  pointer-events: none;
+}
+
+.service-hero-visual--mep .service-hero-image {
+  object-position: 40% center;
+}
+
+/* MEP outcomes card */
+
+.service-details-hero--mep .service-outcomes {
+  position: relative;
+  z-index: 4;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  width: min(100%, 880px);
+  max-width: 880px;
+  margin-top: 54px;
+  padding: 26px 30px;
+  border: 1px solid rgba(217, 140, 56, 0.18);
+  background: rgba(31, 41, 51, 0.84);
+  backdrop-filter: blur(14px);
+}
+
+.service-details-hero--mep .service-outcomes>span {
+  grid-column: 1 / -1;
+  margin-bottom: 0;
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.service-details-hero--mep .service-outcomes ul {
+  display: contents;
+}
+
+.service-details-hero--mep .service-outcomes li {
+  color: rgba(255, 255, 255, 0.94);
+}
+
+/* ==========================================================
+   HARD FACILITY MANAGEMENT HERO
+========================================================== */
+
+.service-details-hero--hard {
+  min-height: 900px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 80% 18%,
+      rgba(50, 135, 180, 0.14),
+      transparent 34%),
+    linear-gradient(120deg,
+      #202a33 0%,
+      #2d3944 52%,
+      #3a4650 100%);
+  color: #fff;
+}
+
+.service-details-hero--hard::before {
+  z-index: 2;
+  opacity: 0.14;
+  background-image:
+    linear-gradient(rgba(88, 154, 186, 0.08) 1px,
+      transparent 1px),
+    linear-gradient(90deg,
+      rgba(88, 154, 186, 0.08) 1px,
+      transparent 1px);
+}
+
+.service-details-hero--hard .service-details-orb {
+  display: none;
+}
+
+.service-details-hero--hard .container {
+  width: min(1448px, calc(100% - 80px));
+  max-width: 1448px;
+}
+
+.service-details-hero--hard .service-back-link {
+  position: relative;
+  z-index: 4;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.service-details-hero--hard .service-back-link:hover {
+  color: #fff;
+}
+
+.service-details-hero--hard .service-hero-grid {
+  display: block;
+}
+
+.service-details-hero--hard .service-hero-copy {
+  position: relative;
+  z-index: 4;
+  width: min(48%, 700px);
+}
+
+.service-details-hero--hard .service-details-icon {
+  border-color: rgba(92, 167, 201, 0.22);
+  background: rgba(255, 255, 255, 0.08);
+  color: #49b7c7;
+}
+
+.service-details-hero--hard .service-eyebrow {
+  color: #49b7c7;
+}
+
+.service-details-hero--hard h1 {
+  max-width: 700px;
+  color: #fff;
+  font-size: clamp(50px, 4.6vw, 74px);
+  line-height: 1.02;
+  letter-spacing: -2px;
+}
+
+.service-details-hero--hard .service-hero-copy>p {
+  max-width: 600px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.service-details-hero--hard .service-hero-cta {
+  background: #31b7c3;
+  color: #fff;
+}
+
+.service-details-hero--hard .service-hero-cta:hover {
+  background: #24939d;
+}
+
+/* Hard Facility image */
+
+.service-hero-visual--hard {
+  position: absolute;
+  inset: 0 -4% 0 auto;
+  /* moves image slightly right */
+  width: 74%;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+
+}
+
+.service-hero-visual--hard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+
+  background: linear-gradient(90deg,
+      #27323d 0%,
+      rgba(39, 50, 61, .99) 10%,
+      rgba(39, 50, 61, .95) 20%,
+      rgba(39, 50, 61, .82) 30%,
+      rgba(39, 50, 61, .62) 40%,
+      rgba(39, 50, 61, .35) 52%,
+      rgba(39, 50, 61, .15) 62%,
+      transparent 76%);
+}
+
+.service-hero-visual--hard .service-hero-image {
+  object-position: 52% center;
+}
+
+/* Hard Facility outcomes */
+
+.service-details-hero--hard .service-outcomes {
+  position: relative;
+  z-index: 4;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  width: min(100%, 880px);
+  max-width: 880px;
+  margin-top: 54px;
+  padding: 26px 30px;
+  border: 1px solid rgba(73, 183, 199, 0.18);
+  background: rgba(32, 42, 51, 0.86);
+  backdrop-filter: blur(14px);
+}
+
+.service-details-hero--hard .service-outcomes>span {
+  grid-column: 1 / -1;
+  margin-bottom: 0;
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.service-details-hero--hard .service-outcomes ul {
+  display: contents;
+}
+
+.service-details-hero--hard .service-outcomes li {
+  color: rgba(255, 255, 255, 0.94);
 }
 
 
@@ -1305,6 +1617,133 @@
   }
 
   /* ------------------------------
+   MEP mobile
+------------------------------ */
+
+  .service-details-hero--mep {
+    min-height: auto;
+  }
+
+  .service-details-hero--mep .container {
+    width: min(100% - 36px, var(--container-width));
+    max-width: var(--container-width);
+  }
+
+  .service-details-hero--mep .service-hero-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .service-details-hero--mep .service-hero-copy {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .service-hero-visual--mep {
+    position: relative;
+    inset: auto;
+    order: 2;
+    width: 100%;
+    height: 350px;
+    border-radius: 28px;
+  }
+
+  .service-hero-visual--mep::before {
+    background: linear-gradient(180deg,
+        rgba(38, 50, 61, 0.02) 0%,
+        rgba(38, 50, 61, 0.12) 55%,
+        rgba(38, 50, 61, 0.48) 100%);
+  }
+
+  .service-hero-visual--mep .service-hero-image {
+    object-position: 62% center;
+  }
+
+  .service-details-hero--mep .service-outcomes {
+    order: 3;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 0;
+    padding: 24px 22px;
+  }
+
+  .service-details-hero--mep .service-outcomes>span {
+    display: block;
+    margin-bottom: 18px;
+  }
+
+  .service-details-hero--mep .service-outcomes ul {
+    display: grid;
+    gap: 15px;
+  }
+
+  /* ------------------------------
+   Hard Facility mobile
+------------------------------ */
+
+  .service-details-hero--hard {
+    min-height: auto;
+  }
+
+  .service-details-hero--hard .container {
+    width: min(100% - 36px, var(--container-width));
+    max-width: var(--container-width);
+  }
+
+  .service-details-hero--hard .service-hero-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .service-details-hero--hard .service-hero-copy {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .service-hero-visual--hard {
+    position: relative;
+    inset: auto;
+    order: 2;
+    width: 100%;
+    height: 350px;
+    border-radius: 28px;
+  }
+
+  .service-hero-visual--hard::before {
+    background:
+      linear-gradient(180deg,
+        rgba(32, 42, 51, 0.02) 0%,
+        rgba(32, 42, 51, 0.14) 55%,
+        rgba(32, 42, 51, 0.5) 100%);
+  }
+
+  .service-hero-visual--hard .service-hero-image {
+    object-position: 66% center;
+  }
+
+  .service-details-hero--hard .service-outcomes {
+    order: 3;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 0;
+    padding: 24px 22px;
+  }
+
+  .service-details-hero--hard .service-outcomes>span {
+    display: block;
+    margin-bottom: 18px;
+  }
+
+  .service-details-hero--hard .service-outcomes ul {
+    display: grid;
+    gap: 15px;
+  }
+
+  /* ------------------------------
      Overview mobile
   ------------------------------ */
 
@@ -1473,4 +1912,33 @@
   .service-hero-cta {
     transition: none;
   }
+}
+
+/* ==========================================================
+   FIX HERO BUTTONS AND LINKS
+========================================================== */
+
+.service-details-hero::before,
+.service-details-hero::after,
+.service-hero-visual::before {
+  pointer-events: none;
+}
+
+.service-details-hero .container {
+  position: relative;
+  z-index: 5;
+}
+
+.service-hero-copy,
+.service-back-link,
+.service-hero-cta,
+.service-outcomes {
+  position: relative;
+  z-index: 6;
+}
+
+.service-hero-cta,
+.service-back-link {
+  pointer-events: auto;
+  cursor: pointer;
 }

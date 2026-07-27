@@ -8,6 +8,8 @@ import wasteManagementImage from "../assets/images/services/waste-management-her
 import softFacilityImage from "../assets/images/services/soft-facility-management.png";
 import pestControlImage from "../assets/images/services/pest-control.png";
 import janitorialImage from "../assets/images/services/janitorial.png";
+import mepImage from "../assets/images/services/mep.png";
+import hardFacilityImage from "../assets/images/services/hard-facility-management.png";
 
 import "./ServiceDetails.css";
 
@@ -62,6 +64,23 @@ export default function ServiceDetails() {
   const isJanitorial =
     service.slug === "Janitorial";
 
+  /* ==========================================================
+ MEP SERVICES PAGE
+========================================================== */
+
+  const isMEP =
+    service.slug === "MEP";
+
+  /* ==========================================================
+   HARD FACILITY MANAGEMENT PAGE
+========================================================== */
+
+  const isHardFacility =
+    service.slug === "Hard-Facility-Management";
+
+
+  /*============================================================== */
+
 
   const heroImage = isWasteManagement
     ? wasteManagementImage
@@ -71,7 +90,11 @@ export default function ServiceDetails() {
         ? pestControlImage
         : isJanitorial
           ? janitorialImage
-          : null;
+          : isMEP
+            ? mepImage
+            : isHardFacility
+              ? hardFacilityImage
+              : null;
 
 
 
@@ -82,19 +105,22 @@ export default function ServiceDetails() {
     }
     : service;
 
+
   return (
     <PageTransition>
       <main className="service-details-page">
         <section
-          className={`service-details-hero ${isWasteManagement
-            ? "service-details-hero--waste"
-            : isSoftFacility
-              ? "service-details-hero--soft"
-              : isPestControl
-                ? "service-details-hero--pest"
-                : isJanitorial
-                  ? "service-details-hero--janitorial"
-                  : ""
+          className={`service-details-hero ${isWasteManagement || isSoftFacility
+            ? "service-details-hero--soft"
+            : isPestControl
+              ? "service-details-hero--pest"
+              : isJanitorial
+                ? "service-details-hero--janitorial"
+                : isMEP
+                  ? "service-details-hero--mep"
+                  : isHardFacility
+                    ? "service-details-hero--hard"
+                    : ""
             }`}
         >
           <div className="service-details-orb" aria-hidden="true" />
@@ -122,19 +148,24 @@ export default function ServiceDetails() {
 
               {/* ======================================================
     HERO IMAGE
+
     Waste Management | Soft Facility | Pest Control | 
     Janitorial
 ====================================================== */}
 
               {heroImage && (
                 <figure
-                  className={`service-hero-visual ${isSoftFacility
-                    ? "service-hero-visual--soft"
-                    : isPestControl
-                      ? "service-hero-visual--pest"
-                      : isJanitorial
-                        ? "service-hero-visual--janitorial"
-                        : ""
+                  className={`service-hero-visual ${isWasteManagement || isSoftFacility
+                      ? "service-hero-visual--soft"
+                      : isPestControl
+                        ? "service-hero-visual--pest"
+                        : isJanitorial
+                          ? "service-hero-visual--janitorial"
+                          : isMEP
+                            ? "service-hero-visual--mep"
+                            : isHardFacility
+                              ? "service-hero-visual--hard"
+                              : ""
                     }`}
                 >
                   {/* Hero Image */}
@@ -148,7 +179,6 @@ export default function ServiceDetails() {
         Waste Management Only
         Truck Logo Overlay
     ====================================================== */}
-
                   {isWasteManagement && (
                     <img
                       className="service-vehicle-logo"
