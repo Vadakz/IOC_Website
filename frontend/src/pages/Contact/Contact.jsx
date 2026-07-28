@@ -91,6 +91,7 @@ export default function Contact() {
 
     const [status, setStatus] = useState("");
     const [activeFaq, setActiveFaq] = useState(null);
+    const [loading, setLoading] = useState(false);
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -101,22 +102,50 @@ export default function Contact() {
         }));
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
 
-        setStatus(
-            t("contact.success")
-        );
+        setStatus("Submitting...");
 
-        setFormData({
-            fullName: "",
-            companyName: "",
-            email: "",
-            phone: "",
-            service: "",
-            message: "",
-        });
-    };
+        try {
+            const response = await fetch("http://localhost:5000/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    name: formData.fullName,
+                    company: formData.companyName,
+                    email: formData.email,
+                    phone: formData.phone,
+                    service: formData.service,
+                    message: formData.message,
+                }),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                setStatus(
+                    "Thank you. Your enquiry has been submitted successfully."
+                );
+
+                setFormData({
+                    fullName: "",
+                    companyName: "",
+                    email: "",
+                    phone: "",
+                    service: "",
+                    message: "",
+                });
+            } else {
+                setStatus(data.message || "Unable to submit the enquiry.");
+            }
+        } catch (error) {
+            console.error(error);
+            setStatus("Unable to connect to the backend server.");
+        }
+    }; 
 
     const toggleFaq = (faqId) => {
         setActiveFaq((currentFaq) =>
@@ -426,9 +455,11 @@ export default function Contact() {
                                     <button
                                         type="submit"
                                         className="contact-submit-button"
+                                        disabled={loading}
                                     >
-                                        {t("contact.submit")}
-                                        <FaArrowRight />
+                                        {loading ? "Submitting..." : t("contact.submit")}
+
+                                        {!loading && <FaArrowRight />}
                                     </button>
 
                                     {status && (

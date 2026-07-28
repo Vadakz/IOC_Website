@@ -104,6 +104,10 @@
         border-color 0.25s ease;
 }
 
+.contact-submit-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
 .contact-primary-button {
     color: #ffffff;
     border: 0;
