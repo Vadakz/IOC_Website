@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 
 import contactRouter from "./routes/contactRoutes.js";
 import connectDB from "./config/db.js";
+import { verifyEmailConnection } from "./utils/sendEmail.js";
 
 /* ==========================================================
    DNS CONFIGURATION
@@ -27,6 +28,12 @@ dotenv.config();
 ========================================================== */
 
 await connectDB();
+try {
+  await verifyEmailConnection();
+} catch (error) {
+  console.error("Email server connection failed:", error.message);
+}
+
 
 /* ==========================================================
    EXPRESS APPLICATION

@@ -1,8 +1,5 @@
 import Contact from "../models/Contact.js";
-
-/* ==========================================================
-   CREATE CONTACT SUBMISSION
-========================================================== */
+import { sendContactEmails } from "../utils/sendEmail.js";
 
 export const createContactSubmission = async (req, res, next) => {
   try {
@@ -15,20 +12,12 @@ export const createContactSubmission = async (req, res, next) => {
       message,
     } = req.body;
 
-    /* ======================================================
-       BASIC VALIDATION
-    ====================================================== */
-
-    if (!name || !email || !message) {
+    if (!name?.trim() || !email?.trim() || !message?.trim()) {
       return res.status(400).json({
         success: false,
         message: "Name, email and message are required.",
       });
     }
-
-    /* ======================================================
-       CREATE AND SAVE SUBMISSION
-    ====================================================== */
 
     const contactSubmission = await Contact.create({
       name: name.trim(),
@@ -39,21 +28,21 @@ export const createContactSubmission = async (req, res, next) => {
       message: message.trim(),
     });
 
-    /* ======================================================
-       SUCCESS RESPONSE
-    ====================================================== */
+   /* try {
+      await sendContactEmails(contactSubmission);
+    } catch (emailError) {
+      console.error("Email sending failed:", emailError.message);
+
+
+    
+    } */
+   await sendContactEmails(contactSubmission);
 
     return res.status(201).json({
       success: true,
       message: "Your enquiry has been submitted successfully.",
       data: {
         id: contactSubmission._id,
-        name: contactSubmission.name,
-        email: contactSubmission.email,
-        phone: contactSubmission.phone,
-        company: contactSubmission.company,
-        service: contactSubmission.service,
-        message: contactSubmission.message,
         status: contactSubmission.status,
         createdAt: contactSubmission.createdAt,
       },
