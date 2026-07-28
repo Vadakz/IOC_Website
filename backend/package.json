@@ -5,10 +5,20 @@
   "type": "module",
   "scripts": {
     "start": "node server.js",
-    "dev": "node --watch server.js"
+    "dev": "nodemon server.js"
   },
   "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.19.2"
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^4.22.2",
+    "express-validator": "^7.3.2",
+    "mongoose": "^9.8.1",
+    "nodemailer": "^9.0.3"
+  },
+  "description": "A small Express API that receives quote requests from the website's contact form.",
+  "main": "server.js",
+  "keywords": [],
+  "devDependencies": {
+    "nodemon": "^3.1.14"
   }
 }

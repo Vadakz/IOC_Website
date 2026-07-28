@@ -8,15 +8,49 @@
   margin: 0 auto;
 }
 
+/* ==========================================================
+   HERO SECTION
+========================================================== */
+
 .industries-page-hero {
-  padding: 180px 0 120px;
+  position: relative;
+  overflow: hidden;
+  padding: 170px 0 120px;
   background:
-    radial-gradient(
-      circle at 88% 18%,
-      rgba(40, 181, 173, 0.17),
-      transparent 31%
-    ),
-    linear-gradient(135deg, #f7fafc, #edf5f7);
+    radial-gradient(circle at 88% 18%,
+      rgba(40, 181, 173, 0.16),
+      transparent 30%),
+    linear-gradient(135deg,
+      #f7fafc 0%,
+      #eef5f8 55%,
+      #ffffff 100%);
+}
+
+.industries-page-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(46, 57, 145, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(46, 57, 145, 0.03) 1px, transparent 1px);
+  background-size: 70px 70px;
+  opacity: 0.45;
+}
+
+.industries-hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  /* Give more space to the image */
+  gap: 8px;
+  align-items: center;
+}
+
+.industries-hero-copy {
+  position: relative;
+  z-index: 2;
 }
 
 .industries-page-label {
@@ -57,6 +91,44 @@
   color: #63778c;
   font-size: 17px;
   line-height: 1.85;
+}
+
+.industries-hero-visual {
+    position: relative;
+    min-height: 650px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  margin-left: -30px;
+}
+
+.industries-hero-visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(90deg,
+      #f7fafc 0%,
+      rgba(247, 250, 252, 0.96) 8%,
+      rgba(247, 250, 252, 0.82) 18%,
+      rgba(247, 250, 252, 0.45) 30%,
+      rgba(247, 250, 252, 0.12) 42%,
+      transparent 56%);
+}
+
+.industries-hero-visual img {
+    width: 160%;
+    max-width: none;
+    height: auto;
+
+    object-fit: contain;
+    object-position: center;
+
+    display: block;
+
+    transform: translateX(-35px);
 }
 
 .industries-scroll-link {
@@ -104,8 +176,8 @@
   margin-bottom: 50px;
 }
 
-.industries-overview-header > div > span,
-.clients-section-header > div > span {
+.industries-overview-header>div>span,
+.clients-section-header>div>span {
   color: #169f99;
   font-size: 12px;
   font-weight: 800;
@@ -123,8 +195,8 @@
   letter-spacing: -2px;
 }
 
-.industries-overview-header > p,
-.clients-section-header > p {
+.industries-overview-header>p,
+.clients-section-header>p {
   margin: 0;
   color: #63778c;
   font-size: 16px;
@@ -210,7 +282,7 @@
   fill: #ffffff;
 }
 
-.industries-page-card-top > span {
+.industries-page-card-top>span {
   color: rgba(8, 37, 65, 0.2);
   font-size: 13px;
   font-weight: 800;
@@ -238,11 +310,9 @@
   padding: 115px 0 130px;
   overflow: hidden;
   background:
-    radial-gradient(
-      circle at 8% 15%,
+    radial-gradient(circle at 8% 15%,
       rgba(40, 181, 173, 0.11),
-      transparent 28%
-    ),
+      transparent 28%),
     #f5f9fb;
 }
 
@@ -323,7 +393,7 @@
   gap: 40px;
 }
 
-.industries-cta-content > div > span {
+.industries-cta-content>div>span {
   color: #47d5cd;
   font-size: 12px;
   font-weight: 800;
@@ -340,7 +410,7 @@
   letter-spacing: -1.6px;
 }
 
-.industries-cta-content > a {
+.industries-cta-content>a {
   display: inline-flex;
   align-items: center;
   gap: 14px;
@@ -354,7 +424,7 @@
   text-decoration: none;
 }
 
-.industries-cta-content > a span {
+.industries-cta-content>a span {
   display: grid;
   width: 30px;
   height: 30px;
@@ -380,10 +450,38 @@
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .industries-page-hero {
     padding: 145px 0 90px;
   }
+
+  .industries-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .industries-hero-visual {
+    min-height: 320px;
+    margin-left: 0;
+    overflow: hidden;
+    border-radius: 28px;
+  }
+
+  .industries-hero-visual::before {
+    background: linear-gradient(180deg,
+        rgba(247, 250, 252, 0.02),
+        rgba(247, 250, 252, 0.34));
+  }
+
+  .industries-hero-visual img {
+    width: 100%;
+    min-height: 320px;
+    object-fit: contain;
+    transform: none;
+  }
+}
+
+@media (max-width: 800px) {
 
   .industries-overview,
   .clients-section {
@@ -418,6 +516,16 @@
     letter-spacing: -1.2px;
   }
 
+  .industries-hero-visual {
+    min-height: 250px;
+  }
+
+  .industries-hero-visual img {
+    width: 100%;
+    min-height: 250px;
+    transform: none;
+  }
+
   .client-logo-card {
     width: 190px;
     height: 135px;
@@ -428,7 +536,7 @@
     height: 62px;
   }
 
-  .industries-cta-content > a {
+  .industries-cta-content>a {
     width: 100%;
     justify-content: space-between;
   }
@@ -438,4 +546,52 @@
   .clients-track {
     animation: none;
   }
+}
+
+/* ==========================================================
+   INDUSTRIES PAGE NAVBAR
+   Applies only while the Industries page is present.
+========================================================== */
+/* ==========================================================
+   INDUSTRIES PAGE NAVBAR
+========================================================== */
+
+/* Navigation Links */
+.industries-page .navbar-menu a,
+.industries-page .navbar-links a,
+.industries-page .nav-links a {
+    color: #082541 !important;
+}
+
+/* Active Page */
+.industries-page .navbar-menu a.active,
+.industries-page .navbar-links a.active,
+.industries-page .nav-links a.active {
+    color: #169f99 !important;
+}
+
+/* Hover */
+.industries-page .navbar-menu a:hover,
+.industries-page .navbar-links a:hover,
+.industries-page .nav-links a:hover {
+    color: #169f99 !important;
+}
+
+/* Language Switcher */
+.industries-page .language-switch,
+.industries-page .language-switch button,
+.industries-page .language-selector {
+    color: #082541 !important;
+}
+
+/* Globe Icon */
+.industries-page .language-switch svg,
+.industries-page .language-selector svg {
+    color: #169f99 !important;
+}
+
+/* Get Quote button */
+.industries-page .quote-btn,
+.industries-page .get-quote-btn {
+    color: #ffffff !important;
 }
