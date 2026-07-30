@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 import contactRouter from "./routes/contactRoutes.js";
 import connectDB from "./config/db.js";
 import { verifyEmailConnection } from "./utils/sendEmail.js";
+import authRouter from "./routes/authRoutes.js";
 
 /* ==========================================================
    DNS CONFIGURATION
@@ -85,6 +86,8 @@ app.get("/health", (req, res) => {
 ========================================================== */
 
 app.use("/api/contact", contactRouter);
+
+app.use("/api/auth", authRouter);
 
 /* ==========================================================
    404 HANDLER
