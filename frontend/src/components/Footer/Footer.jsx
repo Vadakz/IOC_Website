@@ -111,7 +111,7 @@ export default function Footer() {
 
             <div className="footer-contact-list">
               <a
-                href="https://maps.google.com/?q=Riyadh+Saudi+Arabia"
+                href="https://www.google.com/maps/place/%D9%85%D8%B1%D9%83%D8%B2+%D8%A7%D9%84%D8%B6%D8%A8%D8%A7%D8%A8%E2%80%AD/@24.6652146,46.7082051,128m/data=!3m1!1e3!4m6!3m5!1s0x3e2f048a1b400001:0xb6b688ddfd833296!8m2!3d24.6654299!4d46.7084972!16s%2Fg%2F11kj904j5k?entry=ttu&g_ep=EgoyMDI2MDcyMi4wIKXMDSoASAFQAw%3D%3D"
                 target="_blank"
                 rel="noreferrer"
                 className="footer-contact-item"
