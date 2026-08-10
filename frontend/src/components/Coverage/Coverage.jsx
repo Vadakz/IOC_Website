@@ -1,9 +1,19 @@
 import "./Coverage.css";
 import "leaflet/dist/leaflet.css";
 
-import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import {
+  MapContainer,
+  Marker,
+  Popup,
+  TileLayer,
+} from "react-leaflet";
+
 import { useTranslation } from "react-i18next";
 import L from "leaflet";
+
+/* ==========================================================
+   CURRENT COVERAGE LOCATIONS
+========================================================== */
 
 const locations = [
   {
@@ -28,6 +38,29 @@ const locations = [
   },
 ];
 
+/* ==========================================================
+   FUTURE COVERAGE LOCATIONS
+========================================================== */
+
+const futureLocations = [
+  {
+    name: "Makkah",
+    region: "Western Region",
+  },
+  {
+    name: "Madinah",
+    region: "Western Region",
+  },
+  {
+    name: "Yanbu",
+    region: "Western Region",
+  },
+];
+
+/* ==========================================================
+   MAP MARKER ICON
+========================================================== */
+
 const locationIcon = L.divIcon({
   className: "coverage-custom-marker",
   html: `
@@ -39,16 +72,30 @@ const locationIcon = L.divIcon({
   popupAnchor: [0, -16],
 });
 
+/* ==========================================================
+   COVERAGE COMPONENT
+========================================================== */
+
 export default function Coverage() {
   const { t } = useTranslation();
-  const coverageStats = t("coverage.stats", { returnObjects: true });
+
+  const coverageStats = t("coverage.stats", {
+    returnObjects: true,
+  });
 
   return (
-    <section className="coverage-section" id="coverage">
+    <section className="coverage-section">
       <div className="coverage-container">
+
+        {/* ======================================================
+            SECTION HEADER
+        ====================================================== */}
+
         <div className="coverage-header">
           <div>
-            <span className="coverage-label">{t("coverage.label")}</span>
+            <span className="coverage-label">
+              {t("coverage.label")}
+            </span>
 
             <h2>
               {t("coverage.title")}
@@ -61,41 +108,142 @@ export default function Coverage() {
           </p>
         </div>
 
+        {/* ======================================================
+            MAIN COVERAGE LAYOUT
+        ====================================================== */}
+
         <div className="coverage-layout">
-          <div className="coverage-location-panel">
-            <div className="coverage-panel-heading">
-              <span>{t("coverage.locationsLabel")}</span>
-              <strong>
-                {t("coverage.locationsCount", { count: locations.length })}
-              </strong>
-            </div>
 
-            <div className="coverage-location-list">
-              {locations.map((location) => (
-                <div className="coverage-location-card" key={location.name}>
-                  <span className="coverage-location-pin"></span>
+          {/* ====================================================
+              LEFT SIDE
+              CURRENT + FUTURE COVERAGE
+          ==================================================== */}
 
-                  <div>
-                    <h3>{t(`coverage.locations.${location.name}.name`)}</h3>
-                    <p>{t(`coverage.locations.${location.name}.region`)}</p>
+          <div className="coverage-side-column">
+
+            {/* ==================================================
+                CURRENT COVERAGE
+            ================================================== */}
+
+            <div className="coverage-location-panel">
+
+              <div className="coverage-panel-heading">
+                <span>
+                  {t("coverage.currentCoverageLabel")}
+                </span>
+
+                <strong>
+                  {t("coverage.currentCoverageCount", {
+                    count: locations.length,
+                  })}
+                </strong>
+              </div>
+
+              <div className="coverage-location-list">
+                {locations.map((location) => (
+                  <div
+                    className="coverage-location-card"
+                    key={location.name}
+                  >
+                    <span className="coverage-location-pin" />
+
+                    <div>
+                      <h3>
+                        {t(
+                          `coverage.locations.${location.name}.name`
+                        )}
+                      </h3>
+
+                      <p>
+                        {t(
+                          `coverage.locations.${location.name}.region`
+                        )}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
+
             </div>
+
+            {/* ==================================================
+                FUTURE COVERAGE
+            ================================================== */}
+
+            <div className="coverage-location-panel coverage-future-panel">
+
+              <div className="coverage-panel-heading">
+                <span>
+                  {t("coverage.futureCoverageLabel")}
+                </span>
+
+                <strong className="coverage-future-count">
+                  {t("coverage.futureCoverageCount", {
+                    count: futureLocations.length,
+                  })}
+                </strong>
+              </div>
+
+              <div className="coverage-location-list">
+                {futureLocations.map((location) => (
+                  <div
+                    className="coverage-location-card coverage-future-location-card"
+                    key={location.name}
+                  >
+                    <span className="coverage-location-pin coverage-future-pin" />
+
+                    <div>
+                      <h3>
+                        {t(
+                          `coverage.futureLocations.${location.name}.name`
+                        )}
+                      </h3>
+
+                      <p>
+                        {t(
+                          `coverage.futureLocations.${location.name}.region`
+                        )}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+            </div>
+
           </div>
 
+          {/* ====================================================
+              MAP SECTION
+          ==================================================== */}
+
           <div className="coverage-map-card">
+
+            {/* ==================================================
+                MAP HEADER
+            ================================================== */}
+
             <div className="coverage-map-top">
               <div>
-                <span>{t("coverage.network")}</span>
-                <h3>{t("coverage.networkTitle")}</h3>
+                <span>
+                  {t("coverage.network")}
+                </span>
+
+                <h3>
+                  {t("coverage.networkTitle")}
+                </h3>
               </div>
 
               <div className="coverage-map-status">
-                <span></span>
+                <span />
                 {t("coverage.active")}
               </div>
             </div>
+
+            {/* ==================================================
+                LEAFLET MAP
+            ================================================== */}
+
             <MapContainer
               center={[24.2, 45]}
               zoom={5.8}
@@ -126,28 +274,48 @@ export default function Coverage() {
                   <Popup>
                     <div className="coverage-popup">
                       <strong>
-                        {t(`coverage.locations.${location.name}.name`)}
+                        {t(
+                          `coverage.locations.${location.name}.name`
+                        )}
                       </strong>
+
                       <span>
-                        {t(`coverage.locations.${location.name}.region`)}
+                        {t(
+                          `coverage.locations.${location.name}.region`
+                        )}
                       </span>
-                      <p>{t("coverage.popup")}</p>
+
+                      <p>
+                        {t("coverage.popup")}
+                      </p>
                     </div>
                   </Popup>
                 </Marker>
               ))}
             </MapContainer>
 
+            {/* ==================================================
+                MAP FOOTER STATS
+            ================================================== */}
+
             <div className="coverage-map-footer">
               {coverageStats.map((stat) => (
                 <div key={stat.label}>
-                  <strong>{stat.value}</strong>
-                  <span>{stat.label}</span>
+                  <strong>
+                    {stat.value}
+                  </strong>
+
+                  <span>
+                    {stat.label}
+                  </span>
                 </div>
               ))}
             </div>
+
           </div>
+
         </div>
+
       </div>
     </section>
   );

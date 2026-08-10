@@ -55,9 +55,8 @@ export default function Navbar() {
                 </Link>
 
                 <nav
-                    className={`navbar-links ${
-                        menuOpen ? "navbar-links-open" : ""
-                    }`}
+                    className={`navbar-links ${menuOpen ? "navbar-links-open" : ""
+                        }`}
                 >
                     <Link to="/" onClick={closeMenu}>
                         {t("navbar.home")}
@@ -69,6 +68,13 @@ export default function Navbar() {
                     >
                         {t("navbar.about")}
                     </button>
+
+                    <Link
+                        to="/journey"
+                        onClick={closeMenu}
+                    >
+                        {t("navbar.journey")}
+                    </Link>
 
                     <div className="navbar-dropdown">
                         <button
@@ -83,6 +89,7 @@ export default function Navbar() {
                         <div className="navbar-dropdown-menu">
                             {services.map((service) => {
                                 const ServiceIcon = service.icon;
+
                                 const localizedTitle = isArabic
                                     ? t(`serviceItems.${service.slug}.menuTitle`)
                                     : service.menuTitle;
@@ -111,7 +118,10 @@ export default function Navbar() {
                         {t("navbar.coverage")}
                     </button>
 
-                    <Link to="/contact" onClick={closeMenu}>
+                    <Link
+                        to="/contact"
+                        onClick={closeMenu}
+                    >
                         {t("navbar.contact")}
                     </Link>
 
@@ -192,9 +202,8 @@ export default function Navbar() {
 
                     <button
                         type="button"
-                        className={`navbar-toggle ${
-                            menuOpen ? "navbar-toggle-active" : ""
-                        }`}
+                        className={`navbar-toggle ${menuOpen ? "navbar-toggle-active" : ""
+                            }`}
                         aria-label={
                             menuOpen
                                 ? t("navbar.closeMenu")

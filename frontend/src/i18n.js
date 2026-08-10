@@ -10,6 +10,7 @@ const en = {
   navbar: {
     home: "Home",
     about: "About Us",
+    journey: "Our Journey",
     services: "Services",
     coverage: "Coverage",
     contact: "Contact Us",
@@ -65,25 +66,236 @@ const en = {
     label: "Our Coverage",
     title: "Operational coverage across the",
     titleAccent: "Kingdom of Saudi Arabia",
+
     description:
       "IOC provides integrated facility management and operational support across major cities and industrial regions throughout the Kingdom.",
+
+    // =========================
+    // CURRENT COVERAGE
+    // =========================
+
+    currentCoverageLabel: "Current Coverage",
+    currentCoverageCount: "{{count}} Locations",
+
     locationsLabel: "Operational locations",
     locationsCount: "{{count}} Locations",
+
+    locations: {
+      Riyadh: {
+        name: "Riyadh",
+        region: "Central Region",
+      },
+
+      Jeddah: {
+        name: "Jeddah",
+        region: "Western Region",
+      },
+
+      Dammam: {
+        name: "Dammam",
+        region: "Eastern Region",
+      },
+
+      Jubail: {
+        name: "Jubail",
+        region: "Eastern Industrial Region",
+      },
+    },
+
+    // =========================
+    // FUTURE COVERAGE
+    // =========================
+
+    futureCoverageLabel: "Future Coverage",
+    futureCoverageCount: "{{count}} Locations",
+
+    futureLocations: {
+      Makkah: {
+        name: "Makkah",
+        region: "Western Region",
+      },
+
+      Madinah: {
+        name: "Madinah",
+        region: "Western Region",
+      },
+
+      Yanbu: {
+        name: "Yanbu",
+        region: "Western Region",
+      },
+    },
+
+    // =========================
+    // MAP
+    // =========================
+
     network: "IOC Operational Network",
     networkTitle: "Kingdom-wide service coverage",
     active: "Active",
     popup: "IOC operational service coverage",
-    locations: {
-      Riyadh: { name: "Riyadh", region: "Central Region" },
-      Jeddah: { name: "Jeddah", region: "Western Region" },
-      Dammam: { name: "Dammam", region: "Eastern Region" },
-      Jubail: { name: "Jubail", region: "Eastern Industrial Region" },
-    },
+
     stats: [
-      { value: "4", label: "Operational Hubs" },
-      { value: "24/7", label: "Support Services" },
-      { value: "KSA", label: "Nationwide Capability" },
+      {
+        value: "4",
+        label: "Operational Hubs",
+      },
+      {
+        value: "24/7",
+        label: "Support Services",
+      },
+      {
+        value: "KSA",
+        label: "Nationwide Capability",
+      },
     ],
+  },
+
+  /* ==========================================================
+   JOURNEY
+========================================================== */
+
+  journey: {
+    hero: {
+      label: "Our Journey",
+      title: "A Legacy of",
+      accent: "Operational Excellence",
+      description:
+        "From the foundation of Mawarid Holding in 1968 to decades of operational experience through ECO and IOC, our journey reflects a longstanding commitment to reliable service, sustainable growth and client-focused delivery.",
+      startYear: "1968",
+      today: "Today",
+    },
+
+    foundation: {
+      label: "Where It All Began",
+      title: "Built on a Strong Saudi Legacy",
+      description:
+        "Our journey is rooted in a well-established Saudi family-owned group with decades of diversified business and operational experience.",
+      companyType: "Holding Company",
+      company: "Mawarid Holding",
+      year: "1968",
+      text:
+        "Established in 1968, Mawarid Holding created the foundation for a diversified group of companies operating across multiple sectors in the Kingdom of Saudi Arabia.",
+    },
+
+    connection: {
+      label: "A Shared Heritage",
+      title: "Two Companies. One Established Operational Legacy.",
+      description:
+        "ECO and IOC are sister companies under Mawarid Holding, sharing a common heritage, operational experience and commitment to delivering dependable services across Saudi Arabia.",
+      holdingLabel: "Holding Company",
+      sisterCompany: "Sister Company",
+    },
+
+    eco: {
+      name: "ECO",
+      fullName: "Eastern Catering & Operations Company",
+      description:
+        "ECO has long been recognized by clients for its operational services and extensive experience across facility support, environmental services and related operational activities.",
+      note:
+        "For many longstanding clients, ECO represents a familiar name associated with dependable operational service delivery.",
+    },
+
+    ioc: {
+      name: "IOC",
+      fullName: "International Operations Company",
+      established: "Established 1982",
+      description:
+        "Established in 1982, IOC has developed more than four decades of market presence across Saudi Arabia, delivering integrated facility management and operational solutions to a diverse client base.",
+      note:
+        "IOC builds on the same group heritage, experience and commitment to quality while presenting a modern, integrated facility management identity.",
+    },
+
+    legacy: {
+      label: "A Familiar Legacy",
+      title: "You May Already Know Us Through ECO.",
+      description:
+        "Many of our clients are familiar with ECO and its history of operational service delivery. IOC shares the same Mawarid heritage and brings forward decades of group experience, capability and commitment to service excellence.",
+      highlight:
+        "The name may be different, but the experience, operational understanding and commitment to dependable service are built on the same longstanding group legacy.",
+    },
+
+    expertise: {
+      label: "Shared Operational Expertise",
+      title: "Decades of Experience Across Essential Services",
+      description:
+        "Across ECO and IOC, our operational experience spans a broad range of facility, environmental and technical services designed to support complex client environments.",
+
+      items: {
+        waste: {
+          title: "Waste Management",
+          description:
+            "Reliable waste collection, handling and environmental support for commercial, industrial and community operations.",
+        },
+
+        pest: {
+          title: "Pest Management",
+          description:
+            "Integrated pest management programmes focused on inspection, prevention, treatment and ongoing monitoring.",
+        },
+
+        janitorial: {
+          title: "Janitorial Services",
+          description:
+            "Professional cleaning and workplace-care services supporting safe, hygienic and well-maintained environments.",
+        },
+
+        mep: {
+          title: "MEP & HVAC",
+          description:
+            "Technical maintenance and support for mechanical, electrical, plumbing and HVAC systems.",
+        },
+
+        environmental: {
+          title: "Environmental Services",
+          description:
+            "Operational solutions supporting cleaner environments, responsible practices and sustainable service delivery.",
+        },
+
+        support: {
+          title: "Operational Support",
+          description:
+            "Flexible operational support services tailored to the specific requirements of each facility and client.",
+        },
+      },
+    },
+
+    today: {
+      label: "IOC Today",
+      title: "Experience Built for",
+      accent: "the Future",
+      description:
+        "Today, IOC combines decades of operational experience with modern technology, skilled teams and sustainable practices to deliver integrated facility management solutions across the Kingdom.",
+
+      sustainabilityLabel: "Our Commitment",
+      sustainability: "Embracing Sustainable Living",
+
+      stats: {
+        years: {
+          value: "40+",
+          label: "Years of Market Experience",
+        },
+
+        clients: {
+          value: "1000+",
+          label: "Clients Served",
+        },
+
+        coverage: {
+          value: "KSA",
+          label: "Nationwide Capability",
+        },
+      },
+    },
+
+    cta: {
+      label: "Moving Forward",
+      title:
+        "Building on Decades of Experience to Deliver Better Operations.",
+      description:
+        "Discover how IOC combines operational expertise, integrated services and sustainable practices to support your business.",
+      button: "Explore Our Services",
+    },
   },
   whyChoose: {
     label: "Why Choose IOC",
@@ -288,6 +500,7 @@ const ar = {
   navbar: {
     home: "الرئيسية",
     about: "من نحن",
+    journey: "مسيرتنا",
     services: "خدماتنا",
     coverage: "نطاق التغطية",
     contact: "اتصل بنا",
@@ -343,25 +556,235 @@ const ar = {
     label: "نطاق التغطية",
     title: "تغطية تشغيلية في جميع أنحاء",
     titleAccent: "المملكة العربية السعودية",
+
     description:
       "تقدم IOC خدمات متكاملة لإدارة المرافق والدعم التشغيلي في المدن والمناطق الصناعية الرئيسية في المملكة.",
+
+    // =========================
+    // CURRENT COVERAGE
+    // =========================
+
+    currentCoverageLabel: "مناطق التغطية الحالية",
+    currentCoverageCount: "{{count}} مواقع",
+
     locationsLabel: "المواقع التشغيلية",
     locationsCount: "{{count}} مواقع",
+
+    locations: {
+      Riyadh: {
+        name: "الرياض",
+        region: "المنطقة الوسطى",
+      },
+
+      Jeddah: {
+        name: "جدة",
+        region: "المنطقة الغربية",
+      },
+
+      Dammam: {
+        name: "الدمام",
+        region: "المنطقة الشرقية",
+      },
+
+      Jubail: {
+        name: "الجبيل",
+        region: "المنطقة الصناعية الشرقية",
+      },
+    },
+
+    // =========================
+    // FUTURE COVERAGE
+    // =========================
+
+    futureCoverageLabel: "مناطق التغطية المستقبلية",
+    futureCoverageCount: "{{count}} مواقع",
+
+    futureLocations: {
+      Makkah: {
+        name: "مكة المكرمة",
+        region: "المنطقة الغربية",
+      },
+
+      Madinah: {
+        name: "المدينة المنورة",
+        region: "المنطقة الغربية",
+      },
+
+      Yanbu: {
+        name: "ينبع",
+        region: "المنطقة الغربية",
+      },
+    },
+
+    // =========================
+    // MAP
+    // =========================
+
     network: "شبكة IOC التشغيلية",
     networkTitle: "تغطية خدمية على مستوى المملكة",
     active: "نشط",
     popup: "تغطية خدمات IOC التشغيلية",
-    locations: {
-      Riyadh: { name: "الرياض", region: "المنطقة الوسطى" },
-      Jeddah: { name: "جدة", region: "المنطقة الغربية" },
-      Dammam: { name: "الدمام", region: "المنطقة الشرقية" },
-      Jubail: { name: "الجبيل", region: "المنطقة الصناعية الشرقية" },
-    },
+
     stats: [
-      { value: "4", label: "مراكز تشغيلية" },
-      { value: "24/7", label: "خدمات الدعم" },
-      { value: "المملكة", label: "قدرات تغطي المملكة" },
+      {
+        value: "4",
+        label: "مراكز تشغيلية",
+      },
+      {
+        value: "24/7",
+        label: "خدمات الدعم",
+      },
+      {
+        value: "KSA",
+        label: "قدرات على مستوى المملكة",
+      },
     ],
+  },
+  /* ==========================================================
+   JOURNEY
+========================================================== */
+
+  journey: {
+    hero: {
+      label: "مسيرتنا",
+      title: "إرث من",
+      accent: "التميز التشغيلي",
+      description:
+        "من تأسيس مجموعة موارد عام 1968 إلى عقود من الخبرة التشغيلية من خلال ECO وIOC، تعكس مسيرتنا التزاماً راسخاً بالخدمة الموثوقة والنمو المستدام وتقديم الحلول التي تركز على احتياجات العملاء.",
+      startYear: "1968",
+      today: "اليوم",
+    },
+
+    foundation: {
+      label: "من حيث بدأت المسيرة",
+      title: "إرث سعودي راسخ",
+      description:
+        "تستند مسيرتنا إلى مجموعة سعودية عائلية عريقة تمتلك عقوداً من الخبرة المتنوعة في الأعمال والعمليات.",
+      companyType: "الشركة القابضة",
+      company: "مجموعة موارد",
+      year: "1968",
+      text:
+        "تأسست مجموعة موارد عام 1968، وشكلت الأساس لمجموعة متنوعة من الشركات التي تعمل في قطاعات متعددة داخل المملكة العربية السعودية.",
+    },
+
+    connection: {
+      label: "إرث مشترك",
+      title: "شركتان بإرث تشغيلي واحد راسخ.",
+      description:
+        "تعد ECO وIOC شركتين شقيقتين تحت مظلة مجموعة موارد، وتشتركان في إرث واحد وخبرة تشغيلية طويلة والتزام بتقديم خدمات موثوقة في مختلف أنحاء المملكة.",
+      holdingLabel: "الشركة القابضة",
+      sisterCompany: "شركة شقيقة",
+    },
+
+    eco: {
+      name: "ECO",
+      fullName: "شركة التموين والعمليات الشرقية",
+      description:
+        "تُعرف ECO لدى العديد من العملاء بخبرتها الطويلة في الخدمات التشغيلية ودعم المرافق والخدمات البيئية والأنشطة المرتبطة بها.",
+      note:
+        "بالنسبة للعديد من عملائنا منذ سنوات طويلة، تمثل ECO اسماً مألوفاً يرتبط بتقديم خدمات تشغيلية موثوقة.",
+    },
+
+    ioc: {
+      name: "IOC",
+      fullName: "الشركة الدولية للتشغيل",
+      established: "تأسست عام 1982",
+      description:
+        "تأسست IOC عام 1982، وتمتلك أكثر من أربعة عقود من الحضور في السوق السعودي، حيث تقدم حلولاً متكاملة لإدارة المرافق والخدمات التشغيلية لقاعدة متنوعة من العملاء.",
+      note:
+        "تستند IOC إلى الإرث والخبرة نفسها ضمن المجموعة، مع هوية حديثة تركز على الإدارة المتكاملة للمرافق وجودة الخدمة.",
+    },
+
+    legacy: {
+      label: "إرث مألوف",
+      title: "قد تكون تعرفنا بالفعل من خلال ECO.",
+      description:
+        "يعرف العديد من عملائنا ECO وتاريخها الطويل في تقديم الخدمات التشغيلية. وتشترك IOC معها في إرث مجموعة موارد، مستندة إلى عقود من الخبرة والقدرات والالتزام بالتميز في تقديم الخدمات.",
+      highlight:
+        "قد يكون الاسم مختلفاً، لكن الخبرة والفهم التشغيلي والالتزام بالخدمة الموثوقة تستند جميعها إلى الإرث نفسه الممتد عبر عقود.",
+    },
+
+    expertise: {
+      label: "خبرات تشغيلية مشتركة",
+      title: "عقود من الخبرة في الخدمات الأساسية",
+      description:
+        "تمتد خبرات ECO وIOC عبر مجموعة واسعة من خدمات المرافق والخدمات البيئية والفنية المصممة لدعم البيئات التشغيلية المختلفة للعملاء.",
+
+      items: {
+        waste: {
+          title: "إدارة النفايات",
+          description:
+            "خدمات موثوقة لجمع وإدارة النفايات والدعم البيئي للمنشآت التجارية والصناعية والمجتمعات.",
+        },
+
+        pest: {
+          title: "مكافحة الآفات",
+          description:
+            "برامج متكاملة لمكافحة الآفات تعتمد على الفحص والوقاية والمعالجة والمراقبة المستمرة.",
+        },
+
+        janitorial: {
+          title: "خدمات النظافة",
+          description:
+            "خدمات تنظيف وعناية احترافية ببيئة العمل للحفاظ على منشآت آمنة وصحية وحسنة المظهر.",
+        },
+
+        mep: {
+          title: "خدمات MEP والتكييف",
+          description:
+            "صيانة ودعم فني للأنظمة الميكانيكية والكهربائية والصحية وأنظمة التكييف.",
+        },
+
+        environmental: {
+          title: "الخدمات البيئية",
+          description:
+            "حلول تشغيلية تدعم البيئات الأنظف والممارسات المسؤولة وتقديم الخدمات بصورة مستدامة.",
+        },
+
+        support: {
+          title: "الدعم التشغيلي",
+          description:
+            "خدمات دعم تشغيلي مرنة يتم تصميمها وفق متطلبات كل منشأة واحتياجات كل عميل.",
+        },
+      },
+    },
+
+    today: {
+      label: "IOC اليوم",
+      title: "خبرة راسخة من أجل",
+      accent: "المستقبل",
+      description:
+        "تجمع IOC اليوم بين عقود من الخبرة التشغيلية والتقنيات الحديثة والكوادر المؤهلة والممارسات المستدامة لتقديم حلول متكاملة لإدارة المرافق في مختلف أنحاء المملكة.",
+
+      sustainabilityLabel: "التزامنا",
+      sustainability: "نحتضن الحياة المستدامة",
+
+      stats: {
+        years: {
+          value: "+40",
+          label: "عاماً من الخبرة في السوق",
+        },
+
+        clients: {
+          value: "+600",
+          label: "عميل تمت خدمتهم",
+        },
+
+        coverage: {
+          value: "KSA",
+          label: "قدرات على مستوى المملكة",
+        },
+      },
+    },
+
+    cta: {
+      label: "نحو المستقبل",
+      title:
+        "نبني على عقود من الخبرة لتقديم عمليات أفضل.",
+      description:
+        "اكتشف كيف تجمع IOC بين الخبرة التشغيلية والخدمات المتكاملة والممارسات المستدامة لدعم أعمالك.",
+      button: "استكشف خدماتنا",
+    },
   },
   whyChoose: {
     label: "لماذا تختار IOC",

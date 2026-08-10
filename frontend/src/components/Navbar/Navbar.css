@@ -1,437 +1,776 @@
+/* ==========================================================
+   FLOATING GLASS NAVBAR
+========================================================== */
+
 .navbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    width: 100%;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
-    background: rgba(4, 22, 43, 0.24);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: min(94%, 1240px);
+
+  z-index: 1000;
+
+  background: rgba(6, 32, 56, 0.20);
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+
+  box-shadow:
+    0 14px 38px rgba(0, 0, 0, 0.2);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
+
+
+/* ==========================================================
+   NAVBAR CONTAINER
+========================================================== */
 
 .navbar-container {
-    width: min(92%, 1240px);
-    min-height: 88px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 32px;
+  width: 100%;
+  height: 76px;
+
+  padding: 0 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 28px;
 }
 
+
+/* ==========================================================
+   BRAND
+========================================================== */
+
 .navbar-brand {
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-    overflow: hidden;
+  display: flex;
+  align-items: center;
+
+  flex-shrink: 0;
+
+  text-decoration: none;
 }
 
 .navbar-logo {
-    display: block;
-    height: 80px;
-    width: auto;
-    object-fit: contain;
-    max-width: 190;
-    transition: .3s;
+  display: block;
+
+  height: 66px;
+  width: auto;
+  max-width: 185px;
+
+  object-fit: contain;
+
+  transition: transform 0.3s ease;
 }
 
 .navbar-logo:hover {
-    transform: scale(1.04);
+  transform: scale(1.03);
 }
 
+
+/* ==========================================================
+   BRAND DETAILS
+========================================================== */
+
 .brand-details strong {
-    font-size: 14px;
-    letter-spacing: 0.3px;
+  color: #ffffff;
+
+  font-size: 14px;
+  letter-spacing: 0.3px;
 }
 
 .brand-details small {
-    margin-top: 4px;
-    font-size: 10px;
-    letter-spacing: 0.8px;
-    color: rgba(255, 255, 255, 0.68);
-    text-transform: uppercase;
+  display: block;
+
+  margin-top: 4px;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 10px;
+  letter-spacing: 0.8px;
+
+  text-transform: uppercase;
 }
+
+
+/* ==========================================================
+   NAV LINKS
+========================================================== */
 
 .navbar-links {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
+  display: flex;
+  align-items: center;
 
-.navbar-links button {
-    border: none;
-    background: transparent;
-    color: inherit;
-    font: inherit;
-    cursor: pointer;
-    padding: 0;
+  gap: 26px;
 }
 
 .navbar-links a,
 .navbar-links button {
-    color: #ffffff;
+  text-decoration: none;
 }
 
-.navbar-links a:hover,
-.navbar-links button:hover {
-    color: #ffffff;
-    opacity: 0.8;
+.navbar-links button {
+  border: none;
+  background: transparent;
+
+  font: inherit;
+
+  cursor: pointer;
 }
 
-.navbar-links a.active,
-.navbar-links button.active {
-    color: #ffffff;
-    font-weight: 600;
-}
+
+/* ==========================================================
+   NORMAL NAV LINKS
+========================================================== */
 
 .navbar-links a:not(.navbar-mobile-quote),
 .navbar-links button {
-    position: relative;
-    padding: 10px 0;
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 14px;
-    font-weight: 500;
-    background: none;
-    border: none;
-    cursor: pointer;
-    transition: color 0.25s ease;
+  position: relative;
+
+  padding: 10px 0;
+
+  color: rgba(255, 255, 255, 0.9);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  background: none;
+  border: none;
+
+  cursor: pointer;
+
+  transition: color 0.25s ease;
 }
+
+
+/* Underline */
 
 .navbar-links a:not(.navbar-mobile-quote)::after,
 .navbar-links button::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 2px;
-    width: 0;
-    height: 2px;
-    background: #28b5ad;
-    transition: width 0.25s ease;
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 2px;
+
+  width: 0;
+  height: 2px;
+
+  border-radius: 20px;
+
+  background: #28b5ad;
+
+  transition: width 0.25s ease;
 }
+
+
+/* Hover */
 
 .navbar-links a:not(.navbar-mobile-quote):hover,
 .navbar-links button:hover {
-    color: #ffffff;
+  color: #47d5cd;
 }
 
 .navbar-links a:not(.navbar-mobile-quote):hover::after,
 .navbar-links button:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
-.navbar-actions {
-    display: flex;
-    align-items: center;
-    gap: 16px;
+
+/* Active */
+
+.navbar-links a.active,
+.navbar-links button.active {
+  color: #47d5cd;
+
+  font-weight: 700;
 }
+
+.navbar-links a.active::after,
+.navbar-links button.active::after {
+  width: 100%;
+}
+
+
+/* ==========================================================
+   NAVBAR ACTIONS
+========================================================== */
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  flex-shrink: 0;
+}
+
+
+/* ==========================================================
+   LANGUAGE SWITCHER
+========================================================== */
 
 .navbar-language,
 .navbar-mobile-language {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+
+  gap: 7px;
+
+  white-space: nowrap;
 }
 
 .navbar-language-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 15px;
-    line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #47d5cd;
+
+  font-size: 15px;
 }
 
 .navbar-language button,
 .navbar-mobile-language button {
-    position: static;
-    padding: 0;
-    border: none;
-    background: transparent;
-    color: rgba(255, 255, 255, 0.68);
-    font: inherit;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: color 0.2s ease;
+  position: static;
+
+  padding: 0;
+
+  border: none;
+  background: transparent;
+
+  color: rgba(255, 255, 255, 0.62);
+
+  font: inherit;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: color 0.2s ease;
 }
 
-/* Prevent navbar underline effect on language buttons */
 .navbar-language button::after,
 .navbar-mobile-language button::after {
-    display: none;
+  display: none;
 }
 
 .navbar-language button:hover,
 .navbar-mobile-language button:hover {
-    color: #ffffff;
-    opacity: 1;
+  color: #ffffff;
 }
 
 .navbar-language button.active,
 .navbar-mobile-language button.active {
-    color: #28b5ad;
-    font-weight: 700;
+  color: #47d5cd;
+
+  font-weight: 700;
 }
 
 .language-divider {
-    color: rgba(255, 255, 255, 0.32);
+  color: rgba(255, 255, 255, 0.28);
 }
 
 .navbar-mobile-language {
-    display: none;
+  display: none;
 }
 
-/* Services dropdown container */
+
+/* ==========================================================
+   SERVICES DROPDOWN CONTAINER
+========================================================== */
+
 .navbar-dropdown {
-    position: relative;
+  position: relative;
 }
 
-/* Services navbar button */
 .navbar-dropdown-trigger {
-    display: flex;
-    align-items: center;
-    gap: 6px;
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
 }
 
 .dropdown-arrow {
-    display: inline-block;
-    font-size: 11px;
-    transition: transform 0.25s ease;
+  display: inline-block;
+
+  font-size: 10px;
+
+  transition: transform 0.25s ease;
 }
 
-/* Dropdown box */
+
+/* ==========================================================
+   SERVICES DROPDOWN MENU
+========================================================== */
+
 .navbar-dropdown-menu {
-    position: absolute;
-    top: calc(100% + 12px);
-    left: 50%;
-    width: 300px;
-    padding: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 12px;
-    background: rgba(5, 25, 48, 0.98);
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+  position: absolute;
 
-    opacity: 0;
-    visibility: hidden;
-    transform: translate(-50%, 10px);
-    transition:
-        opacity 0.25s ease,
-        visibility 0.25s ease,
-        transform 0.25s ease;
+  top: calc(100% + 14px);
+  left: 50%;
+
+  width: 300px;
+
+  padding: 10px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+
+  background: rgba(5, 29, 52, 0.96);
+
+  box-shadow:
+    0 22px 50px rgba(0, 0, 0, 0.28);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translate(-50%, 10px);
+
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease,
+    transform 0.25s ease;
+
+  z-index: 1100;
 }
 
-/* Show dropdown on hover */
+
+/* ==========================================================
+   SHOW DROPDOWN
+========================================================== */
+
 .navbar-dropdown:hover .navbar-dropdown-menu,
 .navbar-dropdown:focus-within .navbar-dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translate(-50%, 0);
+  opacity: 1;
+  visibility: visible;
+
+  transform: translate(-50%, 0);
 }
 
-.navbar-dropdown:hover .dropdown-arrow {
-    transform: rotate(180deg);
+.navbar-dropdown:hover .dropdown-arrow,
+.navbar-dropdown:focus-within .dropdown-arrow {
+  transform: rotate(180deg);
 }
 
-/* Individual service links */
+
+/* ==========================================================
+   DROPDOWN LINKS
+========================================================== */
+
 .navbar-dropdown-menu a {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    width: 100%;
-    padding: 12px 14px;
-    border-radius: 8px;
-    color: rgba(255, 255, 255, 0.88);
-    font-size: 14px;
-    text-decoration: none;
-    transition:
-        color 0.2s ease,
-        background 0.2s ease,
-        transform 0.2s ease;
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  width: 100%;
+
+  padding: 12px 14px;
+
+  border-radius: 9px;
+
+  color: rgba(255, 255, 255, 0.88);
+
+  font-size: 13px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
-/* Remove the normal navbar underline inside dropdown */
 .navbar-dropdown-menu a::after {
-    display: none;
+  display: none !important;
 }
 
 .navbar-dropdown-menu a:hover {
-    color: #ffffff;
-    background: rgba(40, 181, 173, 0.16);
-    transform: translateX(4px);
+  color: #ffffff;
+
+  background: rgba(40, 181, 173, 0.14);
+
+  transform: translateX(4px);
 }
 
+
+/* ==========================================================
+   DROPDOWN SERVICE ICON
+========================================================== */
+
 .dropdown-service-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 28px;
-    height: 28px;
-    border-radius: 7px;
-    color: #28b5ad;
-    background: rgba(40, 181, 173, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 30px;
+  width: 30px;
+  height: 30px;
+
+  border-radius: 8px;
+
+  color: #28b5ad;
+
+  background: rgba(40, 181, 173, 0.12);
 }
+
+
+/* ==========================================================
+   GET A QUOTE
+========================================================== */
 
 .navbar-quote,
 .navbar-mobile-quote {
-    padding: 12px 22px;
-    border-radius: 8px;
-    background: linear-gradient(135deg, #20a7a0, #287fc0);
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 700;
-    box-shadow: 0 10px 28px rgba(0, 169, 157, 0.25);
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px 21px;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #20a7a0,
+      #287fc0
+    );
+
+  color: #ffffff !important;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 8px 22px rgba(32, 167, 160, 0.24);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.navbar-quote::after,
+.navbar-mobile-quote::after {
+  display: none !important;
 }
 
 .navbar-quote:hover,
 .navbar-mobile-quote:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 14px 32px rgba(0, 169, 157, 0.35);
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 28px rgba(32, 167, 160, 0.34);
 }
 
 .navbar-mobile-quote {
-    display: none;
+  display: none;
 }
 
+
+/* ==========================================================
+   MOBILE TOGGLE
+========================================================== */
+
 .navbar-toggle {
-    display: none;
-    width: 42px;
-    height: 42px;
-    padding: 9px;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.08);
+  display: none;
+
+  width: 42px;
+  height: 42px;
+
+  padding: 9px;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  cursor: pointer;
 }
 
 .navbar-toggle span {
-    display: block;
-    width: 100%;
-    height: 2px;
-    margin: 5px 0;
-    border-radius: 20px;
-    background: #ffffff;
-    transition:
-        transform 0.25s ease,
-        opacity 0.25s ease;
+  display: block;
+
+  width: 100%;
+  height: 2px;
+
+  margin: 5px 0;
+
+  border-radius: 20px;
+
+  background: #ffffff;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
 }
 
 .navbar-toggle-active span:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
+  transform: translateY(7px) rotate(45deg);
 }
 
 .navbar-toggle-active span:nth-child(2) {
-    opacity: 0;
+  opacity: 0;
 }
 
 .navbar-toggle-active span:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
+  transform: translateY(-7px) rotate(-45deg);
 }
+
+
+/* ==========================================================
+   TABLET / MOBILE
+========================================================== */
 
 @media (max-width: 980px) {
-    .navbar-container {
-        min-height: 78px;
-    }
 
-    .navbar-dropdown {
-        width: 100%;
-    }
+  .navbar {
+    top: 10px;
 
-    .navbar-dropdown-trigger {
-        width: 100%;
-        justify-content: space-between;
-        padding: 13px 10px;
-    }
+    width: 96%;
 
-    .navbar-dropdown-menu {
-        position: static;
-        width: 100%;
-        max-height: 0;
-        padding: 0;
-        border: none;
-        box-shadow: none;
-        background: rgba(255, 255, 255, 0.04);
+    border-radius: 16px;
+  }
 
-        opacity: 1;
-        visibility: visible;
-        overflow: hidden;
-        transform: none;
-        transition:
-            max-height 0.3s ease,
-            padding 0.3s ease;
-    }
+  .navbar-container {
+    height: 70px;
 
-    .navbar-dropdown:hover .navbar-dropdown-menu,
-    .navbar-dropdown:focus-within .navbar-dropdown-menu {
-        max-height: 500px;
-        padding: 8px;
-        transform: none;
-    }
+    padding: 0 17px;
+  }
 
-    .navbar-dropdown-menu a {
-        padding: 11px 12px;
-    }
+  .navbar-logo {
+    height: 60px;
+  }
 
-    .navbar-links {
-        position: absolute;
-        top: 78px;
-        left: 4%;
-        right: 4%;
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 5px;
-        padding: 20px;
-        border: 1px solid rgba(255, 255, 255, 0.15);
-        border-radius: 14px;
-        background: rgba(5, 25, 48, 0.97);
-        box-shadow: 0 22px 50px rgba(0, 0, 0, 0.35);
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-14px);
-        transition:
-            opacity 0.25s ease,
-            visibility 0.25s ease,
-            transform 0.25s ease;
-    }
 
-    .navbar-links-open {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-    }
+  /* ========================================================
+     MOBILE NAV PANEL
+  ======================================================== */
 
-    .navbar-links>a:not(.navbar-mobile-quote) {
-        padding: 13px 10px;
-    }
+  .navbar-links {
+    position: absolute;
 
-    .navbar-links>a:not(.navbar-mobile-quote)::after {
-        display: none;
-    }
+    top: calc(100% + 10px);
 
-    .navbar-mobile-quote {
-        display: block;
-        margin-top: 10px;
-        text-align: center;
-    }
+    left: 0;
+    right: 0;
 
-    .navbar-quote {
-        display: none;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 
-    .navbar-toggle {
-        display: block;
-    }
+    gap: 4px;
+
+    padding: 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+
+    background: rgba(5, 29, 52, 0.96);
+
+    box-shadow:
+      0 22px 50px rgba(0, 0, 0, 0.28);
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-12px);
+
+    transition:
+      opacity 0.25s ease,
+      visibility 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .navbar-links-open {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+  }
+
+
+  /* ========================================================
+     MOBILE LINKS
+  ======================================================== */
+
+  .navbar-links > a:not(.navbar-mobile-quote),
+  .navbar-dropdown-trigger {
+    width: 100%;
+
+    padding: 12px 10px;
+
+    color: rgba(255, 255, 255, 0.9);
+
+    text-align: start;
+  }
+
+  .navbar-links > a:not(.navbar-mobile-quote)::after,
+  .navbar-dropdown-trigger::after {
+    display: none;
+  }
+
+  .navbar-links > a:not(.navbar-mobile-quote):hover,
+  .navbar-dropdown-trigger:hover {
+    color: #47d5cd;
+  }
+
+
+  /* ========================================================
+     MOBILE SERVICES DROPDOWN
+  ======================================================== */
+
+  .navbar-dropdown {
+    width: 100%;
+  }
+
+  .navbar-dropdown-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar-dropdown-menu {
+    position: static;
+
+    width: 100%;
+    max-height: 0;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    box-shadow: none;
+
+    opacity: 1;
+    visibility: visible;
+
+    overflow: hidden;
+
+    transform: none;
+
+    transition:
+      max-height 0.3s ease,
+      padding 0.3s ease;
+  }
+
+  .navbar-dropdown:hover .navbar-dropdown-menu,
+  .navbar-dropdown:focus-within .navbar-dropdown-menu {
+    max-height: 500px;
+
+    padding: 7px;
+
+    transform: none;
+  }
+
+  .navbar-dropdown-menu a {
+    padding: 10px 11px;
+
+    color: rgba(255, 255, 255, 0.82);
+  }
+
+  .navbar-dropdown-menu a:hover {
+    color: #ffffff;
+
+    background: rgba(40, 181, 173, 0.14);
+  }
+
+
+  /* ========================================================
+     MOBILE QUOTE
+  ======================================================== */
+
+  .navbar-mobile-quote {
+    display: flex;
+
+    margin-top: 10px;
+
+    text-align: center;
+  }
+
+  .navbar-quote {
+    display: none;  
+  }
+
+
+  /* ========================================================
+     MOBILE TOGGLE
+  ======================================================== */
+
+  .navbar-toggle {
+    display: block;
+  }
 }
 
-@media (max-width: 560px) {
-    .brand-details {
-        display: none;
-    }
 
-    .brand-symbol {
-        font-size: 26px;
-    }
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width: 560px) {
+
+  .navbar {
+    top: 8px;
+
+    width: calc(100% - 16px);
+
+    border-radius: 14px;
+  }
+
+  .navbar-container {
+    height: 66px;
+
+    padding: 0 13px;
+  }
+
+  .navbar-logo {
+    height: 56px;
+
+    max-width: 150px;
+  }
+
+  .brand-details {
+    display: none;
+  }
+
+
+  /* Desktop language hidden */
+
+  .navbar-language {
+    display: none;
+  }
+
+
+  /* Mobile language shown */
+
+  .navbar-mobile-language {
+    display: flex;
+    align-items: center;
+
+    padding: 10px;
+  }
+
+  .navbar-toggle {
+    width: 40px;
+    height: 40px;
+  }
 }

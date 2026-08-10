@@ -1,0 +1,1246 @@
+/* ==========================================================
+   JOURNEY PAGE
+========================================================== */
+
+.journey-page {
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+.journey-container {
+  width: min(92%, 1240px);
+  margin: 0 auto;
+}
+
+
+/* ==========================================================
+   SHARED EYEBROW
+========================================================== */
+
+.journey-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 16px;
+
+  color: #169f99;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+}
+
+.journey-eyebrow::before {
+  content: "";
+
+  width: 32px;
+  height: 2px;
+
+  background: #28b5ad;
+}
+
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.journey-hero {
+  position: relative;
+  overflow: hidden;
+
+  padding: 185px 0 125px;
+
+  background:
+    radial-gradient(
+      circle at 85% 18%,
+      rgba(40, 181, 173, 0.18),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #f8fbfd 0%,
+      #edf5f7 100%
+    );
+}
+
+.journey-hero::after {
+  content: "";
+
+  position: absolute;
+  right: -120px;
+  bottom: -180px;
+
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(40, 181, 173, 0.07);
+}
+
+.journey-hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.journey-hero h1 {
+  max-width: 950px;
+  margin: 0;
+
+  color: #082541;
+
+  font-size: clamp(48px, 6vw, 78px);
+
+  line-height: 1.02;
+  letter-spacing: -3px;
+}
+
+.journey-hero h1 span {
+  color: #169f99;
+}
+
+.journey-hero p {
+  max-width: 760px;
+
+  margin: 28px 0 0;
+
+  color: #63778c;
+
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+
+/* ==========================================================
+   HERO YEARS
+========================================================== */
+
+.journey-hero-years {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  width: min(100%, 520px);
+
+  margin-top: 42px;
+}
+
+.journey-hero-years > span {
+  color: #082541;
+
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.journey-hero-line {
+  position: relative;
+
+  flex: 1;
+
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #28b5ad,
+      rgba(40, 181, 173, 0.15)
+    );
+}
+
+.journey-hero-line span {
+  position: absolute;
+  top: 50%;
+  left: 0;
+
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: #28b5ad;
+
+  box-shadow:
+    0 0 0 7px
+    rgba(40, 181, 173, 0.12);
+
+  transform: translateY(-50%);
+}
+
+
+/* ==========================================================
+   SHARED SECTION HEADING
+========================================================== */
+
+.journey-section-heading {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+
+  align-items: end;
+
+  gap: 70px;
+
+  margin-bottom: 52px;
+}
+
+.journey-section-heading h2,
+.journey-connection-heading h2 {
+  max-width: 760px;
+
+  margin: 0;
+
+  color: #082541;
+
+  font-size: clamp(36px, 4.2vw, 56px);
+
+  line-height: 1.08;
+  letter-spacing: -2px;
+}
+
+.journey-section-heading > p,
+.journey-connection-heading > p {
+  margin: 0;
+
+  color: #63778c;
+
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+
+/* ==========================================================
+   FOUNDATION
+========================================================== */
+
+.journey-foundation {
+  padding: 120px 0;
+
+  background: #ffffff;
+}
+
+.journey-foundation-card {
+  display: grid;
+  grid-template-columns: 120px 70px 1fr;
+
+  align-items: center;
+
+  gap: 28px;
+
+  padding: 36px;
+
+  border: 1px solid rgba(8, 37, 65, 0.08);
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fbfdfe 0%,
+      #f4f9fb 100%
+    );
+
+  box-shadow:
+    0 22px 55px
+    rgba(8, 37, 65, 0.08);
+}
+
+.journey-foundation-year span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 96px;
+  height: 96px;
+
+  border-radius: 50%;
+
+  background: #082d4d;
+
+  color: #ffffff;
+
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.journey-foundation-icon {
+  display: grid;
+
+  width: 62px;
+  height: 62px;
+
+  place-items: center;
+
+  border-radius: 18px;
+
+  background:
+    rgba(40, 181, 173, 0.12);
+
+  color: #169f99;
+
+  font-size: 24px;
+}
+
+.journey-foundation-content > span {
+  color: #169f99;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.journey-foundation-content h3 {
+  margin: 8px 0 10px;
+
+  color: #082541;
+
+  font-size: 26px;
+}
+
+.journey-foundation-content p {
+  max-width: 760px;
+
+  margin: 0;
+
+  color: #65798c;
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+
+/* ==========================================================
+   CONNECTION
+========================================================== */
+
+.journey-connection {
+  padding: 120px 0;
+
+  background:
+    radial-gradient(
+      circle at 12% 15%,
+      rgba(40, 181, 173, 0.08),
+      transparent 28%
+    ),
+    #f5f9fb;
+}
+
+.journey-connection-heading {
+  max-width: 820px;
+
+  margin: 0 auto 58px;
+
+  text-align: center;
+}
+
+.journey-connection-heading .journey-eyebrow {
+  justify-content: center;
+}
+
+.journey-connection-heading .journey-eyebrow::before {
+  display: none;
+}
+
+.journey-connection-heading p {
+  max-width: 720px;
+
+  margin: 18px auto 0;
+}
+
+
+/* ==========================================================
+   GROUP STRUCTURE
+========================================================== */
+
+.journey-group-structure {
+  position: relative;
+
+  max-width: 1000px;
+
+  margin: 0 auto;
+}
+
+.journey-parent-company {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+
+  width: fit-content;
+
+  margin: 0 auto;
+
+  padding: 20px 28px;
+
+  border: 1px solid rgba(8, 37, 65, 0.08);
+  border-radius: 18px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 18px 44px
+    rgba(8, 37, 65, 0.08);
+}
+
+.journey-parent-company > div:last-child span {
+  color: #169f99;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+}
+
+.journey-parent-company h3 {
+  margin: 4px 0 0;
+
+  color: #082541;
+
+  font-size: 19px;
+}
+
+
+/* ==========================================================
+   COMPANY MARK
+========================================================== */
+
+.journey-company-mark {
+  display: grid;
+
+  width: 54px;
+  height: 54px;
+
+  place-items: center;
+
+  flex-shrink: 0;
+
+  border-radius: 15px;
+
+  background: #082d4d;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+}
+
+
+/* ==========================================================
+   CONNECTION LINE
+========================================================== */
+
+.journey-connection-line {
+  position: relative;
+
+  width: 2px;
+  height: 65px;
+
+  margin: 0 auto;
+
+  background:
+    linear-gradient(
+      #28b5ad,
+      rgba(40, 181, 173, 0.18)
+    );
+}
+
+.journey-connection-line::after {
+  content: "";
+
+  position: absolute;
+  left: 50%;
+  bottom: -1px;
+
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: #28b5ad;
+
+  transform: translateX(-50%);
+}
+
+
+/* ==========================================================
+   SISTER COMPANIES
+========================================================== */
+
+.journey-sister-companies {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 24px;
+}
+
+.journey-sister-companies::before {
+  content: "";
+
+  position: absolute;
+  top: -28px;
+  left: 25%;
+
+  width: 50%;
+  height: 2px;
+
+  background:
+    rgba(40, 181, 173, 0.45);
+}
+
+.journey-company-card {
+  position: relative;
+
+  padding: 30px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(8, 37, 65, 0.08);
+  border-radius: 22px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 18px 48px
+    rgba(8, 37, 65, 0.07);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.journey-company-card::after {
+  content: "";
+
+  position: absolute;
+  right: -70px;
+  bottom: -70px;
+
+  width: 160px;
+  height: 160px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(40, 181, 173, 0.06);
+}
+
+.journey-company-card:hover {
+  border-color:
+    rgba(40, 181, 173, 0.35);
+
+  box-shadow:
+    0 28px 60px
+    rgba(8, 37, 65, 0.12);
+
+  transform: translateY(-6px);
+}
+
+.journey-company-top {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 18px;
+
+  margin-bottom: 24px;
+}
+
+.journey-company-badge {
+  padding: 7px 11px;
+
+  border-radius: 30px;
+
+  background:
+    rgba(40, 181, 173, 0.1);
+
+  color: #169f99;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.journey-company-card h3 {
+  position: relative;
+  z-index: 1;
+
+  margin: 0 0 5px;
+
+  color: #082541;
+
+  font-size: 24px;
+}
+
+.journey-company-full-name {
+  position: relative;
+  z-index: 1;
+
+  margin: 0 0 16px !important;
+
+  color: #169f99 !important;
+
+  font-size: 11px !important;
+  font-weight: 800;
+
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.journey-company-card > p {
+  position: relative;
+  z-index: 1;
+
+  margin: 0;
+
+  color: #65798c;
+
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.journey-company-note {
+  position: relative;
+  z-index: 1;
+
+  margin-top: 20px;
+
+  padding: 12px 14px;
+
+  border-left: 3px solid #28b5ad;
+
+  border-radius: 8px;
+
+  background:
+    rgba(40, 181, 173, 0.07);
+
+  color: #415f78;
+
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+
+/* ==========================================================
+   LEGACY
+========================================================== */
+
+.journey-legacy {
+  padding: 110px 0;
+
+  background: #ffffff;
+}
+
+.journey-legacy-card {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+
+  align-items: start;
+
+  gap: 30px;
+
+  padding: 42px;
+
+  border-radius: 26px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #082d4d,
+      #061f38
+    );
+
+  box-shadow:
+    0 30px 70px
+    rgba(6, 31, 56, 0.22);
+}
+
+.journey-legacy-icon {
+  display: grid;
+
+  width: 72px;
+  height: 72px;
+
+  place-items: center;
+
+  border-radius: 20px;
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  color: #47d5cd;
+
+  font-size: 28px;
+}
+
+.journey-legacy-content .journey-eyebrow {
+  color: #47d5cd;
+}
+
+.journey-legacy-content .journey-eyebrow::before {
+  background: #47d5cd;
+}
+
+.journey-legacy-content h2 {
+  max-width: 760px;
+
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(34px, 4vw, 52px);
+
+  line-height: 1.1;
+  letter-spacing: -1.8px;
+}
+
+.journey-legacy-content > p {
+  max-width: 800px;
+
+  margin: 18px 0 0;
+
+  color:
+    rgba(255, 255, 255, 0.72);
+
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.journey-legacy-highlight {
+  margin-top: 24px;
+
+  padding: 16px 18px;
+
+  border: 1px solid
+    rgba(71, 213, 205, 0.25);
+
+  border-radius: 14px;
+
+  background:
+    rgba(71, 213, 205, 0.08);
+
+  color: #d7fffc;
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+
+/* ==========================================================
+   EXPERTISE
+========================================================== */
+
+.journey-expertise {
+  padding: 120px 0;
+
+  background:
+    #f7fafc;
+}
+
+.journey-expertise-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+.journey-expertise-card {
+  min-height: 220px;
+
+  padding: 26px;
+
+  border: 1px solid
+    rgba(8, 37, 65, 0.08);
+
+  border-radius: 19px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 14px 38px
+    rgba(8, 37, 65, 0.05);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.journey-expertise-card:hover {
+  border-color:
+    rgba(40, 181, 173, 0.35);
+
+  box-shadow:
+    0 24px 52px
+    rgba(8, 37, 65, 0.1);
+
+  transform: translateY(-5px);
+}
+
+.journey-expertise-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  margin-bottom: 28px;
+}
+
+.journey-expertise-icon {
+  display: grid;
+
+  width: 52px;
+  height: 52px;
+
+  place-items: center;
+
+  border-radius: 15px;
+
+  background:
+    rgba(40, 181, 173, 0.12);
+
+  color: #169f99;
+
+  font-size: 21px;
+}
+
+.journey-expertise-card-top > span {
+  color:
+    rgba(8, 37, 65, 0.2);
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.journey-expertise-card h3 {
+  margin: 0 0 10px;
+
+  color: #082541;
+
+  font-size: 19px;
+}
+
+.journey-expertise-card p {
+  margin: 0;
+
+  color: #697e91;
+
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+
+/* ==========================================================
+   IOC TODAY
+========================================================== */
+
+.journey-today {
+  padding: 120px 0;
+
+  background: #ffffff;
+}
+
+.journey-today-layout {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+
+  align-items: center;
+
+  gap: 70px;
+}
+
+.journey-today-content h2 {
+  max-width: 680px;
+
+  margin: 0;
+
+  color: #082541;
+
+  font-size: clamp(38px, 4.5vw, 58px);
+
+  line-height: 1.08;
+  letter-spacing: -2px;
+}
+
+.journey-today-content h2 span {
+  color: #169f99;
+}
+
+.journey-today-content > p {
+  max-width: 680px;
+
+  margin: 22px 0 0;
+
+  color: #63778c;
+
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+
+/* ==========================================================
+   SUSTAINABILITY
+========================================================== */
+
+.journey-sustainability {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  width: fit-content;
+
+  margin-top: 28px;
+
+  padding: 15px 18px;
+
+  border-radius: 16px;
+
+  background:
+    rgba(40, 181, 173, 0.09);
+
+  color: #169f99;
+}
+
+.journey-sustainability > svg {
+  font-size: 23px;
+}
+
+.journey-sustainability div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.journey-sustainability span {
+  color: #688095;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.journey-sustainability strong {
+  color: #082541;
+
+  font-size: 14px;
+}
+
+
+/* ==========================================================
+   STATS
+========================================================== */
+
+.journey-stats {
+  display: grid;
+
+  gap: 14px;
+}
+
+.journey-stat-card {
+  display: grid;
+  grid-template-columns: 54px 110px 1fr;
+
+  align-items: center;
+
+  gap: 16px;
+
+  padding: 20px;
+
+  border: 1px solid
+    rgba(8, 37, 65, 0.08);
+
+  border-radius: 17px;
+
+  background: #f8fbfc;
+}
+
+.journey-stat-card svg {
+  color: #169f99;
+
+  font-size: 22px;
+}
+
+.journey-stat-card strong {
+  color: #082541;
+
+  font-size: 28px;
+}
+
+.journey-stat-card span {
+  color: #697e91;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+
+/* ==========================================================
+   FINAL CTA
+========================================================== */
+
+.journey-cta {
+  padding: 75px 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      #082d4d,
+      #061f38
+    );
+}
+
+.journey-cta-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 50px;
+}
+
+.journey-cta-content > div > span {
+  color: #47d5cd;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.journey-cta-content h2 {
+  max-width: 720px;
+
+  margin: 9px 0 0;
+
+  color: #ffffff;
+
+  font-size: clamp(32px, 4vw, 48px);
+
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+}
+
+.journey-cta-content p {
+  max-width: 700px;
+
+  margin: 14px 0 0;
+
+  color:
+    rgba(255, 255, 255, 0.65);
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.journey-cta-content > a {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 14px;
+
+  flex-shrink: 0;
+
+  padding: 13px 17px;
+
+  border-radius: 30px;
+
+  background: #ffffff;
+
+  color: #082d4d;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.journey-cta-content > a:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 28px
+    rgba(0, 0, 0, 0.16);
+}
+
+.journey-cta-content > a span {
+  display: grid;
+
+  width: 30px;
+  height: 30px;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: #28b5ad;
+
+  color: #ffffff;
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 1000px) {
+  .journey-expertise-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .journey-today-layout {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+}
+
+
+/* ==========================================================
+   SMALL TABLET
+========================================================== */
+
+@media (max-width: 800px) {
+  .journey-hero {
+    padding: 145px 0 95px;
+  }
+
+  .journey-foundation,
+  .journey-connection,
+  .journey-expertise,
+  .journey-today {
+    padding: 85px 0;
+  }
+
+  .journey-section-heading {
+    grid-template-columns: 1fr;
+
+    gap: 22px;
+  }
+
+  .journey-foundation-card {
+    grid-template-columns: 90px 1fr;
+
+    gap: 20px;
+  }
+
+  .journey-foundation-icon {
+    display: none;
+  }
+
+  .journey-sister-companies {
+    grid-template-columns: 1fr;
+  }
+
+  .journey-sister-companies::before {
+    display: none;
+  }
+
+  .journey-legacy-card {
+    grid-template-columns: 1fr;
+  }
+
+  .journey-cta-content {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 600px) {
+  .journey-hero h1 {
+    font-size: 45px;
+    letter-spacing: -2px;
+  }
+
+  .journey-hero p {
+    font-size: 15px;
+  }
+
+  .journey-hero-years {
+    gap: 12px;
+  }
+
+  .journey-foundation-card {
+    grid-template-columns: 1fr;
+
+    padding: 24px;
+  }
+
+  .journey-foundation-year span {
+    width: 78px;
+    height: 78px;
+
+    font-size: 20px;
+  }
+
+  .journey-expertise-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .journey-legacy-card {
+    padding: 28px 22px;
+  }
+
+  .journey-company-card {
+    padding: 24px;
+  }
+
+  .journey-stat-card {
+    grid-template-columns: 44px 90px 1fr;
+
+    padding: 16px;
+  }
+
+  .journey-stat-card strong {
+    font-size: 22px;
+  }
+
+  .journey-cta-content > a {
+    width: 100%;
+
+    justify-content: space-between;
+  }
+}
+
+/* ==========================================================
+   IOC LOGO ONLY
+   White background while keeping same dimensions
+========================================================== */
+
+.journey-company-mark-ioc {
+  background: #ffffff;
+  border: 1px solid rgba(8, 37, 65, 0.08);
+  overflow: hidden;
+}
+
+.journey-company-mark-ioc img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
