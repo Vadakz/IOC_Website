@@ -30,7 +30,7 @@ const en = {
     badges: ["Nationwide Coverage", "Integrated Services", "24/7 Operations"],
     stats: [
       { value: "40+", label: "Years of excellence" },
-      { value: "600+", label: "Clients nationwide" },
+      { value: "1000", label: "Clients nationwide" },
       { value: "500+", label: "Employees" },
       { value: "24/7", label: "Customer support" },
     ],
