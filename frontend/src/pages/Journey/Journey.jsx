@@ -133,8 +133,11 @@ export default function Journey() {
                                 <span>1968</span>
                             </div>
 
-                            <div className="journey-foundation-icon">
-                                <FaBuilding />
+                            <div className="journey-foundation-logo">
+                                <img
+                                    src={mawaridLogo}
+                                    alt="Mawarid Holding"
+                                />
                             </div>
 
                             <div className="journey-foundation-content">

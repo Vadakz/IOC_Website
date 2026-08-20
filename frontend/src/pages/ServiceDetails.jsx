@@ -10,6 +10,8 @@ import pestControlImage from "../assets/images/services/pest-control.png";
 import janitorialImage from "../assets/images/services/janitorial.png";
 import mepImage from "../assets/images/services/mep.png";
 import hardFacilityImage from "../assets/images/services/hard-facility-management.png";
+import wasteContainerRange from "../assets/images/services/waste-container-range.png";
+import wasteFleetCompactors from "../assets/images/services/waste-fleet-compactors.png";
 
 import "./ServiceDetails.css";
 
@@ -156,16 +158,16 @@ export default function ServiceDetails() {
               {heroImage && (
                 <figure
                   className={`service-hero-visual ${isWasteManagement || isSoftFacility
-                      ? "service-hero-visual--soft"
-                      : isPestControl
-                        ? "service-hero-visual--pest"
-                        : isJanitorial
-                          ? "service-hero-visual--janitorial"
-                          : isMEP
-                            ? "service-hero-visual--mep"
-                            : isHardFacility
-                              ? "service-hero-visual--hard"
-                              : ""
+                    ? "service-hero-visual--soft"
+                    : isPestControl
+                      ? "service-hero-visual--pest"
+                      : isJanitorial
+                        ? "service-hero-visual--janitorial"
+                        : isMEP
+                          ? "service-hero-visual--mep"
+                          : isHardFacility
+                            ? "service-hero-visual--hard"
+                            : ""
                     }`}
                 >
                   {/* Hero Image */}
@@ -254,6 +256,114 @@ export default function ServiceDetails() {
             </aside>
           </div>
         </section>
+
+        {
+/* ==========================================================
+    WASTE MANAGEMENT
+    FLEET & EQUIPMENT
+========================================================== */}
+
+        {isWasteManagement && (
+          <section className="waste-equipment-section">
+            <div className="container">
+
+              {/* ======================================================
+          SECTION HEADER
+      ====================================================== */}
+
+              <div className="waste-equipment-heading">
+                <span className="service-details-label">
+                  {t("serviceDetails.wasteEquipment.label")}
+                </span>
+
+                <h2>
+                  {t("serviceDetails.wasteEquipment.title")}
+                  <span>
+                    {" "}
+                    {t("serviceDetails.wasteEquipment.titleAccent")}
+                  </span>
+                </h2>
+
+                <p>
+                  {t("serviceDetails.wasteEquipment.description")}
+                </p>
+              </div>
+
+
+              {/* ======================================================
+          01. CONTAINER SOLUTIONS
+      ====================================================== */}
+
+              <article className="waste-equipment-block">
+
+                <div className="waste-equipment-block-heading">
+                  <span>01</span>
+
+                  <div>
+                    <h3>
+                      {t(
+                        "serviceDetails.wasteEquipment.containers.title"
+                      )}
+                    </h3>
+
+                    <p>
+                      {t(
+                        "serviceDetails.wasteEquipment.containers.description"
+                      )}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="waste-equipment-image-card">
+                  <img
+                    src={wasteContainerRange}
+                    alt={t(
+                      "serviceDetails.wasteEquipment.containers.alt"
+                    )}
+                  />
+                </div>
+
+              </article>
+
+
+              {/* ======================================================
+          02. COLLECTION & COMPACTION
+      ====================================================== */}
+
+              <article className="waste-equipment-block">
+
+                <div className="waste-equipment-block-heading">
+                  <span>02</span>
+
+                  <div>
+                    <h3>
+                      {t(
+                        "serviceDetails.wasteEquipment.fleet.title"
+                      )}
+                    </h3>
+
+                    <p>
+                      {t(
+                        "serviceDetails.wasteEquipment.fleet.description"
+                      )}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="waste-equipment-image-card">
+                  <img
+                    src={wasteFleetCompactors}
+                    alt={t(
+                      "serviceDetails.wasteEquipment.fleet.alt"
+                    )}
+                  />
+                </div>
+
+              </article>
+
+            </div>
+          </section>
+        )}
 
         <section className="service-process-section">
           <div className="container">

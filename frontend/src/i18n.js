@@ -30,7 +30,7 @@ const en = {
     badges: ["Nationwide Coverage", "Integrated Services", "24/7 Operations"],
     stats: [
       { value: "40+", label: "Years of excellence" },
-      { value: "1000", label: "Clients nationwide" },
+      { value: "1000+", label: "Clients nationwide" },
       { value: "500+", label: "Employees" },
       { value: "24/7", label: "Customer support" },
     ],
@@ -466,6 +466,35 @@ const en = {
     processTitle: "A clear path from assessment to improvement",
     processDescription:
       "Every programme is shaped around the facility, its risks and the standards that matter to your operation.",
+    wasteEquipment: {
+      label: "Operational Capability",
+
+      title: "Waste Management",
+      titleAccent: "Fleet & Equipment",
+
+      description:
+        "Our operational capability includes a versatile range of containers, collection vehicles and compaction systems designed to support commercial, industrial and high-volume waste management requirements.",
+
+      containers: {
+        title: "Waste Container Solutions",
+
+        description:
+          "A comprehensive container range supporting everything from routine commercial collection to high-volume industrial waste handling.",
+
+        alt:
+          "IOC waste container range including plastic bins, commercial containers, lugger containers and hook lift containers",
+      },
+
+      fleet: {
+        title: "Collection & Compaction Fleet",
+
+        description:
+          "Specialized collection vehicles and compaction equipment support efficient transportation, on-site volume reduction and continuous waste handling operations.",
+
+        alt:
+          "IOC waste collection vehicles, mobile compaction trucks and stationary compactors",
+      },
+    },
   },
   footer: {
     logoAlt: "International Operations Company",
@@ -937,6 +966,36 @@ const ar = {
     processTitle: "مسار واضح من التقييم إلى التحسين",
     processDescription:
       "يتم تصميم كل برنامج وفق المنشأة ومخاطرها والمعايير المهمة لعملياتك.",
+
+    wasteEquipment: {
+      label: "القدرات التشغيلية",
+
+      title: "إدارة النفايات",
+      titleAccent: "الأسطول والمعدات",
+
+      description:
+        "تشمل قدراتنا التشغيلية مجموعة متنوعة من الحاويات ومركبات الجمع وأنظمة الضغط المصممة لدعم متطلبات إدارة النفايات التجارية والصناعية وعمليات النفايات ذات الأحجام الكبيرة.",
+
+      containers: {
+        title: "حلول حاويات النفايات",
+
+        description:
+          "مجموعة متكاملة من الحاويات لتلبية احتياجات الجمع التجاري اليومي وحتى عمليات معالجة النفايات الصناعية ذات الأحجام الكبيرة.",
+
+        alt:
+          "مجموعة حاويات النفايات التابعة لـ IOC بما في ذلك الحاويات البلاستيكية والتجارية وحاويات اللوجر والهوك ليفت",
+      },
+
+      fleet: {
+        title: "أسطول الجمع والضغط",
+
+        description:
+          "مركبات جمع متخصصة ومعدات ضغط تدعم النقل الفعال وتقليل حجم النفايات في الموقع واستمرارية عمليات إدارة النفايات.",
+
+        alt:
+          "مركبات جمع النفايات وشاحنات الضغط المتنقلة والضواغط الثابتة التابعة لـ IOC",
+      },
+    },
   },
   footer: {
     logoAlt: "الشركة الدولية للتشغيل",
