@@ -5,15 +5,12 @@ import { useTranslation } from "react-i18next";
 import mawaridLogo from "../../assets/images/mawarid-logo.png";
 import ecoLogo from "../../assets/images/eco-logo.png";
 import iocLogo from "../../assets/images/ioc-logo.png";
+import { useNavigate } from "react-router-dom";
 
 import {
     FaArrowRight,
     FaBuilding,
     FaLeaf,
-    FaRecycle,
-    FaBug,
-    FaBroom,
-    FaTools,
     FaShieldAlt,
     FaGlobeAsia,
     FaUsers,
@@ -22,36 +19,6 @@ import {
 
 import PageTransition from "../../components/PageTransition";
 
-/* ==========================================================
-   SHARED EXPERTISE
-========================================================== */
-
-const expertiseItems = [
-    {
-        key: "waste",
-        icon: FaRecycle,
-    },
-    {
-        key: "pest",
-        icon: FaBug,
-    },
-    {
-        key: "janitorial",
-        icon: FaBroom,
-    },
-    {
-        key: "mep",
-        icon: FaTools,
-    },
-    {
-        key: "environmental",
-        icon: FaLeaf,
-    },
-    {
-        key: "support",
-        icon: FaBuilding,
-    },
-];
 
 /* ==========================================================
    IOC TODAY STATS
@@ -78,6 +45,22 @@ const journeyStats = [
 
 export default function Journey() {
     const { t } = useTranslation();
+    const navigate = useNavigate();
+
+    const goToServices = () => {
+        navigate("/#services");
+
+        setTimeout(() => {
+            const servicesSection = document.getElementById("services");
+
+            if (servicesSection) {
+                servicesSection.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                });
+            }
+        }, 300);
+    };
 
     return (
         <PageTransition>
@@ -354,75 +337,6 @@ export default function Journey() {
                 </section>
 
 
-                {/* ======================================================
-            SHARED OPERATIONAL EXPERTISE
-        ====================================================== */}
-
-                <section className="journey-expertise">
-                    <div className="journey-container">
-
-                        <div className="journey-section-heading">
-
-                            <div>
-                                <span className="journey-eyebrow">
-                                    {t("journey.expertise.label")}
-                                </span>
-
-                                <h2>
-                                    {t("journey.expertise.title")}
-                                </h2>
-                            </div>
-
-                            <p>
-                                {t("journey.expertise.description")}
-                            </p>
-
-                        </div>
-
-
-                        <div className="journey-expertise-grid">
-
-                            {expertiseItems.map((item, index) => {
-                                const Icon = item.icon;
-
-                                return (
-                                    <article
-                                        className="journey-expertise-card"
-                                        key={item.key}
-                                    >
-
-                                        <div className="journey-expertise-card-top">
-
-                                            <div className="journey-expertise-icon">
-                                                <Icon />
-                                            </div>
-
-                                            <span>
-                                                {String(index + 1).padStart(2, "0")}
-                                            </span>
-
-                                        </div>
-
-                                        <h3>
-                                            {t(
-                                                `journey.expertise.items.${item.key}.title`
-                                            )}
-                                        </h3>
-
-                                        <p>
-                                            {t(
-                                                `journey.expertise.items.${item.key}.description`
-                                            )}
-                                        </p>
-
-                                    </article>
-                                );
-                            })}
-
-                        </div>
-
-                    </div>
-                </section>
 
 
                 {/* ======================================================
@@ -537,13 +451,17 @@ export default function Journey() {
                             </p>
                         </div>
 
-                        <Link to="/services">
+                        <button
+                            type="button"
+                            onClick={goToServices}
+                            className="journey-cta-button"
+                        >
                             {t("journey.cta.button")}
 
                             <span aria-hidden="true">
                                 <FaArrowRight />
                             </span>
-                        </Link>
+                        </button>
 
                     </div>
                 </section>

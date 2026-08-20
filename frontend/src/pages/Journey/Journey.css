@@ -77,8 +77,7 @@
 
   border-radius: 50%;
 
-  background:
-    rgba(40, 181, 173, 0.07);
+  background: rgba(40, 181, 173, 0.07);
 }
 
 .journey-hero-content {
@@ -275,8 +274,7 @@
 
   border-radius: 18px;
 
-  background:
-    rgba(40, 181, 173, 0.12);
+  background: rgba(40, 181, 173, 0.12);
 
   color: #169f99;
 
@@ -492,8 +490,7 @@
   width: 50%;
   height: 2px;
 
-  background:
-    rgba(40, 181, 173, 0.45);
+  background: rgba(40, 181, 173, 0.45);
 }
 
 .journey-company-card {
@@ -530,13 +527,11 @@
 
   border-radius: 50%;
 
-  background:
-    rgba(40, 181, 173, 0.06);
+  background: rgba(40, 181, 173, 0.06);
 }
 
 .journey-company-card:hover {
-  border-color:
-    rgba(40, 181, 173, 0.35);
+  border-color: rgba(40, 181, 173, 0.35);
 
   box-shadow:
     0 28px 60px
@@ -563,8 +558,7 @@
 
   border-radius: 30px;
 
-  background:
-    rgba(40, 181, 173, 0.1);
+  background: rgba(40, 181, 173, 0.1);
 
   color: #169f99;
 
@@ -622,8 +616,7 @@
 
   border-radius: 8px;
 
-  background:
-    rgba(40, 181, 173, 0.07);
+  background: rgba(40, 181, 173, 0.07);
 
   color: #415f78;
 
@@ -676,8 +669,7 @@
 
   border-radius: 20px;
 
-  background:
-    rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.08);
 
   color: #47d5cd;
 
@@ -710,8 +702,7 @@
 
   margin: 18px 0 0;
 
-  color:
-    rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.72);
 
   font-size: 15px;
   line-height: 1.85;
@@ -722,122 +713,16 @@
 
   padding: 16px 18px;
 
-  border: 1px solid
-    rgba(71, 213, 205, 0.25);
+  border: 1px solid rgba(71, 213, 205, 0.25);
 
   border-radius: 14px;
 
-  background:
-    rgba(71, 213, 205, 0.08);
+  background: rgba(71, 213, 205, 0.08);
 
   color: #d7fffc;
 
   font-size: 13px;
   line-height: 1.7;
-}
-
-
-/* ==========================================================
-   EXPERTISE
-========================================================== */
-
-.journey-expertise {
-  padding: 120px 0;
-
-  background:
-    #f7fafc;
-}
-
-.journey-expertise-grid {
-  display: grid;
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
-
-  gap: 20px;
-}
-
-.journey-expertise-card {
-  min-height: 220px;
-
-  padding: 26px;
-
-  border: 1px solid
-    rgba(8, 37, 65, 0.08);
-
-  border-radius: 19px;
-
-  background: #ffffff;
-
-  box-shadow:
-    0 14px 38px
-    rgba(8, 37, 65, 0.05);
-
-  transition:
-    transform 0.3s ease,
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.journey-expertise-card:hover {
-  border-color:
-    rgba(40, 181, 173, 0.35);
-
-  box-shadow:
-    0 24px 52px
-    rgba(8, 37, 65, 0.1);
-
-  transform: translateY(-5px);
-}
-
-.journey-expertise-card-top {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-
-  margin-bottom: 28px;
-}
-
-.journey-expertise-icon {
-  display: grid;
-
-  width: 52px;
-  height: 52px;
-
-  place-items: center;
-
-  border-radius: 15px;
-
-  background:
-    rgba(40, 181, 173, 0.12);
-
-  color: #169f99;
-
-  font-size: 21px;
-}
-
-.journey-expertise-card-top > span {
-  color:
-    rgba(8, 37, 65, 0.2);
-
-  font-size: 12px;
-  font-weight: 800;
-}
-
-.journey-expertise-card h3 {
-  margin: 0 0 10px;
-
-  color: #082541;
-
-  font-size: 19px;
-}
-
-.journey-expertise-card p {
-  margin: 0;
-
-  color: #697e91;
-
-  font-size: 13px;
-  line-height: 1.75;
 }
 
 
@@ -907,8 +792,7 @@
 
   border-radius: 16px;
 
-  background:
-    rgba(40, 181, 173, 0.09);
+  background: rgba(40, 181, 173, 0.09);
 
   color: #169f99;
 }
@@ -961,8 +845,7 @@
 
   padding: 20px;
 
-  border: 1px solid
-    rgba(8, 37, 65, 0.08);
+  border: 1px solid rgba(8, 37, 65, 0.08);
 
   border-radius: 17px;
 
@@ -1040,16 +923,21 @@
 
   margin: 14px 0 0;
 
-  color:
-    rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.65);
 
   font-size: 14px;
   line-height: 1.7;
 }
 
-.journey-cta-content > a {
+
+/* ==========================================================
+   CTA BUTTON
+========================================================== */
+
+.journey-cta-button {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
 
   gap: 14px;
 
@@ -1057,23 +945,25 @@
 
   padding: 13px 17px;
 
+  border: none;
   border-radius: 30px;
 
   background: #ffffff;
 
   color: #082d4d;
 
+  font-family: inherit;
   font-size: 13px;
   font-weight: 800;
 
-  text-decoration: none;
+  cursor: pointer;
 
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease;
 }
 
-.journey-cta-content > a:hover {
+.journey-cta-button:hover {
   transform: translateY(-2px);
 
   box-shadow:
@@ -1081,7 +971,7 @@
     rgba(0, 0, 0, 0.16);
 }
 
-.journey-cta-content > a span {
+.journey-cta-button span {
   display: grid;
 
   width: 30px;
@@ -1102,11 +992,6 @@
 ========================================================== */
 
 @media (max-width: 1000px) {
-  .journey-expertise-grid {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-  }
-
   .journey-today-layout {
     grid-template-columns: 1fr;
 
@@ -1126,7 +1011,6 @@
 
   .journey-foundation,
   .journey-connection,
-  .journey-expertise,
   .journey-today {
     padding: 85px 0;
   }
@@ -1197,10 +1081,6 @@
     font-size: 20px;
   }
 
-  .journey-expertise-grid {
-    grid-template-columns: 1fr;
-  }
-
   .journey-legacy-card {
     padding: 28px 22px;
   }
@@ -1219,12 +1099,13 @@
     font-size: 22px;
   }
 
-  .journey-cta-content > a {
+  .journey-cta-button {
     width: 100%;
 
     justify-content: space-between;
   }
 }
+
 
 /* ==========================================================
    IOC LOGO ONLY
@@ -1233,14 +1114,18 @@
 
 .journey-company-mark-ioc {
   background: #ffffff;
+
   border: 1px solid rgba(8, 37, 65, 0.08);
+
   overflow: hidden;
 }
 
 .journey-company-mark-ioc img {
+  display: block;
+
   width: 100%;
   height: 100%;
+
   object-fit: contain;
   object-position: center;
-  display: block;
 }

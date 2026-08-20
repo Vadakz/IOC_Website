@@ -214,3 +214,24 @@ footer.site{background:var(--navy-3);color:rgba(255,255,255,0.7);padding:56px 0 
   .net-pulse{animation:none;}
   *{transition:none !important;}
 }
+
+
+/* ==========================================================
+   REMOVE DECORATIVE SECTION HEADING DASHES SITE-WIDE
+========================================================== */
+
+.eyebrow::before,
+.journey-eyebrow::before,
+.coverage-label::before,
+.about-label::before,
+.services-label::before,
+.contact-label::before,
+.industries-label::before,
+.why-choose-label::before,
+.footer-label::before {
+  content: none !important;
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+}
