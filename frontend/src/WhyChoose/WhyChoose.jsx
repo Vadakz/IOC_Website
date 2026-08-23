@@ -105,25 +105,25 @@ export default function WhyChoose() {
             const content = localizedStrengths[index];
 
             return (
-            <article className="why-choose-card" key={content.title}>
-              <div className="why-choose-card-top">
-                <div className="why-choose-icon">{strength.icon}</div>
-                <span className="why-choose-number">{strength.number}</span>
-              </div>
+              <article className="why-choose-card" key={content.title}>
+                <div className="why-choose-card-top">
+                  <div className="why-choose-icon">{strength.icon}</div>
+                  <span className="why-choose-number">{strength.number}</span>
+                </div>
 
-              <h3>{content.title}</h3>
+                <h3>{content.title}</h3>
 
-              <p>{content.description}</p>
+                <p>{content.description}</p>
 
-              <ul>
-                {content.points.map((point) => (
-                  <li key={point}>
-                    <span></span>
-                    {point}
-                  </li>
-                ))}
-              </ul>
-            </article>
+                <ul>
+                  {content.points.map((point) => (
+                    <li key={point}>
+                      <span></span>
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </article>
             );
           })}
         </div>
@@ -137,10 +137,11 @@ export default function WhyChoose() {
             </p>
           </div>
 
-          <Link to="/industries">
+          <Link to="/industries" >
             {t("whyChoose.industriesLink")}
             <span aria-hidden="true">{t("common.arrow")}</span>
           </Link>
+          
         </div>
       </div>
     </section>

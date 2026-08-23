@@ -20,10 +20,11 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/journey" element={<Journey />} />
         <Route path="/industries" element={<IndustriesPage />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/services/:slug" element={<ServiceDetails />} />
-        <Route path="/journey" element={<Journey />} />
+     
         <Route path="/team" element={<Team />} />
       </Routes>
 

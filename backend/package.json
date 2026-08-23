@@ -1,26 +1,26 @@
 {
   "name": "ioc-eco-backend",
-  "private": true,
   "version": "1.0.0",
+  "private": true,
+  "description": "Express API for IOC website contact and quotation requests.",
   "type": "module",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js"
   },
   "dependencies": {
-    "bcryptjs": "^3.0.3",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^4.22.2",
     "express-validator": "^7.3.2",
-    "jsonwebtoken": "^9.0.3",
     "mongoose": "^9.8.1",
     "nodemailer": "^9.0.3"
   },
-  "description": "A small Express API that receives quote requests from the website's contact form.",
-  "main": "server.js",
-  "keywords": [],
   "devDependencies": {
     "nodemon": "^3.1.14"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }

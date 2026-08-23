@@ -46,7 +46,7 @@ export default function About() {
               ))}
             </div>
 
-            <Link to="/industries" className="about-button">
+            <Link to="/journey" className="about-button">
               {t("about.button")}
               <span aria-hidden="true">{t("common.arrow")}</span>
             </Link>

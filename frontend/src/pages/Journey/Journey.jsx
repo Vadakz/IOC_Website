@@ -1,6 +1,6 @@
 import "./Journey.css";
 
-import { Link } from "react-router-dom";
+
 import { useTranslation } from "react-i18next";
 import mawaridLogo from "../../assets/images/mawarid-logo.png";
 import ecoLogo from "../../assets/images/eco-logo.png";
