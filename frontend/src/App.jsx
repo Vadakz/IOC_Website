@@ -9,7 +9,7 @@ import IndustriesPage from "./pages/IndustriesPage";
 import ServiceDetails from "./pages/ServiceDetails";
 import ScrollToTop from "./components/ScrollToTop";
 import Journey from "./pages/Journey/Journey";
-import Team from "./pages/team/team";
+import Team from "./pages/team/Team";
 
 function App() {
   return (
