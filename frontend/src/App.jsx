@@ -9,6 +9,7 @@ import IndustriesPage from "./pages/IndustriesPage";
 import ServiceDetails from "./pages/ServiceDetails";
 import ScrollToTop from "./components/ScrollToTop";
 import Journey from "./pages/Journey/Journey";
+import Team from "./pages/team/team";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/services/:slug" element={<ServiceDetails />} />
         <Route path="/journey" element={<Journey />} />
+        <Route path="/team" element={<Team />} />
       </Routes>
 
       <Footer />

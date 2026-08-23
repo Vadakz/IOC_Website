@@ -1,0 +1,691 @@
+/* ==========================================================
+   TEAM PAGE
+========================================================== */
+
+.team-page {
+  min-height: 100vh;
+
+  background: #ffffff;
+}
+
+.team-container {
+  width: min(92%, 1240px);
+
+  margin: 0 auto;
+}
+
+
+/* ==========================================================
+   SHARED EYEBROW
+========================================================== */
+
+.team-eyebrow {
+  display: inline-block;
+
+  margin-bottom: 14px;
+
+  color: #169f99;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 1.7px;
+
+  text-transform: uppercase;
+}
+
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.team-hero {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 180px 0 120px;
+
+  background:
+    radial-gradient(
+      circle at 88% 20%,
+      rgba(40, 181, 173, 0.16),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #f8fbfd,
+      #eef5f7
+    );
+}
+
+.team-hero::after {
+  content: "";
+
+  position: absolute;
+
+  right: -130px;
+  bottom: -210px;
+
+  width: 430px;
+  height: 430px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(40, 181, 173, 0.06);
+}
+
+.team-hero .team-container {
+  position: relative;
+
+  z-index: 1;
+}
+
+.team-hero h1 {
+  max-width: 950px;
+
+  margin: 0;
+
+  color: #082541;
+
+  font-size: clamp(48px, 6vw, 76px);
+
+  line-height: 1.03;
+
+  letter-spacing: -3px;
+}
+
+.team-hero h1 span {
+  color: #169f99;
+}
+
+.team-hero p {
+  max-width: 760px;
+
+  margin: 26px 0 0;
+
+  color: #63778c;
+
+  font-size: 17px;
+
+  line-height: 1.8;
+}
+
+
+/* ==========================================================
+   LEADERSHIP SECTION
+========================================================== */
+
+.team-leadership {
+  padding: 120px 0;
+
+  background: #ffffff;
+}
+
+
+/* ==========================================================
+   SECTION HEADING
+========================================================== */
+
+.team-section-heading {
+  display: grid;
+
+  grid-template-columns: 1.1fr 0.9fr;
+
+  align-items: end;
+
+  gap: 70px;
+
+  margin-bottom: 55px;
+}
+
+.team-section-heading h2 {
+  margin: 0;
+
+  color: #082541;
+
+  font-size: clamp(36px, 4.2vw, 54px);
+
+  line-height: 1.08;
+
+  letter-spacing: -2px;
+}
+
+.team-section-heading > p {
+  margin: 0;
+
+  color: #63778c;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+
+/* ==========================================================
+   CEO CARD
+========================================================== */
+
+.team-ceo-card {
+  display: grid;
+
+  grid-template-columns: 280px 1fr;
+
+  align-items: center;
+
+  gap: 50px;
+
+  padding: 38px;
+
+  margin-bottom: 45px;
+
+  border: 1px solid rgba(8, 37, 65, 0.08);
+
+  border-radius: 26px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f9fcfd,
+      #f1f7f9
+    );
+
+  box-shadow:
+    0 24px 60px
+    rgba(8, 37, 65, 0.08);
+}
+
+
+/* ==========================================================
+   CEO PHOTO PLACEHOLDER
+========================================================== */
+
+.team-ceo-photo {
+  display: flex;
+
+  min-height: 280px;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #082d4d,
+      #0d3f67
+    );
+
+  color: #ffffff;
+}
+
+.team-ceo-photo svg {
+  font-size: 70px;
+
+  color: #47d5cd;
+}
+
+.team-ceo-photo span {
+  font-size: 11px;
+
+  opacity: 0.65;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+}
+
+
+/* ==========================================================
+   CEO CONTENT
+========================================================== */
+
+.team-position-label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #169f99;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+
+  text-transform: uppercase;
+}
+
+.team-ceo-content h3 {
+  margin: 0;
+
+  color: #082541;
+
+  font-size: 36px;
+}
+
+.team-ceo-content p {
+  max-width: 680px;
+
+  margin: 16px 0 0;
+
+  color: #63778c;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+
+/* ==========================================================
+   MANAGEMENT GRID
+========================================================== */
+
+.team-management-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+
+/* ==========================================================
+   MEMBER CARD
+========================================================== */
+
+.team-member-card {
+  overflow: hidden;
+
+  border: 1px solid rgba(8, 37, 65, 0.08);
+
+  border-radius: 20px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 16px 42px
+    rgba(8, 37, 65, 0.06);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.team-member-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 24px 55px
+    rgba(8, 37, 65, 0.11);
+}
+
+
+/* ==========================================================
+   MEMBER PHOTO PLACEHOLDER
+========================================================== */
+
+.team-member-photo {
+  display: flex;
+
+  min-height: 230px;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  background:
+    #eef5f7;
+
+  color: #169f99;
+}
+
+.team-member-photo svg {
+  font-size: 52px;
+}
+
+.team-member-photo span {
+  color: #7b8e9e;
+
+  font-size: 10px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+}
+
+
+/* ==========================================================
+   MEMBER CONTENT
+========================================================== */
+
+.team-member-content {
+  padding: 22px;
+}
+
+.team-member-content > span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #169f99;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.8px;
+
+  text-transform: uppercase;
+}
+
+.team-member-content h3 {
+  margin: 0;
+
+  color: #082541;
+
+  font-size: 18px;
+}
+
+
+/* ==========================================================
+   ORGANIZATION STRUCTURE
+========================================================== */
+
+.team-structure {
+  padding: 120px 0;
+
+  background:
+    #f4f8fa;
+}
+
+.team-structure-heading {
+  max-width: 760px;
+
+  margin: 0 auto 60px;
+
+  text-align: center;
+}
+
+.team-structure-heading h2 {
+  margin: 0;
+
+  color: #082541;
+
+  font-size: clamp(36px, 4vw, 52px);
+
+  line-height: 1.1;
+
+  letter-spacing: -1.6px;
+}
+
+.team-structure-heading p {
+  margin: 18px auto 0;
+
+  color: #63778c;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+
+/* ==========================================================
+   ORGANIZATION CHART
+========================================================== */
+
+.team-org-chart {
+  max-width: 1000px;
+
+  margin: 0 auto;
+}
+
+
+/* ==========================================================
+   CEO NODE
+========================================================== */
+
+.team-org-ceo {
+  width: fit-content;
+
+  margin: 0 auto;
+
+  padding: 18px 28px;
+
+  border-radius: 16px;
+
+  background: #082d4d;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 14px 35px
+    rgba(8, 37, 65, 0.18);
+}
+
+.team-org-ceo span {
+  font-size: 14px;
+
+  font-weight: 800;
+}
+
+
+/* ==========================================================
+   CONNECTOR
+========================================================== */
+
+.team-org-connector {
+  position: relative;
+
+  width: 2px;
+
+  height: 70px;
+
+  margin: 0 auto;
+
+  background:
+    #28b5ad;
+}
+
+.team-org-connector span {
+  position: absolute;
+
+  left: 50%;
+  bottom: -5px;
+
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: #28b5ad;
+
+  transform:
+    translateX(-50%);
+}
+
+
+/* ==========================================================
+   MANAGEMENT LEVEL
+========================================================== */
+
+.team-org-management {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 18px;
+
+  padding-top: 35px;
+}
+
+.team-org-management::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 12.5%;
+
+  width: 75%;
+  height: 2px;
+
+  background:
+    rgba(40, 181, 173, 0.55);
+}
+
+.team-org-item {
+  position: relative;
+
+  display: flex;
+
+  min-height: 95px;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  border: 1px solid rgba(8, 37, 65, 0.09);
+
+  border-radius: 16px;
+
+  background: #ffffff;
+
+  color: #082541;
+
+  text-align: center;
+
+  box-shadow:
+    0 14px 35px
+    rgba(8, 37, 65, 0.06);
+}
+
+.team-org-item::before {
+  content: "";
+
+  position: absolute;
+
+  top: -35px;
+  left: 50%;
+
+  width: 2px;
+  height: 35px;
+
+  background:
+    rgba(40, 181, 173, 0.55);
+
+  transform:
+    translateX(-50%);
+}
+
+.team-org-item span {
+  font-size: 13px;
+
+  font-weight: 700;
+
+  line-height: 1.4;
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 1000px) {
+
+  .team-management-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .team-org-management {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .team-org-management::before,
+  .team-org-item::before {
+    display: none;
+  }
+
+}
+
+
+/* ==========================================================
+   SMALL TABLET
+========================================================== */
+
+@media (max-width: 800px) {
+
+  .team-hero {
+    padding: 145px 0 95px;
+  }
+
+  .team-leadership,
+  .team-structure {
+    padding: 85px 0;
+  }
+
+  .team-section-heading {
+    grid-template-columns: 1fr;
+
+    gap: 22px;
+  }
+
+  .team-ceo-card {
+    grid-template-columns: 1fr;
+  }
+
+  .team-ceo-photo {
+    min-height: 240px;
+  }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 600px) {
+
+  .team-hero h1 {
+    font-size: 44px;
+
+    letter-spacing: -2px;
+  }
+
+  .team-hero p {
+    font-size: 15px;
+  }
+
+  .team-management-grid,
+  .team-org-management {
+    grid-template-columns: 1fr;
+  }
+
+  .team-ceo-card {
+    padding: 24px;
+  }
+
+  .team-ceo-content h3 {
+    font-size: 28px;
+  }
+
+  .team-member-photo {
+    min-height: 210px;
+  }
+
+}

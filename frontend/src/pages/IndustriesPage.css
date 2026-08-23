@@ -94,12 +94,12 @@
 }
 
 .industries-hero-visual {
-    position: relative;
-    min-height: 650px;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: relative;
+  min-height: 650px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-left: -30px;
 }
 
@@ -119,16 +119,16 @@
 }
 
 .industries-hero-visual img {
-    width: 160%;
-    max-width: none;
-    height: auto;
+  width: 160%;
+  max-width: none;
+  height: auto;
 
-    object-fit: contain;
-    object-position: center;
+  object-fit: contain;
+  object-position: center;
 
-    display: block;
+  display: block;
 
-    transform: translateX(-35px);
+  transform: translateX(-35px);
 }
 
 .industries-scroll-link {
@@ -560,38 +560,38 @@
 .industries-page .navbar-menu a,
 .industries-page .navbar-links a,
 .industries-page .nav-links a {
-    color: #082541 !important;
+  color: #082541 !important;
 }
 
 /* Active Page */
 .industries-page .navbar-menu a.active,
 .industries-page .navbar-links a.active,
 .industries-page .nav-links a.active {
-    color: #169f99 !important;
+  color: #169f99 !important;
 }
 
 /* Hover */
 .industries-page .navbar-menu a:hover,
 .industries-page .navbar-links a:hover,
 .industries-page .nav-links a:hover {
-    color: #169f99 !important;
+  color: #169f99 !important;
 }
 
 /* Language Switcher */
 .industries-page .language-switch,
 .industries-page .language-switch button,
 .industries-page .language-selector {
-    color: #082541 !important;
+  color: #082541 !important;
 }
 
 /* Globe Icon */
 .industries-page .language-switch svg,
 .industries-page .language-selector svg {
-    color: #169f99 !important;
+  color: #169f99 !important;
 }
 
 /* Get Quote button */
 .industries-page .quote-btn,
 .industries-page .get-quote-btn {
-    color: #ffffff !important;
+  color: #ffffff !important;
 }

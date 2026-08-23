@@ -11,6 +11,7 @@ const en = {
     home: "Home",
     about: "About Us",
     journey: "Our Journey",
+    team: "Our Team",
     services: "Services",
     coverage: "Coverage",
     contact: "Contact Us",
@@ -18,6 +19,61 @@ const en = {
     openMenu: "Open navigation menu",
     closeMenu: "Close navigation menu",
     selectLanguage: "Select language",
+  },
+
+  team: {
+    hero: {
+      label: "Our Team",
+      title: "Leadership Behind",
+      accent: "Operational Excellence",
+      description:
+        "Our leadership team brings together commercial, operational, financial and people-management expertise to support IOC's continued growth and service excellence.",
+    },
+
+    leadership: {
+      label: "Leadership Team",
+      title: "People Guiding IOC Forward",
+      description:
+        "Our leadership structure combines strategic direction with specialist management across the key functions that support our operations.",
+    },
+
+    photoPlaceholder: "Photo Coming Soon",
+
+    ceo: {
+      name: "Name To Be Added",
+      position: "Managing Director",
+      description:
+        "Providing strategic leadership and direction across IOC's operations, growth initiatives and long-term development.",
+    },
+
+    members: {
+      sales: {
+        name: "Name To Be Added",
+        position: "Sales Manager",
+      },
+
+      operations: {
+        name: "Name To Be Added",
+        position: "Operations Manager",
+      },
+
+      finance: {
+        name: "Name To Be Added",
+        position: "Finance Director",
+      },
+
+      hrAdmin: {
+        name: "Name To Be Added",
+        position: "HR & Admin Manager",
+      },
+    },
+
+    structure: {
+      label: "Organization Structure",
+      title: "Clear Leadership. Integrated Operations.",
+      description:
+        "IOC's management structure supports coordinated decision-making across commercial, operational, financial and people functions.",
+    },
   },
   hero: {
     label: "Established 1982 · Saudi Arabia",
@@ -530,6 +586,7 @@ const ar = {
     home: "الرئيسية",
     about: "من نحن",
     journey: "مسيرتنا",
+    team: "فريقنا",
     services: "خدماتنا",
     coverage: "نطاق التغطية",
     contact: "اتصل بنا",
@@ -537,6 +594,57 @@ const ar = {
     openMenu: "فتح قائمة التنقل",
     closeMenu: "إغلاق قائمة التنقل",
     selectLanguage: "اختر اللغة",
+  },
+  team: {
+    hero: {
+      label: "فريقنا",
+      title: "القيادة وراء",
+      accent: "التميز التشغيلي",
+      description:
+        "يجمع فريقنا القيادي خبرات تجارية وتشغيلية ومالية، إلى جانب خبرات إدارة الموارد البشرية، لدعم نمو الشركة المستمر وتميز خدماتها.",
+    },
+
+    leadership: {
+      label: "الفريق القيادي",
+      title: "قيادات تدفع الشركة نحو المستقبل",
+      description:
+        "يجمع هيكلنا القيادي بين التوجيه الاستراتيجي والإدارة المتخصصة في الوظائف الرئيسية الداعمة لعملياتنا.",
+    },
+
+    photoPlaceholder: "الصورة قريباً",
+
+    ceo: {
+      name: "سيُضاف الاسم لاحقاً",
+      position: "المدير العام",
+      description:
+        "يتولى القيادة والتوجيه الاستراتيجي لعمليات الشركة ومبادرات النمو والتطوير على المدى الطويل.",
+    },
+
+    members: {
+      sales: {
+        name: "سيُضاف الاسم لاحقاً",
+        position: "مدير المبيعات",
+      },
+      operations: {
+        name: "سيُضاف الاسم لاحقاً",
+        position: "مدير العمليات",
+      },
+      finance: {
+        name: "سيُضاف الاسم لاحقاً",
+        position: "المدير المالي",
+      },
+      hrAdmin: {
+        name: "سيُضاف الاسم لاحقاً",
+        position: "مدير الموارد البشرية والشؤون الإدارية",
+      },
+    },
+
+    structure: {
+      label: "الهيكل التنظيمي",
+      title: "قيادة واضحة، وعمليات متكاملة.",
+      description:
+        "يدعم الهيكل الإداري للشركة اتخاذ القرارات بصورة منسقة بين الوظائف التجارية والتشغيلية والمالية ووظائف الموارد البشرية.",
+    },
   },
   hero: {
     label: "تأسست عام 1982 · المملكة العربية السعودية",
