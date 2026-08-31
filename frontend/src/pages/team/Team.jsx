@@ -1,15 +1,13 @@
 import "./Team.css";
 
 import { useTranslation } from "react-i18next";
-import {
-  FaUserTie,
-  FaChartLine,
-  FaCogs,
-  FaCoins,
-  FaUsersCog,
-} from "react-icons/fa";
+
+import { FaUserTie } from "react-icons/fa";
 
 import PageTransition from "../../components/PageTransition";
+
+import salesManagerPhoto from "../../assets/images/team/sales-manager.png";
+import operationsManagerPhoto from "../../assets/images/team/operations-manager.png";
 
 
 /* ==========================================================
@@ -17,35 +15,35 @@ import PageTransition from "../../components/PageTransition";
 ========================================================== */
 
 export default function Team() {
+
   const { t } = useTranslation();
 
 
   /* ========================================================
-     LEADERSHIP DATA
+     LEADERSHIP TEAM
   ======================================================== */
 
   const leadershipTeam = [
     {
+      key: "finance",
+    },
+    {
       key: "sales",
-      icon: FaChartLine,
+      photo: salesManagerPhoto,
     },
     {
       key: "operations",
-      icon: FaCogs,
-    },
-    {
-      key: "finance",
-      icon: FaCoins,
+      photo: operationsManagerPhoto,
     },
     {
       key: "hrAdmin",
-      icon: FaUsersCog,
     },
   ];
 
 
   return (
     <PageTransition>
+
       <main className="team-page">
 
 
@@ -62,11 +60,14 @@ export default function Team() {
             </span>
 
             <h1>
+
               {t("team.hero.title")}
+
               <span>
                 {" "}
                 {t("team.hero.accent")}
               </span>
+
             </h1>
 
             <p>
@@ -78,8 +79,9 @@ export default function Team() {
         </section>
 
 
+
         {/* ==================================================
-            02. CEO
+            02. LEADERSHIP
         ================================================== */}
 
         <section className="team-leadership">
@@ -87,11 +89,14 @@ export default function Team() {
           <div className="team-container">
 
 
-            {/* SECTION HEADER */}
+            {/* ==================================================
+                SECTION HEADING
+            ================================================== */}
 
             <div className="team-section-heading">
 
               <div>
+
                 <span className="team-eyebrow">
                   {t("team.leadership.label")}
                 </span>
@@ -99,7 +104,9 @@ export default function Team() {
                 <h2>
                   {t("team.leadership.title")}
                 </h2>
+
               </div>
+
 
               <p>
                 {t("team.leadership.description")}
@@ -108,13 +115,21 @@ export default function Team() {
             </div>
 
 
-            {/* CEO CARD */}
+
+            {/* ==================================================
+                MANAGING DIRECTOR
+            ================================================== */}
 
             <article className="team-ceo-card">
 
+
+              {/* ==================================================
+                  PHOTO PLACEHOLDER
+              ================================================== */}
+
               <div className="team-ceo-photo">
 
-                <FaUserTie />
+                <FaUserTie aria-hidden="true" />
 
                 <span>
                   {t("team.photoPlaceholder")}
@@ -123,23 +138,29 @@ export default function Team() {
               </div>
 
 
+
+              {/* ==================================================
+                  MANAGING DIRECTOR INFORMATION
+              ================================================== */}
+
               <div className="team-ceo-content">
 
                 <span className="team-position-label">
-                  {t("team.ceo.position")}
+                  {t("team.managingDirector.position")}
                 </span>
 
                 <h3>
-                  {t("team.ceo.name")}
+                  {t("team.managingDirector.name")}
                 </h3>
 
                 <p>
-                  {t("team.ceo.description")}
+                  {t("team.managingDirector.description")}
                 </p>
 
               </div>
 
             </article>
+
 
 
             {/* ==================================================
@@ -148,54 +169,78 @@ export default function Team() {
 
             <div className="team-management-grid">
 
-              {leadershipTeam.map((member) => {
+              {leadershipTeam.map((member) => (
 
-                const Icon = member.icon;
+                <article
+                  className="team-member-card"
+                  key={member.key}
+                >
 
-                return (
 
-                  <article
-                    className="team-member-card"
-                    key={member.key}
-                  >
+                  {/* ==================================================
+                      PHOTO PLACEHOLDER
+                  ================================================== */}
 
-                    <div className="team-member-photo">
+                  <div className="team-member-photo">
 
-                      <Icon />
-
-                      <span>
-                        {t("team.photoPlaceholder")}
-                      </span>
-
-                    </div>
-
-                    <div className="team-member-content">
-
-                      <span>
-                        {t(
-                          `team.members.${member.key}.position`
-                        )}
-                      </span>
-
-                      <h3>
-                        {t(
+                    {member.photo ? (
+                      <img
+                        src={member.photo}
+                        alt={t(
                           `team.members.${member.key}.name`
                         )}
-                      </h3>
+                        className="team-member-image"
+                      />
+                    ) : (
+                      <>
+                        <div className="team-photo-placeholder">
 
-                    </div>
+                          <FaUserTie
+                            aria-hidden="true"
+                          />
 
-                  </article>
+                        </div>
 
-                );
+                        <span>
+                          {t("team.photoPlaceholder")}
+                        </span>
+                      </>
+                    )}
 
-              })}
+                  </div>
+
+
+
+                  {/* ==================================================
+                      MEMBER INFORMATION
+                  ================================================== */}
+
+                  <div className="team-member-content">
+
+                    <span>
+                      {t(
+                        `team.members.${member.key}.position`
+                      )}
+                    </span>
+
+                    <h3>
+                      {t(
+                        `team.members.${member.key}.name`
+                      )}
+                    </h3>
+
+                  </div>
+
+                </article>
+
+              ))}
 
             </div>
 
           </div>
 
         </section>
+
 
 
         {/* ==================================================
@@ -207,7 +252,9 @@ export default function Team() {
           <div className="team-container">
 
 
-            {/* SECTION HEADING */}
+            {/* ==================================================
+                SECTION HEADING
+            ================================================== */}
 
             <div className="team-structure-heading">
 
@@ -226,30 +273,45 @@ export default function Team() {
             </div>
 
 
-            {/* ORGANIZATION CHART */}
+
+            {/* ==================================================
+                ORGANIZATION CHART
+            ================================================== */}
 
             <div className="team-org-chart">
 
 
-              {/* CEO */}
+              {/* ==================================================
+                  MANAGING DIRECTOR
+              ================================================== */}
 
               <div className="team-org-ceo">
 
                 <span>
-                  {t("team.ceo.position")}
+                  {t(
+                    "team.managingDirector.position"
+                  )}
                 </span>
 
               </div>
 
 
-              {/* CONNECTION */}
+
+              {/* ==================================================
+                  CONNECTOR
+              ================================================== */}
 
               <div className="team-org-connector">
+
                 <span />
+
               </div>
 
 
-              {/* MANAGEMENT LEVEL */}
+
+              {/* ==================================================
+                  MANAGEMENT LEVEL
+              ================================================== */}
 
               <div className="team-org-management">
 
@@ -280,6 +342,7 @@ export default function Team() {
 
 
       </main>
+
     </PageTransition>
   );
 }

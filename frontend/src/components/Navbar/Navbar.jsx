@@ -1,8 +1,13 @@
+/* ==========================================================
+   IMPORTS
+========================================================== */
+
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import "./Navbar.css";
+
 import logo from "../../assets/images/logo.png";
 import services from "../../data/services";
 
@@ -13,11 +18,23 @@ import services from "../../data/services";
 
 export default function Navbar() {
 
+
     /* ======================================================
-       STATE & ROUTER
+       STATE
     ====================================================== */
 
     const [menuOpen, setMenuOpen] = useState(false);
+
+    /* About Us dropdown state */
+    const [aboutOpen, setAboutOpen] = useState(false);
+
+    /* Services dropdown state */
+    const [servicesOpen, setServicesOpen] = useState(false);
+
+
+    /* ======================================================
+       ROUTER
+    ====================================================== */
 
     const navigate = useNavigate();
 
@@ -36,11 +53,13 @@ export default function Navbar() {
 
 
     /* ======================================================
-       CLOSE MOBILE MENU
+       CLOSE ALL NAVIGATION MENUS
     ====================================================== */
 
-    const closeMenu = () => {
+    const closeAllMenus = () => {
         setMenuOpen(false);
+        setAboutOpen(false);
+        setServicesOpen(false);
     };
 
 
@@ -50,7 +69,7 @@ export default function Navbar() {
 
     const goToSection = (sectionId) => {
 
-        closeMenu();
+        closeAllMenus();
 
         navigate("/");
 
@@ -88,6 +107,8 @@ export default function Navbar() {
             "language",
             selectedLanguage
         );
+
+        closeAllMenus();
     };
 
 
@@ -109,7 +130,7 @@ export default function Navbar() {
                 <Link
                     to="/"
                     className="navbar-brand"
-                    onClick={closeMenu}
+                    onClick={closeAllMenus}
                 >
 
                     <img
@@ -140,7 +161,7 @@ export default function Navbar() {
 
                     <Link
                         to="/"
-                        onClick={closeMenu}
+                        onClick={closeAllMenus}
                     >
                         {t("navbar.home")}
                     </Link>
@@ -148,10 +169,6 @@ export default function Navbar() {
 
                     {/* ==================================================
                         ABOUT US DROPDOWN
-
-                        About Us
-                        Our Journey
-                        Our Team
                     ================================================== */}
 
                     <div className="navbar-dropdown">
@@ -159,21 +176,44 @@ export default function Navbar() {
                         <button
                             type="button"
                             className="navbar-dropdown-trigger"
-                            onClick={() =>
-                                goToSection("about")
-                            }
+                            aria-expanded={aboutOpen}
+                            onClick={() => {
+
+                                setAboutOpen(
+                                    (current) => !current
+                                );
+
+                                setServicesOpen(false);
+
+                            }}
                         >
 
                             {t("navbar.about")}
 
-                            <span className="dropdown-arrow">
+                            <span
+                                className={`dropdown-arrow ${
+                                    aboutOpen
+                                        ? "dropdown-arrow-open"
+                                        : ""
+                                }`}
+                            >
                                 ▾
                             </span>
 
                         </button>
 
 
-                        <div className="navbar-dropdown-menu">
+                        {/* ==================================================
+                            ABOUT US MENU
+                        ================================================== */}
+
+                        <div
+                            className={`navbar-dropdown-menu ${
+                                aboutOpen
+                                    ? "navbar-dropdown-menu-open"
+                                    : ""
+                            }`}
+                        >
 
 
                             {/* ABOUT US */}
@@ -193,7 +233,7 @@ export default function Navbar() {
 
                             <Link
                                 to="/journey"
-                                onClick={closeMenu}
+                                onClick={closeAllMenus}
                             >
                                 {t("navbar.journey")}
                             </Link>
@@ -203,11 +243,10 @@ export default function Navbar() {
 
                             <Link
                                 to="/team"
-                                onClick={closeMenu}
+                                onClick={closeAllMenus}
                             >
                                 {t("navbar.team")}
                             </Link>
-
 
                         </div>
 
@@ -223,21 +262,44 @@ export default function Navbar() {
                         <button
                             type="button"
                             className="navbar-dropdown-trigger"
-                            onClick={() =>
-                                goToSection("services")
-                            }
+                            aria-expanded={servicesOpen}
+                            onClick={() => {
+
+                                setServicesOpen(
+                                    (current) => !current
+                                );
+
+                                setAboutOpen(false);
+
+                            }}
                         >
 
                             {t("navbar.services")}
 
-                            <span className="dropdown-arrow">
+                            <span
+                                className={`dropdown-arrow ${
+                                    servicesOpen
+                                        ? "dropdown-arrow-open"
+                                        : ""
+                                }`}
+                            >
                                 ▾
                             </span>
 
                         </button>
 
 
-                        <div className="navbar-dropdown-menu">
+                        {/* ==================================================
+                            SERVICES MENU
+                        ================================================== */}
+
+                        <div
+                            className={`navbar-dropdown-menu ${
+                                servicesOpen
+                                    ? "navbar-dropdown-menu-open"
+                                    : ""
+                            }`}
+                        >
 
                             {services.map((service) => {
 
@@ -256,7 +318,7 @@ export default function Navbar() {
                                     <Link
                                         key={service.id}
                                         to={`/services/${service.slug}`}
-                                        onClick={closeMenu}
+                                        onClick={closeAllMenus}
                                     >
 
                                         <span className="dropdown-service-icon">
@@ -302,14 +364,14 @@ export default function Navbar() {
 
                     <Link
                         to="/contact"
-                        onClick={closeMenu}
+                        onClick={closeAllMenus}
                     >
                         {t("navbar.contact")}
                     </Link>
 
 
                     {/* ==================================================
-                        MOBILE LANGUAGE SELECTOR
+                        MOBILE LANGUAGE
                     ================================================== */}
 
                     <div
@@ -369,7 +431,7 @@ export default function Navbar() {
                     <Link
                         to="/contact"
                         className="navbar-mobile-quote"
-                        onClick={closeMenu}
+                        onClick={closeAllMenus}
                     >
                         {t("navbar.quote")}
                     </Link>
@@ -379,14 +441,14 @@ export default function Navbar() {
 
 
                 {/* ==================================================
-                    RIGHT SIDE ACTIONS
+                    NAVBAR ACTIONS
                 ================================================== */}
 
                 <div className="navbar-actions">
 
 
                     {/* ==================================================
-                        DESKTOP LANGUAGE SELECTOR
+                        DESKTOP LANGUAGE
                     ================================================== */}
 
                     <div
@@ -449,7 +511,7 @@ export default function Navbar() {
                     <Link
                         to="/contact"
                         className="navbar-quote"
-                        onClick={closeMenu}
+                        onClick={closeAllMenus}
                     >
                         {t("navbar.quote")}
                     </Link>
