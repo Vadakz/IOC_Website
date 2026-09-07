@@ -110,7 +110,7 @@ const en = {
 
 
       hrAdmin: {
-        name: "Name To Be Added",
+        name: "Arwa Bin Ashban",
         position: "HR Manager",
       },
     },

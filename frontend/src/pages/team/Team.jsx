@@ -1,13 +1,17 @@
+/* ==========================================================
+   IMPORTS
+========================================================== */
+
 import "./Team.css";
 
 import { useTranslation } from "react-i18next";
-
 import { FaUserTie } from "react-icons/fa";
 
 import PageTransition from "../../components/PageTransition";
 
 import salesManagerPhoto from "../../assets/images/team/sales-manager.png";
 import operationsManagerPhoto from "../../assets/images/team/operations-manager.png";
+import femalePlaceholder from "../../assets/images/team/female placeholder.jpg";
 
 
 /* ==========================================================
@@ -21,43 +25,64 @@ export default function Team() {
 
   /* ========================================================
      LEADERSHIP TEAM
+     
+     Display order:
+     01. Finance Director
+     02. Sales Manager
+     03. Operations Manager
+     04. HR Manager
   ======================================================== */
 
   const leadershipTeam = [
     {
       key: "finance",
     },
+
     {
       key: "sales",
       photo: salesManagerPhoto,
     },
+
     {
       key: "operations",
       photo: operationsManagerPhoto,
     },
+
     {
       key: "hrAdmin",
+      photo: femalePlaceholder,
     },
   ];
 
 
+  /* ========================================================
+     PAGE
+  ======================================================== */
+
   return (
+
     <PageTransition>
 
       <main className="team-page">
 
 
         {/* ==================================================
-            01. HERO
+            01. HERO SECTION
         ================================================== */}
 
         <section className="team-hero">
 
           <div className="team-container">
 
+
+            {/* HERO LABEL */}
+
             <span className="team-eyebrow">
               {t("team.hero.label")}
             </span>
+
+
+            {/* HERO TITLE */}
 
             <h1>
 
@@ -70,6 +95,9 @@ export default function Team() {
 
             </h1>
 
+
+            {/* HERO DESCRIPTION */}
+
             <p>
               {t("team.hero.description")}
             </p>
@@ -81,7 +109,7 @@ export default function Team() {
 
 
         {/* ==================================================
-            02. LEADERSHIP
+            02. LEADERSHIP SECTION
         ================================================== */}
 
         <section className="team-leadership">
@@ -117,19 +145,19 @@ export default function Team() {
 
 
             {/* ==================================================
-                MANAGING DIRECTOR
+                02A. MANAGING DIRECTOR
             ================================================== */}
 
             <article className="team-ceo-card">
 
 
-              {/* ==================================================
-                  PHOTO PLACEHOLDER
-              ================================================== */}
+              {/* MANAGING DIRECTOR PHOTO */}
 
               <div className="team-ceo-photo">
 
-                <FaUserTie aria-hidden="true" />
+                <FaUserTie
+                  aria-hidden="true"
+                />
 
                 <span>
                   {t("team.photoPlaceholder")}
@@ -138,10 +166,7 @@ export default function Team() {
               </div>
 
 
-
-              {/* ==================================================
-                  MANAGING DIRECTOR INFORMATION
-              ================================================== */}
+              {/* MANAGING DIRECTOR INFORMATION */}
 
               <div className="team-ceo-content">
 
@@ -164,7 +189,7 @@ export default function Team() {
 
 
             {/* ==================================================
-                MANAGEMENT TEAM
+                02B. MANAGEMENT TEAM
             ================================================== */}
 
             <div className="team-management-grid">
@@ -177,43 +202,48 @@ export default function Team() {
                 >
 
 
-                  {/* ==================================================
-                      PHOTO PLACEHOLDER
-                  ================================================== */}
+                  {/* ==========================================
+                      MEMBER PHOTO
+                  ========================================== */}
 
                   <div className="team-member-photo">
 
                     {member.photo ? (
+
                       <img
                         src={member.photo}
                         alt={t(
                           `team.members.${member.key}.name`
                         )}
-                        className="team-member-image"
+                        className={`team-member-image ${member.key === "hrAdmin"
+                            ? "team-placeholder-image"
+                            : ""
+                          }`}
                       />
+
                     ) : (
-                      <>
-                        <div className="team-photo-placeholder">
 
-                          <FaUserTie
-                            aria-hidden="true"
-                          />
+                      <div className="team-photo-placeholder">
 
-                        </div>
+                        <FaUserTie
+                          aria-hidden="true"
+                        />
 
                         <span>
                           {t("team.photoPlaceholder")}
                         </span>
-                      </>
+
+                      </div>
+
                     )}
 
                   </div>
 
 
 
-                  {/* ==================================================
+                  {/* ==========================================
                       MEMBER INFORMATION
-                  ================================================== */}
+                  ========================================== */}
 
                   <div className="team-member-content">
 
@@ -298,7 +328,7 @@ export default function Team() {
 
 
               {/* ==================================================
-                  CONNECTOR
+                  MAIN CONNECTOR
               ================================================== */}
 
               <div className="team-org-connector">
@@ -339,7 +369,6 @@ export default function Team() {
           </div>
 
         </section>
-
 
       </main>
 
