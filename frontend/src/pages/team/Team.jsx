@@ -9,6 +9,8 @@ import { FaUserTie } from "react-icons/fa";
 
 import PageTransition from "../../components/PageTransition";
 
+import fdPhoto from "../../assets/images/team/FD.png";
+import mdPhoto from "../../assets/images/team/md.png";
 import salesManagerPhoto from "../../assets/images/team/sales-manager.png";
 import operationsManagerPhoto from "../../assets/images/team/operations-manager.png";
 import femalePlaceholder from "../../assets/images/team/female placeholder.jpg";
@@ -36,6 +38,7 @@ export default function Team() {
   const leadershipTeam = [
     {
       key: "finance",
+      photo: fdPhoto,
     },
 
     {
@@ -152,16 +155,13 @@ export default function Team() {
 
 
               {/* MANAGING DIRECTOR PHOTO */}
-
               <div className="team-ceo-photo">
 
-                <FaUserTie
-                  aria-hidden="true"
+                <img
+                  src={mdPhoto}
+                  alt={t("team.ceo.name")}
+                  className="team-md-image"
                 />
-
-                <span>
-                  {t("team.photoPlaceholder")}
-                </span>
 
               </div>
 
@@ -216,8 +216,8 @@ export default function Team() {
                           `team.members.${member.key}.name`
                         )}
                         className={`team-member-image ${member.key === "hrAdmin"
-                            ? "team-placeholder-image"
-                            : ""
+                          ? "team-placeholder-image"
+                          : ""
                           }`}
                       />
 
