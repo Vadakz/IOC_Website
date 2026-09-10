@@ -13,275 +13,341 @@ const services = [
     slug: "WasteManagement",
     title: "Waste Management Services",
     menuTitle: "Waste Management",
-    category: "Environmental services",
+    category: "Environmental Services",
 
     shortDescription:
-      "Responsible collection and handling solutions for municipal, construction, wastewater and specialist waste streams.",
+      "Responsible Collection And Handling Solutions For Municipal, Construction, Wastewater And Specialist Waste Streams.",
 
     image: "/images/waste-management.jpg",
     logo: "/images/ioc-eco-logo.png",
 
     description:
-      "IOC/ECO provides dependable waste and wastewater services for facilities and projects across Saudi Arabia. We match the collection method, equipment and service frequency to each waste stream while supporting safe handling, responsible disposal and cleaner operating environments.",
-    overviewTitle: "Practical waste solutions, responsibly managed",
+      "IOC/ECO Provides Dependable Waste And Wastewater Services For Facilities And Projects Across Saudi Arabia. We Match The Collection Method, Equipment And Service Frequency To Each Waste Stream While Supporting Safe Handling, Responsible Disposal And Cleaner Operating Environments.",
+
+    overviewTitle:
+      "Practical Waste Solutions, Responsibly Managed",
+
     icon: FaRecycle,
+
     features: [
-      "Municipal solid-waste collection",
-      "Construction and demolition waste",
-      "Wastewater and sewage removal",
-      "Hazardous and medical waste support",
-      "Recycling and waste-diversion programmes",
-      "RORO bins, lugger bins, compactors and tankers",
+      "Municipal Solid-Waste Collection",
+      "Construction And Demolition Waste",
+      "Wastewater And Sewage Removal",
+      "Hazardous And Medical Waste Support",
+      "Recycling And Waste-Diversion Programmes",
+      "RORO Bins, Lugger Bins, Compactors And Tankers",
     ],
+
     outcomes: [
-      "Reliable collection schedules",
-      "Equipment matched to each site",
-      "Cleaner and safer operations",
+      "Reliable Collection Schedules",
+      "Equipment Matched To Each Site",
+      "Cleaner And Safer Operations",
     ],
+
     process: [
       {
         title: "Profile",
-        text: "Identify waste streams, volumes, site constraints and collection needs.",
+        text:
+          "Identify Waste Streams, Volumes, Site Constraints And Collection Needs.",
       },
+
       {
         title: "Configure",
-        text: "Select suitable containers, vehicles, frequencies and handling procedures.",
+        text:
+          "Select Suitable Containers, Vehicles, Frequencies And Handling Procedures.",
       },
+
       {
         title: "Collect",
-        text: "Deliver scheduled or responsive collection through equipped operations teams.",
+        text:
+          "Deliver Scheduled Or Responsive Collection Through Equipped Operations Teams.",
       },
+
       {
         title: "Document",
-        text: "Maintain service records and support responsible transfer and disposal.",
+        text:
+          "Maintain Service Records And Support Responsible Transfer And Disposal.",
       },
     ],
-    sectors: ["Commercial", "Healthcare", "Construction", "Industrial"],
+
+    sectors: [
+      "Commercial",
+      "Healthcare",
+      "Construction",
+      "Industrial",
+    ],
   },
+
+
   {
     id: 2,
     slug: "PestControl",
     title: "Pest Control Services",
     menuTitle: "Pest Control",
-    category: "Integrated pest management",
+    category: "Integrated Pest Management",
+
     shortDescription:
-      "Targeted, environmentally responsible pest management built around inspection, prevention and monitoring.",
+      "Targeted, Environmentally Responsible Pest Management Built Around Inspection, Prevention And Monitoring.",
+
     description:
-      "IOC/ECO delivers sustainable pest-management programmes across Saudi Arabia. We begin with a detailed site survey, identify activity and contributing conditions, then combine sanitation guidance, pest proofing, targeted treatment and ongoing monitoring to help maintain a safe, pest-free environment.",
-    overviewTitle: "Control the cause, not only the visible problem",
+      "IOC/ECO Delivers Sustainable Pest-Management Programmes Across Saudi Arabia. We Begin With A Detailed Site Survey, Identify Activity And Contributing Conditions, Then Combine Sanitation Guidance, Pest Proofing, Targeted Treatment And Ongoing Monitoring To Help Maintain A Safe, Pest-Free Environment.",
+
+    overviewTitle:
+      "Control The Cause, Not Only The Visible Problem",
+
     icon: FaBug,
+
     features: [
-      "Crawling and flying insect control",
-      "Rodent, termite and bedbug control",
-      "Fumigation and specialist treatments",
-      "Pest proofing and prevention",
-      "Sanitation and risk recommendations",
-      "Scheduled monitoring and reporting",
+      "Crawling And Flying Insect Control",
+      "Rodent, Termite And Bedbug Control",
+      "Fumigation And Specialist Treatments",
+      "Pest Proofing And Prevention",
+      "Sanitation And Risk Recommendations",
+      "Scheduled Monitoring And Reporting",
     ],
+
     outcomes: [
-      "Site-specific treatment plans",
-      "Reduced risk of recurrence",
-      "Responsible product selection",
+      "Site-Specific Treatment Plans",
+      "Reduced Risk Of Recurrence",
+      "Responsible Product Selection",
     ],
+
     process: [
       {
         title: "Inspect",
-        text: "Survey the premises and identify signs of activity, access points and risk areas.",
+        text:
+          "Survey The Premises And Identify Signs Of Activity, Access Points And Risk Areas.",
       },
+
       {
         title: "Identify",
-        text: "Confirm the pest and evaluate sanitation and environmental conditions.",
+        text:
+          "Confirm The Pest And Evaluate Sanitation And Environmental Conditions.",
       },
+
       {
         title: "Control",
-        text: "Apply proofing, preventive measures and targeted treatments where required.",
+        text:
+          "Apply Proofing, Preventive Measures And Targeted Treatments Where Required.",
       },
+
       {
         title: "Monitor",
-        text: "Track activity, document results and adjust the programme over time.",
+        text:
+          "Track Activity, Document Results And Adjust The Programme Over Time.",
       },
     ],
-    sectors: ["Food operations", "Healthcare", "Hospitality", "Residential and industrial sites"],
+
+    sectors: [
+      "Food Operations",
+      "Healthcare",
+      "Hospitality",
+      "Residential And Industrial Sites",
+    ],
   },
+
+
   {
     id: 3,
     slug: "Janitorial",
     title: "Janitorial Services",
     menuTitle: "Janitorial Services",
-    category: "Professional cleaning",
+    category: "Professional Cleaning",
+
     shortDescription:
-      "Professional daily and specialist cleaning for healthier, safer and better-presented environments.",
+      "Professional Daily And Specialist Cleaning For Healthier, Safer And Better-Presented Environments.",
+
     description:
-      "From daily cleaning to demanding specialist assignments, IOC/ECO develops practical cleaning programmes around each facility’s use, footfall and hygiene requirements. Trained teams, appropriate equipment and active supervision help us maintain dependable standards across indoor and outdoor spaces.",
-    overviewTitle: "A touch of perfection, delivered consistently",
+      "From Daily Cleaning To Demanding Specialist Assignments, IOC/ECO Develops Practical Cleaning Programmes Around Each Facility’s Use, Footfall And Hygiene Requirements. Trained Teams, Appropriate Equipment And Active Supervision Help Us Maintain Dependable Standards Across Indoor And Outdoor Spaces.",
+
+    overviewTitle:
+      "A Touch Of Perfection, Delivered Consistently",
+
     icon: FaBroom,
+
     features: [
-      "Daily cleaning, dusting and sanitizing",
-      "Deep cleaning for indoor and outdoor areas",
-      "Floor sweeping, mopping and vacuuming",
-      "Washroom and high-touch-point cleaning",
-      "Window and façade cleaning",
-      "Commercial, education, healthcare and industrial cleaning",
+      "Daily Cleaning, Dusting And Sanitizing",
+      "Deep Cleaning For Indoor And Outdoor Areas",
+      "Floor Sweeping, Mopping And Vacuuming",
+      "Washroom And High-Touch-Point Cleaning",
+      "Window And Façade Cleaning",
+      "Commercial, Education, Healthcare And Industrial Cleaning",
     ],
+
     outcomes: [
-      "Cleaner, healthier workplaces",
-      "Service plans matched to site use",
-      "Professional presentation every day",
+      "Cleaner, Healthier Workplaces",
+      "Service Plans Matched To Site Use",
+      "Professional Presentation Every Day",
     ],
+
     process: [
       {
         title: "Assess",
-        text: "Review surfaces, traffic patterns, hygiene risks and operating hours.",
+        text:
+          "Review Surfaces, Traffic Patterns, Hygiene Risks And Operating Hours.",
       },
+
       {
         title: "Design",
-        text: "Set the cleaning scope, frequencies, methods, staffing and equipment.",
+        text:
+          "Set The Cleaning Scope, Frequencies, Methods, Staffing And Equipment.",
       },
+
       {
         title: "Deliver",
-        text: "Execute daily and periodic tasks through trained, supervised teams.",
+        text:
+          "Execute Daily And Periodic Tasks Through Trained, Supervised Teams.",
       },
+
       {
         title: "Verify",
-        text: "Inspect results, record performance and address service observations.",
+        text:
+          "Inspect Results, Record Performance And Address Service Observations.",
       },
     ],
-    sectors: ["Commercial", "Education", "Healthcare", "Industrial"],
+
+    sectors: [
+      "Commercial",
+      "Education",
+      "Healthcare",
+      "Industrial",
+    ],
   },
+
+
   {
     id: 4,
     slug: "MEP",
-    title: "Mechanical, Electrical and Plumbing Services",
+    title: "Mechanical, Electrical And Plumbing Services",
     menuTitle: "MEP Services",
-    category: "Technical maintenance",
+    category: "Technical Maintenance",
+
     shortDescription:
-      "Proactive MEP and HVAC maintenance that supports reliable, efficient and safe building operations.",
+      "Proactive MEP And HVAC Maintenance That Supports Reliable, Efficient And Safe Building Operations.",
+
     description:
-      "IOC/ECO manages and maintains mechanical, electrical and plumbing systems using planned maintenance, technical inspections and responsive on-site support. Our focus is to improve system reliability, limit avoidable breakdowns and help critical building services perform efficiently.",
-    overviewTitle: "Keeping essential building systems running",
+      "IOC/ECO Manages And Maintains Mechanical, Electrical And Plumbing Systems Using Planned Maintenance, Technical Inspections And Responsive On-Site Support. Our Focus Is To Improve System Reliability, Limit Avoidable Breakdowns And Help Critical Building Services Perform Efficiently.",
+
+    overviewTitle:
+      "Keeping Essential Building Systems Running",
+
     icon: FaTools,
+
     features: [
-      "Mechanical-system maintenance",
-      "Electrical-system inspections and repairs",
-      "Plumbing maintenance and response",
-      "HVAC servicing and performance checks",
-      "Preventive and corrective maintenance",
-      "Building automation and technical support",
+      "Mechanical-System Maintenance",
+      "Electrical-System Inspections And Repairs",
+      "Plumbing Maintenance And Response",
+      "HVAC Servicing And Performance Checks",
+      "Preventive And Corrective Maintenance",
+      "Building Automation And Technical Support",
     ],
+
     outcomes: [
-      "Fewer avoidable breakdowns",
-      "Improved operating efficiency",
-      "Safer, more dependable systems",
+      "Fewer Avoidable Breakdowns",
+      "Improved Operating Efficiency",
+      "Safer, More Dependable Systems",
     ],
+
     process: [
       {
         title: "Inspect",
-        text: "Review system condition, operating history and critical maintenance needs.",
+        text:
+          "Review System Condition, Operating History And Critical Maintenance Needs.",
       },
+
       {
         title: "Schedule",
-        text: "Build a preventive plan around assets, risk and operational priorities.",
+        text:
+          "Build A Preventive Plan Around Assets, Risk And Operational Priorities.",
       },
+
       {
         title: "Service",
-        text: "Complete planned work and responsive repairs with equipped technicians.",
+        text:
+          "Complete Planned Work And Responsive Repairs With Equipped Technicians.",
       },
+
       {
         title: "Optimize",
-        text: "Monitor recurring faults and recommend practical performance improvements.",
+        text:
+          "Monitor Recurring Faults And Recommend Practical Performance Improvements.",
       },
     ],
-    sectors: ["Healthcare", "Commercial real estate", "Data centres", "Industrial facilities"],
+
+    sectors: [
+      "Healthcare",
+      "Commercial Real Estate",
+      "Data Centres",
+      "Industrial Facilities",
+    ],
   },
+
+
   {
     id: 5,
     slug: "Soft-Facility-Management",
     title: "Soft Facility Management",
     menuTitle: "Soft Facility Management",
-    category: "People & workplace services",
+    category: "People & Workplace Services",
+
     shortDescription:
-      "Coordinated workplace services that keep facilities clean, welcoming and ready for everyday operations.",
+      "Coordinated Workplace Services That Keep Facilities Clean, Welcoming And Ready For Everyday Operations.",
+
     description:
-      "IOC/ECO brings essential non-technical services under one accountable team. We shape each programme around the facility, its occupants and the client’s operating standards, then coordinate people, schedules, supplies and quality checks to deliver a consistent workplace experience.",
-    overviewTitle: "A better everyday experience for every facility",
+      "IOC/ECO Brings Essential Non-Technical Services Under One Accountable Team. We Shape Each Programme Around The Facility, Its Occupants And The Client’s Operating Standards, Then Coordinate People, Schedules, Supplies And Quality Checks To Deliver A Consistent Workplace Experience.",
+
+    overviewTitle:
+      "A Better Everyday Experience For Every Facility",
+
     icon: FaUsersCog,
+
     features: [
-      "Housekeeping and workplace support",
-      "Hospitality and pantry support",
-      "Reception and front-of-house assistance",
-      "Washroom and hygiene management",
-      "External-area and common-area care",
-      "Consumables planning and replenishment",
+      "Housekeeping And Workplace Support",
+      "Hospitality And Pantry Support",
+      "Reception And Front-Of-House Assistance",
+      "Washroom And Hygiene Management",
+      "External-Area And Common-Area Care",
+      "Consumables Planning And Replenishment",
     ],
+
     outcomes: [
-      "One coordinated service plan",
-      "Consistent presentation standards",
-      "Responsive on-site support",
+      "One Coordinated Service Plan",
+      "Consistent Presentation Standards",
+      "Responsive On-Site Support",
     ],
+
     process: [
       {
         title: "Understand",
-        text: "Review the site, occupancy profile and daily operational requirements.",
+        text:
+          "Review The Site, Occupancy Profile And Daily Operational Requirements.",
       },
+
       {
         title: "Plan",
-        text: "Define staffing, schedules, materials, responsibilities and service levels.",
+        text:
+          "Define Staffing, Schedules, Materials, Responsibilities And Service Levels.",
       },
+
       {
         title: "Mobilize",
-        text: "Deploy trained teams with clear procedures and site-specific supervision.",
+        text:
+          "Deploy Trained Teams With Clear Procedures And Site-Specific Supervision.",
       },
+
       {
         title: "Improve",
-        text: "Monitor delivery, resolve issues and continually refine the programme.",
+        text:
+          "Monitor Delivery, Resolve Issues And Continually Refine The Programme.",
       },
     ],
-    sectors: ["Offices", "Hospitality", "Education", "Residential communities"],
-  },
-  {
-    id: 6,
-    slug: "Hard-Facility-Management",
-    title: "Hard Facility Management",
-    menuTitle: "Hard Facility Management",
-    category: "Asset & building performance",
-    shortDescription:
-      "Planned technical care for critical building assets, infrastructure and life-safety systems.",
-    description:
-      "IOC/ECO supports the performance and reliability of essential building systems through structured asset care. Our teams combine planned maintenance, responsive repairs, inspections and performance monitoring to protect assets, reduce disruption and support safe facility operations.",
-    overviewTitle: "Protecting the systems your operation depends on",
-    icon: FaBuilding,
-    features: [
-      "Asset inspections and condition reporting",
-      "Planned preventive maintenance",
-      "Corrective and reactive maintenance",
-      "Building fabric and infrastructure support",
-      "Fire and life-safety system coordination",
-      "Asset records and maintenance reporting",
+
+    sectors: [
+      "Offices",
+      "Hospitality",
+      "Education",
+      "Residential Communities",
     ],
-    outcomes: [
-      "Improved asset reliability",
-      "Reduced operational disruption",
-      "Longer equipment service life",
-    ],
-    process: [
-      {
-        title: "Survey",
-        text: "Assess the facility, asset condition, risks and current maintenance practices.",
-      },
-      {
-        title: "Prioritize",
-        text: "Identify critical systems and establish the maintenance strategy.",
-      },
-      {
-        title: "Maintain",
-        text: "Deliver planned and corrective work through qualified technical teams.",
-      },
-      {
-        title: "Report",
-        text: "Track performance, recurring issues and improvement opportunities.",
-      },
-    ],
-    sectors: ["Commercial real estate", "Healthcare", "Education", "Industrial facilities"],
   },
 ];
 

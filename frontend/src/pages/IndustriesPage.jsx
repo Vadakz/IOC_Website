@@ -107,6 +107,63 @@ export default function IndustriesPage() {
       <main className="industries-page">
 
         {/* ======================================================
+            CLIENTS SECTION
+            Continuously scrolling client logos.
+        ====================================================== */}
+
+        <section
+          className="clients-section"
+          id="clients"
+        >
+          <div className="industries-page-container">
+
+            {/* Clients section heading */}
+
+            <div className="clients-section-header">
+              <div>
+                <span>
+                  {t("industries.clientsLabel")}
+                </span>
+
+                <h2>
+                  {t("industries.clientsTitle")}
+                </h2>
+              </div>
+
+              <p>
+                {t("industries.clientsDescription")}
+              </p>
+            </div>
+
+          </div>
+
+
+          {/* Client logo marquee */}
+
+          <div className="clients-marquee">
+            <div className="clients-track">
+              {movingClients.map((client, index) => (
+                <article
+                  className="client-logo-card"
+                  key={`${client.name}-${index}`}
+                >
+                  <img
+                    src={client.logo}
+                    alt={t("industries.clientLogoAlt", {
+                      client: client.name,
+                    })}
+                  />
+
+                  <span>
+                    {client.name}
+                  </span>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ======================================================
             INDUSTRIES HERO SECTION
             Text on the left and hero image on the right.
         ====================================================== */}
@@ -224,62 +281,7 @@ export default function IndustriesPage() {
         </section>
 
 
-        {/* ======================================================
-            CLIENTS SECTION
-            Continuously scrolling client logos.
-        ====================================================== */}
 
-        <section
-          className="clients-section"
-          id="clients"
-        >
-          <div className="industries-page-container">
-
-            {/* Clients section heading */}
-
-            <div className="clients-section-header">
-              <div>
-                <span>
-                  {t("industries.clientsLabel")}
-                </span>
-
-                <h2>
-                  {t("industries.clientsTitle")}
-                </h2>
-              </div>
-
-              <p>
-                {t("industries.clientsDescription")}
-              </p>
-            </div>
-
-          </div>
-
-
-          {/* Client logo marquee */}
-
-          <div className="clients-marquee">
-            <div className="clients-track">
-              {movingClients.map((client, index) => (
-                <article
-                  className="client-logo-card"
-                  key={`${client.name}-${index}`}
-                >
-                  <img
-                    src={client.logo}
-                    alt={t("industries.clientLogoAlt", {
-                      client: client.name,
-                    })}
-                  />
-
-                  <span>
-                    {client.name}
-                  </span>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
 
 
         {/* ======================================================

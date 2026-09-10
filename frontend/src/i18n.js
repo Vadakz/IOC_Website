@@ -1,11 +1,13 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
+
 /* ==========================================================
    ENGLISH TRANSLATIONS
 ========================================================== */
 
 const en = {
+
   /* ========================================================
      01. COMMON
   ======================================================== */
@@ -29,10 +31,10 @@ const en = {
     services: "Services",
     coverage: "Coverage",
     contact: "Contact Us",
-    quote: "Get a Quote",
-    openMenu: "Open navigation menu",
-    closeMenu: "Close navigation menu",
-    selectLanguage: "Select language",
+    quote: "Get A Quote",
+    openMenu: "Open Navigation Menu",
+    closeMenu: "Close Navigation Menu",
+    selectLanguage: "Select Language",
   },
 
 
@@ -51,7 +53,7 @@ const en = {
       title: "Leadership Behind",
       accent: "Operational Excellence",
       description:
-        "Our leadership team brings together commercial, operational, financial and people-management expertise to support IOC's continued growth and service excellence.",
+        "Our Leadership Team Brings Together Commercial, Operational, Financial And People-Management Expertise To Support IOC's Continued Growth And Service Excellence.",
     },
 
 
@@ -63,7 +65,7 @@ const en = {
       label: "Leadership Team",
       title: "People Guiding IOC Forward",
       description:
-        "Our leadership structure combines strategic direction with specialist management across the key functions that support our operations.",
+        "Our Leadership Structure Combines Strategic Direction With Specialist Management Across The Key Functions That Support Our Operations.",
     },
 
 
@@ -82,7 +84,7 @@ const en = {
       name: "Charbel Keyrouz",
       position: "Managing Director",
       description:
-        "Providing strategic leadership and direction across IOC's operations, growth initiatives and long-term development.",
+        "Providing Strategic Leadership And Direction Across IOC's Operations, Growth Initiatives And Long-Term Development.",
     },
 
 
@@ -107,8 +109,6 @@ const en = {
         position: "Operations Manager",
       },
 
-
-
       hrAdmin: {
         name: "Arwa Bin Ashban",
         position: "HR Manager",
@@ -124,7 +124,7 @@ const en = {
       label: "Organization Structure",
       title: "Clear Leadership. Integrated Operations.",
       description:
-        "IOC's management structure supports coordinated decision-making across commercial, operational, financial and people functions.",
+        "IOC's Management Structure Supports Coordinated Decision-Making Across Commercial, Operational, Financial And People Functions.",
     },
   },
 
@@ -136,24 +136,26 @@ const en = {
   hero: {
     label: "Established 1982 · Saudi Arabia",
     titleFirst: "Embracing",
-    titleSecond: "sustainable living.",
+    titleSecond: "Sustainable Living.",
     description:
-      "Delivering integrated waste management, janitorial, pest control, MEP and environmental services for cleaner, safer and more sustainable communities across Saudi Arabia.",
+      "Delivering Integrated Waste Management, Janitorial, Pest Control, MEP And Environmental Services For Cleaner, Safer And More Sustainable Communities Across Saudi Arabia.",
     explore: "Explore Services",
-    requestQuote: "Request a Quote",
+    requestQuote: "Request A Quote",
+
     badges: [
       "Nationwide Coverage",
       "Integrated Services",
       "24/7 Operations",
     ],
+
     stats: [
       {
         value: "40+",
-        label: "Years of excellence",
+        label: "Years Of Excellence",
       },
       {
         value: "600+",
-        label: "Clients nationwide",
+        label: "Clients Nationwide",
       },
       {
         value: "500+",
@@ -161,11 +163,12 @@ const en = {
       },
       {
         value: "24/7",
-        label: "Customer support",
+        label: "Customer Support",
       },
     ],
-    scroll: "Scroll to discover",
-    scrollLabel: "Scroll to about section",
+
+    scroll: "Scroll To Discover",
+    scrollLabel: "Scroll To About Section",
   },
 
 
@@ -174,8 +177,9 @@ const en = {
   ======================================================== */
 
   about: {
+
     imageAlt:
-      "IOC employee representing decades of operational excellence",
+      "IOC Employee Representing Decades Of Operational Excellence",
 
     label: "About IOC/ECO",
 
@@ -184,10 +188,10 @@ const en = {
     titleAccent: "Since 1982",
 
     paragraphOne:
-      "International Operations Company provides integrated facility management and environmental services across Saudi Arabia.",
+      "International Operations Company Provides Integrated Facility Management And Environmental Services Across Saudi Arabia.",
 
     paragraphTwo:
-      "With more than four decades of experience, we support businesses, industries and communities through reliable, sustainable and professionally managed solutions.",
+      "With More Than Four Decades Of Experience, We Support Businesses, Industries And Communities Through Reliable, Sustainable And Professionally Managed Solutions.",
 
     highlights: [
       {
@@ -200,7 +204,7 @@ const en = {
       },
       {
         value: "40+",
-        label: "Years of Experience",
+        label: "Years Of Experience",
       },
       {
         value: "1982",
@@ -217,12 +221,13 @@ const en = {
   ======================================================== */
 
   servicesSection: {
+
     label: "Our Services",
 
-    title: "Six services. One standard of delivery.",
+    title: "Six Services. One Standard Of Delivery.",
 
     description:
-      "From daily workplace care to critical building systems, IOC/ECO delivers services shaped around your facility and operational needs.",
+      "From Daily Workplace Care To Critical Building Systems, IOC/ECO Delivers Services Shaped Around Your Facility And Operational Needs.",
 
     viewLabel: "View {{service}}",
 
@@ -235,14 +240,15 @@ const en = {
   ======================================================== */
 
   coverage: {
+
     label: "Our Coverage",
 
-    title: "Operational coverage across the",
+    title: "Operational Coverage Across The",
 
-    titleAccent: "Kingdom of Saudi Arabia",
+    titleAccent: "Kingdom Of Saudi Arabia",
 
     description:
-      "IOC provides integrated facility management and operational support across major cities and industrial regions throughout the Kingdom.",
+      "IOC Provides Integrated Facility Management And Operational Support Across Major Cities And Industrial Regions Throughout The Kingdom.",
 
 
     /* ------------------------------------------------------
@@ -258,7 +264,7 @@ const en = {
        OPERATIONAL LOCATIONS
     ------------------------------------------------------ */
 
-    locationsLabel: "Operational locations",
+    locationsLabel: "Operational Locations",
 
     locationsCount: "{{count}} Locations",
 
@@ -319,11 +325,11 @@ const en = {
 
     network: "IOC Operational Network",
 
-    networkTitle: "Kingdom-wide service coverage",
+    networkTitle: "Kingdom-Wide Service Coverage",
 
     active: "Active",
 
-    popup: "IOC operational service coverage",
+    popup: "IOC Operational Service Coverage",
 
 
     /* ------------------------------------------------------
@@ -331,6 +337,7 @@ const en = {
     ------------------------------------------------------ */
 
     stats: [
+
       {
         value: "4",
         label: "Operational Hubs",
@@ -360,14 +367,15 @@ const en = {
     ------------------------------------------------------ */
 
     hero: {
+
       label: "Our Journey",
 
-      title: "A Legacy of",
+      title: "A Legacy Of",
 
       accent: "Operational Excellence",
 
       description:
-        "From the foundation of Mawarid Holding in 1968 to decades of operational experience through ECO and IOC, our journey reflects a longstanding commitment to reliable service, sustainable growth and client-focused delivery.",
+        "From The Foundation Of Mawarid Holding In 1968 To Decades Of Operational Experience Through ECO And IOC, Our Journey Reflects A Longstanding Commitment To Reliable Service, Sustainable Growth And Client-Focused Delivery.",
 
       startYear: "1968",
 
@@ -383,10 +391,10 @@ const en = {
 
       label: "Where It All Began",
 
-      title: "Built on a Strong Saudi Legacy",
+      title: "Built On A Strong Saudi Legacy",
 
       description:
-        "Our journey is rooted in a well-established Saudi family-owned group with decades of diversified business and operational experience.",
+        "Our Journey Is Rooted In A Well-Established Saudi Family-Owned Group With Decades Of Diversified Business And Operational Experience.",
 
       companyType: "Holding Company",
 
@@ -395,7 +403,7 @@ const en = {
       year: "1968",
 
       text:
-        "Established in 1968, Mawarid Holding created the foundation for a diversified group of companies operating across multiple sectors in the Kingdom of Saudi Arabia.",
+        "Established In 1968, Mawarid Holding Created The Foundation For A Diversified Group Of Companies Operating Across Multiple Sectors In The Kingdom Of Saudi Arabia.",
     },
 
 
@@ -411,7 +419,7 @@ const en = {
         "Two Companies. One Established Operational Legacy.",
 
       description:
-        "ECO and IOC are sister companies under Mawarid Holding, sharing a common heritage, operational experience and commitment to delivering dependable services across Saudi Arabia.",
+        "ECO And IOC Are Sister Companies Under Mawarid Holding, Sharing A Common Heritage, Operational Experience And Commitment To Delivering Dependable Services Across Saudi Arabia.",
 
       holdingLabel: "Holding Company",
 
@@ -431,10 +439,10 @@ const en = {
         "Eastern Catering & Operations Company",
 
       description:
-        "ECO has long been recognized by clients for its operational services and extensive experience across facility support, environmental services and related operational activities.",
+        "ECO Has Long Been Recognized By Clients For Its Operational Services And Extensive Experience Across Facility Support, Environmental Services And Related Operational Activities.",
 
       note:
-        "For many longstanding clients, ECO represents a familiar name associated with dependable operational service delivery.",
+        "For Many Longstanding Clients, ECO Represents A Familiar Name Associated With Dependable Operational Service Delivery.",
     },
 
 
@@ -453,10 +461,10 @@ const en = {
         "Established 1982",
 
       description:
-        "Established in 1982, IOC has developed more than four decades of market presence across Saudi Arabia, delivering integrated facility management and operational solutions to a diverse client base.",
+        "Established In 1982, IOC Has Developed More Than Four Decades Of Market Presence Across Saudi Arabia, Delivering Integrated Facility Management And Operational Solutions To A Diverse Client Base.",
 
       note:
-        "IOC builds on the same group heritage, experience and commitment to quality while presenting a modern, integrated facility management identity.",
+        "IOC Builds On The Same Group Heritage, Experience And Commitment To Quality While Presenting A Modern, Integrated Facility Management Identity.",
     },
 
 
@@ -472,10 +480,10 @@ const en = {
         "You May Already Know Us Through ECO.",
 
       description:
-        "Many of our clients are familiar with ECO and its history of operational service delivery. IOC shares the same Mawarid heritage and brings forward decades of group experience, capability and commitment to service excellence.",
+        "Many Of Our Clients Are Familiar With ECO And Its History Of Operational Service Delivery. IOC Shares The Same Mawarid Heritage And Brings Forward Decades Of Group Experience, Capability And Commitment To Service Excellence.",
 
       highlight:
-        "The name may be different, but the experience, operational understanding and commitment to dependable service are built on the same longstanding group legacy.",
+        "The Name May Be Different, But The Experience, Operational Understanding And Commitment To Dependable Service Are Built On The Same Longstanding Group Legacy.",
     },
 
 
@@ -487,12 +495,12 @@ const en = {
 
       label: "IOC Today",
 
-      title: "Experience Built for",
+      title: "Experience Built For",
 
-      accent: "the Future",
+      accent: "The Future",
 
       description:
-        "Today, IOC combines decades of operational experience with modern technology, skilled teams and sustainable practices to deliver integrated facility management solutions across the Kingdom.",
+        "Today, IOC Combines Decades Of Operational Experience With Modern Technology, Skilled Teams And Sustainable Practices To Deliver Integrated Facility Management Solutions Across The Kingdom.",
 
       sustainabilityLabel:
         "Our Commitment",
@@ -505,7 +513,7 @@ const en = {
 
         years: {
           value: "40+",
-          label: "Years of Market Experience",
+          label: "Years Of Market Experience",
         },
 
         clients: {
@@ -530,10 +538,10 @@ const en = {
       label: "Moving Forward",
 
       title:
-        "Building on Decades of Experience to Deliver Better Operations.",
+        "Building On Decades Of Experience To Deliver Better Operations.",
 
       description:
-        "Discover how IOC combines operational expertise, integrated services and sustainable practices to support your business.",
+        "Discover How IOC Combines Operational Expertise, Integrated Services And Sustainable Practices To Support Your Business.",
 
       button:
         "Explore Our Services",
@@ -549,16 +557,16 @@ const en = {
 
     label: "Why Choose IOC",
 
-    title: "A trusted partner for",
+    title: "A Trusted Partner For",
 
     titleAccent:
-      "integrated facility management",
+      "Integrated Facility Management",
 
     intro:
-      "IOC combines operational expertise, skilled professionals and reliable service systems to deliver solutions tailored to each client’s requirements.",
+      "IOC Combines Operational Expertise, Skilled Professionals And Reliable Service Systems To Deliver Solutions Tailored To Each Client’s Requirements.",
 
     years:
-      "Years of proven operational excellence",
+      "Years Of Proven Operational Excellence",
 
 
     strengths: [
@@ -567,57 +575,61 @@ const en = {
         title: "Operational Excellence",
 
         description:
-          "Efficient, reliable and performance-driven services designed to support continuous business operations.",
+          "Efficient, Reliable And Performance-Driven Services Designed To Support Continuous Business Operations.",
 
         points: [
-          "Reliable service delivery",
-          "Continuous improvement",
-          "Performance-focused operations",
+          "Reliable Service Delivery",
+          "Continuous Improvement",
+          "Performance-Focused Operations",
         ],
       },
+
 
       {
         title: "Quality & Compliance",
 
         description:
-          "Our operations follow strict quality, safety and regulatory standards across every service.",
+          "Our Operations Follow Strict Quality, Safety And Regulatory Standards Across Every Service.",
 
         points: [
-          "Safety-first approach",
-          "Quality control systems",
-          "Regulatory compliance",
+          "Safety-First Approach",
+          "Quality Control Systems",
+          "Regulatory Compliance",
         ],
       },
+
 
       {
         title: "Experienced Team",
 
         description:
-          "Skilled professionals and experienced operational teams committed to delivering dependable results.",
+          "Skilled Professionals And Experienced Operational Teams Committed To Delivering Dependable Results.",
 
         points: [
-          "Qualified professionals",
-          "Dedicated support teams",
-          "Industry experience",
+          "Qualified Professionals",
+          "Dedicated Support Teams",
+          "Industry Experience",
         ],
       },
+
 
       {
         title: "Nationwide Capability",
 
         description:
-          "Strategic operational presence supporting clients across major commercial and industrial cities.",
+          "Strategic Operational Presence Supporting Clients Across Major Commercial And Industrial Cities.",
 
         points: [
-          "Riyadh and Jeddah",
-          "Dammam and Jubail",
-          "Flexible service deployment",
+          "Riyadh And Jeddah",
+          "Dammam And Jubail",
+          "Flexible Service Deployment",
         ],
       },
     ],
 
+
     bottom:
-      "Delivering safe, reliable and sustainable operational support throughout the Kingdom.",
+      "Delivering Safe, Reliable And Sustainable Operational Support Throughout The Kingdom.",
 
     industriesLink:
       "Industries We Serve",
@@ -630,85 +642,102 @@ const en = {
 
   industries: {
 
-    heroLabel: "Industries We Serve",
+    heroLabel:
+      "Industries We Serve",
 
-    heroTitle: "Tailored solutions for",
+    heroTitle:
+      "Tailored Solutions For",
 
-    heroAccent: "diverse industries",
+    heroAccent:
+      "Diverse Industries",
 
     heroDescription:
-      "IOC delivers integrated facility management and operational support designed around the requirements of each industry.",
+      "IOC Delivers Integrated Facility Management And Operational Support Designed Around The Requirements Of Each Industry.",
 
     expertiseLabel:
       "Our Industry Expertise",
 
     expertiseTitle:
-      "Supporting complex operational environments across the Kingdom",
+      "Supporting Complex Operational Environments Across The Kingdom",
 
     expertiseDescription:
-      "From commercial and industrial facilities to healthcare, education and hospitality environments, IOC provides reliable, safe and efficient service delivery.",
+      "From Commercial And Industrial Facilities To Healthcare, Education And Hospitality Environments, IOC Provides Reliable, Safe And Efficient Service Delivery.",
+
 
     items: [
 
       {
-        title: "Commercial",
+        title:
+          "Commercial",
 
         description:
-          "Integrated facility management solutions for offices, corporate buildings and business centres.",
+          "Integrated Facility Management Solutions For Offices, Corporate Buildings And Business Centres.",
       },
 
+
       {
-        title: "Industrial",
+        title:
+          "Industrial",
 
         description:
-          "Reliable operational support for factories, warehouses and industrial facilities.",
+          "Reliable Operational Support For Factories, Warehouses And Industrial Facilities.",
       },
 
+
       {
-        title: "Healthcare",
+        title:
+          "Healthcare",
 
         description:
-          "Safe, hygienic and compliant facility services for hospitals, clinics and medical centres.",
+          "Safe, Hygienic And Compliant Facility Services For Hospitals, Clinics And Medical Centres.",
       },
 
+
       {
-        title: "Hospitality",
+        title:
+          "Hospitality",
 
         description:
-          "Professional facility support for hotels, accommodation facilities and hospitality properties.",
+          "Professional Facility Support For Hotels, Accommodation Facilities And Hospitality Properties.",
       },
 
+
       {
-        title: "Education",
+        title:
+          "Education",
 
         description:
-          "Clean, safe and efficient environments for schools, colleges and universities.",
+          "Clean, Safe And Efficient Environments For Schools, Colleges And Universities.",
       },
 
+
       {
-        title: "Retail",
+        title:
+          "Retail",
 
         description:
-          "Responsive facility management for shopping malls, showrooms and retail outlets.",
+          "Responsive Facility Management For Shopping Malls, Showrooms And Retail Outlets.",
       },
     ],
 
-    clientsLabel: "Our Clients",
+
+    clientsLabel:
+      "Our Clients",
 
     clientsTitle:
-      "Trusted partnerships across the industries we serve",
+      "Trusted Partnerships Across The Industries We Serve",
 
     clientsDescription:
-      "We are proud to support leading organizations through dependable facility management, technical services and operational expertise.",
+      "We Are Proud To Support Leading Organizations Through Dependable Facility Management, Technical Services And Operational Expertise.",
 
     clientLogoAlt:
-      "{{client}} logo",
+      "{{client}} Logo",
 
     partnerLabel:
       "Partner With IOC",
 
     partnerTitle:
-      "Reliable operational support for your industry",
+      "Reliable Operational Support For Your Industry",
 
     partnerButton:
       "Discuss Your Requirements",
@@ -724,34 +753,46 @@ const en = {
     cards: [
 
       {
-        title: "Head Office",
+        title:
+          "Head Office",
+
         lines: [
           "Al Murabba, Riyadh 12626",
         ],
       },
 
+
       {
-        title: "Customer Service",
+        title:
+          "Customer Service",
+
         lines: [
           "+966 9200 51300",
         ],
       },
 
+
       {
-        title: "Email",
+        title:
+          "Email",
+
         lines: [
           "info@iocl.sa",
         ],
       },
 
+
       {
-        title: "Working Hours",
+        title:
+          "Working Hours",
+
         lines: [
           "Sunday – Thursday",
           "8:00 AM – 5:00 PM",
         ],
       },
     ],
+
 
     heroLabel:
       "Contact International Operations Company",
@@ -763,58 +804,58 @@ const en = {
       "Operations Together.",
 
     heroDescription:
-      "Speak with our team about integrated facility management, environmental services and operational solutions across Saudi Arabia.",
+      "Speak With Our Team About Integrated Facility Management, Environmental Services And Operational Solutions Across Saudi Arabia.",
 
     sendEnquiry:
-      "Send an Enquiry",
+      "Send An Enquiry",
 
     callTeam:
       "Call Our Team",
 
     getInTouch:
-      "Get in Touch",
+      "Get In Touch",
 
     reachTitle:
-      "Choose the easiest way to reach us.",
+      "Choose The Easiest Way To Reach Us.",
 
     reachDescription:
-      "Our team is available to support enquiries, quotations, service requests and business partnerships.",
+      "Our Team Is Available To Support Enquiries, Quotations, Service Requests And Business Partnerships.",
 
     supportLabel:
       "Reliable Support",
 
     supportTitle:
-      "Solutions designed around your operations.",
+      "Solutions Designed Around Your Operations.",
 
     supportDescription:
-      "Share your requirements with us and our team will recommend the right service solution for your business.",
+      "Share Your Requirements With Us And Our Team Will Recommend The Right Service Solution For Your Business.",
 
     coverageFeature:
-      "Nationwide operational coverage",
+      "Nationwide Operational Coverage",
 
     responsiveFeature:
-      "Responsive customer support",
+      "Responsive Customer Support",
 
     formLabel:
-      "Send an Enquiry",
+      "Send An Enquiry",
 
     formTitle:
-      "Tell us how we can assist you.",
+      "Tell Us How We Can Assist You.",
 
     formDescription:
-      "Complete the form and our team will contact you as soon as possible.",
+      "Complete The Form And Our Team Will Contact You As Soon As Possible.",
 
     fullName:
       "Full Name",
 
     fullNamePlaceholder:
-      "Enter your full name",
+      "Enter Your Full Name",
 
     companyName:
       "Company Name",
 
     companyPlaceholder:
-      "Enter company name",
+      "Enter Company Name",
 
     email:
       "Email Address",
@@ -832,7 +873,7 @@ const en = {
       "Interested Service",
 
     selectService:
-      "Select a service",
+      "Select A Service",
 
     other:
       "Other",
@@ -841,13 +882,13 @@ const en = {
       "Message",
 
     messagePlaceholder:
-      "Tell us about your requirements",
+      "Tell Us About Your Requirements",
 
     submit:
       "Send Enquiry",
 
     success:
-      "Thank you. Your enquiry has been recorded. Our team will contact you shortly.",
+      "Thank You. Your Enquiry Has Been Recorded. Our Team Will Contact You Shortly.",
   },
 
 
@@ -858,46 +899,46 @@ const en = {
   serviceDetails: {
 
     notFound:
-      "Service not found",
+      "Service Not Found",
 
     notFoundDescription:
-      "The service you’re looking for is not available.",
+      "The Service You’re Looking For Is Not Available.",
 
     returnHome:
-      "Return to homepage",
+      "Return To Homepage",
 
     allServices:
-      "All services",
+      "All Services",
 
     discuss:
-      "Discuss your requirements",
+      "Discuss Your Requirements",
 
     benefitsLabel:
-      "Service benefits",
+      "Service Benefits",
 
     expect:
-      "What you can expect",
+      "What You Can Expect",
 
     overview:
-      "Service overview",
+      "Service Overview",
 
     sectors:
-      "Supporting your sector",
+      "Supporting Your Sector",
 
     capabilities:
-      "Our capabilities",
+      "Our Capabilities",
 
     provide:
-      "What we provide",
+      "What We Provide",
 
     processLabel:
-      "How we work",
+      "How We Work",
 
     processTitle:
-      "A clear path from assessment to improvement",
+      "A Clear Path From Assessment To Improvement",
 
     processDescription:
-      "Every programme is shaped around the facility, its risks and the standards that matter to your operation.",
+      "Every Programme Is Shaped Around The Facility, Its Risks And The Standards That Matter To Your Operation.",
 
 
     /* ------------------------------------------------------
@@ -916,7 +957,7 @@ const en = {
         "Fleet & Equipment",
 
       description:
-        "Our operational capability includes a versatile range of containers, collection vehicles and compaction systems designed to support commercial, industrial and high-volume waste management requirements.",
+        "Our Operational Capability Includes A Versatile Range Of Containers, Collection Vehicles And Compaction Systems Designed To Support Commercial, Industrial And High-Volume Waste Management Requirements.",
 
 
       /* ----------------------------------------------------
@@ -929,10 +970,10 @@ const en = {
           "Waste Container Solutions",
 
         description:
-          "A comprehensive container range supporting everything from routine commercial collection to high-volume industrial waste handling.",
+          "A Comprehensive Container Range Supporting Everything From Routine Commercial Collection To High-Volume Industrial Waste Handling.",
 
         alt:
-          "IOC waste container range including plastic bins, commercial containers, lugger containers and hook lift containers",
+          "IOC Waste Container Range Including Plastic Bins, Commercial Containers, Lugger Containers And Hook Lift Containers",
       },
 
 
@@ -946,10 +987,10 @@ const en = {
           "Collection & Compaction Fleet",
 
         description:
-          "Specialized collection vehicles and compaction equipment support efficient transportation, on-site volume reduction and continuous waste handling operations.",
+          "Specialized Collection Vehicles And Compaction Equipment Support Efficient Transportation, On-Site Volume Reduction And Continuous Waste Handling Operations.",
 
         alt:
-          "IOC waste collection vehicles, mobile compaction trucks and stationary compactors",
+          "IOC Waste Collection Vehicles, Mobile Compaction Trucks And Stationary Compactors",
       },
     },
   },
@@ -965,7 +1006,7 @@ const en = {
       "International Operations Company",
 
     description:
-      "Delivering integrated facility management, environmental and operational solutions that create cleaner, safer and more sustainable environments.",
+      "Delivering Integrated Facility Management, Environmental And Operational Solutions That Create Cleaner, Safer And More Sustainable Environments.",
 
     tagline:
       "Creating Sustainable Living",
@@ -974,7 +1015,7 @@ const en = {
       "Company",
 
     companyLinksLabel:
-      "Footer company links",
+      "Footer Company Links",
 
     home:
       "Home",
@@ -995,7 +1036,7 @@ const en = {
       "Our Services",
 
     serviceLinksLabel:
-      "Footer service links",
+      "Footer Service Links",
 
     contact:
       "Contact",
@@ -1004,10 +1045,10 @@ const en = {
       "Riyadh",
 
     country:
-      "Kingdom of Saudi Arabia",
+      "Kingdom Of Saudi Arabia",
 
     copyright:
-      "© {{year}} International Operations Company. All rights reserved.",
+      "© {{year}} International Operations Company. All Rights Reserved.",
 
     privacy:
       "Privacy Policy",
@@ -1137,7 +1178,7 @@ const ar = {
     ------------------------------------------------------ */
 
     managingDirector: {
-      name: "سيُضاف الاسم لاحقاً",
+      name: "شربيل كيروز",
       position: "المدير العام",
       description:
         "يتولى القيادة والتوجيه الاستراتيجي لعمليات الشركة ومبادرات النمو والتطوير على المدى الطويل.",
@@ -1153,7 +1194,7 @@ const ar = {
       sales: {
 
         name:
-          "سيُضاف الاسم لاحقاً",
+          "سيف المجالي",
 
         position:
           "مدير المبيعات",
@@ -1162,7 +1203,7 @@ const ar = {
       operations: {
 
         name:
-          "سيُضاف الاسم لاحقاً",
+          "رامي يوسف",
 
         position:
           "مدير العمليات",
@@ -1171,7 +1212,7 @@ const ar = {
       finance: {
 
         name:
-          "سيُضاف الاسم لاحقاً",
+          "راجيش كولكارني",
 
         position:
           "المدير المالي",
@@ -1180,7 +1221,7 @@ const ar = {
       hrAdmin: {
 
         name:
-          "سيُضاف الاسم لاحقاً",
+          "أروى بن عشبان",
 
         position:
           "مدير الموارد البشرية",
@@ -1631,7 +1672,7 @@ const ar = {
         "ECO",
 
       fullName:
-        "شركة التموين والعمليات الشرقية",
+        "الشركة الشرقية للتموين والتشغيل",
 
       description:
         "تُعرف ECO لدى العديد من العملاء بخبرتها الطويلة في الخدمات التشغيلية ودعم المرافق والخدمات البيئية والأنشطة المرتبطة بها.",
@@ -1985,7 +2026,7 @@ const ar = {
           "خدمة العملاء",
 
         lines: [
-          "+966 9200 51300",
+          "\u200E+966 9200 51300\u200E",
         ],
       },
 
@@ -2286,10 +2327,10 @@ const ar = {
     "Soft-Facility-Management": {
 
       title:
-        "الإدارة الناعمة للمرافق",
+        "الإدارة العامة للمرافق",
 
       menuTitle:
-        "الإدارة الناعمة للمرافق",
+        "الإدارة العامة للمرافق",
 
       category:
         "خدمات الأفراد وبيئة العمل",
