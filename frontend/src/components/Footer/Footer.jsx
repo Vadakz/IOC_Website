@@ -403,19 +403,7 @@ export default function Footer() {
           </p>
 
 
-          {/* LEGAL LINKS */}
 
-          <div className="footer-legal-links">
-
-            <a href="#">
-              {t("footer.privacy")}
-            </a>
-
-            <a href="#">
-              {t("footer.terms")}
-            </a>
-
-          </div>
 
         </div>
 

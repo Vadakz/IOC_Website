@@ -30,6 +30,7 @@ const en = {
     team: "Our Team",
     services: "Services",
     coverage: "Coverage",
+    clients: "Our Clients",
     contact: "Contact Us",
     quote: "Get A Quote",
     openMenu: "Open Navigation Menu",
@@ -758,6 +759,8 @@ const en = {
 
         lines: [
           "Al Murabba, Riyadh 12626",
+          "Western Region : Jeddhah",
+          "Eastern Region : Dammam",
         ],
       },
 
@@ -1104,6 +1107,9 @@ const ar = {
 
     coverage:
       "نطاق التغطية",
+
+    clients:
+     "عملاؤنا",
 
     contact:
       "اتصل بنا",
@@ -2018,6 +2024,8 @@ const ar = {
 
         lines: [
           "المربع، الرياض 12626",
+          "المنطقة الغربية: جدة",
+          "المنطقة الشرقية: الدمام"
         ],
       },
 

@@ -147,11 +147,10 @@ export default function Navbar() {
                 ================================================== */}
 
                 <nav
-                    className={`navbar-links ${
-                        menuOpen
+                    className={`navbar-links ${menuOpen
                             ? "navbar-links-open"
                             : ""
-                    }`}
+                        }`}
                 >
 
 
@@ -191,11 +190,10 @@ export default function Navbar() {
                             {t("navbar.about")}
 
                             <span
-                                className={`dropdown-arrow ${
-                                    aboutOpen
+                                className={`dropdown-arrow ${aboutOpen
                                         ? "dropdown-arrow-open"
                                         : ""
-                                }`}
+                                    }`}
                             >
                                 ▾
                             </span>
@@ -208,11 +206,10 @@ export default function Navbar() {
                         ================================================== */}
 
                         <div
-                            className={`navbar-dropdown-menu ${
-                                aboutOpen
+                            className={`navbar-dropdown-menu ${aboutOpen
                                     ? "navbar-dropdown-menu-open"
                                     : ""
-                            }`}
+                                }`}
                         >
 
 
@@ -277,11 +274,10 @@ export default function Navbar() {
                             {t("navbar.services")}
 
                             <span
-                                className={`dropdown-arrow ${
-                                    servicesOpen
+                                className={`dropdown-arrow ${servicesOpen
                                         ? "dropdown-arrow-open"
                                         : ""
-                                }`}
+                                    }`}
                             >
                                 ▾
                             </span>
@@ -294,11 +290,10 @@ export default function Navbar() {
                         ================================================== */}
 
                         <div
-                            className={`navbar-dropdown-menu ${
-                                servicesOpen
+                            className={`navbar-dropdown-menu ${servicesOpen
                                     ? "navbar-dropdown-menu-open"
                                     : ""
-                            }`}
+                                }`}
                         >
 
                             {services.map((service) => {
@@ -357,6 +352,17 @@ export default function Navbar() {
                         {t("navbar.coverage")}
                     </button>
 
+
+                    {/* ==================================================
+                        OUR CLIENTS
+                    ================================================== */}
+                    <Link
+                        to="/industries#clients"
+                        className="navbar-link"
+                        onClick={closeAllMenus}
+                    >
+                        {t("navbar.clients")}
+                    </Link>
 
                     {/* ==================================================
                         CONTACT
@@ -523,11 +529,10 @@ export default function Navbar() {
 
                     <button
                         type="button"
-                        className={`navbar-toggle ${
-                            menuOpen
+                        className={`navbar-toggle ${menuOpen
                                 ? "navbar-toggle-active"
                                 : ""
-                        }`}
+                            }`}
                         aria-label={
                             menuOpen
                                 ? t("navbar.closeMenu")

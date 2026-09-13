@@ -595,3 +595,40 @@
 .industries-page .get-quote-btn {
   color: #ffffff !important;
 }
+
+/* ==========================================================
+   ARABIC CLIENT MARQUEE FIX
+   Keep the marquee physically LTR so all logos render.
+========================================================== */
+
+html[dir="rtl"] .clients-marquee {
+  direction: ltr;
+  overflow: hidden;
+}
+
+html[dir="rtl"] .clients-track {
+  direction: ltr;
+  display: flex;
+  width: max-content;
+
+  animation-name: clientsMoveArabic;
+  animation-duration: 35s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+
+/* ==========================================================
+   ARABIC MARQUEE
+   Move the complete duplicated track from right to left.
+========================================================== */
+
+@keyframes clientsMoveArabic {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 11px));
+  }
+}
