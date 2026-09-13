@@ -38,12 +38,6 @@ const contactSchema = new mongoose.Schema(
       required: true,
       trim: true,
     },
-
-    status: {
-      type: String,
-      enum: ["new", "contacted", "closed"],
-      default: "new",
-    },
   },
   {
     timestamps: true,

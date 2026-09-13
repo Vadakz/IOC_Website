@@ -6,11 +6,10 @@ import dotenv from "dotenv";
 import contactRouter from "./routes/contactRoutes.js";
 import connectDB from "./config/db.js";
 import { verifyEmailConnection } from "./utils/sendEmail.js";
-import authRouter from "./routes/authRoutes.js";
 
 /* ==========================================================
    DNS CONFIGURATION
-   Required because your router DNS was blocking MongoDB SRV.
+   Required because the router DNS was blocking MongoDB SRV.
 ========================================================== */
 
 dns.setServers([
@@ -29,12 +28,15 @@ dotenv.config();
 ========================================================== */
 
 await connectDB();
+
 try {
   await verifyEmailConnection();
 } catch (error) {
-  console.error("Email server connection failed:", error.message);
+  console.error(
+    "Email server connection failed:",
+    error.message
+  );
 }
-
 
 /* ==========================================================
    EXPRESS APPLICATION
@@ -45,7 +47,9 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 const CORS_ORIGIN = process.env.CORS_ORIGIN
-  ? process.env.CORS_ORIGIN.split(",").map((origin) => origin.trim())
+  ? process.env.CORS_ORIGIN
+      .split(",")
+      .map((origin) => origin.trim())
   : "*";
 
 /* ==========================================================
@@ -67,7 +71,7 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.status(200).json({
     success: true,
-    service: "IOC ECO Backend",
+    service: "IOC Backend",
     message: "Backend is running successfully.",
   });
 });
@@ -86,8 +90,6 @@ app.get("/health", (req, res) => {
 ========================================================== */
 
 app.use("/api/contact", contactRouter);
-
-app.use("/api/auth", authRouter);
 
 /* ==========================================================
    404 HANDLER
@@ -119,6 +121,6 @@ app.use((err, req, res, next) => {
 
 app.listen(PORT, () => {
   console.log(
-    `IOC/ECO backend listening on http://localhost:${PORT}`
+    `IOC backend listening on http://localhost:${PORT}`
   );
 });
