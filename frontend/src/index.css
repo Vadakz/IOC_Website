@@ -217,10 +217,12 @@ footer.site{background:var(--navy-3);color:rgba(255,255,255,0.7);padding:56px 0 
 
 
 /* ==========================================================
-   REMOVE DECORATIVE SECTION HEADING DASHES SITE-WIDE
-========================================================== */
+   REMOVE DECORATIVE DASHES SITE-WIDE
+   ========================================================== */
 
+/* Eyebrow pseudo-elements */
 .eyebrow::before,
+.hero-eyebrow::before,
 .journey-eyebrow::before,
 .coverage-label::before,
 .about-label::before,
@@ -228,10 +230,31 @@ footer.site{background:var(--navy-3);color:rgba(255,255,255,0.7);padding:56px 0 
 .contact-label::before,
 .industries-label::before,
 .why-choose-label::before,
-.footer-label::before {
+.footer-label::before,
+.section-eyebrow::before {
   content: none !important;
   display: none !important;
-  width: 0 !important;
-  height: 0 !important;
-  margin: 0 !important;
+}
+
+/* Eyebrow dash elements */
+.hero-eyebrow-line,
+.journey-eyebrow-line,
+.coverage-label-line,
+.about-label-line,
+.services-label-line,
+.contact-label-line,
+.industries-label-line,
+.why-choose-label-line,
+.footer-label-line,
+.section-eyebrow-line {
+  display: none !important;
+}
+
+.journey-eyebrow::before {
+    content: none !important;
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }

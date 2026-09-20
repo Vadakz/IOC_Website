@@ -9,7 +9,7 @@
   text-align: center;
 }
 
-.services-heading > span {
+.services-heading>span {
   display: inline-block;
   margin-bottom: 14px;
   color: var(--secondary);
@@ -34,8 +34,24 @@
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 24px;
+}
+
+/* First 3 cards */
+.services-grid .service-card:nth-child(1),
+.services-grid .service-card:nth-child(2),
+.services-grid .service-card:nth-child(3) {
+  grid-column: span 2;
+}
+
+/* Last 2 cards - centered */
+.services-grid .service-card:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.services-grid .service-card:nth-child(5) {
+  grid-column: 4 / span 2;
 }
 
 .service-card {
@@ -157,8 +173,8 @@
   transition: transform 0.25s ease;
 }
 
-.service-card:hover .service-link > span,
-.service-card:focus-visible .service-link > span {
+.service-card:hover .service-link>span,
+.service-card:focus-visible .service-link>span {
   transform: translateX(5px);
 }
 

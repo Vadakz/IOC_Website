@@ -148,8 +148,8 @@ export default function Navbar() {
 
                 <nav
                     className={`navbar-links ${menuOpen
-                            ? "navbar-links-open"
-                            : ""
+                        ? "navbar-links-open"
+                        : ""
                         }`}
                 >
 
@@ -191,8 +191,8 @@ export default function Navbar() {
 
                             <span
                                 className={`dropdown-arrow ${aboutOpen
-                                        ? "dropdown-arrow-open"
-                                        : ""
+                                    ? "dropdown-arrow-open"
+                                    : ""
                                     }`}
                             >
                                 ▾
@@ -206,11 +206,10 @@ export default function Navbar() {
                         ================================================== */}
 
                         <div
-                            className={`navbar-dropdown-menu ${aboutOpen
-                                    ? "navbar-dropdown-menu-open"
-                                    : ""
+                            className={`navbar-dropdown-menu navbar-about-menu ${aboutOpen ? "navbar-dropdown-menu-open" : ""
                                 }`}
                         >
+
 
 
                             {/* ABOUT US */}
@@ -275,8 +274,8 @@ export default function Navbar() {
 
                             <span
                                 className={`dropdown-arrow ${servicesOpen
-                                        ? "dropdown-arrow-open"
-                                        : ""
+                                    ? "dropdown-arrow-open"
+                                    : ""
                                     }`}
                             >
                                 ▾
@@ -291,8 +290,8 @@ export default function Navbar() {
 
                         <div
                             className={`navbar-dropdown-menu ${servicesOpen
-                                    ? "navbar-dropdown-menu-open"
-                                    : ""
+                                ? "navbar-dropdown-menu-open"
+                                : ""
                                 }`}
                         >
 
@@ -530,8 +529,8 @@ export default function Navbar() {
                     <button
                         type="button"
                         className={`navbar-toggle ${menuOpen
-                                ? "navbar-toggle-active"
-                                : ""
+                            ? "navbar-toggle-active"
+                            : ""
                             }`}
                         aria-label={
                             menuOpen

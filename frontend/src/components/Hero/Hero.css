@@ -66,11 +66,7 @@
   text-transform: uppercase;
 }
 
-.hero-eyebrow-line {
-  width: 34px;
-  height: 2px;
-  background: #31bdb3;
-}
+
 
 .hero h1 {
   max-width: 700px;

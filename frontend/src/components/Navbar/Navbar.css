@@ -1,6 +1,6 @@
 /* ==========================================================
    FLOATING GLASS NAVBAR
-========================================================== */
+   ========================================================== */
 
 .navbar {
   position: fixed;
@@ -27,7 +27,7 @@
 
 /* ==========================================================
    NAVBAR CONTAINER
-========================================================== */
+   ========================================================== */
 
 .navbar-container {
   width: 100%;
@@ -45,7 +45,7 @@
 
 /* ==========================================================
    BRAND
-========================================================== */
+   ========================================================== */
 
 .navbar-brand {
   display: flex;
@@ -75,7 +75,7 @@
 
 /* ==========================================================
    BRAND DETAILS
-========================================================== */
+   ========================================================== */
 
 .brand-details strong {
   color: #ffffff;
@@ -100,7 +100,7 @@
 
 /* ==========================================================
    NAV LINKS
-========================================================== */
+   ========================================================== */
 
 .navbar-links {
   display: flex;
@@ -126,7 +126,7 @@
 
 /* ==========================================================
    NORMAL NAV LINKS
-========================================================== */
+   ========================================================== */
 
 .navbar-links a:not(.navbar-mobile-quote),
 .navbar-links button {
@@ -148,7 +148,9 @@
 }
 
 
-/* Underline */
+/* ==========================================================
+   NAVBAR UNDERLINE
+   ========================================================== */
 
 .navbar-links a:not(.navbar-mobile-quote)::after,
 .navbar-links button::after {
@@ -170,7 +172,9 @@
 }
 
 
-/* Hover */
+/* ==========================================================
+   NAVBAR HOVER
+   ========================================================== */
 
 .navbar-links a:not(.navbar-mobile-quote):hover,
 .navbar-links button:hover {
@@ -183,7 +187,9 @@
 }
 
 
-/* Active */
+/* ==========================================================
+   ACTIVE
+   ========================================================== */
 
 .navbar-links a.active,
 .navbar-links button.active {
@@ -200,7 +206,7 @@
 
 /* ==========================================================
    NAVBAR ACTIONS
-========================================================== */
+   ========================================================== */
 
 .navbar-actions {
   display: flex;
@@ -214,7 +220,7 @@
 
 /* ==========================================================
    LANGUAGE SWITCHER
-========================================================== */
+   ========================================================== */
 
 .navbar-language,
 .navbar-mobile-language {
@@ -284,8 +290,8 @@
 
 
 /* ==========================================================
-   SERVICES DROPDOWN CONTAINER
-========================================================== */
+   DROPDOWN CONTAINER
+   ========================================================== */
 
 .navbar-dropdown {
   position: relative;
@@ -308,8 +314,8 @@
 
 
 /* ==========================================================
-   SERVICES DROPDOWN MENU
-========================================================== */
+   DROPDOWN MENU
+   ========================================================== */
 
 .navbar-dropdown-menu {
   position: absolute;
@@ -348,7 +354,7 @@
 
 /* ==========================================================
    SHOW DROPDOWN
-========================================================== */
+   ========================================================== */
 
 .navbar-dropdown:hover .navbar-dropdown-menu,
 .navbar-dropdown:focus-within .navbar-dropdown-menu {
@@ -366,9 +372,12 @@
 
 /* ==========================================================
    DROPDOWN LINKS
-========================================================== */
+   ========================================================== */
 
-.navbar-dropdown-menu a {
+.navbar-dropdown-menu a,
+.navbar-dropdown-menu button {
+  box-sizing: border-box;
+
   display: flex;
   align-items: center;
 
@@ -378,14 +387,23 @@
 
   padding: 12px 14px;
 
+  border: none;
   border-radius: 9px;
+
+  background: transparent;
 
   color: rgba(255, 255, 255, 0.88);
 
+  font-family: inherit;
   font-size: 13px;
   font-weight: 600;
 
+  line-height: 1.2;
+
   text-decoration: none;
+  text-align: left;
+
+  cursor: pointer;
 
   transition:
     color 0.2s ease,
@@ -393,12 +411,19 @@
     transform 0.2s ease;
 }
 
-.navbar-dropdown-menu a::after {
+
+/* Remove main navbar underline inside dropdown */
+.navbar-dropdown-menu a::after,
+.navbar-dropdown-menu button::after {
   display: none !important;
+  content: none !important;
 }
 
-.navbar-dropdown-menu a:hover {
-  color: #ffffff;
+
+/* Dropdown hover */
+.navbar-dropdown-menu a:hover,
+.navbar-dropdown-menu button:hover {
+  color: #47d5cd;
 
   background: rgba(40, 181, 173, 0.14);
 
@@ -408,7 +433,7 @@
 
 /* ==========================================================
    DROPDOWN SERVICE ICON
-========================================================== */
+   ========================================================== */
 
 .dropdown-service-icon {
   display: flex;
@@ -429,7 +454,7 @@
 
 /* ==========================================================
    GET A QUOTE
-========================================================== */
+   ========================================================== */
 
 .navbar-quote,
 .navbar-mobile-quote {
@@ -442,11 +467,9 @@
   border-radius: 10px;
 
   background:
-    linear-gradient(
-      135deg,
+    linear-gradient(135deg,
       #20a7a0,
-      #287fc0
-    );
+      #287fc0);
 
   color: #ffffff !important;
 
@@ -483,7 +506,7 @@
 
 /* ==========================================================
    MOBILE TOGGLE
-========================================================== */
+   ========================================================== */
 
 .navbar-toggle {
   display: none;
@@ -533,7 +556,7 @@
 
 /* ==========================================================
    TABLET / MOBILE
-========================================================== */
+   ========================================================== */
 
 @media (max-width: 980px) {
 
@@ -558,7 +581,7 @@
 
   /* ========================================================
      MOBILE NAV PANEL
-  ======================================================== */
+     ======================================================== */
 
   .navbar-links {
     position: absolute;
@@ -608,9 +631,9 @@
 
   /* ========================================================
      MOBILE LINKS
-  ======================================================== */
+     ======================================================== */
 
-  .navbar-links > a:not(.navbar-mobile-quote),
+  .navbar-links>a:not(.navbar-mobile-quote),
   .navbar-dropdown-trigger {
     width: 100%;
 
@@ -621,20 +644,20 @@
     text-align: start;
   }
 
-  .navbar-links > a:not(.navbar-mobile-quote)::after,
+  .navbar-links>a:not(.navbar-mobile-quote)::after,
   .navbar-dropdown-trigger::after {
     display: none;
   }
 
-  .navbar-links > a:not(.navbar-mobile-quote):hover,
+  .navbar-links>a:not(.navbar-mobile-quote):hover,
   .navbar-dropdown-trigger:hover {
     color: #47d5cd;
   }
 
 
   /* ========================================================
-     MOBILE SERVICES DROPDOWN
-  ======================================================== */
+     MOBILE DROPDOWN
+     ======================================================== */
 
   .navbar-dropdown {
     width: 100%;
@@ -682,22 +705,26 @@
     transform: none;
   }
 
-  .navbar-dropdown-menu a {
+  .navbar-dropdown-menu a,
+  .navbar-dropdown-menu button {
     padding: 10px 11px;
 
     color: rgba(255, 255, 255, 0.82);
   }
 
-  .navbar-dropdown-menu a:hover {
-    color: #ffffff;
+  .navbar-dropdown-menu a:hover,
+  .navbar-dropdown-menu button:hover {
+    color: #47d5cd;
 
     background: rgba(40, 181, 173, 0.14);
+
+    transform: none;
   }
 
 
   /* ========================================================
      MOBILE QUOTE
-  ======================================================== */
+     ======================================================== */
 
   .navbar-mobile-quote {
     display: flex;
@@ -708,13 +735,13 @@
   }
 
   .navbar-quote {
-    display: none;  
+    display: none;
   }
 
 
   /* ========================================================
      MOBILE TOGGLE
-  ======================================================== */
+     ======================================================== */
 
   .navbar-toggle {
     display: block;
@@ -723,54 +750,178 @@
 
 
 /* ==========================================================
-   SMALL MOBILE
-========================================================== */
+   ABOUT US DROPDOWN — FINAL
+   ========================================================== */
 
-@media (max-width: 560px) {
+.navbar-about-menu {
+  position: absolute;
 
-  .navbar {
-    top: 8px;
+  top: calc(100% + 14px);
+  left: 50%;
 
-    width: calc(100% - 16px);
+  width: 210px;
 
-    border-radius: 14px;
+  margin: 0;
+  padding: 6px;
+
+  box-sizing: border-box;
+
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+
+  background: rgba(5, 29, 52, 0.97);
+
+  box-shadow:
+    0 22px 50px rgba(0, 0, 0, 0.28);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  overflow: hidden;
+
+  z-index: 1100;
+}
+
+
+/* ==========================================================
+   ABOUT US ITEMS
+   ========================================================== */
+
+.navbar-about-menu > a,
+.navbar-about-menu > button {
+  box-sizing: border-box;
+
+  display: flex;
+
+  align-items: center;
+
+  width: 100%;
+  height: 42px;
+  min-height: 42px;
+
+  margin: 0 !important;
+  padding: 0 12px !important;
+
+  border: 0;
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: rgba(255, 255, 255, 0.88);
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+
+  line-height: 1;
+
+  text-align: left;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transform: none !important;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+
+/* ==========================================================
+   ABOUT US ITEM HOVER
+   ========================================================== */
+
+.navbar-about-menu > a:hover,
+.navbar-about-menu > button:hover {
+  color: #47d5cd;
+
+  background: rgba(40, 181, 173, 0.14);
+
+  transform: none !important;
+}
+
+
+/* ==========================================================
+   REMOVE ALL UNDERLINES
+   ========================================================== */
+
+.navbar-about-menu > a::before,
+.navbar-about-menu > a::after,
+.navbar-about-menu > button::before,
+.navbar-about-menu > button::after {
+  content: none !important;
+
+  display: none !important;
+
+  width: 0 !important;
+  height: 0 !important;
+}
+
+
+/* ==========================================================
+   ABOUT US RTL
+   ========================================================== */
+
+html[dir="rtl"] .navbar-about-menu > a,
+html[dir="rtl"] .navbar-about-menu > button {
+  direction: rtl;
+
+  text-align: right;
+}
+
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 980px) {
+
+  .navbar-about-menu {
+    position: static;
+
+    width: 100%;
+
+    margin: 0;
+
+    padding: 6px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    box-shadow: none;
+
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+
+    overflow: hidden;
   }
 
-  .navbar-container {
-    height: 66px;
 
-    padding: 0 13px;
-  }
+  .navbar-about-menu > a,
+  .navbar-about-menu > button {
+    width: 100%;
 
-  .navbar-logo {
-    height: 56px;
+    height: 42px;
+    min-height: 42px;
 
-    max-width: 150px;
-  }
+    margin: 0 !important;
+    padding: 0 11px !important;
 
-  .brand-details {
-    display: none;
-  }
+    font-size: 13px;
 
-
-  /* Desktop language hidden */
-
-  .navbar-language {
-    display: none;
+    transform: none !important;
   }
 
 
-  /* Mobile language shown */
+  .navbar-about-menu > a:hover,
+  .navbar-about-menu > button:hover {
+    color: #47d5cd;
 
-  .navbar-mobile-language {
-    display: flex;
-    align-items: center;
+    background: rgba(40, 181, 173, 0.14);
 
-    padding: 10px;
-  }
-
-  .navbar-toggle {
-    width: 40px;
-    height: 40px;
+    transform: none !important;
   }
 }

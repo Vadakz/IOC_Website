@@ -33,12 +33,12 @@
 }
 
 .journey-eyebrow::before {
-  content: "";
-
-  width: 32px;
-  height: 2px;
-
-  background: #28b5ad;
+    content: none !important;
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 
@@ -1128,4 +1128,36 @@
 
   object-fit: contain;
   object-position: center;
+}
+
+/* ==========================================================
+   REMOVE ALL DECORATIVE DASHES / LINES
+   ========================================================== */
+
+*::before,
+*::after {
+  /* Do not use this globally — see safer rule below */
+}
+
+/* Section / eyebrow decorative lines */
+.eyebrow::before,
+.hero-eyebrow-line,
+.journey-eyebrow-line,
+.coverage-label::before,
+.about-label::before,
+.services-label::before,
+.contact-label::before,
+.industries-label::before,
+.why-choose-label::before,
+.footer-label::before,
+.section-eyebrow::before,
+.section-title::before,
+.section-heading::before {
+  display: none !important;
+  content: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
 }
