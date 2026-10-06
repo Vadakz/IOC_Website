@@ -945,6 +945,114 @@ const en = {
 
 
     /* ------------------------------------------------------
+       SOFT FACILITY MANAGEMENT — INTEGRATED MEP
+    ------------------------------------------------------ */
+
+    softMep: {
+
+      label:
+        "Integrated Technical Support",
+
+      title:
+        "Services",
+
+      description:
+        "Our Soft Facilities Management Solutions Are Supported By Integrated MEP Services Covering Mechanical, Electrical, Plumbing And HVAC Systems. Our Technical Teams Support Preventive Maintenance, Inspections And Responsive Repairs To Help Maintain Reliable, Safe And Efficient Building Operations.",
+
+      imageAlt:
+        "MEP Services",
+
+      imageKicker:
+        "MEP",
+
+      imageTitle:
+        "Technical Building Services",
+
+
+      /* ----------------------------------------------------
+         MECHANICAL
+      ---------------------------------------------------- */
+
+      mechanical: {
+
+        title:
+          "Mechanical",
+
+        description:
+          "Reliable Maintenance And Support For Essential Mechanical Building Systems.",
+
+      },
+
+
+      /* ----------------------------------------------------
+         ELECTRICAL
+      ---------------------------------------------------- */
+
+      electrical: {
+
+        title:
+          "Electrical",
+
+        description:
+          "Inspection, Maintenance And Responsive Support For Electrical Systems.",
+
+      },
+
+
+      /* ----------------------------------------------------
+         PLUMBING
+      ---------------------------------------------------- */
+
+      plumbing: {
+
+        title:
+          "Plumbing",
+
+        description:
+          "Planned And Responsive Plumbing Maintenance To Keep Facilities Operating Smoothly.",
+
+      },
+
+
+      /* ----------------------------------------------------
+         HVAC
+      ---------------------------------------------------- */
+
+      hvac: {
+
+        title:
+          "HVAC",
+
+        description:
+          "HVAC Servicing And Performance Support For Comfortable And Efficient Facilities.",
+
+      },
+
+
+      /* ----------------------------------------------------
+         SUPPORT AREAS
+      ---------------------------------------------------- */
+
+      support: {
+
+        preventive:
+          "Preventive Maintenance",
+
+        inspections:
+          "Technical Inspections",
+
+        repairs:
+          "Corrective Repairs",
+
+        building:
+          "Building Systems Support",
+
+      },
+
+    },
+
+
+    /* ------------------------------------------------------
        WASTE MANAGEMENT EQUIPMENT
     ------------------------------------------------------ */
 
@@ -994,6 +1102,18 @@ const en = {
 
         alt:
           "IOC Waste Collection Vehicles, Mobile Compaction Trucks And Stationary Compactors",
+      },
+
+      /* ----------------------------------------------------
+        Sewage Disposal
+     ---------------------------------------------------- */
+
+      sewage: {
+        title: "Sewage Disposal",
+        description:
+          "IOC/ECO Supports Sewage And Wastewater Management Through Specialized Tankers, Vacuum Tankers And Suction Equipment. Our Fleet Supports Reliable Collection, Transportation And Responsible Disposal For Commercial, Industrial And Other High-Volume Requirements.",
+        alt:
+          "IOC Sewage Disposal Fleet Including 18 Cubic Meter And 32 Cubic Meter Sewage Suction Vehicles",
       },
     },
   },
@@ -1109,7 +1229,7 @@ const ar = {
       "نطاق التغطية",
 
     clients:
-     "عملاؤنا",
+      "عملاؤنا",
 
     contact:
       "اتصل بنا",
@@ -2206,6 +2326,114 @@ const ar = {
 
 
     /* ------------------------------------------------------
+       الإدارة العامة للمرافق — خدمات MEP المتكاملة
+    ------------------------------------------------------ */
+
+    softMep: {
+
+      label:
+        "الدعم الفني المتكامل",
+
+      title:
+        "خدمات",
+
+      description:
+        "تدعم حلولنا للإدارة العامة للمرافق خدمات MEP المتكاملة التي تشمل الأنظمة الميكانيكية والكهربائية والصحية وأنظمة التكييف والتهوية. وتعمل فرقنا الفنية على تنفيذ الصيانة الوقائية والفحوصات والإصلاحات سريعة الاستجابة للمساعدة في الحفاظ على تشغيل المباني بكفاءة وأمان وموثوقية.",
+
+      imageAlt:
+        "خدمات MEP",
+
+      imageKicker:
+        "MEP",
+
+      imageTitle:
+        "الخدمات الفنية للمباني",
+
+
+      /* ----------------------------------------------------
+         الأعمال الميكانيكية
+      ---------------------------------------------------- */
+
+      mechanical: {
+
+        title:
+          "الأعمال الميكانيكية",
+
+        description:
+          "صيانة ودعم موثوقان للأنظمة الميكانيكية الأساسية في المباني.",
+
+      },
+
+
+      /* ----------------------------------------------------
+         الأعمال الكهربائية
+      ---------------------------------------------------- */
+
+      electrical: {
+
+        title:
+          "الأعمال الكهربائية",
+
+        description:
+          "فحص وصيانة ودعم سريع الاستجابة للأنظمة الكهربائية.",
+
+      },
+
+
+      /* ----------------------------------------------------
+         أعمال السباكة
+      ---------------------------------------------------- */
+
+      plumbing: {
+
+        title:
+          "أعمال السباكة",
+
+        description:
+          "صيانة مخططة وسريعة الاستجابة لأنظمة السباكة للحفاظ على استمرارية تشغيل المرافق.",
+
+      },
+
+
+      /* ----------------------------------------------------
+         التكييف والتهوية
+      ---------------------------------------------------- */
+
+      hvac: {
+
+        title:
+          "التكييف والتهوية",
+
+        description:
+          "خدمات صيانة ودعم لأداء أنظمة التكييف والتهوية لضمان مرافق مريحة وفعالة.",
+
+      },
+
+
+      /* ----------------------------------------------------
+         مجالات الدعم
+      ---------------------------------------------------- */
+
+      support: {
+
+        preventive:
+          "الصيانة الوقائية",
+
+        inspections:
+          "الفحوصات الفنية",
+
+        repairs:
+          "الإصلاحات التصحيحية",
+
+        building:
+          "دعم أنظمة المباني",
+
+      },
+
+    },
+
+
+    /* ------------------------------------------------------
        WASTE MANAGEMENT EQUIPMENT
     ------------------------------------------------------ */
 
@@ -2255,6 +2483,19 @@ const ar = {
 
         alt:
           "مركبات جمع النفايات وشاحنات الضغط المتنقلة والضواغط الثابتة التابعة لـ IOC",
+      },
+
+
+      /* ----------------------------------------------------
+        Sewage Disposal
+      ---------------------------------------------------- */
+
+      sewage: {
+        title: "التخلص من مياه الصرف الصحي",
+        description:
+          "تدعم IOC/ECO إدارة مياه الصرف الصحي والمياه العادمة من خلال صهاريج متخصصة وصهاريج شفط ومعدات سحب متخصصة. ويساعد أسطولنا في تنفيذ عمليات جمع ونقل موثوقة والتخلص المسؤول من مياه الصرف الصحي للمتطلبات التجارية والصناعية وغيرها من العمليات ذات الأحجام الكبيرة.",
+        alt:
+          "أسطول IOC للتخلص من مياه الصرف الصحي ويشمل مركبات شفط بسعة 18 و32 متراً مكعباً",
       },
     },
   },

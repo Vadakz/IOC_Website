@@ -9,7 +9,7 @@
   text-align: center;
 }
 
-.services-heading>span {
+.services-heading > span {
   display: inline-block;
   margin-bottom: 14px;
   color: var(--secondary);
@@ -38,6 +38,10 @@
   gap: 24px;
 }
 
+/* =========================
+   DESKTOP CARD POSITIONING
+========================= */
+
 /* First 3 cards */
 .services-grid .service-card:nth-child(1),
 .services-grid .service-card:nth-child(2),
@@ -53,6 +57,10 @@
 .services-grid .service-card:nth-child(5) {
   grid-column: 4 / span 2;
 }
+
+/* =========================
+   SERVICE CARD
+========================= */
 
 .service-card {
   position: relative;
@@ -93,6 +101,7 @@
   text-transform: uppercase;
 }
 
+/* Top hover line */
 .service-card::before {
   content: "";
   position: absolute;
@@ -119,6 +128,10 @@
   transform: scaleX(1);
 }
 
+/* =========================
+   SERVICE ICON
+========================= */
+
 .service-icon {
   width: 64px;
   height: 64px;
@@ -143,6 +156,10 @@
   color: #ffffff;
 }
 
+/* =========================
+   SERVICE CONTENT
+========================= */
+
 .service-card h3 {
   margin-bottom: 14px;
   color: var(--primary);
@@ -156,6 +173,10 @@
   font-size: 15px;
   line-height: 1.75;
 }
+
+/* =========================
+   LEARN MORE LINK
+========================= */
 
 .service-link {
   margin-top: auto;
@@ -173,33 +194,160 @@
   transition: transform 0.25s ease;
 }
 
-.service-card:hover .service-link>span,
-.service-card:focus-visible .service-link>span {
+.service-card:hover .service-link > span,
+.service-card:focus-visible .service-link > span {
   transform: translateX(5px);
 }
 
+/* =========================
+   TABLET
+========================= */
+
 @media (max-width: 980px) {
   .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 640px) {
-  .services-section {
-    padding: 80px 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
   }
 
-  .services-heading {
-    margin-bottom: 40px;
-    text-align: left;
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr;
+  /* Reset desktop positioning */
+  .services-grid .service-card:nth-child(1),
+  .services-grid .service-card:nth-child(2),
+  .services-grid .service-card:nth-child(3),
+  .services-grid .service-card:nth-child(4),
+  .services-grid .service-card:nth-child(5) {
+    grid-column: auto;
   }
 
   .service-card {
-    min-height: auto;
-    padding: 27px;
+    min-height: 320px;
+    padding: 28px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 640px) {
+  .services-section {
+    padding: 70px 0;
+  }
+
+  .services-heading {
+    max-width: 100%;
+    margin: 0 0 38px;
+    text-align: center;
+  }
+
+  .services-heading > span {
+    margin-bottom: 12px;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+
+  .services-heading h2 {
+    margin-bottom: 14px;
+    font-size: 34px;
+    line-height: 1.2;
+  }
+
+  .services-heading p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  /* Remove desktop grid positioning */
+  .services-grid .service-card:nth-child(1),
+  .services-grid .service-card:nth-child(2),
+  .services-grid .service-card:nth-child(3),
+  .services-grid .service-card:nth-child(4),
+  .services-grid .service-card:nth-child(5) {
+    grid-column: auto;
+  }
+
+  .service-card {
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    padding: 26px;
+    border-radius: 18px;
+  }
+
+  .service-card-number {
+    top: 22px;
+    right: 23px;
+    font-size: 11px;
+  }
+
+  .service-icon {
+    width: 58px;
+    height: 58px;
+    margin-bottom: 20px;
+    border-radius: 16px;
+    font-size: 24px;
+  }
+
+  .service-card-category {
+    margin-bottom: 8px;
+    font-size: 9px;
+    letter-spacing: 1.2px;
+  }
+
+  .service-card h3 {
+    margin-bottom: 12px;
+    font-size: 21px;
+    line-height: 1.3;
+  }
+
+  .service-card p {
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .service-link {
+    font-size: 13px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+  .services-section {
+    padding: 60px 0;
+  }
+
+  .services-heading h2 {
+    font-size: 30px;
+  }
+
+  .services-heading p {
+    font-size: 14px;
+  }
+
+  .service-card {
+    padding: 22px;
+  }
+
+  .service-icon {
+    width: 54px;
+    height: 54px;
+    margin-bottom: 18px;
+  }
+
+  .service-card h3 {
+    font-size: 20px;
+  }
+
+  .service-card p {
+    font-size: 13px;
   }
 }

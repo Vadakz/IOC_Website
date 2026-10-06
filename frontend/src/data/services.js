@@ -3,7 +3,6 @@ import {
   FaBuilding,
   FaBug,
   FaRecycle,
-  FaTools,
   FaUsersCog,
 } from "react-icons/fa";
 
@@ -78,7 +77,6 @@ const services = [
     ],
   },
 
-
   {
     id: 2,
     slug: "PestControl",
@@ -145,7 +143,6 @@ const services = [
       "Residential And Industrial Sites",
     ],
   },
-
 
   {
     id: 3,
@@ -214,90 +211,21 @@ const services = [
     ],
   },
 
-
   {
     id: 4,
-    slug: "MEP",
-    title: "Mechanical, Electrical And Plumbing Services",
-    menuTitle: "MEP Services",
-    category: "Technical Maintenance",
-
-    shortDescription:
-      "Proactive MEP And HVAC Maintenance That Supports Reliable, Efficient And Safe Building Operations.",
-
-    description:
-      "IOC/ECO Manages And Maintains Mechanical, Electrical And Plumbing Systems Using Planned Maintenance, Technical Inspections And Responsive On-Site Support. Our Focus Is To Improve System Reliability, Limit Avoidable Breakdowns And Help Critical Building Services Perform Efficiently.",
-
-    overviewTitle:
-      "Keeping Essential Building Systems Running",
-
-    icon: FaTools,
-
-    features: [
-      "Mechanical-System Maintenance",
-      "Electrical-System Inspections And Repairs",
-      "Plumbing Maintenance And Response",
-      "HVAC Servicing And Performance Checks",
-      "Preventive And Corrective Maintenance",
-      "Building Automation And Technical Support",
-    ],
-
-    outcomes: [
-      "Fewer Avoidable Breakdowns",
-      "Improved Operating Efficiency",
-      "Safer, More Dependable Systems",
-    ],
-
-    process: [
-      {
-        title: "Inspect",
-        text:
-          "Review System Condition, Operating History And Critical Maintenance Needs.",
-      },
-
-      {
-        title: "Schedule",
-        text:
-          "Build A Preventive Plan Around Assets, Risk And Operational Priorities.",
-      },
-
-      {
-        title: "Service",
-        text:
-          "Complete Planned Work And Responsive Repairs With Equipped Technicians.",
-      },
-
-      {
-        title: "Optimize",
-        text:
-          "Monitor Recurring Faults And Recommend Practical Performance Improvements.",
-      },
-    ],
-
-    sectors: [
-      "Healthcare",
-      "Commercial Real Estate",
-      "Data Centres",
-      "Industrial Facilities",
-    ],
-  },
-
-
-  {
-    id: 5,
     slug: "Soft-Facility-Management",
-    title: "Soft Facility Management",
-    menuTitle: "Soft Facility Management",
-    category: "People & Workplace Services",
+    title: "Soft Facilities Management",
+    menuTitle: "Soft Facilities Management",
+    category: "Integrated Facility Management",
 
     shortDescription:
-      "Coordinated Workplace Services That Keep Facilities Clean, Welcoming And Ready For Everyday Operations.",
+      "Coordinated Soft Facilities Management Services Supported By Technical MEP Solutions For Clean, Safe And Efficient Facilities.",
 
     description:
-      "IOC/ECO Brings Essential Non-Technical Services Under One Accountable Team. We Shape Each Programme Around The Facility, Its Occupants And The Client’s Operating Standards, Then Coordinate People, Schedules, Supplies And Quality Checks To Deliver A Consistent Workplace Experience.",
+      "IOC/ECO Brings Essential Soft Facilities Management Services Under One Accountable Team. We Shape Each Programme Around The Facility, Its Occupants And The Client’s Operating Standards, Then Coordinate People, Schedules, Supplies, Technical Support And Quality Checks To Deliver A Consistent Workplace Experience.",
 
     overviewTitle:
-      "A Better Everyday Experience For Every Facility",
+      "Integrated Soft Facilities Management For Every Facility",
 
     icon: FaUsersCog,
 
@@ -347,6 +275,77 @@ const services = [
       "Hospitality",
       "Education",
       "Residential Communities",
+    ],
+
+    /*
+     * MEP IS NOW PART OF SOFT FACILITIES MANAGEMENT
+     * It is intentionally not a top-level service.
+     */
+    subServices: [
+      {
+        id: 1,
+        slug: "MEP",
+        title: "Mechanical, Electrical And Plumbing Services",
+        menuTitle: "MEP Services",
+        category: "Technical Maintenance",
+
+        shortDescription:
+          "Proactive MEP And HVAC Maintenance That Supports Reliable, Efficient And Safe Building Operations.",
+
+        description:
+          "IOC/ECO Manages And Maintains Mechanical, Electrical And Plumbing Systems Using Planned Maintenance, Technical Inspections And Responsive On-Site Support. Our Focus Is To Improve System Reliability, Limit Avoidable Breakdowns And Help Critical Building Services Perform Efficiently.",
+
+        overviewTitle:
+          "Keeping Essential Building Systems Running",
+
+        features: [
+          "Mechanical-System Maintenance",
+          "Electrical-System Inspections And Repairs",
+          "Plumbing Maintenance And Response",
+          "HVAC Servicing And Performance Checks",
+          "Preventive And Corrective Maintenance",
+          "Building Automation And Technical Support",
+        ],
+
+        outcomes: [
+          "Fewer Avoidable Breakdowns",
+          "Improved Operating Efficiency",
+          "Safer, More Dependable Systems",
+        ],
+
+        process: [
+          {
+            title: "Inspect",
+            text:
+              "Review System Condition, Operating History And Critical Maintenance Needs.",
+          },
+
+          {
+            title: "Schedule",
+            text:
+              "Build A Preventive Plan Around Assets, Risk And Operational Priorities.",
+          },
+
+          {
+            title: "Service",
+            text:
+              "Complete Planned Work And Responsive Repairs With Equipped Technicians.",
+          },
+
+          {
+            title: "Optimize",
+            text:
+              "Monitor Recurring Faults And Recommend Practical Performance Improvements.",
+          },
+        ],
+
+        sectors: [
+          "Healthcare",
+          "Commercial Real Estate",
+          "Data Centres",
+          "Industrial Facilities",
+        ],
+      },
     ],
   },
 ];

@@ -327,21 +327,19 @@
 ========================================================== */
 
 .team-member-photo {
+  width: 100%;
+  height: 300px;
+  min-height: 300px;
+  overflow: hidden;
+
   display: flex;
-
-  min-height: 230px;
-
-  flex-direction: column;
-
   align-items: center;
   justify-content: center;
 
-  gap: 10px;
-
-  background:
-    #eef5f7;
-
+  background: #eef5f7;
   color: #169f99;
+
+  box-sizing: border-box;
 }
 
 .team-member-photo svg {
@@ -653,10 +651,8 @@
 ========================================================== */
 
 @media (max-width: 600px) {
-
   .team-hero h1 {
     font-size: 44px;
-
     letter-spacing: -2px;
   }
 
@@ -678,11 +674,10 @@
   }
 
   .team-member-photo {
-    min-height: 210px;
+    height: 280px;
+    min-height: 280px;
   }
-
 }
-
 /* ==========================================================
    ALL MANAGEMENT PHOTOS
 ========================================================== */
@@ -695,15 +690,14 @@
 
   margin: 0;
   padding: 0;
-
   border: none;
 
   object-fit: cover;
+  object-position: center top;
 
-  object-position: center;
+  transition: transform 0.35s ease;
 
-  transition:
-    transform 0.35s ease;
+  box-sizing: border-box;
 }
 
 /* ==========================================================
@@ -711,17 +705,16 @@
 ========================================================== */
 
 .team-placeholder-image {
-  width: 115% !important;
-  height: 300px !important;
+  width: 100% !important;
+  height: 100% !important;
 
-  min-width: 115%;
-  min-height: 298px;
+  min-width: 100%;
+  min-height: 100%;
 
   max-width: 100%;
-  max-height: 250px;
+  max-height: 100%;
 
   object-fit: cover;
-
   object-position: center;
 
   transform: none !important;
