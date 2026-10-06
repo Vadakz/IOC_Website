@@ -9,7 +9,24 @@ import { fileURLToPath } from "node:url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const logoPath = path.join(__dirname, "../assets/ioc-logo.png");
+const logoPath = path.join(
+  __dirname,
+  "../assets/ioc-logo.png"
+);
+
+/* ==========================================================
+   HTML ESCAPE
+   Prevents customer-entered values from becoming HTML.
+========================================================== */
+
+const escapeHtml = (value = "") => {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+};
 
 /* ==========================================================
    CREATE EMAIL TRANSPORTER
@@ -60,6 +77,135 @@ export const verifyEmailConnection = async () => {
 };
 
 /* ==========================================================
+   CREATE ITEM IMAGE ATTACHMENTS
+========================================================== */
+
+const createItemAttachments = (
+  selectedItems = [],
+  uploadedImages = []
+) => {
+  const attachments = [];
+  const imageMap = new Map();
+
+  uploadedImages.forEach((file) => {
+    const filename = file.originalname || "";
+    const itemId = path.parse(filename).name;
+
+    if (!itemId) {
+      return;
+    }
+
+    const cid = `item-${itemId}`;
+
+    imageMap.set(itemId, {
+      cid,
+      filename: file.originalname,
+      content: file.buffer,
+      contentType: file.mimetype,
+    });
+  });
+
+  selectedItems.forEach((item) => {
+    const image = imageMap.get(item.id);
+
+    if (image) {
+      attachments.push({
+        filename: image.filename,
+        content: image.content,
+        contentType: image.contentType,
+        cid: image.cid,
+      });
+    }
+  });
+
+  return {
+    attachments,
+    imageMap,
+  };
+};
+
+/* ==========================================================
+   SELECTED ITEMS HTML
+========================================================== */
+
+const createSelectedItemsHtml = (
+  selectedItems = [],
+  imageMap
+) => {
+  if (!selectedItems.length) {
+    return `
+      <p style="
+        color:#777777;
+        margin:0;
+      ">
+        No items selected.
+      </p>
+    `;
+  }
+
+  return selectedItems
+    .map((item) => {
+      const image = imageMap.get(item.id);
+
+      return `
+        <div style="
+          margin-bottom:16px;
+          padding:14px;
+          border:1px solid #dce5e8;
+          border-radius:10px;
+          background:#f8fafb;
+        ">
+
+          ${
+            image
+              ? `
+                <div style="
+                  margin-bottom:10px;
+                ">
+                  <img
+                    src="cid:${image.cid}"
+                    alt="${escapeHtml(item.title)}"
+                    style="
+                      display:block;
+                      width:140px;
+                      height:100px;
+                      object-fit:contain;
+                      border-radius:7px;
+                      border:1px solid #dce5e8;
+                      background:#ffffff;
+                    "
+                  />
+                </div>
+              `
+              : ""
+          }
+
+          <div style="
+            font-size:14px;
+            color:#333333;
+          ">
+
+            <strong>
+              ${escapeHtml(item.title)}
+            </strong>
+
+            <div style="
+              margin-top:5px;
+              color:#555555;
+            ">
+              <strong>Quantity:</strong>
+              ${Number(item.quantity) || 1}
+            </div>
+
+          </div>
+
+        </div>
+      `;
+    })
+    .join("");
+};
+
+/* ==========================================================
    SEND CONTACT EMAILS
 ========================================================== */
 
@@ -72,82 +218,180 @@ export const sendContactEmails = async (contact) => {
     phone,
     company,
     service,
+    selectedItems = [],
     message,
+    uploadedImages = [],
   } = contact;
 
-  /* ----------------------------------------------------------
+  /* --------------------------------------------------------
+     IMAGE ATTACHMENTS
+  -------------------------------------------------------- */
+
+  const {
+    attachments: itemAttachments,
+    imageMap,
+  } = createItemAttachments(
+    selectedItems,
+    uploadedImages
+  );
+
+  const selectedItemsHtml = createSelectedItemsHtml(
+    selectedItems,
+    imageMap
+  );
+
+  /* --------------------------------------------------------
+     COMMON ATTACHMENTS
+  -------------------------------------------------------- */
+
+  const adminAttachments = [
+    {
+      filename: "ioc-logo.png",
+      path: logoPath,
+      cid: "ioc-logo",
+    },
+
+    ...itemAttachments,
+  ];
+
+  const customerAttachments = [
+    {
+      filename: "ioc-logo.png",
+      path: logoPath,
+      cid: "ioc-logo",
+    },
+
+    ...itemAttachments,
+  ];
+
+  /* ========================================================
      EMAIL SENT TO IOC
-  ---------------------------------------------------------- */
+  ======================================================== */
 
   const adminEmail = {
     from: `"International Operations Company" <${process.env.SMTP_USER}>`,
+
     to: process.env.CONTACT_RECEIVER,
+
     replyTo: email,
+
     subject: `New Website Enquiry From ${name}`,
 
     html: `
       <div style="
-        font-family: Arial, Helvetica, sans-serif;
-        line-height: 1.6;
-        color: #333333;
+        font-family:Arial,Helvetica,sans-serif;
+        line-height:1.6;
+        color:#333333;
+        max-width:750px;
+        margin:0 auto;
       ">
 
-        <h2 style="color:#1f2f93;">
+        <h2 style="
+          color:#1f2f93;
+          margin-bottom:20px;
+        ">
           New Website Enquiry
         </h2>
 
-        <p>
-          <strong>Name:</strong> ${name}
-        </p>
+        <div style="
+          border:1px solid #dce5e8;
+          border-radius:10px;
+          padding:18px;
+          margin-bottom:20px;
+          background:#f8fafb;
+        ">
 
-        <p>
-          <strong>Email:</strong> ${email}
-        </p>
+          <p>
+            <strong>Name:</strong>
+            ${escapeHtml(name)}
+          </p>
 
-        <p>
-          <strong>Phone:</strong> ${phone || "Not Provided"}
-        </p>
+          <p>
+            <strong>Email:</strong>
+            ${escapeHtml(email)}
+          </p>
 
-        <p>
-          <strong>Company:</strong> ${company || "Not Provided"}
-        </p>
+          <p>
+            <strong>Phone:</strong>
+            ${escapeHtml(phone || "Not Provided")}
+          </p>
 
-        <p>
-          <strong>Service:</strong> ${service || "Not Selected"}
-        </p>
+          <p>
+            <strong>Company:</strong>
+            ${escapeHtml(company || "Not Provided")}
+          </p>
 
-        <h3 style="color:#1f2f93;">
+          <p>
+            <strong>Service:</strong>
+            ${escapeHtml(service || "Not Selected")}
+          </p>
+
+        </div>
+
+        <h3 style="
+          color:#1f2f93;
+          margin-bottom:12px;
+        ">
+          Selected Items & Quantity
+        </h3>
+
+        ${selectedItemsHtml}
+
+        <h3 style="
+          color:#1f2f93;
+          margin-top:25px;
+        ">
           Message
         </h3>
 
-        <p>
-          ${message}
-        </p>
+        <div style="
+          padding:15px;
+          border:1px solid #dce5e8;
+          border-radius:10px;
+          background:#ffffff;
+          white-space:pre-wrap;
+        ">
+          ${escapeHtml(message)}
+        </div>
+
+        <div style="
+          margin-top:25px;
+          padding-top:15px;
+          border-top:1px solid #dddddd;
+          font-size:13px;
+          color:#777777;
+        ">
+          Submitted through the IOC website.
+        </div>
 
       </div>
     `,
+
+    attachments: adminAttachments,
   };
 
-  /* ----------------------------------------------------------
-     ACKNOWLEDGEMENT SENT TO CUSTOMER
-  ---------------------------------------------------------- */
+  /* ========================================================
+     CUSTOMER ACKNOWLEDGEMENT
+  ======================================================== */
 
   const customerEmail = {
     from: `"International Operations Company" <${process.env.SMTP_USER}>`,
+
     to: email,
+
     subject: "We Have Received Your Enquiry",
 
     html: `
       <div style="
-        font-family: Arial, Helvetica, sans-serif;
-        line-height: 1.6;
-        color: #333333;
-        max-width: 650px;
-        margin: 0 auto;
+        font-family:Arial,Helvetica,sans-serif;
+        line-height:1.6;
+        color:#333333;
+        max-width:650px;
+        margin:0 auto;
       ">
 
         <p>
-          Dear ${name},
+          Dear ${escapeHtml(name)},
         </p>
 
         <p>
@@ -160,30 +404,28 @@ export const sendContactEmails = async (contact) => {
           as soon as possible.
         </p>
 
-        <p style="margin-bottom: 8px;">
-         <strong>Regards,</strong>
+        <h3 style="
+          color:#1f2f93;
+          margin-top:25px;
+        ">
+          Your Selected Items
+        </h3>
+
+        ${selectedItemsHtml}
+
+        <p>
+          <strong>Regards,</strong>
         </p>
 
-        <!-- IOC SIGNATURE -->
         <div style="
-          margin-top: 10px;
-          padding-top: 10px;
+          margin-top:10px;
+          padding-top:10px;
         ">
 
-
-
-          <!-- COMPANY DETAILS -->
-          <div style="
-            font-size:14px;
-            line-height:1.7;
-            color:#333333;
-          ">
-
-          <!-- IOC LOGO -->
           <img
             src="cid:ioc-logo"
             alt="International Operations Company"
-            width="180"
+            width="160"
             style="
               display:block;
               width:160px;
@@ -193,39 +435,29 @@ export const sendContactEmails = async (contact) => {
             "
           />
 
-            <br />
+          <div style="
+            font-size:14px;
+            line-height:1.7;
+            color:#333333;
+          ">
+
             <strong>
-            International Operations Company (IOC ECO) | Riyadh
-          
-            <br />
-            Waste | Janitorial | Pest Control | MEP            
-            <br />
-            +966 9200 51300 | www.iocl.sa |  info@iocl.sa
-            <br /> 
-            <a
-              href="mailto:info@iocl.sa"
-              style="
-                color:#333333;
-                text-decoration:none;
-              "
-            >
-             
-            </a>
-              </strong>
+              International Operations Company (IOC ECO) | Riyadh
+              <br />
+              Waste | Janitorial | Pest Control | MEP
+              <br />
+              +966 9200 51300 | www.iocl.sa | info@iocl.sa
+            </strong>
 
           </div>
-          
 
-          <!-- SLOGAN -->
           <div style="
             margin-top:12px;
             font-size:14px;
             font-weight:bold;
             color:#198754;
           ">
-          <strong>
             Embracing Sustainable Living
-          </strong>
           </div>
 
         </div>
@@ -233,22 +465,12 @@ export const sendContactEmails = async (contact) => {
       </div>
     `,
 
-    /* --------------------------------------------------------
-       EMBED IOC LOGO
-    -------------------------------------------------------- */
-
-    attachments: [
-      {
-        filename: "ioc-logo.png",
-        path: logoPath,
-        cid: "ioc-logo",
-      },
-    ],
+    attachments: customerAttachments,
   };
 
-  /* ----------------------------------------------------------
+  /* ========================================================
      SEND IOC EMAIL
-  ---------------------------------------------------------- */
+  ======================================================== */
 
   const adminResult = await transporter.sendMail(adminEmail);
 
@@ -259,11 +481,12 @@ export const sendContactEmails = async (contact) => {
     response: adminResult.response,
   });
 
-  /* ----------------------------------------------------------
+  /* ========================================================
      SEND CUSTOMER EMAIL
-  ---------------------------------------------------------- */
+  ======================================================== */
 
-  const customerResult = await transporter.sendMail(customerEmail);
+  const customerResult =
+    await transporter.sendMail(customerEmail);
 
   console.log("Customer email result:", {
     messageId: customerResult.messageId,

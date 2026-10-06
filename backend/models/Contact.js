@@ -1,5 +1,51 @@
 import mongoose from "mongoose";
 
+/* ==========================================================
+   SELECTED ITEM SCHEMA
+========================================================== */
+
+const selectedItemSchema = new mongoose.Schema(
+  {
+    id: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+
+    number: {
+      type: String,
+      default: "",
+      trim: true,
+    },
+
+    title: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+
+    arabicTitle: {
+      type: String,
+      default: "",
+      trim: true,
+    },
+
+    quantity: {
+      type: Number,
+      required: true,
+      min: 1,
+      default: 1,
+    },
+  },
+  {
+    _id: false,
+  }
+);
+
+/* ==========================================================
+   CONTACT SCHEMA
+========================================================== */
+
 const contactSchema = new mongoose.Schema(
   {
     name: {
@@ -33,10 +79,27 @@ const contactSchema = new mongoose.Schema(
       default: "",
     },
 
+    serviceSlug: {
+      type: String,
+      trim: true,
+      default: "",
+    },
+
+    selectedItems: {
+      type: [selectedItemSchema],
+      default: [],
+    },
+
     message: {
       type: String,
       required: true,
       trim: true,
+    },
+
+    status: {
+      type: String,
+      enum: ["new", "contacted", "completed"],
+      default: "new",
     },
   },
   {
