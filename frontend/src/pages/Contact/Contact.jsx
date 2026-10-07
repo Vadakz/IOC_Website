@@ -32,8 +32,6 @@ import PageTransition from "../../components/PageTransition";
 
 
 
-
-
 /* ==========================================================
 
    WASTE MANAGEMENT IMAGES
@@ -69,11 +67,8 @@ import sewage18Image from "../../assets/images/services/waste-management/18-sewa
 import sewage32Image from "../../assets/images/services/waste-management/32-sewage-disposal.png";
 
 /* ==========================================================
-
-  pest control images
-
+   PEST MANAGEMENT IMAGES
 ========================================================== */
-
 
 import ratTrapImage from "../../assets/images/services/pest-control/rat-trap.png";
 import catTrapImage from "../../assets/images/services/pest-control/cat-trap.png";
@@ -447,43 +442,75 @@ const serviceSelectionOptions = {
     "PestControl": {
         title: "Pest Management",
         arabicTitle: "إدارة مكافحة الآفات",
-        items: [
-            {
-                id: "rat-trap",
-                number: "01",
-                title: "Rat Trap",
-                arabicTitle: "مصيدة الفئران",
-                image: ratTrapImage,
+        categories: {
+            "fly-control": {
+                title: "Fly Control Service",
+                arabicTitle: "خدمة مكافحة الحشرات الطائرة",
+                items: [
+                    {
+                        id: "fogging-service",
+                        number: "01",
+                        title: "Fogging Service",
+                        arabicTitle: "خدمة الضباب",
+                        image: foggingMachineImage,
+                    },
+                    {
+                        id: "uv-insect-killer-service",
+                        number: "02",
+                        title: "UV Insect Killer Service",
+                        arabicTitle: "خدمة مصائد الحشرات بالأشعة فوق البنفسجية",
+                        image: null,
+                    },
+                    {
+                        id: "ulv-service",
+                        number: "03",
+                        title: "ULV Service",
+                        arabicTitle: "خدمة ULV",
+                        image: ulvMachineImage,
+                    },
+                ],
             },
-            {
-                id: "cat-trap",
-                number: "02",
-                title: "Cat Trap",
-                arabicTitle: "مصيدة القطط",
-                image: catTrapImage,
+            "spraying-gelling": {
+                title: "Spraying / Gelling Service",
+                arabicTitle: "خدمة الرش والجل",
+                items: [
+                    {
+                        id: "gloria-machine",
+                        number: "01",
+                        title: "Gloria Machine",
+                        arabicTitle: "جهاز Gloria",
+                        image: gloriaMachineImage,
+                    },
+                ],
             },
-            {
-                id: "ulv-machine",
-                number: "03",
-                title: "ULV Machine",
-                arabicTitle: "جهاز ULV",
-                image: ulvMachineImage,
+            "rodent-stray-animal": {
+                title: "Rodent & Stray Animal Control Service",
+                arabicTitle: "خدمة مكافحة القوارض والحيوانات الضالة",
+                items: [
+                    {
+                        id: "rat-trap",
+                        number: "01",
+                        title: "Rat Trap",
+                        arabicTitle: "مصيدة الفئران",
+                        image: ratTrapImage,
+                    },
+                    {
+                        id: "cat-trap",
+                        number: "02",
+                        title: "Cat Trap",
+                        arabicTitle: "مصيدة القطط",
+                        image: catTrapImage,
+                    },
+                    {
+                        id: "snake-trap",
+                        number: "03",
+                        title: "Snake Trap",
+                        arabicTitle: "مصيدة الثعابين",
+                        image: null,
+                    },
+                ],
             },
-            {
-                id: "gloria-machine",
-                number: "04",
-                title: "Gloria Machine",
-                arabicTitle: "جهاز Gloria",
-                image: gloriaMachineImage,
-            },
-            {
-                id: "fogging-machine",
-                number: "05",
-                title: "Fogging Machine",
-                arabicTitle: "جهاز الضباب",
-                image: foggingMachineImage,
-            },
-        ],
+        },
     },
 
     "Janitorial": {
@@ -641,6 +668,9 @@ export default function Contact() {
 
         useState("containers");
 
+    const [selectedPestCategory, setSelectedPestCategory] =
+        useState("fly-control");
+
     const [servicePopupOpen, setServicePopupOpen] = useState(false);
     const [selectedServiceItems, setSelectedServiceItems] = useState([]);
     const [serviceItemQuantities, setServiceItemQuantities] = useState({});
@@ -720,6 +750,10 @@ export default function Contact() {
             return;
         }
 
+        if (serviceSlug === "PestControl") {
+            setSelectedPestCategory("fly-control");
+        }
+
         setSelectedWasteCategory("containers");
         setWastePopupOpen(false);
         setServicePopupOpen(Boolean(serviceSelectionOptions[serviceSlug]));
@@ -735,6 +769,11 @@ export default function Contact() {
 
         setSelectedWasteCategory(category);
 
+    };
+
+
+    const handlePestCategoryChange = (event) => {
+        setSelectedPestCategory(event.target.value);
     };
 
 
@@ -825,7 +864,20 @@ export default function Contact() {
        NON-WASTE SERVICE SELECTION
     ====================================================== */
 
-    const currentServiceSelection = serviceSelectionOptions[formData.serviceSlug];
+    const currentServiceSelection =
+        formData.serviceSlug === "PestControl"
+            ? serviceSelectionOptions.PestControl.categories[selectedPestCategory]
+            : serviceSelectionOptions[formData.serviceSlug];
+
+    const currentServiceTitle =
+        formData.serviceSlug === "PestControl"
+            ? serviceSelectionOptions.PestControl.title
+            : currentServiceSelection?.title;
+
+    const currentServiceArabicTitle =
+        formData.serviceSlug === "PestControl"
+            ? serviceSelectionOptions.PestControl.arabicTitle
+            : currentServiceSelection?.arabicTitle;
 
     const toggleServiceItem = (itemId) => {
         setSelectedServiceItems((currentItems) => {
@@ -856,9 +908,14 @@ export default function Contact() {
         setServicePopupOpen(false);
     };
 
-    const selectedServiceDetails = currentServiceSelection
-        ? currentServiceSelection.items.filter((item) => selectedServiceItems.includes(item.id))
-        : [];
+    const selectedServiceDetails =
+        formData.serviceSlug === "PestControl"
+            ? Object.values(serviceSelectionOptions.PestControl.categories)
+                .flatMap((category) => category.items)
+                .filter((item) => selectedServiceItems.includes(item.id))
+            : currentServiceSelection
+                ? currentServiceSelection.items.filter((item) => selectedServiceItems.includes(item.id))
+                : [];
 
 
     /* ======================================================
@@ -868,146 +925,214 @@ export default function Contact() {
 
 
     const handleSubmit = async (event) => {
+
         event.preventDefault();
 
+
+
         setLoading(true);
-        setStatus(isArabic ? "جارٍ الإرسال..." : "Submitting...");
+
+
+
+        setStatus("Submitting...");
+
+
+
+
 
         try {
-            const selectedWasteItems = Object.values(wasteManagementCategories)
+
+            const selectedEquipmentDetails = Object.values(
+
+                wasteManagementCategories
+
+            )
+
                 .flatMap((category) => category.items)
-                .filter((item) => formData.selectedEquipment.includes(item.id))
+
+                .filter((item) =>
+
+                    formData.selectedEquipment.includes(
+
+                        item.id
+
+                    )
+
+                )
+
                 .map((item) => ({
-                    id: item.id,
-                    number: item.number,
-                    title: item.title,
-                    arabicTitle: item.arabicTitle,
+                    name: isArabic
+                        ? item.arabicTitle
+                        : item.title,
                     quantity: formData.equipmentQuantities[item.id] || 1,
-                    image: item.image,
                 }));
 
-            const selectedNonWasteItems = selectedServiceDetails.map((item) => ({
-                id: item.id,
-                number: item.number,
-                title: item.title,
-                arabicTitle: item.arabicTitle,
+            const selectedServiceItemDetails = selectedServiceDetails.map((item) => ({
+                name: isArabic ? item.arabicTitle : item.title,
                 quantity: serviceItemQuantities[item.id] || 1,
-                image: item.image || null,
             }));
 
-            const allSelectedItems = [
-                ...selectedWasteItems,
-                ...selectedNonWasteItems,
-            ];
+            const allSelectedItems = [...selectedEquipmentDetails, ...selectedServiceItemDetails];
 
-            const submitData = new FormData();
-
-            submitData.append("name", formData.fullName.trim());
-            submitData.append("company", formData.companyName.trim());
-            submitData.append("email", formData.email.trim());
-            submitData.append("phone", formData.phone.trim());
-            submitData.append("service", formData.service);
-            submitData.append("serviceSlug", formData.serviceSlug);
-            submitData.append("message", formData.message.trim());
-
-            submitData.append(
-                "selectedItems",
-                JSON.stringify(
-                    allSelectedItems.map((item) => ({
-                        id: item.id,
-                        number: item.number,
-                        title: item.title,
-                        arabicTitle: item.arabicTitle,
-                        quantity: item.quantity,
-                    }))
-                )
+            const selectedEquipmentForBackend = allSelectedItems.map(
+                (item) => `${item.name} - Qty: ${item.quantity}`
             );
 
-            for (const item of allSelectedItems) {
-                if (!item.image) continue;
 
-                try {
-                    const imageResponse = await fetch(item.image);
-
-                    if (!imageResponse.ok) {
-                        console.warn(`Unable to load image for ${item.id}`);
-                        continue;
-                    }
-
-                    const blob = await imageResponse.blob();
-                    const extension = blob.type.split("/")[1] || "jpg";
-
-                    const file = new File(
-                        [blob],
-                        `${item.id}.${extension}`,
-                        { type: blob.type }
-                    );
-
-                    submitData.append("itemImages", file);
-                } catch (imageError) {
-                    console.warn(
-                        `Image upload skipped for ${item.id}:`,
-                        imageError
-                    );
-                }
-            }
 
             const response = await fetch(
+
                 "http://localhost:5000/api/contact",
+
                 {
+
                     method: "POST",
-                    body: submitData,
+
+
+
+                    headers: {
+
+                        "Content-Type": "application/json",
+
+                    },
+
+
+
+                    body: JSON.stringify({
+
+                        name: formData.fullName,
+
+
+
+                        company: formData.companyName,
+
+
+
+                        email: formData.email,
+
+
+
+                        phone: formData.phone,
+
+
+
+                        service: formData.service,
+
+
+
+                        serviceSlug: formData.serviceSlug,
+
+
+
+                        selectedEquipment:
+
+                            allSelectedItems,
+
+
+
+                        message: formData.message,
+
+                    }),
+
                 }
+
             );
+
+
+
+
 
             const data = await response.json();
 
+
+
+
+
             if (response.ok) {
+
                 setStatus(
-                    isArabic
-                        ? "شكراً لك. تم إرسال استفسارك بنجاح."
-                        : "Thank you. Your enquiry has been submitted successfully."
+
+                    "Thank you. Your enquiry has been submitted successfully."
+
                 );
 
+
+
+
+
                 setFormData({
+
                     fullName: "",
+
                     companyName: "",
+
                     email: "",
+
                     phone: "",
+
+
+
                     service: "",
+
                     serviceSlug: "",
+
+
+
                     selectedEquipment: [],
-                    equipmentQuantities: {},
+
+
+
                     message: "",
+
                 });
+
+
+
+
 
                 setWastePopupOpen(false);
                 setServicePopupOpen(false);
                 setSelectedServiceItems([]);
                 setServiceItemQuantities({});
+
                 setSelectedWasteCategory("containers");
+                setSelectedPestCategory("fly-control");
+
             } else {
+
                 setStatus(
+
                     data.message ||
-                        (isArabic
-                            ? "تعذر إرسال الاستفسار."
-                            : "Unable to submit the enquiry.")
+
+                    "Unable to submit the enquiry."
+
                 );
+
             }
+
+
+
         } catch (error) {
-            console.error("Contact form submission error:", error);
+
+            console.error(error);
+
+
 
             setStatus(
-                isArabic
-                    ? "تعذر الاتصال بخادم النظام."
-                    : "Unable to connect to the backend server."
+
+                "Unable to connect to the backend server."
+
             );
+
+
+
         } finally {
+
             setLoading(false);
+
         }
+
     };
-
-
 
 
 
@@ -2631,18 +2756,90 @@ export default function Contact() {
                                                         )}
 
                                                     </div>
+
                                                     <div className="waste-popup-footer">
+
+
+
+                                                        <span>
+
+                                                            {formData.selectedEquipment.length > 0
+
+                                                                ? isArabic
+
+                                                                    ? `${formData.selectedEquipment.length} عنصر محدد`
+
+                                                                    : `${formData.selectedEquipment.length} Item(s) Selected`
+
+                                                                : isArabic
+
+                                                                    ? "لم يتم اختيار أي عنصر"
+
+                                                                    : "No Items Selected"}
+
+                                                        </span>
+
+
+
+
+
                                                         <div className="waste-popup-footer-actions">
+
+
+
                                                             <button
+
                                                                 type="button"
-                                                                className="waste-popup-submit"
-                                                                onClick={handleWasteSelectionDone}
+
+                                                                className="waste-popup-done"
+
+                                                                onClick={() =>
+
+                                                                    setWastePopupOpen(false)
+
+                                                                }
+
                                                             >
-                                                                {isArabic ? "إرسال" : "Submit"}
-                                                                <FaArrowRight />
+
+                                                                {isArabic
+
+                                                                    ? "إغلاق"
+
+                                                                    : "Close"}
+
                                                             </button>
+
+
+
+
+
+                                                            <button
+
+                                                                type="button"
+
+                                                                className="waste-popup-submit"
+
+                                                                onClick={handleWasteSelectionDone}
+
+                                                            >
+
+                                                                {isArabic
+                                                                    ? "إضافة إلى الطلب"
+                                                                    : "Add to Enquiry"}
+
+                                                                <FaArrowRight />
+
+                                                            </button>
+
+
+
                                                         </div>
+
+
+
                                                     </div>
+
+
 
                                                 </div>
 
@@ -2662,17 +2859,64 @@ export default function Contact() {
                                             <div className="service-selection-popup">
                                                 <div className="service-selection-header">
                                                     <div>
-                                                        <span className="contact-page-eyebrow">{isArabic ? "اختيار الخدمة" : "Service Selection"}</span>
-                                                        <h3>{isArabic ? currentServiceSelection.arabicTitle : currentServiceSelection.title}</h3>
-                                                        <p>{isArabic ? "يمكنك اختيار أكثر من عنصر وتحديد الكمية." : "Select one or more options and set the required quantity."}</p>
+                                                        <span className="contact-page-eyebrow">
+                                                            {isArabic ? "اختيار الخدمة" : "Service Selection"}
+                                                        </span>
+                                                        <h3>
+                                                            {isArabic ? currentServiceArabicTitle : currentServiceTitle}
+                                                        </h3>
+                                                        <p>
+                                                            {isArabic
+                                                                ? "يمكنك اختيار أكثر من عنصر وتحديد الكمية."
+                                                                : "Select one or more options and set the required quantity."}
+                                                        </p>
                                                     </div>
-                                                    <button type="button" className="service-selection-close" onClick={() => setServicePopupOpen(false)}>×</button>
+
+                                                    <button
+                                                        type="button"
+                                                        className="service-selection-close"
+                                                        onClick={() => setServicePopupOpen(false)}
+                                                    >
+                                                        ×
+                                                    </button>
                                                 </div>
+
+                                                {formData.serviceSlug === "PestControl" && (
+                                                    <div className="waste-popup-select">
+                                                        <label htmlFor="pestCategory">
+                                                            {isArabic ? "نوع خدمة مكافحة الآفات" : "Pest Management Service Type"}
+                                                        </label>
+                                                        <select
+                                                            id="pestCategory"
+                                                            value={selectedPestCategory}
+                                                            onChange={handlePestCategoryChange}
+                                                        >
+                                                            <option value="fly-control">
+                                                                {isArabic ? "خدمة مكافحة الحشرات الطائرة" : "Fly Control Service"}
+                                                            </option>
+                                                            <option value="spraying-gelling">
+                                                                {isArabic ? "خدمة الرش والجل" : "Spraying / Gelling Service"}
+                                                            </option>
+                                                            <option value="rodent-stray-animal">
+                                                                {isArabic ? "خدمة مكافحة القوارض والحيوانات الضالة" : "Rodent & Stray Animal Control Service"}
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                )}
+
                                                 <div className="service-selection-grid">
                                                     {currentServiceSelection.items.map((item) => {
                                                         const isSelected = selectedServiceItems.includes(item.id);
+
                                                         return (
-                                                            <button type="button" key={item.id} className={`service-selection-card ${isSelected ? "service-selection-card-selected" : ""}`} onClick={() => toggleServiceItem(item.id)} aria-pressed={isSelected}>
+                                                            <button
+                                                                type="button"
+                                                                key={item.id}
+                                                                className={`service-selection-card ${isSelected ? "service-selection-card-selected" : ""
+                                                                    }`}
+                                                                onClick={() => toggleServiceItem(item.id)}
+                                                                aria-pressed={isSelected}
+                                                            >
                                                                 <div className="service-selection-image-wrapper">
                                                                     {item.image ? (
                                                                         <img
@@ -2694,63 +2938,97 @@ export default function Contact() {
                                                                         </div>
                                                                     )}
                                                                 </div>
+
                                                                 <div className="service-selection-card-content">
                                                                     <span className="service-selection-number">
                                                                         {item.number}
                                                                     </span>
-
                                                                     <h4>
                                                                         {isArabic
                                                                             ? item.arabicTitle
                                                                             : item.title}
                                                                     </h4>
-
-                                                                    <span className="service-selection-arrow">
-                                                                        →
-                                                                    </span>
-
+                                                                    <span className="service-selection-arrow">→</span>
                                                                     {isSelected && (
-                                                                        <span className="service-selection-check">
-                                                                            ✓
-                                                                        </span>
+                                                                        <span className="service-selection-check">✓</span>
                                                                     )}
                                                                 </div>
                                                             </button>
                                                         );
                                                     })}
                                                 </div>
+
                                                 <div className="service-selection-summary">
                                                     <div className="service-selection-summary-heading">
                                                         <h4>
-                                                            {isArabic
-                                                                ? "العناصر المحددة"
-                                                                : "Selected Items"}
+                                                            {isArabic ? "العناصر المحددة" : "Selected Items"}
                                                         </h4>
-
                                                         <span>
                                                             {isArabic
                                                                 ? "حدد الكمية لكل عنصر"
                                                                 : "Set the quantity for each item"}
                                                         </span>
                                                     </div>
+
                                                     {selectedServiceDetails.length > 0 ? (
                                                         <div className="service-selection-selected-list">
                                                             {selectedServiceDetails.map((item) => (
-                                                                <div className="service-selection-selected-row" key={item.id}>
+                                                                <div
+                                                                    className="service-selection-selected-row"
+                                                                    key={item.id}
+                                                                >
                                                                     <div className="service-selection-selected-info">
                                                                         <div className="service-selection-mini-image">
-                                                                            <img
-                                                                                src={item.image}
-                                                                                alt={isArabic ? item.arabicTitle : item.title}
-                                                                            />
+                                                                            {item.image ? (
+                                                                                <img
+                                                                                    src={item.image}
+                                                                                    alt={isArabic ? item.arabicTitle : item.title}
+                                                                                />
+                                                                            ) : (
+                                                                                <div className="service-selection-mini-placeholder">
+                                                                                    {item.number}
+                                                                                </div>
+                                                                            )}
                                                                         </div>
-                                                                        <div><span>{item.number}</span><strong>{isArabic ? item.arabicTitle : item.title}</strong></div></div>
-                                                                    <div className="service-selection-quantity"><label htmlFor={`service-quantity-${item.id}`}>{isArabic ? "الكمية" : "Quantity"}</label><input id={`service-quantity-${item.id}`} type="number" min="1" step="1" value={serviceItemQuantities[item.id] || 1} onChange={(event) => handleServiceItemQuantityChange(item.id, event.target.value)} /></div>
+
+                                                                        <div>
+                                                                            <span>{item.number}</span>
+                                                                            <strong>
+                                                                                {isArabic ? item.arabicTitle : item.title}
+                                                                            </strong>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div className="service-selection-quantity">
+                                                                        <label htmlFor={`service-quantity-${item.id}`}>
+                                                                            {isArabic ? "الكمية" : "Quantity"}
+                                                                        </label>
+                                                                        <input
+                                                                            id={`service-quantity-${item.id}`}
+                                                                            type="number"
+                                                                            min="1"
+                                                                            step="1"
+                                                                            value={serviceItemQuantities[item.id] || 1}
+                                                                            onChange={(event) =>
+                                                                                handleServiceItemQuantityChange(
+                                                                                    item.id,
+                                                                                    event.target.value
+                                                                                )
+                                                                            }
+                                                                        />
+                                                                    </div>
                                                                 </div>
                                                             ))}
                                                         </div>
-                                                    ) : <div className="service-selection-empty">{isArabic ? "لم يتم اختيار أي عنصر" : "No items selected yet"}</div>}
+                                                    ) : (
+                                                        <div className="service-selection-empty">
+                                                            {isArabic
+                                                                ? "لم يتم اختيار أي عنصر"
+                                                                : "No items selected yet"}
+                                                        </div>
+                                                    )}
                                                 </div>
+
                                                 <div className="service-selection-footer">
                                                     <div className="service-selection-footer-actions">
                                                         <button
@@ -2854,34 +3132,29 @@ export default function Contact() {
                                                 {selectedServiceDetails.map((item) => (
                                                     <div className="waste-enquiry-summary-row" key={item.id}>
                                                         <div className="waste-enquiry-summary-item">
-                                                                {item.image ? (
-                                                                    <div className="service-summary-image">
-                                                                        <img
-                                                                            src={item.image}
-                                                                            alt={
-                                                                                isArabic
-                                                                                    ? item.arabicTitle
-                                                                                    : item.title
-                                                                            }
-                                                                        />
-                                                                    </div>
-                                                                ) : (
-                                                                    <div className="service-summary-placeholder">
-                                                                        {item.number}
-                                                                    </div>
-                                                                )}
-
-                                                                <div className="service-summary-details">
-                                                                    <span className="waste-enquiry-summary-number">
-                                                                        {item.number}
-                                                                    </span>
-                                                                    <strong>
-                                                                        {isArabic
+                                                            {item.image ? (
+                                                                <img
+                                                                    src={item.image}
+                                                                    alt={
+                                                                        isArabic
                                                                             ? item.arabicTitle
-                                                                            : item.title}
-                                                                    </strong>
+                                                                            : item.title
+                                                                    }
+                                                                />
+                                                            ) : (
+                                                                <div className="service-summary-placeholder">
+                                                                    {item.number}
                                                                 </div>
+                                                            )}
+                                                            <div>
+                                                                <span className="waste-enquiry-summary-number">
+                                                                    {item.number}
+                                                                </span>
+                                                                <strong>
+                                                                    {isArabic ? item.arabicTitle : item.title}
+                                                                </strong>
                                                             </div>
+                                                        </div>
                                                         <div className="waste-enquiry-summary-quantity"><span>{isArabic ? "الكمية" : "Quantity"}</span><strong>{serviceItemQuantities[item.id] || 1}</strong></div>
                                                     </div>
                                                 ))}

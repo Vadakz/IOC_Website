@@ -32,6 +32,7 @@ const en = {
     coverage: "Coverage",
     clients: "Our Clients",
     contact: "Contact Us",
+    gallery: "Gallery",
     quote: "Get A Quote",
     openMenu: "Open Navigation Menu",
     closeMenu: "Close Navigation Menu",
@@ -1230,6 +1231,9 @@ const ar = {
 
     clients:
       "عملاؤنا",
+
+    gallery:
+      "المعرض",
 
     contact:
       "اتصل بنا",

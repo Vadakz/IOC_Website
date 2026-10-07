@@ -10,6 +10,7 @@ import ServiceDetails from "./pages/ServiceDetails";
 import ScrollToTop from "./components/ScrollToTop";
 import Journey from "./pages/Journey/Journey";
 import Team from "./pages/team/Team";
+import Gallery from "./pages/Gallery/Gallery";
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
         <Route path="/industries" element={<IndustriesPage />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/services/:slug" element={<ServiceDetails />} />
-     
+        <Route path="/gallery" element={<Gallery />} />
         <Route path="/team" element={<Team />} />
       </Routes>
 
