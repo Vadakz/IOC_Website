@@ -597,10 +597,10 @@ const serviceSelectionOptions = {
                         arabicTitle: "الاستقبال والمكاتب الأمامية",
                         image: receptionFrontOfficeImage,
                     },
-                  
+
                     {
                         id: "workplace-services",
-                        number: "03",
+                        number: "02",
                         title: "Workplace Services",
                         arabicTitle: "خدمات بيئة العمل",
                         image: workplaceServicesImage,
@@ -613,40 +613,40 @@ const serviceSelectionOptions = {
                 items: [
                     {
                         id: "mechanical-systems",
-                        number: "04",
+                        number: "03",
                         title: "Mechanical Systems",
                         arabicTitle: "الأنظمة الميكانيكية",
                         image: mechanicalSystemsImage,
                     },
                     {
                         id: "electrical-systems",
-                        number: "05",
+                        number: "04",
                         title: "Electrical Systems",
                         arabicTitle: "الأنظمة الكهربائية",
                         image: electricalSystemsImage,
                     },
                     {
                         id: "plumbing-systems",
-                        number: "06",
+                        number: "05",
                         title: "Plumbing Systems",
                         arabicTitle: "أنظمة السباكة",
                         image: plumbingSystemsImage,
                     },
                     {
                         id: "hvac-systems",
-                        number: "07",
+                        number: "06",
                         title: "HVAC Systems",
                         arabicTitle: "أنظمة التكييف والتهوية",
                         image: hvacSystemsImage,
                     },
                     {
                         id: "preventive-maintenance",
-                        number: "08",
+                        number: "07",
                         title: "Preventive Maintenance",
                         arabicTitle: "الصيانة الوقائية",
                         image: preventiveMaintenanceImage,
                     },
-                
+
                 ],
             },
         },
