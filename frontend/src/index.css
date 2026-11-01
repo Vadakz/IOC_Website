@@ -250,11 +250,3 @@ footer.site{background:var(--navy-3);color:rgba(255,255,255,0.7);padding:56px 0 
   display: none !important;
 }
 
-.journey-eyebrow::before {
-    content: none !important;
-    display: none !important;
-    width: 0 !important;
-    height: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}

@@ -629,6 +629,54 @@
    RTL
 ========================================================== */
 
+html[dir="rtl"] .gallery-page {
+    direction: rtl;
+}
+
+html[dir="rtl"] .gallery-project-card,
+html[dir="rtl"] .gallery-detail-header {
+    text-align: right;
+}
+
+html[dir="rtl"] .gallery-project-card-main {
+    padding-right: 0;
+    padding-left: 82px;
+}
+
+html[dir="rtl"] .gallery-project-card-link {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .gallery-project-next {
+    right: auto;
+    left: 26px;
+}
+
+html[dir="rtl"] .gallery-project-next:hover {
+    transform: translateY(-50%) translateX(-4px);
+}
+
+html[dir="rtl"] .gallery-project-next svg {
+    transform: rotate(180deg);
+}
+
+html[dir="rtl"] .gallery-lightbox-close {
+    right: auto;
+    left: 24px;
+}
+
+html[dir="rtl"] .gallery-lightbox-prev {
+    left: auto;
+    right: 24px;
+}
+
+html[dir="rtl"] .gallery-lightbox-next {
+    right: auto;
+    left: 24px;
+}
+
+
+
 html[dir="rtl"] .gallery-project-card,
 html[dir="rtl"] .gallery-detail-header {
     text-align: right;
@@ -691,6 +739,19 @@ html[dir="rtl"] .gallery-lightbox-next {
 
     .gallery-project-next:hover {
         transform: translateX(4px);
+    }
+
+    html[dir="rtl"] .gallery-project-card-main {
+        padding-left: 0;
+    }
+
+    html[dir="rtl"] .gallery-project-next {
+        right: auto;
+        left: 16px;
+    }
+
+    html[dir="rtl"] .gallery-project-next:hover {
+        transform: translateX(-4px);
     }
 
     .gallery-project-card-image,

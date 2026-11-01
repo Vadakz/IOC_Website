@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { FaArrowRight, FaChevronLeft, FaChevronRight, FaTimes } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 import PageTransition from "../../components/PageTransition";
 import "./Gallery.css";
 
@@ -41,23 +42,22 @@ import rodent10 from "../../assets/images/projects/aqua-arabia/rodent-wild-pest-
 const aquaArabiaProject = {
     id: "aqua-arabia-qiddiya",
     title: "Aqua Arabia – Qiddiya City",
+    arabicTitle: "أكوا أرابيا – مدينة القدية",
     service: "Pest Management Services",
+    arabicService: "خدمات مكافحة الآفات",
     location: "Qiddiya City, Saudi Arabia",
+    arabicLocation: "مدينة القدية، المملكة العربية السعودية",
     status: "Ongoing",
+    arabicStatus: "جاري",
     approach: "Integrated Pest Management",
+    arabicApproach: "الإدارة المتكاملة للآفات",
     cover: aquaArabiaCover,
 
     description:
         "IOC provides integrated pest management services at Aqua Arabia – Qiddiya City, supporting a safe, hygienic and pest-controlled environment through inspection, monitoring, targeted treatments and preventive measures. The project covers flying and crawling insects, rodents, stray animals and other wild pests through an integrated approach.",
+    arabicDescription:
+        "تقدم IOC خدمات متكاملة لمكافحة الآفات في مشروع أكوا أرابيا – مدينة القدية، بما يدعم توفير بيئة آمنة وصحية وخالية من الآفات من خلال التفتيش والمراقبة والمعالجات المستهدفة والإجراءات الوقائية. ويشمل المشروع مكافحة الحشرات الطائرة والزاحفة والقوارض والحيوانات السائبة والآفات البرية الأخرى من خلال منهج متكامل.",
 
-    scope: [
-        "Flying & Crawling Insect Control",
-        "Rodent Monitoring & Control",
-        "Stray Animal Management",
-        "Scheduled Fogging Operations",
-        "Wild Pest Management",
-        "Preventive Pest Management",
-    ],
 
     activities: [
         "Initial site inspection",
@@ -71,24 +71,34 @@ const aquaArabiaProject = {
         "Fogging operations",
         "Preventive pest management",
     ],
-
-    frequency: [
-        { label: "Inspection for pest activity", value: "Weekly" },
-        { label: "General Pest & Rodents Control", value: "Twice Per Month" },
-        { label: "ULV & Flying Insects Control", value: "Weekly" },
+    arabicActivities: [
+        "الفحص الأولي للموقع",
+        "مراقبة نشاط الآفات",
+        "إجراءات مكافحة الثعابين",
+        "مكافحة الصراصير",
+        "مراقبة ومكافحة القوارض",
+        "إدارة محطات الطعوم",
+        "المعالجة بالمبيدات الحشرية",
+        "مكافحة الذباب",
+        "عمليات الرش الضبابي",
+        "المكافحة الوقائية للآفات",
     ],
+
 
     galleries: [
         {
             title: "Fly Control",
+            arabicTitle: "مكافحة الذباب",
             images: [fly01, fly02, fly03, fly04, fly05, fly06, fly07, fly08, fly09, fly10],
         },
         {
             title: "Spraying / Gel Application",
+            arabicTitle: "الرش / تطبيق الجل",
             images: [spray01, spray02, spray03, spray04, spray05, spray06, spray07, spray08, spray09, spray10],
         },
         {
             title: "Rodent / Wild Pest Control",
+            arabicTitle: "مكافحة القوارض والآفات البرية",
             images: [rodent01, rodent02, rodent03, rodent04, rodent05, rodent06, rodent07, rodent08, rodent09, rodent10],
         },
     ],
@@ -104,11 +114,13 @@ export default function Gallery() {
     const [selectedProject, setSelectedProject] = useState(null);
     const [lightbox, setLightbox] = useState(null);
 
+    const { i18n } = useTranslation();
+
     const project = projects[currentProjectIndex];
 
-    const isArabic =
-        typeof document !== "undefined" &&
-        document.documentElement.dir === "rtl";
+    // Read the active language from react-i18next so the Gallery
+    // re-renders immediately when the user switches EN/AR.
+    const isArabic = i18n.resolvedLanguage?.startsWith("ar");
 
     const content = isArabic
         ? {
@@ -125,13 +137,13 @@ export default function Gallery() {
               service: "الخدمة",
               status: "الحالة",
               approach: "المنهجية",
-              scope: "نطاق العمل",
               gallery: "معرض المشروع",
               activities: "الأنشطة الرئيسية",
-              frequency: "تكرار الخدمة",
               back: "إغلاق تفاصيل المشروع",
               ongoingValue: "جاري",
               ipm: "الإدارة المتكاملة للآفات",
+              viewImage: "عرض الصورة",
+              projectClient: "أكوا أرابيا",
           }
         : {
               heroEyebrow: "OUR WORK",
@@ -147,13 +159,13 @@ export default function Gallery() {
               service: "Service",
               status: "Status",
               approach: "Approach",
-              scope: "Scope of Work",
               gallery: "Project Gallery",
               activities: "Key Activities",
-              frequency: "Service Frequency",
               back: "Close Project Details",
               ongoingValue: "Ongoing",
               ipm: "Integrated Pest Management",
+              viewImage: "View image",
+              projectClient: "Aqua Arabia",
           };
 
     const openProject = () => {
@@ -255,13 +267,21 @@ export default function Gallery() {
 
                                 <span className="gallery-project-card-content">
                                     <span className="gallery-project-card-kicker">
-                                        {project.service}
+                                        {isArabic
+                                            ? project.arabicService
+                                            : project.service}
                                     </span>
 
-                                    <strong>{project.title}</strong>
+                                    <strong>
+                                        {isArabic
+                                            ? project.arabicTitle
+                                            : project.title}
+                                    </strong>
 
                                     <span className="gallery-project-card-meta">
-                                        {project.location}
+                                        {isArabic
+                                            ? project.arabicLocation
+                                            : project.location}
                                     </span>
 
                                     <span className="gallery-project-card-link">
@@ -307,10 +327,16 @@ export default function Gallery() {
                                         {content.ongoing}
                                     </span>
 
-                                    <h2>{selectedProject.title}</h2>
+                                    <h2>
+                                        {isArabic
+                                            ? selectedProject.arabicTitle
+                                            : selectedProject.title}
+                                    </h2>
 
                                     <p className="gallery-detail-service">
-                                        {selectedProject.service}
+                                        {isArabic
+                                            ? selectedProject.arabicService
+                                            : selectedProject.service}
                                     </p>
                                 </div>
 
@@ -326,7 +352,11 @@ export default function Gallery() {
                             <div className="gallery-detail-hero">
                                 <img
                                     src={selectedProject.cover}
-                                    alt={selectedProject.title}
+                                    alt={
+                                        isArabic
+                                            ? selectedProject.arabicTitle
+                                            : selectedProject.title
+                                    }
                                 />
                             </div>
 
@@ -335,54 +365,57 @@ export default function Gallery() {
                                     {content.about}
                                 </span>
 
-                                <p>{selectedProject.description}</p>
+                                <p>
+                                    {isArabic
+                                        ? selectedProject.arabicDescription
+                                        : selectedProject.description}
+                                </p>
                             </div>
 
                             <div className="gallery-info-grid">
                                 <div>
                                     <span>{content.client}</span>
-                                    <strong>Aqua Arabia</strong>
+                                    <strong>
+                                        {isArabic
+                                            ? selectedProject.arabicTitle.split(" – ")[0]
+                                            : "Aqua Arabia"}
+                                    </strong>
                                 </div>
 
                                 <div>
                                     <span>{content.location}</span>
-                                    <strong>{selectedProject.location}</strong>
+                                    <strong>
+                                        {isArabic
+                                            ? selectedProject.arabicLocation
+                                            : selectedProject.location}
+                                    </strong>
                                 </div>
 
                                 <div>
                                     <span>{content.service}</span>
-                                    <strong>{selectedProject.service}</strong>
+                                    <strong>
+                                        {isArabic
+                                            ? selectedProject.arabicService
+                                            : selectedProject.service}
+                                    </strong>
                                 </div>
 
                                 <div>
                                     <span>{content.status}</span>
-                                    <strong>{content.ongoingValue}</strong>
+                                    <strong>
+                                        {isArabic
+                                            ? selectedProject.arabicStatus
+                                            : selectedProject.status}
+                                    </strong>
                                 </div>
 
                                 <div>
                                     <span>{content.approach}</span>
-                                    <strong>{content.ipm}</strong>
-                                </div>
-                            </div>
-
-                            <div className="gallery-detail-section">
-                                <div className="gallery-detail-heading">
-                                    <span className="gallery-detail-label">
-                                        {content.scope}
-                                    </span>
-                                    <h3>{content.scope}</h3>
-                                </div>
-
-                                <div className="gallery-scope-grid">
-                                    {selectedProject.scope.map((item, index) => (
-                                        <div
-                                            className="gallery-scope-card"
-                                            key={item}
-                                        >
-                                            <span>0{index + 1}</span>
-                                            <strong>{item}</strong>
-                                        </div>
-                                    ))}
+                                    <strong>
+                                        {isArabic
+                                            ? selectedProject.arabicApproach
+                                            : selectedProject.approach}
+                                    </strong>
                                 </div>
                             </div>
 
@@ -399,7 +432,11 @@ export default function Gallery() {
                                         className="gallery-photo-group"
                                         key={group.title}
                                     >
-                                        <h4>{group.title}</h4>
+                                        <h4>
+                                            {isArabic
+                                                ? group.arabicTitle
+                                                : group.title}
+                                        </h4>
 
                                         <div className="gallery-photo-grid">
                                             {group.images.map((image, index) => (
@@ -430,7 +467,10 @@ export default function Gallery() {
                                 </div>
 
                                 <div className="gallery-activities-grid">
-                                    {selectedProject.activities.map((item) => (
+                                    {(isArabic
+                                        ? selectedProject.arabicActivities
+                                        : selectedProject.activities
+                                    ).map((item) => (
                                         <div
                                             className="gallery-activity-card"
                                             key={item}
@@ -442,26 +482,7 @@ export default function Gallery() {
                                 </div>
                             </div>
 
-                            <div className="gallery-detail-section gallery-frequency-section">
-                                <div className="gallery-detail-heading">
-                                    <span className="gallery-detail-label">
-                                        {content.frequency}
-                                    </span>
-                                    <h3>{content.frequency}</h3>
-                                </div>
-
-                                <div className="gallery-frequency-grid">
-                                    {selectedProject.frequency.map((item) => (
-                                        <div
-                                            className="gallery-frequency-card"
-                                            key={item.label}
-                                        >
-                                            <span>{item.label}</span>
-                                            <strong>{item.value}</strong>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
+                            
                         </div>
                     </section>
                 )}
@@ -496,7 +517,7 @@ export default function Gallery() {
 
                         <img
                             src={lightbox.image}
-                            alt="Project evidence"
+                            alt={isArabic ? "صور المشروع" : "Project evidence"}
                             onClick={(event) => event.stopPropagation()}
                         />
 

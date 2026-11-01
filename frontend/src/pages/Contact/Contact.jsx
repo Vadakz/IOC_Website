@@ -75,8 +75,31 @@ import catTrapImage from "../../assets/images/services/pest-control/cat-trap.png
 import ulvMachineImage from "../../assets/images/services/pest-control/ulv-machine.png";
 import gloriaMachineImage from "../../assets/images/services/pest-control/gloria-machine.png";
 import foggingMachineImage from "../../assets/images/services/pest-control/fogging-machine.png";
+import uvInsectKillerImage from "../../assets/images/services/pest-control/uv-insect-killer.png";
+import snakeTrapImage from "../../assets/images/services/pest-control/snake-trap.png";
 
 
+/* ==========================================================
+   Janitorial Services Images
+========================================================== */
+
+import generalCleaningImage from "../../assets/images/services/janitorial/general-cleaning.png";
+import deepCleaningImage from "../../assets/images/services/janitorial/deep-cleaning.png";
+import washroomHygieneImage from "../../assets/images/services/janitorial/washroom-hygiene.png";
+import floorCarpetCareImage from "../../assets/images/services/janitorial/floor-carpet-care.png";
+import windowCleaningImage from "../../assets/images/services/janitorial/window-cleaning.png";
+
+
+/* ==========================================================
+   soft Facility Management Images
+========================================================== */
+import receptionFrontOfficeImage from "../../assets/images/services/soft-facility-management/reception-front-office.png";
+import workplaceServicesImage from "../../assets/images/services/soft-facility-management/workplace-services.png";
+import mechanicalSystemsImage from "../../assets/images/services/soft-facility-management/mechanical-systems.png";
+import electricalSystemsImage from "../../assets/images/services/soft-facility-management/electrical-systems.png";
+import plumbingSystemsImage from "../../assets/images/services/soft-facility-management/plumbing-systems.png";
+import hvacSystemsImage from "../../assets/images/services/soft-facility-management/hvac-systems.png";
+import preventiveMaintenanceImage from "../../assets/images/services/soft-facility-management/preventive-maintenance.png";
 
 
 
@@ -459,7 +482,7 @@ const serviceSelectionOptions = {
                         number: "02",
                         title: "UV Insect Killer Service",
                         arabicTitle: "خدمة مصائد الحشرات بالأشعة فوق البنفسجية",
-                        image: null,
+                        image: uvInsectKillerImage,
                     },
                     {
                         id: "ulv-service",
@@ -506,7 +529,7 @@ const serviceSelectionOptions = {
                         number: "03",
                         title: "Snake Trap",
                         arabicTitle: "مصيدة الثعابين",
-                        image: null,
+                        image: snakeTrapImage,
                     },
                 ],
             },
@@ -517,11 +540,41 @@ const serviceSelectionOptions = {
         title: "Janitorial Services",
         arabicTitle: "خدمات النظافة",
         items: [
-            { id: "general-cleaning", number: "01", title: "General Cleaning", arabicTitle: "التنظيف العام" },
-            { id: "deep-cleaning", number: "02", title: "Deep Cleaning", arabicTitle: "التنظيف العميق" },
-            { id: "washroom-hygiene", number: "03", title: "Washroom Hygiene", arabicTitle: "نظافة دورات المياه" },
-            { id: "floor-carpet-care", number: "04", title: "Floor & Carpet Care", arabicTitle: "العناية بالأرضيات والسجاد" },
-            { id: "window-cleaning", number: "05", title: "Window Cleaning", arabicTitle: "تنظيف النوافذ" },
+            {
+                id: "general-cleaning",
+                number: "01",
+                title: "General Cleaning",
+                arabicTitle: "التنظيف العام",
+                image: generalCleaningImage
+            },
+            {
+                id: "deep-cleaning",
+                number: "02",
+                title: "Deep Cleaning",
+                arabicTitle: "التنظيف العميق",
+                image: deepCleaningImage,
+            },
+            {
+                id: "washroom-hygiene",
+                number: "03",
+                title: "Washroom Hygiene",
+                arabicTitle: "نظافة دورات المياه",
+                image: washroomHygieneImage,
+            },
+            {
+                id: "floor-carpet-care",
+                number: "04",
+                title: "Floor & Carpet Care",
+                arabicTitle: "العناية بالأرضيات والسجاد",
+                image: floorCarpetCareImage,
+            },
+            {
+                id: "window-cleaning",
+                number: "05",
+                title: "Window Cleaning",
+                arabicTitle: "تنظيف النوافذ",
+                image: windowCleaningImage,
+            },
         ],
     },
 
@@ -532,20 +585,71 @@ const serviceSelectionOptions = {
     "Soft-Facility-Management": {
         title: "Soft Facility Management",
         arabicTitle: "إدارة المرافق الناعمة",
-        items: [
-            { id: "housekeeping", number: "01", title: "Housekeeping", arabicTitle: "خدمات التدبير والنظافة" },
-            { id: "landscaping", number: "02", title: "Landscaping", arabicTitle: "تنسيق الحدائق" },
-            { id: "reception-front-office", number: "03", title: "Reception & Front Office", arabicTitle: "الاستقبال والمكاتب الأمامية" },
-            { id: "support-services", number: "04", title: "Support Services", arabicTitle: "الخدمات المساندة" },
-            { id: "workplace-services", number: "05", title: "Workplace Services", arabicTitle: "خدمات بيئة العمل" },
-
-            { id: "mechanical-systems", number: "06", title: "Mechanical Systems", arabicTitle: "الأنظمة الميكانيكية" },
-            { id: "electrical-systems", number: "07", title: "Electrical Systems", arabicTitle: "الأنظمة الكهربائية" },
-            { id: "plumbing-systems", number: "08", title: "Plumbing Systems", arabicTitle: "أنظمة السباكة" },
-            { id: "hvac-systems", number: "09", title: "HVAC Systems", arabicTitle: "أنظمة التكييف والتهوية" },
-            { id: "preventive-maintenance", number: "10", title: "Preventive Maintenance", arabicTitle: "الصيانة الوقائية" },
-            { id: "technical-support", number: "11", title: "Technical Support", arabicTitle: "الدعم الفني" },
-        ],
+        categories: {
+            "soft-facilities": {
+                title: "Soft Facilities",
+                arabicTitle: "خدمات المرافق الناعمة",
+                items: [
+                    {
+                        id: "reception-front-office",
+                        number: "01",
+                        title: "Reception & Front Office",
+                        arabicTitle: "الاستقبال والمكاتب الأمامية",
+                        image: receptionFrontOfficeImage,
+                    },
+                  
+                    {
+                        id: "workplace-services",
+                        number: "03",
+                        title: "Workplace Services",
+                        arabicTitle: "خدمات بيئة العمل",
+                        image: workplaceServicesImage,
+                    },
+                ],
+            },
+            mep: {
+                title: "MEP",
+                arabicTitle: "الأعمال الميكانيكية والكهربائية والسباكة",
+                items: [
+                    {
+                        id: "mechanical-systems",
+                        number: "04",
+                        title: "Mechanical Systems",
+                        arabicTitle: "الأنظمة الميكانيكية",
+                        image: mechanicalSystemsImage,
+                    },
+                    {
+                        id: "electrical-systems",
+                        number: "05",
+                        title: "Electrical Systems",
+                        arabicTitle: "الأنظمة الكهربائية",
+                        image: electricalSystemsImage,
+                    },
+                    {
+                        id: "plumbing-systems",
+                        number: "06",
+                        title: "Plumbing Systems",
+                        arabicTitle: "أنظمة السباكة",
+                        image: plumbingSystemsImage,
+                    },
+                    {
+                        id: "hvac-systems",
+                        number: "07",
+                        title: "HVAC Systems",
+                        arabicTitle: "أنظمة التكييف والتهوية",
+                        image: hvacSystemsImage,
+                    },
+                    {
+                        id: "preventive-maintenance",
+                        number: "08",
+                        title: "Preventive Maintenance",
+                        arabicTitle: "الصيانة الوقائية",
+                        image: preventiveMaintenanceImage,
+                    },
+                
+                ],
+            },
+        },
     },
 };
 
@@ -670,6 +774,8 @@ export default function Contact() {
 
     const [selectedPestCategory, setSelectedPestCategory] =
         useState("fly-control");
+    const [selectedSoftFacilityCategory, setSelectedSoftFacilityCategory] =
+        useState("soft-facilities");
 
     const [servicePopupOpen, setServicePopupOpen] = useState(false);
     const [selectedServiceItems, setSelectedServiceItems] = useState([]);
@@ -752,6 +858,10 @@ export default function Contact() {
 
         if (serviceSlug === "PestControl") {
             setSelectedPestCategory("fly-control");
+        }
+
+        if (serviceSlug === "Soft-Facility-Management") {
+            setSelectedSoftFacilityCategory("soft-facilities");
         }
 
         setSelectedWasteCategory("containers");
@@ -867,17 +977,25 @@ export default function Contact() {
     const currentServiceSelection =
         formData.serviceSlug === "PestControl"
             ? serviceSelectionOptions.PestControl.categories[selectedPestCategory]
-            : serviceSelectionOptions[formData.serviceSlug];
+            : formData.serviceSlug === "Soft-Facility-Management"
+                ? serviceSelectionOptions["Soft-Facility-Management"].categories[
+                selectedSoftFacilityCategory
+                ]
+                : serviceSelectionOptions[formData.serviceSlug];
 
     const currentServiceTitle =
         formData.serviceSlug === "PestControl"
             ? serviceSelectionOptions.PestControl.title
-            : currentServiceSelection?.title;
+            : formData.serviceSlug === "Soft-Facility-Management"
+                ? serviceSelectionOptions["Soft-Facility-Management"].title
+                : currentServiceSelection?.title;
 
     const currentServiceArabicTitle =
         formData.serviceSlug === "PestControl"
             ? serviceSelectionOptions.PestControl.arabicTitle
-            : currentServiceSelection?.arabicTitle;
+            : formData.serviceSlug === "Soft-Facility-Management"
+                ? serviceSelectionOptions["Soft-Facility-Management"].arabicTitle
+                : currentServiceSelection?.arabicTitle;
 
     const toggleServiceItem = (itemId) => {
         setSelectedServiceItems((currentItems) => {
@@ -913,9 +1031,17 @@ export default function Contact() {
             ? Object.values(serviceSelectionOptions.PestControl.categories)
                 .flatMap((category) => category.items)
                 .filter((item) => selectedServiceItems.includes(item.id))
-            : currentServiceSelection
-                ? currentServiceSelection.items.filter((item) => selectedServiceItems.includes(item.id))
-                : [];
+            : formData.serviceSlug === "Soft-Facility-Management"
+                ? Object.values(
+                    serviceSelectionOptions["Soft-Facility-Management"].categories
+                )
+                    .flatMap((category) => category.items)
+                    .filter((item) => selectedServiceItems.includes(item.id))
+                : currentServiceSelection
+                    ? currentServiceSelection.items.filter((item) =>
+                        selectedServiceItems.includes(item.id)
+                    )
+                    : [];
 
 
     /* ======================================================
@@ -1097,6 +1223,7 @@ export default function Contact() {
 
                 setSelectedWasteCategory("containers");
                 setSelectedPestCategory("fly-control");
+                setSelectedSoftFacilityCategory("soft-facilities");
 
             } else {
 
@@ -2900,6 +3027,29 @@ export default function Contact() {
                                                             <option value="rodent-stray-animal">
                                                                 {isArabic ? "خدمة مكافحة القوارض والحيوانات الضالة" : "Rodent & Stray Animal Control Service"}
                                                             </option>
+                                                        </select>
+                                                    </div>
+                                                )}
+                                                {formData.serviceSlug === "Soft-Facility-Management" && (
+                                                    <div className="waste-popup-select">
+                                                        <label htmlFor="softFacilityCategory">
+                                                            {isArabic
+                                                                ? "نوع خدمة إدارة المرافق"
+                                                                : "Soft Facility Management Type"}
+                                                        </label>
+                                                        <select
+                                                            id="softFacilityCategory"
+                                                            value={selectedSoftFacilityCategory}
+                                                            onChange={(event) =>
+                                                                setSelectedSoftFacilityCategory(event.target.value)
+                                                            }
+                                                        >
+                                                            <option value="soft-facilities">
+                                                                {isArabic
+                                                                    ? "خدمات المرافق الناعمة"
+                                                                    : "Soft Facilities"}
+                                                            </option>
+                                                            <option value="mep">MEP</option>
                                                         </select>
                                                     </div>
                                                 )}
