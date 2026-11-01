@@ -93,7 +93,7 @@ import windowCleaningImage from "../../assets/images/services/janitorial/window-
 /* ==========================================================
    soft Facility Management Images
 ========================================================== */
-
+import receptionFrontOfficeImage from "../../assets/images/services/soft-facility-management/reception-front-office.png";
 import workplaceServicesImage from "../../assets/images/services/soft-facility-management/workplace-services.png";
 import mechanicalSystemsImage from "../../assets/images/services/soft-facility-management/mechanical-systems.png";
 import electricalSystemsImage from "../../assets/images/services/soft-facility-management/electrical-systems.png";
