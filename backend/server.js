@@ -68,7 +68,7 @@ app.use(express.json());
    TEST ROUTES
 ========================================================== */
 
-app.use(express.urlencoded({ extended: true }));
+
 
 app.get("/", (req, res) => {
   res.status(200).json({

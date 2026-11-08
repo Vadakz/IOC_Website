@@ -32,6 +32,7 @@ const escapeHtml = (value = "") => {
    CREATE EMAIL TRANSPORTER
 ========================================================== */
 
+
 const createTransporter = () => {
   const {
     SMTP_HOST,
@@ -47,12 +48,12 @@ const createTransporter = () => {
   }
 
   return nodemailer.createTransport({
-    host: SMTP_HOST,
+    host: SMTP_HOST.trim(),
     port: Number(SMTP_PORT),
     secure: false,
 
     auth: {
-      user: SMTP_USER,
+      user: SMTP_USER.trim(),
       pass: SMTP_PASS,
     },
 
@@ -63,6 +64,7 @@ const createTransporter = () => {
     },
   });
 };
+
 
 /* ==========================================================
    VERIFY EMAIL CONNECTION
@@ -156,9 +158,8 @@ const createSelectedItemsHtml = (
           background:#f8fafb;
         ">
 
-          ${
-            image
-              ? `
+          ${image
+          ? `
                 <div style="
                   margin-bottom:10px;
                 ">
@@ -177,8 +178,8 @@ const createSelectedItemsHtml = (
                   />
                 </div>
               `
-              : ""
-          }
+          : ""
+        }
 
           <div style="
             font-size:14px;
