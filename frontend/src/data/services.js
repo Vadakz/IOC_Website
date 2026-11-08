@@ -15,13 +15,13 @@ const services = [
     category: "Environmental Services",
 
     shortDescription:
-      "Responsible Collection And Handling Solutions For Municipal, Construction, Wastewater And Specialist Waste Streams.",
+      "Responsible collection and handling solutions for municipal, construction, wastewater and specialist waste streams.",
 
     image: "/images/waste-management.jpg",
     logo: "/images/ioc-eco-logo.png",
 
     description:
-      "IOC/ECO Provides Dependable Waste And Wastewater Services For Facilities And Projects Across Saudi Arabia. We Match The Collection Method, Equipment And Service Frequency To Each Waste Stream While Supporting Safe Handling, Responsible Disposal And Cleaner Operating Environments.",
+      "IOC/ECO provides dependable waste and wastewater services for facilities and projects across Saudi Arabia. We match the collection method, equipment and service frequency to each waste stream while supporting safe handling, responsible disposal and cleaner operating environments.",
 
     overviewTitle:
       "Practical Waste Solutions, Responsibly Managed",
@@ -47,25 +47,22 @@ const services = [
       {
         title: "Profile",
         text:
-          "Identify Waste Streams, Volumes, Site Constraints And Collection Needs.",
+          "Identify waste streams, volumes, site constraints and collection needs.",
       },
-
       {
         title: "Configure",
         text:
-          "Select Suitable Containers, Vehicles, Frequencies And Handling Procedures.",
+          "Select suitable containers, vehicles, frequencies and handling procedures.",
       },
-
       {
         title: "Collect",
         text:
-          "Deliver Scheduled Or Responsive Collection Through Equipped Operations Teams.",
+          "Deliver scheduled or responsive collection through equipped operations teams.",
       },
-
       {
         title: "Document",
         text:
-          "Maintain Service Records And Support Responsible Transfer And Disposal.",
+          "Maintain service records and support responsible transfer and disposal.",
       },
     ],
 
@@ -85,10 +82,10 @@ const services = [
     category: "Integrated Pest Management",
 
     shortDescription:
-      "Targeted, Environmentally Responsible Pest Management Built Around Inspection, Prevention And Monitoring.",
+      "Targeted, environmentally responsible pest management built around inspection, prevention and monitoring.",
 
     description:
-      "IOC/ECO Delivers Sustainable Pest-Management Programmes Across Saudi Arabia. We Begin With A Detailed Site Survey, Identify Activity And Contributing Conditions, Then Combine Sanitation Guidance, Pest Proofing, Targeted Treatment And Ongoing Monitoring To Help Maintain A Safe, Pest-Free Environment.",
+      "IOC/ECO delivers sustainable pest-management programmes across Saudi Arabia. We begin with a detailed site survey, identify activity and contributing conditions, then combine sanitation guidance, pest proofing, targeted treatment and ongoing monitoring to help maintain a safe, pest-free environment.",
 
     overviewTitle:
       "Control The Cause, Not Only The Visible Problem",
@@ -114,25 +111,22 @@ const services = [
       {
         title: "Inspect",
         text:
-          "Survey The Premises And Identify Signs Of Activity, Access Points And Risk Areas.",
+          "Survey the premises and identify signs of activity, access points and risk areas.",
       },
-
       {
         title: "Identify",
         text:
-          "Confirm The Pest And Evaluate Sanitation And Environmental Conditions.",
+          "Confirm the pest and evaluate sanitation and environmental conditions.",
       },
-
       {
         title: "Control",
         text:
-          "Apply Proofing, Preventive Measures And Targeted Treatments Where Required.",
+          "Apply proofing, preventive measures and targeted treatments where required.",
       },
-
       {
         title: "Monitor",
         text:
-          "Track Activity, Document Results And Adjust The Programme Over Time.",
+          "Track activity, document results and adjust the programme over time.",
       },
     ],
 
@@ -152,10 +146,10 @@ const services = [
     category: "Professional Cleaning",
 
     shortDescription:
-      "Professional Daily And Specialist Cleaning For Healthier, Safer And Better-Presented Environments.",
+      "Professional daily and specialist cleaning for healthier, safer and better-presented environments.",
 
     description:
-      "From Daily Cleaning To Demanding Specialist Assignments, IOC/ECO Develops Practical Cleaning Programmes Around Each Facility’s Use, Footfall And Hygiene Requirements. Trained Teams, Appropriate Equipment And Active Supervision Help Us Maintain Dependable Standards Across Indoor And Outdoor Spaces.",
+      "From daily cleaning to demanding specialist assignments, IOC/ECO develops practical cleaning programmes around each facility’s use, footfall and hygiene requirements. Trained teams, appropriate equipment and active supervision help us maintain dependable standards across indoor and outdoor spaces.",
 
     overviewTitle:
       "A Touch Of Perfection, Delivered Consistently",
@@ -181,25 +175,22 @@ const services = [
       {
         title: "Assess",
         text:
-          "Review Surfaces, Traffic Patterns, Hygiene Risks And Operating Hours.",
+          "Review surfaces, traffic patterns, hygiene risks and operating hours.",
       },
-
       {
         title: "Design",
         text:
-          "Set The Cleaning Scope, Frequencies, Methods, Staffing And Equipment.",
+          "Set the cleaning scope, frequencies, methods, staffing and equipment.",
       },
-
       {
         title: "Deliver",
         text:
-          "Execute Daily And Periodic Tasks Through Trained, Supervised Teams.",
+          "Execute daily and periodic tasks through trained, supervised teams.",
       },
-
       {
         title: "Verify",
         text:
-          "Inspect Results, Record Performance And Address Service Observations.",
+          "Inspect results, record performance and address service observations.",
       },
     ],
 
@@ -219,10 +210,10 @@ const services = [
     category: "Integrated Facility Management",
 
     shortDescription:
-      "Coordinated Soft Facilities Management Services Supported By Technical MEP Solutions For Clean, Safe And Efficient Facilities.",
+      "Coordinated soft facilities management services supported by technical MEP solutions for clean, safe and efficient facilities.",
 
     description:
-      "IOC/ECO Brings Essential Soft Facilities Management Services Under One Accountable Team. We Shape Each Programme Around The Facility, Its Occupants And The Client’s Operating Standards, Then Coordinate People, Schedules, Supplies, Technical Support And Quality Checks To Deliver A Consistent Workplace Experience.",
+      "IOC/ECO brings essential soft facilities management services under one accountable team. We shape each programme around the facility, its occupants and the client’s operating standards, then coordinate people, schedules, supplies, technical support and quality checks to deliver a consistent workplace experience.",
 
     overviewTitle:
       "Integrated Soft Facilities Management For Every Facility",
@@ -248,25 +239,22 @@ const services = [
       {
         title: "Understand",
         text:
-          "Review The Site, Occupancy Profile And Daily Operational Requirements.",
+          "Review the site, occupancy profile and daily operational requirements.",
       },
-
       {
         title: "Plan",
         text:
-          "Define Staffing, Schedules, Materials, Responsibilities And Service Levels.",
+          "Define staffing, schedules, materials, responsibilities and service levels.",
       },
-
       {
         title: "Mobilize",
         text:
-          "Deploy Trained Teams With Clear Procedures And Site-Specific Supervision.",
+          "Deploy trained teams with clear procedures and site-specific supervision.",
       },
-
       {
         title: "Improve",
         text:
-          "Monitor Delivery, Resolve Issues And Continually Refine The Programme.",
+          "Monitor delivery, resolve issues and continually refine the programme.",
       },
     ],
 
@@ -290,10 +278,10 @@ const services = [
         category: "Technical Maintenance",
 
         shortDescription:
-          "Proactive MEP And HVAC Maintenance That Supports Reliable, Efficient And Safe Building Operations.",
+          "Proactive MEP and HVAC maintenance that supports reliable, efficient and safe building operations.",
 
         description:
-          "IOC/ECO Manages And Maintains Mechanical, Electrical And Plumbing Systems Using Planned Maintenance, Technical Inspections And Responsive On-Site Support. Our Focus Is To Improve System Reliability, Limit Avoidable Breakdowns And Help Critical Building Services Perform Efficiently.",
+          "IOC/ECO manages and maintains mechanical, electrical and plumbing systems using planned maintenance, technical inspections and responsive on-site support. Our focus is to improve system reliability, limit avoidable breakdowns and help critical building services perform efficiently.",
 
         overviewTitle:
           "Keeping Essential Building Systems Running",
@@ -317,25 +305,22 @@ const services = [
           {
             title: "Inspect",
             text:
-              "Review System Condition, Operating History And Critical Maintenance Needs.",
+              "Review system condition, operating history and critical maintenance needs.",
           },
-
           {
             title: "Schedule",
             text:
-              "Build A Preventive Plan Around Assets, Risk And Operational Priorities.",
+              "Build a preventive plan around assets, risk and operational priorities.",
           },
-
           {
             title: "Service",
             text:
-              "Complete Planned Work And Responsive Repairs With Equipped Technicians.",
+              "Complete planned work and responsive repairs with equipped technicians.",
           },
-
           {
             title: "Optimize",
             text:
-              "Monitor Recurring Faults And Recommend Practical Performance Improvements.",
+              "Monitor recurring faults and recommend practical performance improvements.",
           },
         ],
 
