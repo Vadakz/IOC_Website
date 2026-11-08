@@ -282,89 +282,10 @@ export default function Team() {
           <div className="team-container">
 
 
-            {/* ==================================================
-                SECTION HEADING
-            ================================================== */}
-
-            <div className="team-structure-heading">
-
-              <span className="team-eyebrow">
-                {t("team.structure.label")}
-              </span>
-
-              <h2>
-                {t("team.structure.title")}
-              </h2>
-
-              <p>
-                {t("team.structure.description")}
-              </p>
-
-            </div>
 
 
 
-            {/* ==================================================
-                ORGANIZATION CHART
-            ================================================== */}
 
-            <div className="team-org-chart">
-
-
-              {/* ==================================================
-                  MANAGING DIRECTOR
-              ================================================== */}
-
-              <div className="team-org-ceo">
-
-                <span>
-                  {t(
-                    "team.managingDirector.position"
-                  )}
-                </span>
-
-              </div>
-
-
-
-              {/* ==================================================
-                  MAIN CONNECTOR
-              ================================================== */}
-
-              <div className="team-org-connector">
-
-                <span />
-
-              </div>
-
-
-
-              {/* ==================================================
-                  MANAGEMENT LEVEL
-              ================================================== */}
-
-              <div className="team-org-management">
-
-                {leadershipTeam.map((member) => (
-
-                  <div
-                    className="team-org-item"
-                    key={member.key}
-                  >
-
-                    <span>
-                      {t(
-                        `team.members.${member.key}.position`
-                      )}
-                    </span>
-
-                  </div>
-
-                ))}
-
-              </div>
-
-            </div>
 
           </div>
 

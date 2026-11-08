@@ -63,7 +63,7 @@
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 2.1px;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 
@@ -75,7 +75,7 @@
   font-weight: 700;
   line-height: 0.98;
   letter-spacing: -3.5px;
-  text-transform: uppercase;
+  text-transform:none;
 }
 
 .hero h1 span {
@@ -230,7 +230,7 @@
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 1.4px;
-  text-transform: uppercase;
+  text-transform: none;
   transform: translateX(-50%);
   border: 0;
   background: transparent;
