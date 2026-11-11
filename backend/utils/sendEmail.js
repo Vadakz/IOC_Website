@@ -158,26 +158,37 @@ const createSelectedItemsHtml = (
           background:#f8fafb;
         ">
 
-          ${image
+${image
           ? `
-                <div style="
-                  margin-bottom:10px;
-                ">
-                  <img
-                    src="cid:${image.cid}"
-                    alt="${escapeHtml(item.title)}"
-                    style="
-                      display:block;
-                      width:140px;
-                      height:100px;
-                      object-fit:contain;
-                      border-radius:7px;
-                      border:1px solid #dce5e8;
-                      background:#ffffff;
-                    "
-                  />
-                </div>
-              `
+    <table
+      role="presentation"
+      cellpadding="0"
+      cellspacing="0"
+      border="0"
+      width="140"
+      style="width:140px; max-width:140px;"
+    >
+      <tr>
+        <td width="140" style="width:140px;">
+          <img
+            src="cid:${image.cid}"
+            alt="${escapeHtml(item.title)}"
+            width="140"
+            style="
+              display:block;
+              width:140px;
+              max-width:140px;
+              height:auto;
+              border-radius:7px;
+              border:1px solid #dce5e8;
+              background:#ffffff;
+            "
+          />
+        </td>
+      </tr>
+    </table>
+    <div style="height:10px; line-height:10px;">&nbsp;</div>
+  `
           : ""
         }
 
