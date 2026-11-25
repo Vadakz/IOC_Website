@@ -338,28 +338,26 @@
         padding: 75px 0;
     }
 
-
-    /* --------------------------------------------------------
-     IMAGE
-  -------------------------------------------------------- */
+    /* Show the complete original image */
+    .about-image-wrapper {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        border-radius: 22px;
+    }
 
     .about-image {
+        display: block;
         width: 100%;
-
-        height: 380px;
-
+        height: auto;
+        max-width: 100%;
+        object-fit: contain;
         object-position: center;
     }
 
-
-    /* --------------------------------------------------------
-     HIGHLIGHTS
-  -------------------------------------------------------- */
-
+    /* HIGHLIGHTS */
     .about-highlights {
-        grid-template-columns:
-            repeat(2, 1fr);
-
+        grid-template-columns: repeat(2, 1fr);
         gap: 10px;
     }
 
