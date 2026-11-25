@@ -428,3 +428,16 @@
     animation: none;
   }
 }
+
+
+/* Fix CountUp number styling */
+.hero-stat-card strong > span {
+  display: inline;
+  margin: 0;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: inherit;
+  font-weight: 700;
+  line-height: 1;
+}
+

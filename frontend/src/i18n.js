@@ -37,8 +37,9 @@ const en = {
     openMenu: "Open Navigation Menu",
     closeMenu: "Close Navigation Menu",
     selectLanguage: "Select Language",
-    "aboutIOC": "About IOC",
-    "overview": "Overview"
+    aboutIOC: "About IOC",
+    overview: "Overview",
+    insights: "Blogs & Insights"
   },
 
 
@@ -92,7 +93,7 @@ const en = {
         name: "Ramy Youssef",
         position: "Operations Manager",
         description:
-          "An experienced Operations Manager with 14+ years in waste management, facilities management, oil & gas, and transportation, specialising in fleet management, cost optimisation, and operational excellence.",
+          "An experienced Operations Manager with over 14 years of expertise in waste management, facilities management, oil & gas, and transportation. Specialised in fleet management, cost optimisation, and operational excellence, with a proven ability to achieve operational targets.",
       },
 
       hrAdmin: {
@@ -997,7 +998,48 @@ const en = {
     terms:
       "Terms & Conditions",
   },
+
+
+  /* ========================================================
+   14. BLOGS & INSIGHTS
+  ======================================================== */
+
+  insights: {
+    eyebrow: "KNOWLEDGE. PERSPECTIVES. INNOVATION.",
+    title: "Blogs &",
+    titleHighlight: "Insights",
+    subtitle: "Ideas, insights and perspectives on facility management, operations, sustainability and the future of our industry.",
+    exploreButton: "Explore Articles",
+
+    featuredLabel: "EDITOR'S PICK",
+    featuredTitle: "Featured Article",
+    featuredBadge: "Featured",
+
+    latestLabel: "STAY INFORMED",
+    latestTitle: "Latest Articles",
+    latestDescription: "Explore our perspectives on the topics shaping our industry.",
+
+    categories: {
+      all: "All",
+      facilityManagement: "Facility Management",
+      operations: "Operations",
+      sustainability: "Sustainability",
+      technology: "Technology",
+      workplace: "Workplace"
+    },
+
+    comingSoon: "Article coming soon",
+    noArticles: "No articles found",
+    noArticlesDescription: "There are currently no articles in this category.",
+
+    ctaLabel: "LET'S CONNECT",
+    ctaTitle: "Looking for a reliable operations partner?",
+    ctaDescription: "Get in touch with our team to learn more about our services and capabilities.",
+    ctaButton: "Contact Us"
+  },
 };
+
+
 
 
 
@@ -1051,8 +1093,13 @@ const ar = {
     clients:
       "عملاؤنا",
 
+      aboutIOC: "نبذة عن شركة IOC",
+
     gallery:
       "المعرض",
+
+    insights:
+      "المدونات والرؤى",
 
     contact:
       "اتصل بنا",
@@ -2338,6 +2385,44 @@ const ar = {
 
     terms:
       "الشروط والأحكام",
+  },
+
+  /* ========================================================
+   BLOGS & INSIGHTS
+======================================================== */
+
+  insights: {
+    eyebrow: "المعرفة. وجهات النظر. الابتكار.",
+    title: "المدونات و",
+    titleHighlight: "الرؤى",
+    subtitle: "أفكار ورؤى ووجهات نظر حول إدارة المرافق والعمليات والاستدامة ومستقبل قطاعنا.",
+    exploreButton: "استكشف المقالات",
+
+    featuredLabel: "اختيار المحرر",
+    featuredTitle: "مقال مميز",
+    featuredBadge: "مميز",
+
+    latestLabel: "ابقَ على اطلاع",
+    latestTitle: "أحدث المقالات",
+    latestDescription: "اكتشف وجهات نظرنا حول الموضوعات التي تشكل مستقبل قطاعنا.",
+
+    categories: {
+      all: "الكل",
+      facilityManagement: "إدارة المرافق",
+      operations: "العمليات",
+      sustainability: "الاستدامة",
+      technology: "التكنولوجيا",
+      workplace: "بيئة العمل"
+    },
+
+    comingSoon: "المقال قادم قريباً",
+    noArticles: "لم يتم العثور على مقالات",
+    noArticlesDescription: "لا توجد حالياً مقالات ضمن هذه الفئة.",
+
+    ctaLabel: "لنتواصل معاً",
+    ctaTitle: "هل تبحث عن شريك موثوق في إدارة العمليات؟",
+    ctaDescription: "تواصل مع فريقنا لمعرفة المزيد عن خدماتنا وقدراتنا.",
+    ctaButton: "اتصل بنا"
   },
 
 

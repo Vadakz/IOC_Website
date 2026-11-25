@@ -1,12 +1,20 @@
+
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import "./Hero.css";
 import heroBackground from "../../assets/images/hero-bg.jpg";
+import CountUp from "../../components/CountUp";
 
 export default function Hero() {
   const { t } = useTranslation();
-  const statistics = t("hero.stats", { returnObjects: true });
-  const badges = t("hero.badges", { returnObjects: true });
+
+  const statistics = t("hero.stats", {
+    returnObjects: true,
+  });
+
+  const badges = t("hero.badges", {
+    returnObjects: true,
+  });
 
   const scrollToSection = (sectionId) => {
     document.getElementById(sectionId)?.scrollIntoView({
@@ -49,10 +57,15 @@ export default function Hero() {
               onClick={() => scrollToSection("services")}
             >
               {t("hero.explore")}
-              <span aria-hidden="true">{t("common.arrow")}</span>
+              <span aria-hidden="true">
+                {t("common.arrow")}
+              </span>
             </button>
 
-            <Link to="/contact" className="hero-button hero-button-secondary">
+            <Link
+              to="/contact"
+              className="hero-button hero-button-secondary"
+            >
               {t("hero.requestQuote")}
             </Link>
           </div>
@@ -66,8 +79,14 @@ export default function Hero() {
 
         <div className="hero-statistics">
           {statistics.map((stat) => (
-            <article className="hero-stat-card" key={stat.label}>
-              <strong>{stat.value}</strong>
+            <article
+              className="hero-stat-card"
+              key={stat.label}
+            >
+              <strong>
+                <CountUp value={stat.value} duration={2200} />
+              </strong>
+
               <span>{stat.label}</span>
             </article>
           ))}

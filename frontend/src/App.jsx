@@ -11,6 +11,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import Journey from "./pages/Journey/Journey";
 import Team from "./pages/team/Team";
 import Gallery from "./pages/Gallery/Gallery";
+import Insights from "./pages/Insights/Insights";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/services/:slug" element={<ServiceDetails />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/team" element={<Team />} />
+        <Route path="/insights" element={<Insights />} />
       </Routes>
 
       <Footer />

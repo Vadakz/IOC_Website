@@ -372,6 +372,17 @@ export default function Navbar() {
                         {t("navbar.gallery")}
                     </Link>
 
+                    {/* ==================================================
+                       BLOGS & INSIGHTS
+                    ================================================== */}
+
+                    <Link
+                        to="/insights"
+                        onClick={closeAllMenus}
+                    >
+                        {t("navbar.insights")}
+                    </Link>
+
 
                     {/* ==================================================
                         CONTACT
