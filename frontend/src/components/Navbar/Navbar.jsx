@@ -187,7 +187,7 @@ export default function Navbar() {
                             }}
                         >
 
-                            {t("navbar.about")}
+                            {t("navbar.aboutIOC")}
 
                             <span
                                 className={`dropdown-arrow ${aboutOpen
@@ -217,11 +217,9 @@ export default function Navbar() {
                             <button
                                 type="button"
                                 className="navbar-dropdown-link"
-                                onClick={() =>
-                                    goToSection("about")
-                                }
+                                onClick={() => goToSection("about")}
                             >
-                                {t("navbar.about")}
+                                {t("navbar.overview")}
                             </button>
 
 
