@@ -1,16 +1,14 @@
+
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import clients from "../data/clients";
 import PageTransition from "../components/PageTransition";
-import industriesHeroImage from "../assets/images/industries/industries-hero.png";
 
 import "./IndustriesPage.css";
 
-
 /* ==========================================================
    INDUSTRIES DATA
-   These items are used to build the industry cards.
 ========================================================== */
 
 const industries = [
@@ -24,7 +22,6 @@ const industries = [
       </svg>
     ),
   },
-
   {
     title: "Industrial",
     description:
@@ -35,7 +32,6 @@ const industries = [
       </svg>
     ),
   },
-
   {
     title: "Healthcare",
     description:
@@ -46,7 +42,6 @@ const industries = [
       </svg>
     ),
   },
-
   {
     title: "Hospitality",
     description:
@@ -57,7 +52,6 @@ const industries = [
       </svg>
     ),
   },
-
   {
     title: "Education",
     description:
@@ -68,7 +62,6 @@ const industries = [
       </svg>
     ),
   },
-
   {
     title: "Retail",
     description:
@@ -81,64 +74,32 @@ const industries = [
   },
 ];
 
-
 export default function IndustriesPage() {
   const { t } = useTranslation();
 
-  /* ==========================================================
-     CLIENT LOGO MARQUEE
-     Duplicating the list creates a continuous scrolling effect.
-  ========================================================== */
-
   const movingClients = [...clients, ...clients];
-
-  /* ==========================================================
-     TRANSLATED INDUSTRY CONTENT
-     The translated titles and descriptions come from i18n.
-  ========================================================== */
 
   const localizedIndustries = t("industries.items", {
     returnObjects: true,
   });
 
-
   return (
     <PageTransition>
       <main className="industries-page">
 
-        {/* ======================================================
-            CLIENTS SECTION
-            Continuously scrolling client logos.
-        ====================================================== */}
+        {/* CLIENTS SECTION */}
 
-        <section
-          className="clients-section"
-          id="clients"
-        >
+        <section className="clients-section" id="clients">
           <div className="industries-page-container">
-
-            {/* Clients section heading */}
-
             <div className="clients-section-header">
               <div>
-                <span>
-                  {t("industries.clientsLabel")}
-                </span>
-
-                <h2>
-                  {t("industries.clientsTitle")}
-                </h2>
+                <span>{t("industries.clientsLabel")}</span>
+                <h2>{t("industries.clientsTitle")}</h2>
               </div>
 
-              <p>
-                {t("industries.clientsDescription")}
-              </p>
+              <p>{t("industries.clientsDescription")}</p>
             </div>
-
           </div>
-
-
-          {/* Client logo marquee */}
 
           <div className="clients-marquee">
             <div className="clients-track">
@@ -154,124 +115,76 @@ export default function IndustriesPage() {
                     })}
                   />
 
-                  <span>
-                    {client.name}
-                  </span>
+                  <span>{client.name}</span>
                 </article>
               ))}
             </div>
           </div>
         </section>
 
-        {/* ======================================================
-            INDUSTRIES HERO SECTION
-            Text on the left and hero image on the right.
-        ====================================================== */}
-
-        <section className="industries-page-hero">
-          <div className="industries-page-container industries-hero-grid">
-
-            {/* Hero text content */}
-
-            <div className="industries-hero-copy">
-              <span className="industries-page-label">
-                {t("industries.heroLabel")}
-              </span>
-
-              <h1>
-                {t("industries.heroTitle")}
-
-                <span>
-                  {" "}
-                  {t("industries.heroAccent")}
-                </span>
-              </h1>
-
-              <p>
-                {t("industries.heroDescription")}
-              </p>
-            </div>
-
-
-            {/* Hero industry network image */}
-
-            <figure className="industries-hero-visual">
-              <img
-                src={industriesHeroImage}
-                alt={t("industries.heroImageAlt", {
-                  defaultValue: "Industries served by IOC",
-                })}
-              />
-            </figure>
-
-          </div>
-        </section>
-
-
-        {/* ======================================================
-            INDUSTRY EXPERTISE SECTION
-            Displays the six industry cards.
-        ====================================================== */}
+        {/* MINIMAL INDUSTRIES SECTION */}
 
         <section
           className="industries-overview"
           id="industry-list"
         >
-          <div className="industries-page-container">
+          <div className="industries-page-container industries-overview-layout">
 
-            {/* Industry section heading */}
+            {/* LEFT CONTENT */}
 
-            <div className="industries-overview-header">
-              <div>
-                <span>
-                  {t("industries.expertiseLabel")}
-                </span>
+            <div className="industries-overview-copy">
+              <span className="industries-section-label">
+                {t("industries.expertiseLabel")}
+              </span>
 
-                <h2>
-                  {t("industries.expertiseTitle")}
-                </h2>
-              </div>
+              <h1>
+                {t("industries.expertiseTitle")}
+              </h1>
 
               <p>
                 {t("industries.expertiseDescription")}
               </p>
+
+              <Link
+                to="/contact"
+                className="industries-explore-button"
+              >
+                {t("industries.partnerButton")}
+                <span aria-hidden="true">
+                  {t("common.arrow")}
+                </span>
+              </Link>
+
+              <div className="industries-copy-decoration">
+                <span />
+                <span />
+                <span />
+              </div>
             </div>
 
-
-            {/* Industry cards */}
+            {/* RIGHT INDUSTRY CARDS */}
 
             <div className="industries-page-grid">
               {industries.map((industry, index) => {
-                const translatedIndustry =
-                  localizedIndustries[index];
+                const translatedIndustry = localizedIndustries[index];
 
                 return (
                   <article
                     className="industries-page-card"
-                    key={translatedIndustry.title}
+                    key={industry.title}
                   >
-                    <div className="industries-page-card-top">
-
-                      {/* Industry icon */}
-
-                      <div className="industries-page-icon">
-                        {industry.icon}
-                      </div>
-
-                      {/* Industry number */}
-
-                      <span>
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
+                    <div className="industries-page-icon">
+                      {industry.icon}
                     </div>
 
-                    <h3>
-                      {translatedIndustry.title}
-                    </h3>
+                    <div className="industries-card-text">
+                      <h3>{translatedIndustry.title}</h3>
+                      <p>{translatedIndustry.description}</p>
+                    </div>
 
-                    <p>
-                      {translatedIndustry.description}
-                    </p>
+                    <span className="industries-card-number">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
                   </article>
                 );
               })}
@@ -280,36 +193,21 @@ export default function IndustriesPage() {
           </div>
         </section>
 
-
-
-
-
-        {/* ======================================================
-            INDUSTRIES CTA SECTION
-            Directs users to the Contact page.
-        ====================================================== */}
+        {/* CONTACT CTA */}
 
         <section className="industries-cta">
           <div className="industries-page-container industries-cta-content">
-
             <div>
-              <span>
-                {t("industries.partnerLabel")}
-              </span>
-
-              <h2>
-                {t("industries.partnerTitle")}
-              </h2>
+              <span>{t("industries.partnerLabel")}</span>
+              <h2>{t("industries.partnerTitle")}</h2>
             </div>
 
             <Link to="/contact">
               {t("industries.partnerButton")}
-
               <span aria-hidden="true">
                 {t("common.arrow")}
               </span>
             </Link>
-
           </div>
         </section>
 
