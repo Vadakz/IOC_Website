@@ -336,18 +336,7 @@ export default function Navbar() {
                     </div>
 
 
-                    {/* ==================================================
-                        COVERAGE
-                    ================================================== */}
 
-                    <button
-                        type="button"
-                        onClick={() =>
-                            goToSection("coverage")
-                        }
-                    >
-                        {t("navbar.coverage")}
-                    </button>
 
 
                     {/* ==================================================

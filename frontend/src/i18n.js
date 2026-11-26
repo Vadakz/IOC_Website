@@ -1115,6 +1115,8 @@ const ar = {
 
     selectLanguage:
       "اختر اللغة",
+    
+    overview: "نظرة عامة",
   },
 
 
